@@ -1,0 +1,200 @@
+*,
+*::before,
+*::after {outline:none; box-sizing:border-box}
+
+html {min-width:320px; height:100%}
+
+body {min-width:320px; height:100%; margin:0; padding:0; font:18px/26px Arial, sans-serif; color:#080825; background:#FFFFFF; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-anchor:none}
+.fonts-loaded body {font-family:Mulish, sans-serif}
+
+a {color:#080825; text-decoration:underline}
+@media (min-width:1260px) {
+    a:hover {text-decoration:none}
+}
+
+img {border:none; max-width:100%; height:auto}
+iframe {border:none; max-width:100%}
+
+::-ms-clear {display:none}
+
+strong, b {font-weight:600}
+
+h1 {margin:50px 0 40px 0; padding:0; font-weight:normal; text-align:center; font-size:130px; line-height:85px}
+.fonts-loaded h1 {font-family:BeauRivage, sans-serif}
+h2 {margin:60px 0 20px 0; padding:0; font-weight:900; font-size:38px; line-height:42px; text-transform:uppercase}
+h3 {margin:60px 0 20px 0; padding:0; font-weight:600; font-size:22px; line-height:25px}
+p {margin:20px 0; padding:0}
+.small {font-size:13px; line-height:16px}
+
+.btn {display:inline-block; margin:0; padding:15px 20px; overflow:visible; outline:none; text-decoration:none; background:#6768AB; color:#FFFFFF; border:none; border-radius:25px; font:800 16px/20px Arial, Helvetica, sans-serif; letter-spacing:0; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
+.fonts-loaded .btn {font-family:Mulish, sans-serif}
+
+.container {max-width:1260px; margin:0 auto}
+.container::after {content:""; display:block; clear:both}
+
+.wrapper {display:flex; flex-direction:column; width:100%; min-width:320px; min-height:100%; position:relative; overflow:hidden}
+.wrapper-inner {height:100%; padding:64px 0 0 0; flex:1; background:url(../images/bg.svg) no-repeat center top}
+
+header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; border-bottom:2px solid #F9F9FF}
+.header-inner {height:62px; display:flex; align-items:center}
+
+.page-main header {border-bottom:none}
+
+.logo {min-width:144px; display:flex; align-items:flex-start}
+.logo a {min-width:144px; display:flex; align-items:flex-start}
+.logo-left {display:block; width:96px; height:24px; margin:3px 0 0 0; fill:#080825}
+.logo-right {display:block; width:44px; height:31px; margin:0 0 0 4px; fill:#080825; stroke:#080825}
+
+.page-main .logo-left {fill:#FFFFFF}
+.page-main .logo-right {fill:#FFFFFF; stroke:#FFFFFF}
+
+.header-location {white-space:nowrap; margin:0 0 0 20px}
+.header-location-current {font-weight:600; font-size:12px; line-height:15px; text-transform:uppercase}
+.header-location-current svg {display:inline-block; vertical-align:middle; margin:-2px 5px 0 0; width:11px; height:13px; fill:#080825}
+
+.page-main .header-location-current {color:#FFFFFF}
+.page-main .header-location-current svg {fill:#FFFFFF}
+
+.header-menu {display:flex; flex-grow:1; justify-content:center}
+.header-menu ul {display:flex; margin:0; padding:0; list-style:none; font-weight:800; font-size:12px; line-height:62px; text-transform:uppercase}
+.header-menu ul li {margin:0 0 0 20px; padding:0; position:relative}
+.header-menu ul li:first-child {margin:0}
+.header-menu ul li::before {display:none}
+.header-menu ul li.open::before {content:""; display:block; position:absolute; left:-10px; top:13px; right:-10px; bottom:0; background:#FFFFFF; border-radius:20px 20px 0 0}
+.header-menu ul li.open::after {content:""; display:block; position:absolute; right:-43px; top:13px; width:35px; height:36px; background:url(../images/header-submenu-corner.svg) no-repeat}
+.header-menu ul li a {display:block; color:#080825; text-decoration:none; position:relative}
+.header-menu ul li a::after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:2px; background:#080825; transition:transform 0.2s; transform:scale(0, 1)}
+.header-menu ul li.active a::after,
+.header-menu ul li a:hover::after {transform:scale(1, 1)}
+.header-menu ul li a svg {display:inline-block; vertical-align:middle; width:9px; height:7px; fill:#080825; margin:-2px 0 0 4px; transition:transform 0.2s, fill 0.2s}
+.header-menu ul li.open a svg {transform:rotate(-180deg); fill:#080825}
+.header-menu ul li ul {display:none; position:absolute; z-index:99; left:-10px; top:49px; white-space:nowrap; background:#FFFFFF; border-radius:0 20px 20px 20px}
+.header-menu ul li.open ul {display:block}
+.header-menu ul li ul li {margin:0}
+.header-menu ul li ul li a {line-height:30px; padding:0 18px 0 10px; transition:color 0.2s, background 0.2s}
+.header-menu ul li ul li a::after {display:none}
+.header-menu ul li ul li a:hover {background:#F9F9FF; color:#787B8E}
+.header-menu ul li ul li:first-child a {border-radius:0 20px 0 0}
+.header-menu ul li ul li:last-child a {border-radius:0 0 20px 20px}
+
+.page-main .header-menu ul li a {color:#FFFFFF}
+.page-main .header-menu ul li a::after {background:#FFFFFF}
+.page-main .header-menu ul li.open a {color:#080825}
+.page-main .header-menu ul li a svg {fill:#FFFFFF}
+.page-main .header-menu ul li.open a svg {fill:#080825}
+
+.header-search {min-width:284px; margin:0 77px 0 0}
+.header-search form {margin:0; padding:0; position:relative}
+.header-search-input input {position:relative; border:2px solid #E4E6F1; font:600 12px/15px Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:9px 47px 9px 17px; width:100%; height:37px; box-sizing:border-box; outline:none; border-radius:18px; background:transparent; -webkit-appearance:none}
+.fonts-loaded .footer-subscribe-input input {font-family:Mulish, sans-serif}
+.header-search-input input::-webkit-input-placeholder {opacity:1; color:#A8ABBF}
+.header-search-input input::-moz-placeholder {opacity:1; color:#A8ABBF}
+.header-search-input input:-ms-input-placeholder {opacity:1; color:#A8ABBF}
+.header-search-input input:-webkit-autofill,
+.header-search-input input:-webkit-autofill:active,
+.header-search-input input:-webkit-autofill:focus,
+.header-search-input input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+.header-search-submit {position:absolute; right:0; top:0}
+.header-search-submit button {display:block; margin:0; padding:0; width:47px; height:37px; overflow:visible; outline:none; text-decoration:none; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
+.header-search-submit button svg {position:absolute; left:50%; top:50%; width:19px; height:20px; fill:#080825; transform:translate(-50%, -50%)}
+
+.page-main .header-search-input input {border-color:#FFFFFF; color:#FFFFFF}
+.page-main .header-search-input input::-webkit-input-placeholder {color:#FFFFFF}
+.page-main .header-search-input input::-moz-placeholder {color:#FFFFFF}
+.page-main .header-search-input input:-ms-input-placeholder {color:#FFFFFF}
+.page-main .header-search-input input:-webkit-autofill,
+.page-main .header-search-input input:-webkit-autofill:active,
+.page-main .header-search-input input:-webkit-autofill:focus,
+.page-main .header-search-input input:-webkit-autofill:hover {-webkit-text-fill-color:#FFFFFF; caret-color:#FFFFFF}
+.page-main .header-search-submit button svg {fill:#FFFFFF}
+
+.header-user {min-width:62px; margin:0 7px 0 0}
+.header-user-link {display:block; height:37px; border:1px solid #080825; border-radius:18px; position:relative}
+.header-user-link svg {position:absolute; left:50%; top:50%; width:18px; height:23px; fill:#080825; transform:translate(-50%, -50%)}
+
+.page-main .header-user-link {border-color:#FFFFFF}
+.page-main .header-user-link svg {fill:#FFFFFF}
+
+.header-lang {white-space:nowrap; margin:11px 0 0 0}
+.header-lang-select {display:inline-block; vertical-align:top; position:relative; margin:-11px -13px 0 0}
+.header-lang-select-current {padding:11px 13px; cursor:pointer; border-radius:20px 20px 0 0; transition:color 0.2s; font-weight:600; font-size:12px; line-height:15px; color:#080825}
+.header-lang-select.open .header-lang-select-current {color:#080825; background:#FFFFFF}
+.header-lang-select-current svg {display:inline-block; vertical-align:middle; width:9px; height:7px; fill:#080825; margin:-2px 0 0 4px; transition:transform 0.2s, fill 0.2s}
+.header-lang-select.open .header-lang-select-current svg {transform:rotate(-180deg); fill:#080825}
+.header-lang-select ul {display:none; position:absolute; left:0; top:100%; right:0; margin:-3px 0 0 0; padding:0; list-style:none; z-index:99; background:#FFFFFF; border-radius:0 0 20px 20px; font-weight:bold; font-size:12px; line-height:15px}
+.header-lang-select.open ul {display:block}
+.header-lang-select ul li {margin:0; padding:0}
+.header-lang-select ul li::before {display:none}
+.header-lang-select ul li a {display:block; padding:8px 0 8px 13px; color:#080825; text-decoration:none; transition:background 0.2s, color 0.2s}
+.header-lang-select ul li a:last-child {border-radius:0 0 20px 20px}
+.header-lang-select ul li a:hover {color:#787B8E; background:#F9F9FF}
+
+.page-main .header-lang-select-current {color:#FFFFFF}
+.page-main .header-lang-select.open .header-lang-select-current {color:#080825}
+.page-main .header-lang-select-current svg {fill:#FFFFFF}
+.page-main .header-lang-select.open .header-lang-select-current svg {fill:#080825}
+
+.breadcrumbs {margin:15px 0 0 0; font-size:12px; line-height:15px; text-transform:uppercase; color:rgba(8, 8, 37, 0.4)}
+.breadcrumbs span {font-weight:300; margin:0 5px}
+.breadcrumbs a {font-weight:300; color:rgba(8, 8, 37, 0.4); text-decoration:none}
+.breadcrumbs strong {font-weight:normal}
+
+.slider {position:relative; margin:-64px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
+.slider-item {display:inline-block; vertical-align:top; width:100%; font-size:18px; line-height:26px; letter-spacing:0; white-space:normal}
+.slider-item-content {height:678px; position:relative}
+.slider-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+.slider-item-bg::before {content:""; position:absolute; left:0; top:164px; right:0; bottom:0; background:linear-gradient(180deg, rgba(5, 5, 28, 0.00) 0%, #05051C 100%)}
+
+footer {position:relative; margin:70px 0 0 0; background:#080825 url(../images/footer.svg) no-repeat center top}
+
+.footer-top {padding:46px 0; min-height:306px; display:flex}
+
+.footer-subscribe {min-width:418px}
+.footer-subscribe-title {font-size:16px; line-height:20px; color:#FFFFFF}
+.footer-subscribe-form {margin:12px 0 0 0}
+.footer-subscribe-form form {margin:0; padding:0; display:flex}
+.footer-subscribe-input {min-width:216px}
+.footer-subscribe-input input {position:relative; border:1px solid #6768AB; font:12px/15px Arial, sans-serif; letter-spacing:0; color:#FFFFFF; vertical-align:top; margin:0; padding:16px 20px 17px 20px; width:100%; height:50px; box-sizing:border-box; outline:none; border-radius:25px; background:transparent; -webkit-appearance:none}
+.fonts-loaded .footer-subscribe-input input {font-family:Mulish, sans-serif}
+.footer-subscribe-input input::-webkit-input-placeholder {opacity:1; color:rgba(103, 104, 171, 0.7)}
+.footer-subscribe-input input::-moz-placeholder {opacity:1; color:rgba(103, 104, 171, 0.7)}
+.footer-subscribe-input input:-ms-input-placeholder {opacity:1; color:rgba(103, 104, 171, 0.7)}
+.footer-subscribe-input input:-webkit-autofill,
+.footer-subscribe-input input:-webkit-autofill:active,
+.footer-subscribe-input input:-webkit-autofill:focus,
+.footer-subscribe-input input:-webkit-autofill:hover {-webkit-text-fill-color:#FFFFFF; caret-color:#FFFFFF; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+.footer-subscribe-submit {margin:0 0 0 10px}
+
+.footer-catalogue {margin:5px 0 0 0}
+.footer-catalogue ul {margin:0; padding:0; list-style:none; font-weight:600; font-size:12px; line-height:15px; text-transform:uppercase; column-count:2; column-gap:40px; white-space:nowrap}
+.footer-catalogue ul li {margin:0; padding:0 0 14px 0; -webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
+.footer-catalogue ul li::before {display:none}
+.footer-catalogue ul li a {color:#FFFFFF; text-decoration:none}
+
+.footer-menu {margin:5px 0 0 221px}
+.footer-menu ul {margin:0; padding:0; list-style:none; font-weight:600; font-size:12px; line-height:15px; text-transform:uppercase; white-space:nowrap}
+.footer-menu ul li {margin:0; padding:0 0 14px 0}
+.footer-menu ul li::before {display:none}
+.footer-menu ul li a {color:#FFFFFF; text-decoration:none}
+
+.footer-lang {margin:5px 0 0 0; flex-grow:1; display:flex; align-items:flex-start; justify-content:flex-end}
+.footer-lang-select {display:inline-block; vertical-align:top; position:relative; margin:-11px -13px 0 0}
+.footer-lang-select-current {padding:11px 13px; cursor:pointer; border-radius:20px 20px 0 0; transition:color 0.2s; font-weight:bold; font-size:12px; line-height:15px; color:#FFFFFF}
+.footer-lang-select.open .footer-lang-select-current {color:#080825; background:#FFFFFF}
+.footer-lang-select-current svg {display:inline-block; vertical-align:middle; width:9px; height:7px; fill:#FFFFFF; margin:-2px 0 0 4px; transition:transform 0.2s, fill 0.2s}
+.footer-lang-select.open .footer-lang-select-current svg {transform:rotate(-180deg); fill:#080825}
+.footer-lang-select ul {display:none; position:absolute; left:0; top:100%; right:0; margin:-3px 0 0 0; padding:0; list-style:none; z-index:99; background:#FFFFFF; border-radius:0 0 20px 20px; font-weight:bold; font-size:12px; line-height:15px}
+.footer-lang-select.open ul {display:block}
+.footer-lang-select ul li {margin:0; padding:0}
+.footer-lang-select ul li::before {display:none}
+.footer-lang-select ul li a {display:block; padding:8px 0 8px 13px; color:#080825; text-decoration:none; transition:background 0.2s, color 0.2s}
+.footer-lang-select ul li a:last-child {border-radius:0 0 20px 20px}
+.footer-lang-select ul li a:hover {color:#787B8E; background:#F9F9FF}
+
+.footer-bottom {border-top:1px solid rgba(103, 104, 171, 0.3); padding:17px 0 23px 0; display:flex; align-items:center}
+.footer-copyrights {flex-grow:1; color:#A1A5BC; font-size:13px; line-height:16px}
+.footer-social {display:flex}
+.footer-social a {min-width:26px; margin:0 0 0 6px}
+.footer-social svg {display:block; width:26px; height:26px}
+.footer-social a.footer-social-facebook svg {fill:#6768AB}
+.footer-social a.footer-social-instagram svg {fill:#EA435D}
