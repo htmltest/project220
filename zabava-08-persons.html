@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Zabava</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body class="page-persones">
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- wrapper inner -->
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="header-inner">
+                            <div class="logo">
+                                <a href="#">
+                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
+                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                </a>
+                            </div>
+
+                            <div class="header-location">
+                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
+                            </div>
+
+                            <div class="header-menu">
+                                <ul>
+                                    <li><a href="#">Movie</a></li>
+                                    <li><a href="#">Theatre</a></li>
+                                    <li><a href="#">Restaurants</a></li>
+                                    <li><a href="#">Stand-up</a></li>
+                                    <li class="with-more">
+                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                        <ul>
+                                            <li><a href="#">Concerts</a></li>
+                                            <li><a href="#">Exhibitions</a></li>
+                                            <li><a href="#">Children</a></li>
+                                            <li><a href="#">Sport</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="header-search">
+                                <div class="header-search-form">
+                                    <form action="#" method="post">
+                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="header-user">
+                                <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                            </div>
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">RU</a></li>
+                                        <li><a href="#">SLO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><strong>Persons</strong></div>
+
+                    <h1>Persons</h1>
+
+                    <!-- filters -->
+                    <div class="filters">
+                        <form action="#" method="post">
+
+                            <div class="filter-letters">
+                                <label><input type="checkbox" name="letter" value="A"><span>A</span></label>
+                                <label><input type="checkbox" name="letter" value="B"><span>B</span></label>
+                                <label><input type="checkbox" name="letter" value="C"><span>С</span></label>
+                                <label><input type="checkbox" name="letter" value="D"><span>D</span></label>
+                                <label><input type="checkbox" name="letter" value="E"><span>E</span></label>
+                                <label><input type="checkbox" name="letter" value="F"><span>F</span></label>
+                                <label><input type="checkbox" name="letter" value="G"><span>G</span></label>
+                                <label><input type="checkbox" name="letter" value="H"><span>H</span></label>
+                                <label><input type="checkbox" name="letter" value="I"><span>I</span></label>
+                                <label><input type="checkbox" name="letter" value="J"><span>J</span></label>
+                                <label><input type="checkbox" name="letter" value="K"><span>K</span></label>
+                                <label><input type="checkbox" name="letter" value="L"><span>L</span></label>
+                                <label><input type="checkbox" name="letter" value="M"><span>M</span></label>
+                                <label><input type="checkbox" name="letter" value="N"><span>N</span></label>
+                                <label><input type="checkbox" name="letter" value="O"><span>O</span></label>
+                                <label><input type="checkbox" name="letter" value="P"><span>P</span></label>
+                                <label><input type="checkbox" name="letter" value="Q"><span>Q</span></label>
+                                <label><input type="checkbox" name="letter" value="R"><span>R</span></label>
+                                <label><input type="checkbox" name="letter" value="S"><span>S</span></label>
+                                <label><input type="checkbox" name="letter" value="T"><span>T</span></label>
+                                <label><input type="checkbox" name="letter" value="U"><span>U</span></label>
+                                <label><input type="checkbox" name="letter" value="V"><span>V</span></label>
+                                <label><input type="checkbox" name="letter" value="W"><span>W</span></label>
+                                <label><input type="checkbox" name="letter" value="X"><span>X</span></label>
+                                <label><input type="checkbox" name="letter" value="Y"><span>Y</span></label>
+                                <label><input type="checkbox" name="letter" value="Z"><span>Z</span></label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- filters END -->
+                    
+                    <h2 class="filters-results">1,450 people found</h2>
+
+                    <!-- cards -->
+                    <div class="cards">
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-01.jpg)"></div>
+                                    <h3>Maria Gorban</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-02.jpg)"></div>
+                                    <h3>Ivan Petrov</h3>
+                                    <div class="card-text">Stand-up, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-03.jpg)"></div>
+                                    <h3>Vladimir Rublev</h3>
+                                    <div class="card-text">Stand-up, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-04.jpg)"></div>
+                                    <h3>Claus Maine</h3>
+                                    <div class="card-text">Concerts, Great Britain</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-05.jpg)"></div>
+                                    <h3>Leo DiCaprio</h3>
+                                    <div class="card-text">Cinema, USA</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-06.jpg)"></div>
+                                    <h3>Maria Gorban</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-07.jpg)"></div>
+                                    <h3>Mihail G</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-08.jpg)"></div>
+                                    <h3>Maxim Petrov</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-09.jpg)"></div>
+                                    <h3>Nikas Safronov</h3>
+                                    <div class="card-text">Concerts, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-10.jpg)"></div>
+                                    <h3>Maria Gorban</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-11.jpg)"></div>
+                                    <h3>Ivan Ivanov</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                        <!-- card -->
+                        <div class="card">
+                            <div class="card-inner">
+                                <a href="#" class="card-content">
+                                    <div class="card-preview" style="background-image:url(files/persones-12.jpg)"></div>
+                                    <h3>Maria Gorban</h3>
+                                    <div class="card-text">Cinema, Russia</div>
+                                </a>
+                                <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                            </div>
+                        </div>
+                        <!-- card END -->
+
+                    </div>
+                    <!-- cards END -->
+
+                    <div class="cards-more"><a href="#">Show more</a></div>
+
+                </div>
+                <!-- container END -->
+
+            </div>
+            <!-- wrapper inner END -->
+
+            <footer>
+                <div class="container">
+
+                    <div class="footer-top">
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-title">Subscribe</div>
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-catalogue">
+                            <ul>
+                                <li><a href="#">Movie</a></li>
+                                <li><a href="#">Theatre</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Stand-up</a></li>
+                                <li><a href="#">Concerts</a></li>
+                                <li><a href="#">Exhibitions</a></li>
+                                <li><a href="#">Children</a></li>
+                                <li><a href="#">Sport</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Events on the map</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Legal information</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-lang">
+                            <div class="footer-lang-select">
+                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                <ul>
+                                    <li><a href="#">RU</a></li>
+                                    <li><a href="#">SLO</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
+                        <div class="footer-social">
+                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
