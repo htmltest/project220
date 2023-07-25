@@ -62,7 +62,7 @@
                             </div>
 
                             <div class="header-user">
-                                <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                                <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
                             </div>
 
                             <div class="header-lang">
@@ -92,6 +92,67 @@
                     <p>John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</p>
                     <p>A&nbsp;chamber restaurant that has been operating on&nbsp;Sretensky Boulevard for more than 15&nbsp;years, with classics of&nbsp;Italian cuisine and author&rsquo;s recipes from the chef, who can often be&nbsp;found in&nbsp;the hall chatting with guests or&nbsp;cooking pasta in&nbsp;a&nbsp;cheese head. Special attention is&nbsp;paid to&nbsp;the quality of&nbsp;products: ingredients are delivered from the Apennine Peninsula, cheeses are ordered from farmers, tomato sauce is&nbsp;cooked according to&nbsp;a&nbsp;secret recipe. Generous portions of&nbsp;pasta (15&nbsp;types!) in&nbsp;osteria, they are served in&nbsp;plates made by&nbsp;hand from the famous Italian ceramics from Umbria. Attention to&nbsp;detail can be&nbsp;traced not only in&nbsp;the elegant serving, but also in&nbsp;the interior&nbsp;&mdash; the oven is&nbsp;decorated with handmade tiles, the ceilings are painted in&nbsp;Florentine style, chandeliers and Murano glass balls that were ordered in&nbsp;Venice</p>
                     <p class="small">John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</p>
+
+                    <h2>Form</h2>
+                    <form action="ajax/success.html" method="post" class="ajax-form">
+                        <div class="form-field">
+                            <div class="form-label">Your first and last name</div>
+                            <div class="form-input"><input type="text" name="name" value="" class="required"></div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-label">Country</div>
+                            <div class="form-select">
+                                <select name="country" class="required" data-placeholder="">
+                                    <option value=""></option>
+                                    <option value="Afghanistan, Islamic Republic of">Afghanistan, Islamic Republic of</option>
+                                    <option value="Albania">Albania</option>
+                                    <option value="Algeria">Algeria</option>
+                                    <option value="Andorra">Andorra</option>
+                                    <option value="Angola">Angola</option>
+                                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Azerbaijan">Azerbaijan</option>
+                                    <option value="Bahamas, The">Bahamas, The</option>
+                                    <option value="Bahrain">Bahrain</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Barbados">Barbados</option>
+                                    <option value="Belarus">Belarus</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Belize">Belize</option>
+                                    <option value="Benin">Benin</option>
+                                    <option value="Bhutan">Bhutan</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                                    <option value="Botswana">Botswana</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Brunei">Brunei</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Burkina Faso">Burkina Faso</option>
+                                    <option value="Burundi">Burundi</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-checkbox">
+                                <label><input type="checkbox" name="checkbox" class="required"><span>Consent to the processing of personal data <a href="#">privacy policy</a></span></label>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <div class="form-label">Do you like?</div>
+                            <div class="form-radio">
+                                <label><input type="radio" name="radio" value="0" checked><span>Yes</span></label>
+                            </div>
+                            <div class="form-radio">
+                                <label><input type="radio" name="radio" value="1"><span>Dont know</span></label>
+                            </div>
+                        </div>
+                        <div class="form-submit"><input type="submit" value="Submit" class="btn"></div>
+                        <div class="captcha-container"></div>
+                        <div class="captcha-notice">This site uses <a href="https://yandex.com/legal/smartcaptcha_notice/" target="_blank">Yandex SmartCaptcha</a>.</div>
+                    </form>
 
                 </div>
                 <!-- container END -->

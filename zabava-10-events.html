@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Zabava</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body class="page-events">
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- wrapper inner -->
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="header-inner">
+                            <div class="logo">
+                                <a href="#">
+                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
+                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                </a>
+                            </div>
+
+                            <div class="header-location">
+                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
+                            </div>
+
+                            <div class="header-menu">
+                                <ul>
+                                    <li><a href="#">Movie</a></li>
+                                    <li><a href="#">Theatre</a></li>
+                                    <li><a href="#">Restaurants</a></li>
+                                    <li><a href="#">Stand-up</a></li>
+                                    <li class="with-more">
+                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                        <ul>
+                                            <li><a href="#">Concerts</a></li>
+                                            <li><a href="#">Exhibitions</a></li>
+                                            <li><a href="#">Children</a></li>
+                                            <li><a href="#">Sport</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="header-search">
+                                <div class="header-search-form">
+                                    <form action="#" method="post">
+                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="header-user">
+                                <a href="#" class="header-user-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                            </div>
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">RU</a></li>
+                                        <li><a href="#">SLO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- container -->
+                <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><strong>Venues for events</strong></div>
+
+                    <h1>Venues for events</h1>
+
+                    <!-- filters -->
+                    <div class="filters">
+                        <form action="ajax/events.html" method="post">
+
+                            <div class="filters-params">
+                                <div class="filters-params-inner">
+                                    <div class="filters-params-item">
+                                        <div class="filters-search">
+                                            <a href="#" class="filters-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                                            <div class="filters-search-content">
+                                                <div class="filters-search-inner">
+                                                    <div class="filters-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                                    <div class="filters-search-submit"><button type="submit" class="btn"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                                </div>
+                                                <a href="#" class="filters-search-close"><svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">country<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Afghanistan, Islamic Republic of]"><span>Afghanistan, Islamic Republic of</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Albania]"><span>Albania</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Algeria]"><span>Algeria</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Andorra]"><span>Andorra</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Angola]"><span>Angola</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Antigua and Barbuda]"><span>Antigua and Barbuda</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Argentina]"><span>Argentina</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Armenia]"><span>Armenia</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Australia]"><span>Australia</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Austria]"><span>Austria</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Azerbaijan]"><span>Azerbaijan</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bahamas, The]"><span>Bahamas, The</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bahrain]"><span>Bahrain</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bangladesh]"><span>Bangladesh</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Barbados]"><span>Barbados</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belarus]"><span>Belarus</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belgium]"><span>Belgium</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belize]"><span>Belize</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Benin]"><span>Benin</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bhutan]"><span>Bhutan</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bolivia]"><span>Bolivia</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bosnia and Herzegovina]"><span>Bosnia and Herzegovina</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Botswana]"><span>Botswana</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Brazil]"><span>Brazil</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Brunei]"><span>Brunei</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bulgaria]"><span>Bulgaria</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Burkina Faso]"><span>Burkina Faso</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Burundi]"><span>Burundi</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">city<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Ljubljana]"><span>Ljubljana</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Maribor]"><span>Maribor</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Kranj]"><span>Kranj</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Celje]"><span>Celje</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Koper]"><span>Koper</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Velenje]"><span>Velenje</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">type venues<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="venues[Concerts]"><span>Concerts</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="venues[Sport]"><span>Sport</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">price per hour<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-range">
+                                                        <div class="filters-select-range-fields">
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>from</strong> <span>€</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="price_from" value="0" data-default="0"></div>
+                                                            </div>
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>to</strong> <span>€</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="price_to" value="1000" data-default="1000"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="filters-select-range-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Max people<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-range">
+                                                        <div class="filters-select-range-fields">
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-input"><input type="text" name="maxpeople" value="1000" data-default="1000"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="filters-select-range-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Square<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-range">
+                                                        <div class="filters-select-range-fields">
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>from</strong> <span>m</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="square_from" value="0" data-default="0"></div>
+                                                            </div>
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>to</strong> <span>m</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="square_to" value="1000" data-default="1000"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="filters-select-range-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Equipment and Facilities<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="equipment"><span>Equipment</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="facilities"><span>Facilities</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Services and Conditions<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="services"><span>Services</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="conditions"><span>Conditions</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Photos and Videos<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="photos"><span>Photos</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="videos"><span>Videos</span></label></div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-clearall">
+                                        <a href="#">clear all<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <!-- filters END -->
+
+                    <!-- catalogue -->
+                    <div class="catalogue">
+
+                        <h2 class="filters-results">A total of 1567 venues</h2>
+
+                        <!-- cards -->
+                        <div class="cards">
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-01.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-02.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-03.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-04.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-05.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-06.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-07.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-08.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-09.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-10.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-11.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview" style="background-image:url(files/events-12.jpg)">
+                                            <div class="card-ticket card-ticket-events"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</div>
+                                        </div>
+                                        <h3>Loftblackout</h3>
+                                        <div class="card-text">Slovenia, Ljubljana, 100 square meters, capacity 150 people</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                        </div>
+                        <!-- cards END -->
+
+                        <div class="cards-more"><a href="ajax/events-more.html" data-page="2">Show more</a></div>
+
+                    </div>
+                    <!-- catalogue END -->
+
+                </div>
+                <!-- container END -->
+
+            </div>
+            <!-- wrapper inner END -->
+
+            <footer>
+                <div class="container">
+
+                    <div class="footer-top">
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-title">Subscribe</div>
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-catalogue">
+                            <ul>
+                                <li><a href="#">Movie</a></li>
+                                <li><a href="#">Theatre</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Stand-up</a></li>
+                                <li><a href="#">Concerts</a></li>
+                                <li><a href="#">Exhibitions</a></li>
+                                <li><a href="#">Children</a></li>
+                                <li><a href="#">Sport</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Events on the map</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Legal information</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-lang">
+                            <div class="footer-lang-select">
+                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                <ul>
+                                    <li><a href="#">RU</a></li>
+                                    <li><a href="#">SLO</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
+                        <div class="footer-social">
+                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

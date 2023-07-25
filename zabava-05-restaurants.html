@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width">
     </head>
 
-    <body class="page-persones">
+    <body class="page-restaurants">
 
         <!-- wrapper -->
         <div class="wrapper">
@@ -38,7 +38,7 @@
                                 <ul>
                                     <li><a href="#">Movie</a></li>
                                     <li><a href="#">Theatre</a></li>
-                                    <li><a href="#">Restaurants</a></li>
+                                    <li class="active"><a href="#">Restaurants</a></li>
                                     <li><a href="#">Stand-up</a></li>
                                     <li class="with-more">
                                         <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
@@ -81,42 +81,52 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><strong>Persons</strong></div>
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><strong>Restaurants</strong></div>
 
-                    <h1>Persons</h1>
+                    <h1>Restaurants</h1>
+
+                    <div class="restaurants-special">
+                        <h3>Special offers</h3>
+                        <div class="restaurants-special-slider">
+                            <div class="restaurants-special-slider-item">
+                                <div class="restaurants-special-slider-item-inner">
+                                    <div class="restaurants-special-slider-item-bg" style="background-image:url(files/restaurants-special.jpg)"></div>
+                                    <div class="restaurants-special-slider-item-container">
+                                        <div class="restaurants-special-slider-item-content">
+                                            <h2>The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</h2>
+                                            <div class="restaurants-special-slider-item-btn"><a href="#" class="btn btn-red">learn more</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="restaurants-special-slider-item">
+                                <div class="restaurants-special-slider-item-inner">
+                                    <div class="restaurants-special-slider-item-bg" style="background-image:url(files/restaurants-special.jpg)"></div>
+                                    <div class="restaurants-special-slider-item-container">
+                                        <div class="restaurants-special-slider-item-content">
+                                            <h2>The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</h2>
+                                            <div class="restaurants-special-slider-item-btn"><a href="#" class="btn btn-red">learn more</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="restaurants-special-slider-item">
+                                <div class="restaurants-special-slider-item-inner">
+                                    <div class="restaurants-special-slider-item-bg" style="background-image:url(files/restaurants-special.jpg)"></div>
+                                    <div class="restaurants-special-slider-item-container">
+                                        <div class="restaurants-special-slider-item-content">
+                                            <h2>The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</h2>
+                                            <div class="restaurants-special-slider-item-btn"><a href="#" class="btn btn-red">learn more</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- filters -->
                     <div class="filters">
-                        <form action="ajax/persons.html" method="post">
-
-                            <div class="filter-letters">
-                                <label><input type="checkbox" name="letter[A]"><span>A</span></label>
-                                <label><input type="checkbox" name="letter[B]"><span>B</span></label>
-                                <label><input type="checkbox" name="letter[C]"><span>С</span></label>
-                                <label><input type="checkbox" name="letter[D]"><span>D</span></label>
-                                <label><input type="checkbox" name="letter[E]"><span>E</span></label>
-                                <label><input type="checkbox" name="letter[F]"><span>F</span></label>
-                                <label><input type="checkbox" name="letter[G]"><span>G</span></label>
-                                <label><input type="checkbox" name="letter[H]"><span>H</span></label>
-                                <label><input type="checkbox" name="letter[I]"><span>I</span></label>
-                                <label><input type="checkbox" name="letter[J]"><span>J</span></label>
-                                <label><input type="checkbox" name="letter[K]"><span>K</span></label>
-                                <label><input type="checkbox" name="letter[L]"><span>L</span></label>
-                                <label><input type="checkbox" name="letter[M]"><span>M</span></label>
-                                <label><input type="checkbox" name="letter[N]"><span>N</span></label>
-                                <label><input type="checkbox" name="letter[O]"><span>O</span></label>
-                                <label><input type="checkbox" name="letter[P]"><span>P</span></label>
-                                <label><input type="checkbox" name="letter[Q]"><span>Q</span></label>
-                                <label><input type="checkbox" name="letter[R]"><span>R</span></label>
-                                <label><input type="checkbox" name="letter[S]"><span>S</span></label>
-                                <label><input type="checkbox" name="letter[T]"><span>T</span></label>
-                                <label><input type="checkbox" name="letter[U]"><span>U</span></label>
-                                <label><input type="checkbox" name="letter[V]"><span>V</span></label>
-                                <label><input type="checkbox" name="letter[W]"><span>W</span></label>
-                                <label><input type="checkbox" name="letter[X]"><span>X</span></label>
-                                <label><input type="checkbox" name="letter[Y]"><span>Y</span></label>
-                                <label><input type="checkbox" name="letter[Z]"><span>Z</span></label>
-                            </div>
+                        <form action="ajax/restaurants.html" method="post">
 
                             <div class="filters-params">
                                 <div class="filters-params-inner">
@@ -134,12 +144,19 @@
                                     </div>
                                     <div class="filters-params-item">
                                         <div class="filters-select">
-                                            <a href="#" class="filters-select-title">type<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <a href="#" class="filters-select-title">type of establishment<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
                                             <div class="filters-select-content">
                                                 <div class="filters-select-content-inner">
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="type[Cinema]"><span>Cinema</span></label></div>
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="type[Stand-up]"><span>Stand-up</span></label></div>
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="type[Concerts]"><span>Concerts</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Premieres]"><span>Premieres</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Ballet]"><span>Ballet</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Childish]"><span>Childish</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Dramatic]"><span>Dramatic</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Comedies]"><span>Comedies</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Musicals]"><span>Musicals</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Operettas]"><span>Operettas</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Opera]"><span>Opera</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="establishment[Circus]"><span>Circus</span></label></div>
                                                 </div>
                                             </div>
                                             <div class="filters-params-item-selected">
@@ -150,12 +167,19 @@
                                     </div>
                                     <div class="filters-params-item">
                                         <div class="filters-select">
-                                            <a href="#" class="filters-select-title">country<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <a href="#" class="filters-select-title">type of kitchen<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
                                             <div class="filters-select-content">
                                                 <div class="filters-select-content-inner">
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Russia]"><span>Russia</span></label></div>
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Great Britain]"><span>Great Britain</span></label></div>
-                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="country[USA]"><span>USA</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Premieres]"><span>Premieres</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Ballet]"><span>Ballet</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Childish]"><span>Childish</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Dramatic]"><span>Dramatic</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Comedies]"><span>Comedies</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Musicals]"><span>Musicals</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Operettas]"><span>Operettas</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Opera]"><span>Opera</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="kitchen[Circus]"><span>Circus</span></label></div>
                                                 </div>
                                             </div>
                                             <div class="filters-params-item-selected">
@@ -163,6 +187,35 @@
                                                 <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">price<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-range">
+                                                        <div class="filters-select-range-fields">
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>from</strong> <span>€</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="from" value="0" data-default="0"></div>
+                                                            </div>
+                                                            <div class="filters-select-range-field">
+                                                                <div class="filters-select-range-field-title"><strong>to</strong> <span>€</span></div>
+                                                                <div class="filters-select-range-field-input"><input type="text" name="to" value="1000" data-default="1000"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="filters-select-range-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item-selected">
+                                                <div class="filters-params-item-selected-values"></div>
+                                                <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-checkbox"><label><input type="checkbox" name="accept"><span>accept boni</span></label></div>
                                     </div>
                                     <div class="filters-params-clearall">
                                         <a href="#">clear all<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a>
@@ -177,7 +230,7 @@
                     <!-- catalogue -->
                     <div class="catalogue">
 
-                        <h2 class="filters-results">1,450 people found</h2>
+                        <h2 class="filters-results">48 establishments</h2>
 
                         <!-- cards -->
                         <div class="cards">
@@ -186,9 +239,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-01.jpg)"></div>
-                                        <h3>Maria Gorban</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-01.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Imperial Café</h3>
+                                        <div class="card-text">Krasnoprudnaya, 12, Moscow Marriott Imperial<br> Plaza Hotel, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -199,9 +254,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-02.jpg)"></div>
-                                        <h3>Ivan Petrov</h3>
-                                        <div class="card-text">Stand-up, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-02.jpg)">
+                                            <div class="card-cost card-cost-2"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>The Bull</h3>
+                                        <div class="card-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",<br> from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -212,9 +269,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-03.jpg)"></div>
-                                        <h3>Vladimir Rublev</h3>
-                                        <div class="card-text">Stand-up, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-03.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Grand Cru</h3>
+                                        <div class="card-text">Petrovsky b-r, 14, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -225,9 +284,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-04.jpg)"></div>
-                                        <h3>Claus Maine</h3>
-                                        <div class="card-text">Concerts, Great Britain</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-04.jpg)">
+                                            <div class="card-cost card-cost-1"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Bamboo.bar</h3>
+                                        <div class="card-text">Krasnoprudnaya, 12, Moscow Marriott Imperial<br> Plaza Hotel, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -238,9 +299,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-05.jpg)"></div>
-                                        <h3>Leo DiCaprio</h3>
-                                        <div class="card-text">Cinema, USA</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-05.jpg)">
+                                            <div class="card-cost card-cost-4"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Pasta and basta</h3>
+                                        <div class="card-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",<br> from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -251,9 +314,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-06.jpg)"></div>
-                                        <h3>Maria Gorban</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-06.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>O2 Lounge</h3>
+                                        <div class="card-text">Petrovsky b-r, 14, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -264,9 +329,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-07.jpg)"></div>
-                                        <h3>Mihail G</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-07.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Imperial Café</h3>
+                                        <div class="card-text">Krasnoprudnaya, 12, Moscow Marriott Imperial<br> Plaza Hotel, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -277,9 +344,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-08.jpg)"></div>
-                                        <h3>Maxim Petrov</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-08.jpg)">
+                                            <div class="card-cost card-cost-2"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>The Bull</h3>
+                                        <div class="card-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",<br> from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -290,9 +359,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-09.jpg)"></div>
-                                        <h3>Nikas Safronov</h3>
-                                        <div class="card-text">Concerts, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-09.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Grand Cru</h3>
+                                        <div class="card-text">Petrovsky b-r, 14, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -303,9 +374,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-10.jpg)"></div>
-                                        <h3>Maria Gorban</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-10.jpg)">
+                                            <div class="card-cost card-cost-1"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Bamboo.bar</h3>
+                                        <div class="card-text">Krasnoprudnaya, 12, Moscow Marriott Imperial<br> Plaza Hotel, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -316,9 +389,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-11.jpg)"></div>
-                                        <h3>Ivan Ivanov</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-11.jpg)">
+                                            <div class="card-cost card-cost-4"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>Pasta and basta</h3>
+                                        <div class="card-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",<br> from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -329,9 +404,11 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/persones-12.jpg)"></div>
-                                        <h3>Maria Gorban</h3>
-                                        <div class="card-text">Cinema, Russia</div>
+                                        <div class="card-preview" style="background-image:url(files/restaurants-12.jpg)">
+                                            <div class="card-cost card-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
+                                        </div>
+                                        <h3>O2 Lounge</h3>
+                                        <div class="card-text">Petrovsky b-r, 14, from 12:00 to 23:00</div>
                                     </a>
                                     <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
                                 </div>
@@ -341,7 +418,7 @@
                         </div>
                         <!-- cards END -->
 
-                        <div class="cards-more"><a href="ajax/persons-more.html" data-page="2">Show more</a></div>
+                        <div class="cards-more"><a href="ajax/restaurants-more.html" data-page="2">Show more</a></div>
 
                     </div>
                     <!-- catalogue END -->
