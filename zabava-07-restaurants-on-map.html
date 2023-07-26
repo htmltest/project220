@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Zabava</title>
+
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/select2/select2.css">
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width">
+    </head>
+
+    <body class="page-main page-map">
+
+        <!-- wrapper -->
+        <div class="wrapper">
+
+            <!-- wrapper inner -->
+            <div class="wrapper-inner">
+
+                <header>
+                    <div class="container">
+                        <div class="header-inner">
+                            <div class="logo">
+                                <a href="#">
+                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
+                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                </a>
+                            </div>
+
+                            <div class="header-location">
+                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
+                            </div>
+
+                            <div class="header-menu">
+                                <ul>
+                                    <li><a href="#">Movie</a></li>
+                                    <li><a href="#">Theatre</a></li>
+                                    <li class="active"><a href="#">Restaurants</a></li>
+                                    <li><a href="#">Stand-up</a></li>
+                                    <li class="with-more">
+                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                        <ul>
+                                            <li><a href="#">Concerts</a></li>
+                                            <li><a href="#">Exhibitions</a></li>
+                                            <li><a href="#">Children</a></li>
+                                            <li><a href="#">Sport</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="header-search">
+                                <div class="header-search-form">
+                                    <form action="#" method="post">
+                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="header-user">
+                                <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
+                            </div>
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">RU</a></li>
+                                        <li><a href="#">SLO</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- page map container -->
+                <div class="page-map-container">
+                    <div id="map" class="page-map-container-map"></div>
+                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly" async></script>
+                    <script>
+                        var map;
+                        var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
+
+                        function initMap() {
+                            map = new google.maps.Map(document.getElementById("map"), {
+                                center: coordinates,
+                                zoom: 12
+                            });
+                            var marker = new google.maps.Marker({
+                                position: coordinates,
+                                map: map,
+                                icon: new google.maps.MarkerImage(
+                                    'images/map-icon-restaurants.svg',
+                                    new google.maps.Size(46, 46),
+                                    new google.maps.Point(0, 0),
+                                    new google.maps.Point(23, 23)
+                                ),
+                            });
+                        }
+                    </script>
+
+                    <!-- page map list -->
+                    <div class="page-map-list">
+                        <h3>Restaurants on the map</h3>
+                        <div class="page-map-list-content">
+                            <div class="catalogue">
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-01.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-02.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-03.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Imperial Café</div>
+                                    <div class="page-map-list-item-text">Krasnoprudnaya, 12, Moscow Marriott Imperial Plaza Hotel, from 12:00 to 23:00</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-04.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-05.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-06.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">The Bull</div>
+                                    <div class="page-map-list-item-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-07.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-08.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-09.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Grand Cru</div>
+                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-10.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-11.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-12.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Pasta and basta, Pasta and bastaPasta and basta</div>
+                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-01.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-02.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-03.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Imperial Café</div>
+                                    <div class="page-map-list-item-text">Krasnoprudnaya, 12, Moscow Marriott Imperial Plaza Hotel, from 12:00 to 23:00</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-04.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-05.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-06.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">The Bull</div>
+                                    <div class="page-map-list-item-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-07.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-08.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-09.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Grand Cru</div>
+                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                                <div class="page-map-list-item">
+                                    <div class="page-map-list-item-photos">
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-10.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-11.jpg)"></div>
+                                        <div class="page-map-list-item-photo" style="background-image:url(files/restaurants-map-12.jpg)"></div>
+                                    </div>
+                                    <div class="page-map-list-item-title">Pasta and basta, Pasta and bastaPasta and basta</div>
+                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
+                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- page map list END -->
+                </div>
+                <!-- page map container END -->
+
+            </div>
+            <!-- wrapper inner END -->
+
+            <footer>
+                <div class="container">
+
+                    <div class="footer-top">
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-title">Subscribe</div>
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-catalogue">
+                            <ul>
+                                <li><a href="#">Movie</a></li>
+                                <li><a href="#">Theatre</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Stand-up</a></li>
+                                <li><a href="#">Concerts</a></li>
+                                <li><a href="#">Exhibitions</a></li>
+                                <li><a href="#">Children</a></li>
+                                <li><a href="#">Sport</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">Events on the map</a></li>
+                                <li><a href="#">About US</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Legal information</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-lang">
+                            <div class="footer-lang-select">
+                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                <ul>
+                                    <li><a href="#">RU</a></li>
+                                    <li><a href="#">SLO</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-bottom">
+                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
+                        <div class="footer-social">
+                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
+
+        </div>
+        <!-- wrapper END -->
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>
