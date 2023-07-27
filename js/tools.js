@@ -257,6 +257,35 @@ $(document).ready(function() {
         }
     });
 
+    $('.filters-date-title').click(function(e) {
+        var curSelect = $(this).parent();
+        if (curSelect.hasClass('open')) {
+            curSelect.removeClass('open');
+        } else {
+            $('.filters-date.open').removeClass('open');
+            curSelect.addClass('open');
+        }
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.filters-date').length == 0 && !$(e.target).hasClass('air-datepicker-cell') && !$(e.target).hasClass('air-datepicker-nav--title') && $(e.target).parents().filter('.air-datepicker-nav--title').length == 0) {
+            $('.filters-date').removeClass('open');
+        }
+    });
+
+    $('.filters-date-calendar').each(function() {
+        var curCalendar = $(this);
+        var dp = new AirDatepicker('#' + $(this).attr('id'), {
+            range: true,
+            onSelect(date, formattedDate) {
+                curCalendar.parent().find('> input[type="hidden"]').val(date.formattedDate.join(','));
+            }
+
+        });
+        curCalendar.data('dp', dp);
+    });
+
     $('.filters-checkbox input').change(function() {
         $('.filters form').trigger('submit');
     });
@@ -267,11 +296,20 @@ $(document).ready(function() {
 
     $('.filters-params-clearall a').click(function(e) {
         $('.filters-search-input input').val('');
+
         $('.filters-checkbox input').prop('checked', false);
+
         $('.filters-select-checkbox input').prop('checked', false);
         $('.filters-select-range-field-input input').each(function() {
             $(this).val($(this).attr('data-default'));
         });
+
+        $('.filters-date').each(function() {
+            var curDate = $(this);
+            var dp = curDate.find('.filters-date-calendar').data('dp');
+            dp.clear();
+        });
+
         $('.filters form').trigger('submit');
         e.preventDefault();
     });
@@ -282,6 +320,11 @@ $(document).ready(function() {
         curSelect.find('.filters-select-range-field-input input').each(function() {
             $(this).val($(this).attr('data-default'));
         });
+
+        var curDate = $(this).parents().filter('.filters-date');
+        var dp = curDate.find('.filters-date-calendar').data('dp');
+        dp.clear();
+
         $('.filters form').trigger('submit');
         e.preventDefault();
     });
@@ -317,6 +360,8 @@ $(document).ready(function() {
                     updateFiltersStatus();
 
                     initMainPage();
+
+                    updateMap();
 
                     $('.catalogue').removeClass('loading');
                 });
@@ -373,11 +418,65 @@ $(document).ready(function() {
     $('body').on('click', '.page-map-list-item', function() {
         var curItem = $(this);
         if (!curItem.hasClass('active')) {
-            $('.page-map-list-item.active').removeClass('active');
+
+            var curIcon = null;
+            var iconImg = '';
+            var iconWidth = 0;
+            var iconHeight = 0;
+            var iconCenterX = 0;
+            var iconCenterY = 0;
+
+            var activeItem = $('.page-map-list-item.active');
+            if (activeItem.length == 1) {
+                activeItem.removeClass('active');
+                var activeIndex = $('.page-map-list-item').index(activeItem);
+
+                for (var j = 0; j < mapIcons.length; j++) {
+                    if (mapIcons[j].type == activeItem.attr('data-type')) {
+                        curIcon = mapIcons[j];
+                    }
+                }
+                iconImg = curIcon.iconURL;
+                iconWidth = curIcon.iconWidth;
+                iconHeight = curIcon.iconHeight;
+                iconCenterX = curIcon.iconCenterX;
+                iconCenterY = curIcon.iconCenterY;
+
+                markers[activeIndex].setIcon(new google.maps.MarkerImage(
+                    iconImg,
+                    new google.maps.Size(iconWidth, iconHeight),
+                    new google.maps.Point(0, 0),
+                    new google.maps.Point(iconCenterX, iconCenterY)
+                ));
+            }
+
             curItem.addClass('active');
+            var curIndex = $('.page-map-list-item').index(curItem);
+
+            for (var j = 0; j < mapIcons.length; j++) {
+                if (mapIcons[j].type == curItem.attr('data-type')) {
+                    curIcon = mapIcons[j];
+                }
+            }
+            iconImg = curIcon.iconBigURL;
+            iconWidth = curIcon.iconBigWidth;
+            iconHeight = curIcon.iconBigHeight;
+            iconCenterX = curIcon.iconBigCenterX;
+            iconCenterY = curIcon.iconBigCenterY;
+
+            markers[curIndex].setIcon(new google.maps.MarkerImage(
+                iconImg,
+                new google.maps.Size(iconWidth, iconHeight),
+                new google.maps.Point(0, 0),
+                new google.maps.Point(iconCenterX, iconCenterY)
+            ));
         }
     });
-    
+
+    $('.page-map-list-content').each(function() {
+        updateMap();
+    });
+
     $('.page-map-list-content').mCustomScrollbar({
         axis: 'y'
     });
@@ -395,7 +494,7 @@ function updateFiltersStatus() {
     $('.filters-params').each(function() {
         var curStatus = false;
 
-        if ($('.filters-search-input input').val() != '') {
+        if ($('.filters-search-input input').length == 1 && $('.filters-search-input input').val() != '') {
             curStatus = true;
             $('.filters-search').addClass('active');
         } else {
@@ -448,6 +547,24 @@ function updateFiltersStatus() {
             }
         });
 
+        $('.filters-date').each(function() {
+            var curDate = $(this);
+            var curInput = curDate.find('.filters-date-content > input[type="hidden"]');
+            if (curInput.val() != '') {
+                curStatus = true;
+                curDate.addClass('active');
+                var curValue = curInput.val().split(',');
+                var selectedHTML = '';
+                for (var i = 0; i < curValue.length; i++) {
+                    selectedHTML += '<div class="filters-params-item-selected-values-text">' + curValue[i] + '</div>';
+                }
+                curDate.find('.filters-params-item-selected-values').html(selectedHTML);
+            } else {
+                curDate.removeClass('active');
+                curDate.find('.filters-params-item-selected-values').html('');
+            }
+        });
+
         $('.filters-checkbox').each(function() {
             var curCheckbox = $(this);
             if (curCheckbox.find('input').prop('checked')) {
@@ -462,6 +579,14 @@ function updateFiltersStatus() {
             $('.filters-params').addClass('active');
         } else {
             $('.filters-params').removeClass('active');
+        }
+    });
+    
+    $('#free-checkbox input').change(function() {
+        if ($('#free-checkbox input').prop('checked')) {
+            $('#price-select').addClass('disabled');
+        } else {
+            $('#price-select').removeClass('disabled');
         }
     });
 
@@ -673,4 +798,64 @@ function windowClose() {
             }
         }
     }
+}
+
+function updateMap() {
+
+    $('.page-map-container-map').each(function() {
+        if (map != 'undefined') {
+            var data = [];
+            $('.page-map-list-item').each(function() {
+                var curItem = $(this);
+                var isActive = curItem.hasClass('active');
+                data.push({
+                    'longitude': Number(curItem.attr('data-longitude')),
+                    'latitude': Number(curItem.attr('data-latitude')),
+                    'title': curItem.find('.page-map-list-item-title').text(),
+                    'active': isActive,
+                    'type': curItem.attr('data-type')
+                });
+            });
+
+            for (var i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
+            }
+
+            markers = [];
+
+            for (var i = 0; i < data.length; i++) {
+                var curIcon = null
+                for (var j = 0; j < mapIcons.length; j++) {
+                    if (mapIcons[j].type == data[i].type) {
+                        curIcon = mapIcons[j];
+                    }
+                }
+                var iconImg = curIcon.iconURL;
+                var iconWidth = curIcon.iconWidth;
+                var iconHeight = curIcon.iconHeight;
+                var iconCenterX = curIcon.iconCenterX;
+                var iconCenterY = curIcon.iconCenterY;
+                if (data[i].active) {
+                    iconImg = curIcon.iconBigURL;
+                    iconWidth = curIcon.iconBigWidth;
+                    iconHeight = curIcon.iconBigHeight;
+                    iconCenterX = curIcon.iconBigCenterX;
+                    iconCenterY = curIcon.iconBigCenterY;
+                }
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(data[i].longitude, data[i].latitude),
+                    map: map,
+                    title: data[i].title,
+                    icon: new google.maps.MarkerImage(
+                        iconImg,
+                        new google.maps.Size(iconWidth, iconHeight),
+                        new google.maps.Point(0, 0),
+                        new google.maps.Point(iconCenterX, iconCenterY)
+                    ),
+                });
+                markers.push(marker);
+            }
+        }
+    });
+
 }

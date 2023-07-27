@@ -373,6 +373,7 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .filters-search-close svg {display:block; width:9px; height:9px; fill:#A8ABBF}
 
 .filters-select {position:relative}
+.filters-select.disabled {pointer-events:none; opacity:0.5}
 .filters-select-title {display:flex; align-items:center; text-decoration:none; color:#080825; height:50px; border:1px solid #080825; background:#F7F8FC; border-radius:25px; padding:0 24px; justify-content:center; white-space:nowrap; min-width:156px; font-weight:800; font-size:16px; line-height:20px; text-transform:uppercase; transition:border-color 0.2s, color 0.2s}
 .filters-select.open .filters-select-title {border-radius:25px 25px 0 0}
 .filters-select.active .filters-select-title {border-color:#6768AB; color:#6768AB}
@@ -428,6 +429,18 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .filters-checkbox.active span {border-color:#6768AB; color:#6768AB}
 .filters-checkbox span::before {content:""; position:absolute; left:24px; top:16px; width:16px; height:16px; background:#FFFFFF url(../images/checkbox.svg) no-repeat -999px -999px; border:1px solid #080825; border-radius:2px}
 .filters-checkbox input:checked+span::before {background-position:center}
+
+.filters-date {position:relative}
+.filters-date-title {display:flex; align-items:center; text-decoration:none; color:#080825; height:50px; border:1px solid #080825; background:#F7F8FC; border-radius:25px; padding:0 24px; justify-content:center; white-space:nowrap; min-width:156px; font-weight:800; font-size:16px; line-height:20px; text-transform:uppercase; transition:border-color 0.2s, color 0.2s}
+.filters-date.open .filters-date-title {border-radius:25px 25px 0 0}
+.filters-date.active .filters-date-title {border-color:#6768AB; color:#6768AB}
+.filters-date-title svg {display:block; width:16px; height:16px; margin:0 0 0 10px; fill:#080825; transition:transform 0.2s, fill 0.2s}
+.filters-date.active .filters-date-title svg {fill:#6768AB}
+.filters-date-content {display:none; position:absolute; left:0; top:50px; right:auto; min-width:100%; background:#F7F8FC; border:1px solid #080825; border-top:none; margin-top:-1px; border-radius:0 25px 25px 25px; padding:16px; z-index:80}
+.filters-date.open .filters-date-content {display:block}
+.filters-date-submit {margin:10px 0 0 0}
+.filters-date-submit input {display:block; width:100%; padding:11px; font-size:12px; line-height:15px}
+.filters-date.active .filters-params-item-selected {display:flex}
 
 .filters-params-clearall {display:none; padding:10px 5px 0 5px}
 .filters-params.active .filters-params-clearall {display:flex}
@@ -773,14 +786,71 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 @media (min-width:1260px) {
     .page-map-list-item:hover {background:#F3F4FA}
 }
-.page-map-list-item.active {border-color:#EA435D; background:#F3F4FA}
+.page-map-list-item.active {background:#F3F4FA}
 .page-map-list-item-photos {display:flex}
 .page-map-list-item-photo {min-width:33.33%; padding:100px 0 0 0; background:no-repeat center; background-size:cover}
 .page-map-list-item-title {margin:5px 0 0 0}
 .page-map-list-item-text {margin:5px 0 0 0; font-size:11px; line-height:14px; color:#787B8E; max-width:213px}
-.page-map-list-item-link {position:absolute; display:flex; align-items:center; right:14px; bottom:14px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; visibility:hidden; opacity:0; transition:opacity 0.2s; text-decoration:none; color:#EA435D}
+.page-map-list-item-link {position:absolute; display:flex; align-items:center; right:14px; bottom:14px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; visibility:hidden; opacity:0; transition:opacity 0.2s; text-decoration:none}
 .page-map-list-item.active .page-map-list-item-link {visibility:visible; opacity:1}
-.page-map-list-item-link svg {display:block; width:12px; height:10px; fill:#EA435D; margin:0 0 0 5px}
+.page-map-list-item-link svg {display:block; width:12px; height:10px; margin:0 0 0 5px}
+
+.page-map-list-item-restaurant.active {border-color:#EA435D}
+.page-map-list-item-restaurant .page-map-list-item-link {color:#EA435D}
+.page-map-list-item-restaurant .page-map-list-item-link svg {fill:#EA435D}
+
+.page-map-list-item-event.active {border-color:#6768AB}
+.page-map-list-item-event .page-map-list-item-link {color:#6768AB}
+.page-map-list-item-event .page-map-list-item-link svg {fill:#6768AB}
+
+.page-map-list-item-theatre.active {border-color:#D77E70}
+.page-map-list-item-theatre .page-map-list-item-link {color:#D77E70}
+.page-map-list-item-theatre .page-map-list-item-link svg {fill:#D77E70}
+
+.page-map-list-item-concert.active {border-color:#6768AB}
+.page-map-list-item-concert .page-map-list-item-link {color:#6768AB}
+.page-map-list-item-concert .page-map-list-item-link svg {fill:#6768AB}
+
+.page-map-list-item-standup.active {border-color:#D77E70}
+.page-map-list-item-standup .page-map-list-item-link {color:#D77E70}
+.page-map-list-item-standup .page-map-list-item-link svg {fill:#D77E70}
+
+.page-map-list-item-children.active {border-color:#F8C061}
+.page-map-list-item-children .page-map-list-item-link {color:#F8C061}
+.page-map-list-item-children .page-map-list-item-link svg {fill:#F8C061}
+
+.page-map-list-item-sport.active {border-color:#458499}
+.page-map-list-item-sport .page-map-list-item-link {color:#458499}
+.page-map-list-item-sport .page-map-list-item-link svg {fill:#458499}
+
+.page-map-filters {position:absolute; left:50%; top:76px; width:816px; margin-left:-186px}
+.page-map-filters .filters {margin:0}
+.page-map-filters .filters-params {margin:0; border-top:none; padding:0}
+.page-map-filters .filters-params-inner {justify-content:flex-start}
+.page-map-filters .filters-select-title {background:#FFFFFF; border-color:#FFFFFF; font-weight:600; font-size:12px; line-height:16px; padding:0 40px 0 20px; justify-content:flex-start}
+.page-map-filters .filters-select.active .filters-select-title {border-color:#FFFFFF; color:rgba(255, 255, 255, 0)}
+.page-map-filters .filters-select.open .filters-select-title {color:#080825}
+.page-map-filters .filters-select-title svg {position:absolute; right:20px; top:50%; margin-top:-3px}
+.page-map-filters .filters-select-content {background:#FFFFFF; border-color:#FFFFFF; box-shadow:0px 24px 24px 0px rgba(7, 21, 66, 0.15)}
+.page-map-filters .filters-select-range {min-width:112px}
+.page-map-filters .filters-checkbox span {background:#FFFFFF; border-color:#FFFFFF; font-weight:600; font-size:12px; line-height:16px; padding:0 20px 0 40px; min-width:0}
+.page-map-filters .filters-checkbox span::before {left:18px}
+.page-map-filters .filters-params-item-selected {position:absolute; left:20px; top:50%; right:40px; transform:translateY(-50%); font-weight:600; font-size:12px; line-height:16px; color:#080825; padding:0; pointer-events:none}
+.page-map-filters .filters-params-item-selected-values {word-wrap:normal; max-width:none; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
+.page-map-filters .filters-params-item-selected-values-item {display:inline}
+.page-map-filters .filters-params-item-selected-values-item::after {content:", "}
+.page-map-filters .filters-params-item-selected-values-item:last-child::after {content:none}
+.page-map-filters .filters-select.active .filters-params-item-selected {display:block}
+.page-map-filters .filters-select.open .filters-params-item-selected {display:none}
+.page-map-filters .filters-params-item-selected-clear {display:none}
+.page-map-filters .filters-params-clearall a {font-weight:600; font-size:12px; line-height:16px; padding:0 20px}
+.page-map-filters .filters-date-title {background:#FFFFFF; border-color:#FFFFFF; font-weight:600; font-size:12px; line-height:16px; padding:0 40px 0 20px; justify-content:flex-start}
+.page-map-filters .filters-date.active .filters-date-title {border-color:#FFFFFF; color:rgba(255, 255, 255, 0)}
+.page-map-filters .filters-date.open .filters-date-title {color:#080825}
+.page-map-filters .filters-date-title svg {position:absolute; right:20px; top:50%; margin-top:-8px}
+.page-map-filters .filters-date-content {background:#FFFFFF; border-color:#FFFFFF; box-shadow:0px 24px 24px 0px rgba(7, 21, 66, 0.15)}
+.page-map-filters .filters-date.active .filters-params-item-selected {display:block}
+.page-map-filters .filters-date.open .filters-params-item-selected {display:none}
 
 footer {position:relative; margin:70px 0 0 0; background:#080825 url(../images/footer.svg) no-repeat center top}
 
