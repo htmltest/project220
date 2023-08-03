@@ -150,12 +150,33 @@ label.error {display:block; margin:3px 0 0 0; font-weight:500; font-size:10px; l
 header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; border-bottom:2px solid #F9F9FF}
 .header-inner {height:62px; display:flex; align-items:center}
 
+header.fixed {position:fixed; background:#FFFFFF; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); height:88px; border-bottom:none}
+header.fixed .header-inner,
+.menu-burger-open .header-inner {height:88px}
+
+.menu-burger-open,
+.menu-burger-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidden}
+
+.menu-burger-open header,
+.menu-burger-open header.fixed {position:fixed; background:rgba(8, 8, 37, 0.97); box-shadow:none; height:88px; border-bottom:none}
+
 .page-main header {border-bottom:none}
+
+.menu-burger-link {display:none; flex-grow:1}
+header.fixed .menu-burger-link,
+.menu-burger-open .menu-burger-link {display:block}
+.menu-burger-link a svg {display:block; width:35px; height:22px; fill:#080825}
+.menu-burger-link a svg:nth-child(2) {display:none}
+.menu-burger-open .menu-burger-link a svg {display:none; height:26px; fill:#FFFFFF}
+.menu-burger-open .menu-burger-link a svg:nth-child(2) {display:block}
 
 .logo {min-width:144px; display:flex; align-items:flex-start}
 .logo a {min-width:144px; display:flex; align-items:flex-start}
 .logo-left {display:block; width:96px; height:24px; margin:3px 0 0 0; fill:#080825}
 .logo-right {display:block; width:44px; height:31px; margin:0 0 0 4px; fill:#080825; stroke:#080825}
+
+header.fixed .logo,
+.menu-burger-open .logo {display:none}
 
 .page-main .logo-left {fill:#FFFFFF}
 .page-main .logo-right {fill:#FFFFFF; stroke:#FFFFFF}
@@ -175,6 +196,9 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .header-location {white-space:nowrap; margin:0 0 0 20px}
 .header-location-current {font-weight:600; font-size:12px; line-height:15px; text-transform:uppercase}
 .header-location-current svg {display:inline-block; vertical-align:middle; margin:-2px 5px 0 0; width:11px; height:13px; fill:#080825}
+
+header.fixed .header-location,
+.menu-burger-open .header-location {display:none}
 
 .page-main .header-location-current {color:#FFFFFF}
 .page-main .header-location-current svg {fill:#FFFFFF}
@@ -205,6 +229,9 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .header-menu ul li ul li:first-child a {border-radius:0 20px 0 0}
 .header-menu ul li ul li:last-child a {border-radius:0 0 20px 20px}
 
+header.fixed .header-menu,
+.menu-burger-open .header-menu {display:none}
+
 .page-main .header-menu ul li.open::before {box-shadow:none}
 .page-main .header-menu ul li ul {box-shadow:none}
 .page-main .header-menu ul li a {color:#FFFFFF}
@@ -228,6 +255,18 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .header-search-submit button {display:block; margin:0; padding:0; width:47px; height:37px; overflow:visible; outline:none; text-decoration:none; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
 .header-search-submit button svg {position:absolute; left:50%; top:50%; width:19px; height:20px; fill:#080825; transform:translate(-50%, -50%)}
 
+header.fixed .header-search {display:none}
+.menu-burger-open .header-search {min-width:663px; margin:0 55px 0 0}
+.menu-burger-open .header-search-input input {border-color:#FFFFFF; color:#FFFFFF}
+.menu-burger-open .header-search-input input::-webkit-input-placeholder {color:#FFFFFF}
+.menu-burger-open .header-search-input input::-moz-placeholder {color:#FFFFFF}
+.menu-burger-open .header-search-input input:-ms-input-placeholder {color:#FFFFFF}
+.menu-burger-open .header-search-input input:-webkit-autofill,
+.menu-burger-open .header-search-input input:-webkit-autofill:active,
+.menu-burger-open .header-search-input input:-webkit-autofill:focus,
+.menu-burger-open .header-search-input input:-webkit-autofill:hover {-webkit-text-fill-color:#FFFFFF; caret-color:#FFFFFF}
+.menu-burger-open .header-search-submit button svg {fill:#FFFFFF}
+
 .page-main .header-search-input input {border-color:#FFFFFF; color:#FFFFFF}
 .page-main .header-search-input input::-webkit-input-placeholder {color:#FFFFFF}
 .page-main .header-search-input input::-moz-placeholder {color:#FFFFFF}
@@ -242,8 +281,17 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .header-user-link {display:block; height:37px; border:1px solid #080825; border-radius:18px; position:relative}
 .header-user-link svg {position:absolute; left:50%; top:50%; width:18px; height:23px; fill:#080825; transform:translate(-50%, -50%)}
 
+header.fixed .header-user {margin:0}
+.menu-burger-open .header-user {margin:0 7px 0 0}
+
 .page-main .header-user-link {border-color:#FFFFFF}
 .page-main .header-user-link svg {fill:#FFFFFF}
+
+header.fixed .header-user-link {border-color:#080825}
+header.fixed .header-user-link svg {fill:#080825}
+
+.menu-burger-open .header-user-link {border-color:#FFFFFF}
+.menu-burger-open .header-user-link svg {fill:#FFFFFF}
 
 .header-lang {white-space:nowrap; margin:11px 0 0 0}
 .header-lang-select {display:inline-block; vertical-align:top; position:relative; margin:-11px -13px 0 0}
@@ -261,11 +309,28 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
     .header-lang-select ul li a:hover {color:#787B8E; background:#F9F9FF}
 }
 
+header.fixed .header-lang {display:none}
+
+.menu-burger-open .header-lang-select-current {color:#FFFFFF}
+.menu-burger-open .header-lang-select.open .header-lang-select-current {color:#080825; box-shadow:none}
+.menu-burger-open .header-lang-select-current svg {fill:#FFFFFF}
+.menu-burger-open .header-lang-select.open .header-lang-select-current svg {fill:#080825}
+.menu-burger-open .header-lang-select ul {box-shadow:none}
+
 .page-main .header-lang-select-current {color:#FFFFFF}
 .page-main .header-lang-select.open .header-lang-select-current {color:#080825; box-shadow:none}
 .page-main .header-lang-select-current svg {fill:#FFFFFF}
 .page-main .header-lang-select.open .header-lang-select-current svg {fill:#080825}
 .page-main .header-lang-select ul {box-shadow:none}
+
+.add-menu {display:none; position:fixed; left:0; top:88px; right:0; bottom:0; overflow:auto; background:rgba(8, 8, 37, 0.97); z-index:98}
+.menu-burger-open .add-menu {display:block}
+.add-menu::-webkit-scrollbar-thumb {background:#6768AB; border-radius:2px}
+.add-menu::-webkit-scrollbar {width:4px; height:4px; background:#F0F1F6}
+.add-menu ul {position:relative; border-top:1px solid #FFFFFF; margin:0; padding:61px 0 31px 0; list-style:none; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; column-count:3}
+.add-menu ul li {margin:0; padding:0 0 30px 0; -webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
+.add-menu ul li::before {display:none}
+.add-menu ul li a {color:#FFFFFF; text-decoration:none}
 
 .breadcrumbs {margin:15px 0 0 0; font-size:12px; line-height:15px; text-transform:uppercase; color:rgba(8, 8, 37, 0.4)}
 .breadcrumbs span {font-weight:300; margin:0 5px}
@@ -300,11 +365,16 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .slider .slick-dots li.slick-active button {background:#FFFFFF}
 
 .filters {margin:33px 0 0 0; position:relative; z-index:80}
+.calendar-fixed .filters {z-index:99; margin:33px 62px 0 35px}
 
-.filters-calendar {position:relative; overflow:hidden; z-index:2; margin:-30px 0 0 0}
-.filters-calendar.with-scrollbar {margin-bottom:-20px}
-.page-main .filters-calendar {margin:30px 0 0 0}
-.page-main .filters-calendar.with-scrollbar {margin-bottom:-36px}
+.menu-burger-open.calendar-fixed .filters {z-index:80}
+
+.filters-calendar-wrapper {position:relative; margin:-30px 0 0 0; z-index:2; height:78px}
+.filters-calendar-wrapper.with-scrollbar {margin-bottom:-20px; height:104px}
+.page-main .filters-calendar-wrapper {margin:30px 0 0 0}
+.page-main .filters-calendar-wrapper.with-scrollbar {margin-bottom:-36px}
+.filters-calendar {position:relative; overflow:hidden}
+.calendar-fixed .filters-calendar {position:fixed; left:50%; width:1083px; margin-left:-555px; top:0; padding-top:5px; z-index:99; background:#FFFFFF}
 .filters-calendar-inner {display:flex}
 .filters-calendar-month {margin:0 0 0 18px}
 .filters-calendar-month:first-child {margin:0}
@@ -331,6 +401,10 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .filters-calendar.position-right .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {display:none !important}
 .filters-calendar .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft {background:url(../images/filters-calendar-left.svg) no-repeat}
 .filters-calendar .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {background:url(../images/filters-calendar-right.svg) no-repeat}
+
+.calendar-fixed .filters-calendar .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:5px}
+.calendar-fixed .filters-calendar .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft,
+.calendar-fixed .filters-calendar .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {bottom:7px}
 
 .filter-letters {margin:19px -3px 0 -3px; display:flex; flex-wrap:wrap}
 .filter-letters label {display:block; cursor:pointer; min-width:41px; max-width:41px; margin:0 3px}
@@ -844,6 +918,7 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .page-map-filters .filters-select.open .filters-params-item-selected {display:none}
 .page-map-filters .filters-params-item-selected-clear {display:none}
 .page-map-filters .filters-params-clearall a {font-weight:600; font-size:12px; line-height:16px; padding:0 20px}
+.page-map-filters .filters-date {min-width:178px}
 .page-map-filters .filters-date-title {background:#FFFFFF; border-color:#FFFFFF; font-weight:600; font-size:12px; line-height:16px; padding:0 40px 0 20px; justify-content:flex-start}
 .page-map-filters .filters-date.active .filters-date-title {border-color:#FFFFFF; color:rgba(255, 255, 255, 0)}
 .page-map-filters .filters-date.open .filters-date-title {color:#080825}
@@ -851,6 +926,10 @@ header {position:absolute; z-index:99; left:0; top:0; right:0; height:64px; bord
 .page-map-filters .filters-date-content {background:#FFFFFF; border-color:#FFFFFF; box-shadow:0px 24px 24px 0px rgba(7, 21, 66, 0.15)}
 .page-map-filters .filters-date.active .filters-params-item-selected {display:block}
 .page-map-filters .filters-date.open .filters-params-item-selected {display:none}
+.page-map-filters .filters-date .filters-params-item-selected-values {display:flex; font-size:12px; line-height:15px}
+.page-map-filters .filters-date .filters-params-item-selected-values-text:nth-child(2) {margin:0 0 0 24px; position:relative}
+.page-map-filters .filters-date .filters-params-item-selected-values-text:nth-child(2)::before {content:"—"; position:absolute; left:-19px; top:50%; transform:translateY(-50%)}
+.page-map-filters .filters-date .filters-params-item-selected-values span {display:block; font-size:10px; line-height:13px; color:#787B8E; font-weight:600}
 
 footer {position:relative; margin:70px 0 0 0; background:#080825 url(../images/footer.svg) no-repeat center top}
 

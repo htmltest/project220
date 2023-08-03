@@ -199,7 +199,8 @@ $(document).ready(function() {
         },
         callbacks:{
             onInit: function() {
-                $('.filters-calendar').addClass('with-scrollbar position-left');
+                $('.filters-calendar').addClass('position-left');
+                $('.filters-calendar-wrapper').addClass('with-scrollbar')
             },
             onScroll:function() {
                 if (this.mcs.leftPct == 0) {
@@ -481,6 +482,20 @@ $(document).ready(function() {
         axis: 'y'
     });
 
+    $('.menu-burger-link a').click(function(e) {
+        if ($('html').hasClass('menu-burger-open')) {
+            $('html').removeClass('menu-burger-open');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        } else {
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('menu-burger-open');
+            $('html').data('scrollTop', curScroll);
+            $('.wrapper').css('margin-top', -curScroll);
+        }
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load', function() {
@@ -556,7 +571,7 @@ function updateFiltersStatus() {
                 var curValue = curInput.val().split(',');
                 var selectedHTML = '';
                 for (var i = 0; i < curValue.length; i++) {
-                    selectedHTML += '<div class="filters-params-item-selected-values-text">' + curValue[i] + '</div>';
+                    selectedHTML += '<div class="filters-params-item-selected-values-text">' + getDateText(curValue[i]) + '</div>';
                 }
                 curDate.find('.filters-params-item-selected-values').html(selectedHTML);
             } else {
@@ -581,7 +596,7 @@ function updateFiltersStatus() {
             $('.filters-params').removeClass('active');
         }
     });
-    
+
     $('#free-checkbox input').change(function() {
         if ($('#free-checkbox input').prop('checked')) {
             $('#price-select').addClass('disabled');
@@ -859,3 +874,69 @@ function updateMap() {
     });
 
 }
+
+function getDateText(curDate) {
+    var curDay = curDate.split('/')[1];
+    var curMonth = curDate.split('/')[0];
+    var curYear = curDate.split('/')[2];
+    var curMonthTitle = '';
+    switch(curMonth) {
+        case '01':
+            curMonthTitle = 'Jan';
+            break;
+        case '02':
+            curMonthTitle = 'Feb';
+            break;
+        case '03':
+            curMonthTitle = 'Mar';
+            break;
+        case '04':
+            curMonthTitle = 'Apr';
+            break;
+        case '05':
+            curMonthTitle = 'May';
+            break;
+        case '06':
+            curMonthTitle = 'Jun';
+            break;
+        case '07':
+            curMonthTitle = 'Jul';
+            break;
+        case '08':
+            curMonthTitle = 'Aug';
+            break;
+        case '09':
+            curMonthTitle = 'Sep';
+            break;
+        case '10':
+            curMonthTitle = 'Oct';
+            break;
+        case '11':
+            curMonthTitle = 'Nov';
+            break;
+        case '12':
+            curMonthTitle = 'Dec';
+            break;
+    }
+    return (curDay + ' ' + curMonthTitle + ' <span>' + curYear + '</span>');
+}
+
+$(window).on('load resize scroll', function() {
+    var windowScroll = $(window).scrollTop();
+
+    $('header').each(function() {
+        if (windowScroll > 64) {
+            $('header').addClass('fixed');
+        } else {
+            $('header').removeClass('fixed');
+        }
+    });
+
+    $('.filters-calendar-wrapper').each(function() {
+        if (windowScroll > $('.filters-calendar-wrapper').offset().top + $('.filters-calendar-wrapper').outerHeight() - 88) {
+            $('html').addClass('calendar-fixed');
+        } else {
+            $('html').removeClass('calendar-fixed');
+        }
+    });
+});
