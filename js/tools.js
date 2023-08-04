@@ -180,7 +180,18 @@ $(document).ready(function() {
         slidesToScroll: 3,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-        dots: true
+        dots: true,
+        responsive: [
+            {
+                breakpoint: 1259,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: false
+                }
+            }
+        ]
     });
 
     $('.restaurants-special-slider').slick({
