@@ -119,7 +119,18 @@ $(document).ready(function() {
             slidesToScroll: 3,
             prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-prev"></use></svg></button>',
             nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slider-next"></use></svg></button>',
-            dots: true
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 1259,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false,
+                        dots: false
+                    }
+                }
+            ]
         });
     }
 
@@ -950,4 +961,18 @@ $(window).on('load resize scroll', function() {
             $('html').removeClass('calendar-fixed');
         }
     });
+});
+
+$(window).on('load resize', function() {
+    if ($(window).width() > 1259) {
+        if ($('.filters-params').length > 0) {
+            $('.filters-params').mCustomScrollbar('destroy');
+        }
+    } else {
+        if ($('.filters-params').length > 0) {
+            $('.filters-params').mCustomScrollbar({
+                axis: 'x'
+            });
+        }
+    }
 });
