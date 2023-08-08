@@ -500,10 +500,6 @@ $(document).ready(function() {
         updateMap();
     });
 
-    $('.page-map-list-content').mCustomScrollbar({
-        axis: 'y'
-    });
-
     $('.menu-burger-link a').click(function(e) {
         if ($('html').hasClass('menu-burger-open')) {
             $('html').removeClass('menu-burger-open');
@@ -515,6 +511,11 @@ $(document).ready(function() {
             $('html').data('scrollTop', curScroll);
             $('.wrapper').css('margin-top', -curScroll);
         }
+        e.preventDefault();
+    });
+    
+    $('.page-map-list-close').click(function(e) {
+        $('.page-map-list').removeClass('visible');
         e.preventDefault();
     });
 
@@ -879,22 +880,40 @@ function updateMap() {
                     iconCenterX = curIcon.iconBigCenterX;
                     iconCenterY = curIcon.iconBigCenterY;
                 }
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(data[i].longitude, data[i].latitude),
-                    map: map,
-                    title: data[i].title,
-                    icon: new google.maps.MarkerImage(
-                        iconImg,
-                        new google.maps.Size(iconWidth, iconHeight),
-                        new google.maps.Point(0, 0),
-                        new google.maps.Point(iconCenterX, iconCenterY)
-                    ),
-                });
+                var marker = add_marker(data[i].longitude, data[i].latitude, data[i].title, iconImg, iconWidth, iconHeight, iconCenterX, iconCenterY);
                 markers.push(marker);
             }
         }
     });
 
+}
+
+function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX, iconCenterY) {
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(lng, lat),
+        map: map,
+        title: title,
+        icon: new google.maps.MarkerImage(
+            iconImg,
+            new google.maps.Size(iconWidth, iconHeight),
+            new google.maps.Point(0, 0),
+            new google.maps.Point(iconCenterX, iconCenterY)
+        ),
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+        var curIndex = -1;
+        for (var i = 0; i < markers.length; i++) {
+            if (marker == markers[i]) {
+                curIndex = i;
+            }
+        }
+        if (curIndex > -1) {
+            $('.page-map-list-item').eq(curIndex).trigger('click');
+            $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list-item').eq(curIndex));
+            $('.page-map-list').addClass('visible');
+        }
+    });
+    return marker;
 }
 
 function getDateText(curDate) {
@@ -968,9 +987,23 @@ $(window).on('load resize', function() {
         if ($('.filters-params').length > 0) {
             $('.filters-params').mCustomScrollbar('destroy');
         }
+
+        if ($('.page-map-list-content').length > 0) {
+            $('.page-map-list-content').mCustomScrollbar('destroy');
+            $('.page-map-list-content').mCustomScrollbar({
+                axis: 'y'
+            });
+        }
     } else {
-        if ($('.filters-params').length > 0) {
+        if ($('.filters-params').length > 0 && $('.page-map-filters').length == 0) {
             $('.filters-params').mCustomScrollbar({
+                axis: 'x'
+            });
+        }
+
+        if ($('.page-map-list-content').length > 0) {
+            $('.page-map-list-content').mCustomScrollbar('destroy');
+            $('.page-map-list-content').mCustomScrollbar({
                 axis: 'x'
             });
         }

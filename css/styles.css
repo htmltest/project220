@@ -1172,6 +1172,7 @@ header.fixed .header-lang {display:none}
 .detail-info-map {margin:36px 0 0 0}
 .detail-info-map-title {font-weight:800; font-size:16px; line-height:20px; text-transform:uppercase}
 .detail-info-map-container {margin:8px 0 0 0; height:231px; position:relative; border-radius:50px}
+.detail-info-map-container .gm-fullscreen-control {background:transparent !important; box-shadow:none !important}
 
 @media (max-width:1259px) {
     .detail-info-map {margin:20px 0 0 0}
@@ -1347,10 +1348,24 @@ header.fixed .header-lang {display:none}
 .page-map-container-map {position:absolute; left:0; top:0; right:0; bottom:0}
 .page-map-container-map::after {content:""; position:absolute; left:0; top:0; right:0; height:124px; background:linear-gradient(180deg, rgba(5, 5, 28, 0.86) 0%, rgba(5, 5, 28, 0) 100%); pointer-events:none}
 
+.page-map-container-map .gm-control-active+div {background:none !important; height:10px !important}
+.page-map-container-map .gm-bundled-control {right:62px !important; bottom:40px !important}
+.page-map-container-map .gm-bundled-control .gmnoprint {position:relative !important; left:auto !important; top:auto !important}
+.page-map-container-map .gm-bundled-control .gmnoprint > div {background:none !important; width:60px !important; height:auto !important; box-shadow:none !important}
+.page-map-container-map .gm-control-active {border-radius:50% !important; width:60px !important; height:60px !important; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15) !important; background:#F7F8FC url(../images/google-map-zoom-in.svg) no-repeat center !important}
+.page-map-container-map .gm-control-active+div+.gm-control-active {background-image:url(../images/google-map-zoom-out.svg) !important}
+.page-map-container-map .gm-control-active>img {display:none !important}
+
 @media (max-width:1259px) {
     .page-map .wrapper-inner {padding:72px 0 0 0}
     .page-map-container {min-height:396px}
     .page-map-container-map::after {height:96px}
+
+    .page-map-container-map .gm-control-active+div {height:8px !important}
+    .page-map-container-map .gm-bundled-control {right:10px !important; bottom:10px !important}
+    .page-map-container-map .gm-bundled-control .gmnoprint > div {width:40px !important}
+    .page-map-container-map .gm-control-active {width:40px !important; height:40px !important; background-image:url(../images/google-map-zoom-in-mobile.svg) !important}
+    .page-map-container-map .gm-control-active+div+.gm-control-active {background-image:url(../images/google-map-zoom-out-mobile.svg) !important}
 }
 
 .page-map-list {position:absolute; left:50%; margin-left:-630px; top:86px; bottom:24px; width:400px; background:#FFFFFF; border-radius:40px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15)}
@@ -1373,9 +1388,26 @@ header.fixed .header-lang {display:none}
 .page-map-list-item-link {position:absolute; display:flex; align-items:center; right:14px; bottom:14px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; visibility:hidden; opacity:0; transition:opacity 0.2s; text-decoration:none}
 .page-map-list-item.active .page-map-list-item-link {visibility:visible; opacity:1}
 .page-map-list-item-link svg {display:block; width:12px; height:10px; margin:0 0 0 5px}
+.page-map-list-close {display:none}
 
 @media (max-width:1259px) {
     .page-map-list {transform:translate(-9999px, -9999px)}
+    .page-map-list.visible {transform:none; position:fixed; z-index:999; left:0; top:0; right:0; bottom:0; width:auto; height:auto; border-radius:0; padding:0; background:rgba(8, 8, 37, 0.7)}
+    .page-map-list h3 {display:none}
+    .page-map-list-content {position:fixed; z-index:999; left:8px; top:50%; bottom:auto; right:8px; transform:translateY(-50%); background:#FFFFFF; border-radius:30px; padding:14px 0 14px 14px}
+    .page-map-list-content .catalogue {display:flex}
+    .page-map-list-item {min-width:193px; max-width:193px; border:none; padding:0; margin:0 0 0 7px; border-radius:0}
+    .page-map-list-item:first-child {margin:0}
+    .page-map-list-item.active {background:none}
+    .page-map-list-item-photos {display:block}
+    .page-map-list-item-photo {display:none}
+    .page-map-list-item-photo:first-child {display:block; min-width:0; border-radius:20px; height:121px; padding:0}
+    .page-map-list-item-title {margin:8px 0 0 0; font-size:15px; line-height:16px}
+    .page-map-list-item-text {margin:8px 0 0 0; font-size:10px; line-height:11px}
+    .page-map-list-item-link {position:relative; right:auto; bottom:auto; margin:10px 0 0 0; opacity:1; visibility:visible; justify-content:center; height:34px; background:#F3F4FA; border-radius:17px}
+    .page-map-list.visible .page-map-list-close {display:block; position:fixed; right:10px; top:10px; z-index:999}
+    .page-map-list.visible .page-map-list-close svg {display:block; width:13px; height:13px; fill:#FFFFFF}
+    .page-map-list-content .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:0}
 }
 
 .page-map-list-item-restaurant.active {border-color:#EA435D}
@@ -1441,7 +1473,20 @@ header.fixed .header-lang {display:none}
 .page-map-filters .filters-date .filters-params-item-selected-values span {display:block; font-size:10px; line-height:13px; color:#787B8E; font-weight:600}
 
 @media (max-width:1259px) {
-    .page-map-filters {left:10px; top:56px; right:10px; width:auto; margin-left:0}
+    .page-map-filters {left:10px; top:50px; right:10px; width:auto; margin-left:0}
+    .page-map-filters .filters-params-inner {flex-wrap:wrap}
+    .page-map-filters .filters-params-item {min-width:50%; max-width:100%; padding:6px 2px 0 2px}
+    .page-map-filters .filters-select {min-width:100%}
+    .page-map-filters .filters-select-title {font-size:10px; line-height:13px; position:relative; overflow:hidden; text-overflow:ellipsis}
+    .page-map-filters .filters-date {min-width:100%}
+    .page-map-filters .filters-date-title {min-width:100%; font-size:10px; line-height:13px}
+    .page-map-filters .filters-checkbox {min-width:100%}
+    .page-map-filters .filters-checkbox span {font-size:10px; line-height:13px}
+    .page-map-filters .filters-params-clearall {padding:6px 2px 0 2px}
+    .page-map-filters .filters-params-clearall a {font-size:10px; line-height:13px}
+    .page-map-filters .filters-date-content {left:auto; right:0; border-radius:25px 0 25px 25px}
+    .page-map-filters .filters-params-item-selected {font-size:10px; line-height:13px}
+    .page-map-filters .filters-date .filters-params-item-selected-values {font-size:10px; line-height:13px}
 }
 
 footer {position:relative; margin:70px 0 0 0; background:#080825 url(../images/footer.svg) no-repeat center top}
