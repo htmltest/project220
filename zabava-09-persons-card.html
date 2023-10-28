@@ -5,16 +5,19 @@
         <title>Zabava</title>
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
-    <body class="page-persones">
+    <body>
 
         <!-- wrapper -->
         <div class="wrapper">
@@ -25,43 +28,97 @@
                 <header>
                     <div class="container">
                         <div class="header-inner">
-                            <div class="menu-burger-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-burger-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-burger-close"></use></svg></a></div>
-
                             <div class="logo">
                                 <a href="#">
-                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
-                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                    <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
                                 </a>
                             </div>
 
-                            <div class="header-location">
-                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
-                            </div>
+                            <!-- header container -->
+                            <div class="header-container">
+                                <div class="header-location">
+                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></a>
+                                    <div class="header-location-window">
+                                        <div class="header-location-window-search">
+                                            <input type="text" value="">
+                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                        </div>
+                                        <div class="header-location-window-inner">
+                                            <div class="header-location-window-item"><a href="#"><span>Celje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Domžale</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Izola</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Jesenice</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kamnik</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Koper</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kostanjevica na Krki</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kranj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item active"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Logatec</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Maribor</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Murska Sobota</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Nova Gorica</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Novo Mesto</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Postojna</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Ptuj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Škofja Loka</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Trbovlje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Velenje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Vrhnika</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="header-menu">
-                                <ul>
-                                    <li><a href="#">Movie</a></li>
-                                    <li><a href="#">Theatre</a></li>
-                                    <li><a href="#">Restaurants</a></li>
-                                    <li><a href="#">Stand-up</a></li>
-                                    <li class="with-more">
-                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
-                                        <ul>
-                                            <li><a href="#">Concerts</a></li>
-                                            <li><a href="#">Exhibitions</a></li>
-                                            <li><a href="#">Children</a></li>
-                                            <li><a href="#">Sport</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <div class="header-menu">
+                                    <ul>
+                                        <li>
+                                            <a href="#">Events<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                            <ul>
+                                                <li><a href="#"><span class="header-menu-category category-film"></span>Film<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-music"></span>Music<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-culture"></span>Culture<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-sports"></span>Sports<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-children"></span>For children<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-education"></span>Education<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-gastronomic"></span>Gastronomic events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-exhibitions"></span>Fairs, trade, and promotional exhibitions<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-social"></span>Social and charity events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Restaurants</a></li>
+                                        <li class="active"><a href="#">Persons</a></li>
+                                        <li><a href="#">Event Venues</a></li>
+                                    </ul>
+                                    <div class="header-menu-mobile">
+                                        <div class="header-menu-mobile-item"><a href="#">Events on the map</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">About US</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Privacy Policy</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Legal information</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- header container END -->
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>EN</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">SI<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                        <li class="active"><a href="#">EN<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="header-search">
-                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-search-form">
                                     <form action="#" method="post">
-                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-content">
+                                            <div class="header-search-title">Search</div>
+                                            <div class="header-search-input"><input type="text" name="search" value="" placeholder="Event, actor, place"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></div>
+                                        </div>
                                         <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                        <div class="header-search-submit-mobile"><button type="submit" class="btn">Search</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -70,102 +127,68 @@
                                 <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
                             </div>
 
-                            <div class="header-lang">
-                                <div class="header-lang-select">
-                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                    <ul>
-                                        <li><a href="#">RU</a></li>
-                                        <li><a href="#">SLO</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="menu-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a></div>
                         </div>
                     </div>
                 </header>
 
-                <div class="add-menu">
-                    <div class="container">
-                        <ul>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><a href="#">Persons</a><span>&raquo;</span><strong>Jake Gyllenhaal</strong></div>
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><a href="#">Persons</a><span>&raquo;</span>Jake Gyllenhaal</div>
 
-                    <h1>Jake Gyllenhaal</h1>
+                    <h1 class="page-title page-title-persons">Jake Gyllenhaal</h1>
 
                     <!-- detail media -->
                     <div class="detail-media">
 
-                        <div class="detail-media-slider">
-                            <div class="detail-media-slider-list">
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
+                        <div class="detail-media-slider swiper">
+                            <div class="detail-media-slider-list swiper-wrapper">
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-persones-1.jpg" alt=""></div>
                                 </div>
                             </div>
-                            <div class="detail-media-slider-preview">
-                                <a href="#"><img src="files/detail-persones-1-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-persones-2-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-persones-3-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-persones-4-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-persones-5-preview.jpg" alt=""></a>
+
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#detail-media-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#detail-media-next"></use></svg></div>
+
+                            <div class="detail-media-header">
+                                <div class="detail-media-header-content">
+                                </div>
+                                <a href="#" class="detail-media-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                            </div>
+
+                            <div class="detail-media-info">
+                                <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
+                                <div class="detail-media-info-item"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
                             </div>
                         </div>
 
-                        <div class="detail-media-info">
-                            <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-cinema"></use></svg>CINEMA</div>
-                            <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-place"></use></svg>Great Britain</div>
+                        <div class="detail-media-slider-preview">
+                            <div class="detail-media-slider-preview-list swiper">
+                                <div class="detail-media-slider-preview-inner swiper-wrapper">
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-persones-1-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-persones-2-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-persones-3-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-persones-4-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-persones-5-preview.jpg" alt=""></a></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#detail-media-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#detail-media-next"></use></svg></div>
                         </div>
                     </div>
                     <!-- detail media END -->
@@ -183,49 +206,32 @@
                                 <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar</p>
                                 <p>In&nbsp;an&nbsp;hour and a&nbsp;half you will live an&nbsp;artist&rsquo;s life full of&nbsp;happiness and pain. Alexander Vertinsky?.. Albert Makarov?.. No&nbsp;matter whose fate you see in&nbsp;the reflections of&nbsp;mirrors, you will not want to&nbsp;look away. You won&rsquo;t want this bright world to&nbsp;dissolve with the last chord of&nbsp;the piano. Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;conc</p>
 
-                                <div class="detail-info-params">
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Parking</div>
-                                        <div class="detail-info-param-value">no</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Bank cards</div>
-                                        <div class="detail-info-param-value">accepted</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Discount on the menu</div>
-                                        <div class="detail-info-param-value">no</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Business lunch</div>
-                                        <div class="detail-info-param-value">Mon-Fri 12.00–16.00</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Wi-Fi</div>
-                                        <div class="detail-info-param-value">yes</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">Banquets</div>
-                                        <div class="detail-info-param-value">no</div>
-                                    </div>
-                                    <div class="detail-info-param">
-                                        <div class="detail-info-param-title">For children</div>
-                                        <div class="detail-info-param-value">Children's chairs Animation services</div>
-                                    </div>
-                                </div>
-
-                                <div class="detail-info-social">
-                                    <div class="detail-info-social-item">
-                                        <div class="detail-info-social-item-title">Jake Gyllenhaal in social networks</div>
-                                        <div class="detail-info-social-item-value">
-                                            <a href="#" target="_blank"><img src="images/detail-social-fb.svg" alt=""></a>
-                                            <a href="#" target="_blank"><img src="images/detail-social-instagram.svg" alt=""></a>
-                                            <a href="#" target="_blank"><img src="images/detail-social-tiktok.svg" alt=""></a>
+                                <div class="detail-info-params-with-social">
+                                    <div class="detail-info-params">
+                                        <div class="detail-info-social-item">
+                                            <div class="detail-info-social-item-title">Social Media Links</div>
+                                            <div class="detail-info-social-item-value">
+                                                <div class="detail-info-social-item-value-social">
+                                                    <a href="#" target="_blank"><img src="images/detail-social-fb.svg" alt=""></a>
+                                                </div>
+                                                <div class="detail-info-social-item-value-social">
+                                                    <a href="#" target="_blank"><img src="images/detail-social-instagram.svg" alt=""></a>
+                                                </div>
+                                                <div class="detail-info-social-item-value-social">
+                                                    <a href="#" target="_blank"><img src="images/detail-social-tiktok.svg" alt=""></a>
+                                                </div>
+                                                <div class="detail-info-social-item-value-social">
+                                                    <a href="#" target="_blank"><img src="images/detail-social-share.svg" alt=""></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="detail-info-social-item">
-                                        <div class="detail-info-social-item-title">Share in FB</div>
-                                        <div class="detail-info-social-item-value"><img src="files/share-fb.png" alt=""></div>
+
+                                    <div class="detail-info-social">
+                                        <div class="detail-info-social-item">
+                                            <div class="detail-info-social-item-title">Person Website</div>
+                                            <div class="detail-info-social-item-value"><a href="https://docs.google.com/" target="_blank">https://docs.google.com/</a></div>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -239,7 +245,7 @@
 
                     <!-- other section -->
                     <div class="other-section">
-                        <h2>Events with <span>Jake Gyllenhaal</span></h2>
+                        <div class="other-section-title">Events with <span>Jake Gyllenhaal</span></div>
 
                         <!-- cards -->
                         <div class="cards">
@@ -248,13 +254,15 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-01.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
                                             <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
                                         </div>
-                                        <h3>Looking for a wife, cheap!</h3>
+                                        <div class="card-title">Looking for a wife, cheap!</div>
                                         <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
@@ -263,13 +271,15 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
-                                            <div class="card-past">past</div>
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-02.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
+                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
                                         </div>
-                                        <h3>Female friendship, or How to get married</h3>
+                                        <div class="card-title">Swan Lake</div>
                                         <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br> Solo performance</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
@@ -278,111 +288,25 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
-                                            <div class="card-past">past</div>
-                                        </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
-                                        </div>
-                                        <h3>Looking for a wife, cheap!</h3>
-                                        <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
-                                        </div>
-                                        <h3>Swan Lake</h3>
-                                        <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-03.jpg)"></div>
+                                            <div class="card-rating rating-red">2.2</div>
                                             <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
                                         </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
-                                        </div>
-                                        <h3>Looking for a wife, cheap!</h3>
-                                        <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
-                                        </div>
-                                        <h3>Swan Lake</h3>
+                                        <div class="card-title">Female friendship, or How to get married</div>
                                         <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
-                                        </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
 
                         </div>
                         <!-- cards END -->
+
+                        <div class="other-section-more"><a href="#">Show more</a></div>
                     </div>
-                    <!-- main section END -->
+                    <!-- other section END -->
 
                 </div>
                 <!-- container END -->
@@ -393,54 +317,36 @@
             <footer>
                 <div class="container">
 
-                    <div class="footer-top">
-                        <div class="footer-subscribe">
-                            <div class="footer-subscribe-title">Subscribe</div>
-                            <div class="footer-subscribe-form">
-                                <form action="#" method="post">
-                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
-                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
-                                </form>
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                            <div class="footer-social">
+                                <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                                <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
                             </div>
                         </div>
-                        <div class="footer-catalogue">
-                            <ul>
-                                <li><a href="#">Movie</a></li>
-                                <li><a href="#">Theatre</a></li>
-                                <li><a href="#">Restaurants</a></li>
-                                <li><a href="#">Stand-up</a></li>
-                                <li class="on-mobile"><a href="#">Events on the map</a></li>
-                                <li><a href="#">Concerts</a></li>
-                                <li><a href="#">Exhibitions</a></li>
-                                <li><a href="#">Children</a></li>
-                                <li><a href="#">Sport</a></li>
-                            </ul>
-                        </div>
+
                         <div class="footer-menu">
                             <ul>
-                                <li class="no-mobile"><a href="#">Events on the map</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Persons</a></li>
+                                <li><a href="#">Event Venues</a></li>
+                                <li><a href="#">Events on the map</a></li>
                                 <li><a href="#">About US</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Legal information</a></li>
                             </ul>
                         </div>
 
-                        <div class="footer-lang">
-                            <div class="footer-lang-select">
-                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                <ul>
-                                    <li><a href="#">RU</a></li>
-                                    <li><a href="#">SLO</a></li>
-                                </ul>
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="Subscribe" class="btn"></div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom">
-                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
-                        <div class="footer-social">
-                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
-                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                            <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
                         </div>
                     </div>
 
@@ -459,12 +365,14 @@
         <script>svg4everybody();</script>
 
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/slick/slick.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/air-datepicker/air-datepicker.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

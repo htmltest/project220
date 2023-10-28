@@ -5,16 +5,19 @@
         <title>Zabava</title>
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
-    <body class="page-main page-map">
+    <body class="page-map">
 
         <!-- wrapper -->
         <div class="wrapper">
@@ -25,43 +28,97 @@
                 <header>
                     <div class="container">
                         <div class="header-inner">
-                            <div class="menu-burger-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-burger-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-burger-close"></use></svg></a></div>
-
                             <div class="logo">
                                 <a href="#">
-                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
-                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                    <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
                                 </a>
                             </div>
 
-                            <div class="header-location">
-                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
-                            </div>
+                            <!-- header container -->
+                            <div class="header-container">
+                                <div class="header-location">
+                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></a>
+                                    <div class="header-location-window">
+                                        <div class="header-location-window-search">
+                                            <input type="text" value="">
+                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                        </div>
+                                        <div class="header-location-window-inner">
+                                            <div class="header-location-window-item"><a href="#"><span>Celje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Domžale</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Izola</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Jesenice</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kamnik</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Koper</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kostanjevica na Krki</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kranj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item active"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Logatec</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Maribor</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Murska Sobota</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Nova Gorica</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Novo Mesto</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Postojna</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Ptuj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Škofja Loka</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Trbovlje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Velenje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Vrhnika</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="header-menu">
-                                <ul>
-                                    <li><a href="#">Movie</a></li>
-                                    <li><a href="#">Theatre</a></li>
-                                    <li><a href="#">Restaurants</a></li>
-                                    <li><a href="#">Stand-up</a></li>
-                                    <li class="with-more">
-                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
-                                        <ul>
-                                            <li><a href="#">Concerts</a></li>
-                                            <li><a href="#">Exhibitions</a></li>
-                                            <li><a href="#">Children</a></li>
-                                            <li><a href="#">Sport</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <div class="header-menu">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="#">Events<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                            <ul>
+                                                <li><a href="#"><span class="header-menu-category category-film"></span>Film<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-music"></span>Music<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-culture"></span>Culture<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-sports"></span>Sports<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-children"></span>For children<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-education"></span>Education<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-gastronomic"></span>Gastronomic events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-exhibitions"></span>Fairs, trade, and promotional exhibitions<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-social"></span>Social and charity events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Restaurants</a></li>
+                                        <li><a href="#">Persons</a></li>
+                                        <li><a href="#">Event Venues</a></li>
+                                    </ul>
+                                    <div class="header-menu-mobile">
+                                        <div class="header-menu-mobile-item"><a href="#">Events on the map</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">About US</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Privacy Policy</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Legal information</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- header container END -->
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>EN</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">SI<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                        <li class="active"><a href="#">EN<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="header-search">
-                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-search-form">
                                     <form action="#" method="post">
-                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-content">
+                                            <div class="header-search-title">Search</div>
+                                            <div class="header-search-input"><input type="text" name="search" value="" placeholder="Event, actor, place"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></div>
+                                        </div>
                                         <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                        <div class="header-search-submit-mobile"><button type="submit" class="btn">Search</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -70,308 +127,18 @@
                                 <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
                             </div>
 
-                            <div class="header-lang">
-                                <div class="header-lang-select">
-                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                    <ul>
-                                        <li><a href="#">RU</a></li>
-                                        <li><a href="#">SLO</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="menu-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a></div>
                         </div>
                     </div>
                 </header>
 
-                <div class="add-menu">
-                    <div class="container">
-                        <ul>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- page map container -->
                 <div class="page-map-container">
                     <div id="map" class="page-map-container-map"></div>
+                    <script src="js/map-config.js"></script>
                     <script>
                         var map;
-                        var styleArray = [
-                          {
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#f5f5f5"
-                              }
-                            ]
-                          },
-                          {
-                            "elementType": "labels.icon",
-                            "stylers": [
-                              {
-                                "visibility": "off"
-                              }
-                            ]
-                          },
-                          {
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#616161"
-                              }
-                            ]
-                          },
-                          {
-                            "elementType": "labels.text.stroke",
-                            "stylers": [
-                              {
-                                "color": "#f5f5f5"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "administrative.land_parcel",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#bdbdbd"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "poi",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#eeeeee"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "poi",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#757575"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "poi.park",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#e5e5e5"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "poi.park",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#9e9e9e"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "road",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#ffffff"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "road.arterial",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#757575"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "road.highway",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#dadada"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "road.highway",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#616161"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "road.local",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#9e9e9e"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "transit.line",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#e5e5e5"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "transit.station",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#eeeeee"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "water",
-                            "elementType": "geometry",
-                            "stylers": [
-                              {
-                                "color": "#c9c9c9"
-                              }
-                            ]
-                          },
-                          {
-                            "featureType": "water",
-                            "elementType": "labels.text.fill",
-                            "stylers": [
-                              {
-                                "color": "#9e9e9e"
-                              }
-                            ]
-                          }
-                        ];
                         var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
-                        var mapIcons = [
-                            {
-                                'type': 'event',
-                                'iconURL': 'images/map-icon-events.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-events-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            },
-                            {
-                                'type': 'theatre',
-                                'iconURL': 'images/map-icon-theatre.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-theatre-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            },
-                            {
-                                'type': 'concert',
-                                'iconURL': 'images/map-icon-concert.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-concert-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            },
-                            {
-                                'type': 'standup',
-                                'iconURL': 'images/map-icon-standup.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-standup-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            },
-                            {
-                                'type': 'children',
-                                'iconURL': 'images/map-icon-children.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-children-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            },
-                            {
-                                'type': 'sport',
-                                'iconURL': 'images/map-icon-sport.svg',
-                                'iconWidth': 46,
-                                'iconHeight': 46,
-                                'iconCenterX': 23,
-                                'iconCenterY': 23,
-                                'iconBigURL': 'images/map-icon-sport-big.svg',
-                                'iconBigWidth': 64,
-                                'iconBigHeight': 64,
-                                'iconBigCenterX': 32,
-                                'iconBigCenterY': 32
-                            }
-                        ];
 
                         var markers = [];
 
@@ -397,180 +164,307 @@
                     </script>
                     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly&key=AIzaSyA0WMOe8YWd0yua6Z4Fr_fOmST1CJs1OW0"></script>
 
-                    <!-- page map list -->
-                    <div class="page-map-list">
-                        <h3>Events on the map</h3>
-                        <div class="page-map-list-content">
-                            <div class="catalogue">
-                                <div class="page-map-list-item page-map-list-item-event" data-longitude="46.06227022577827" data-latitude="14.503687895051863" data-type="event">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-01.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-02.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-03.jpg)"></div>
+                    <!-- page-map-content -->
+                    <div class="page-map-content">
+                        <!-- page map list -->
+                        <div class="page-map-list">
+                            <div class="page-map-list-content">
+                                <div class="catalogue">
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.06227022577827" data-latitude="14.503687895051863" data-type="event">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-01.jpg)"></div>
+                                                    <div class="card-rating rating-green">4.7</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
+                                                </div>
+                                                <div class="card-title">Looking for a wife, cheap!</div>
+                                                <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">Looking for a wife, cheap!</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, Empire Lounge, Empire Lounge, Live music, Live music</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-theatre" data-longitude="46.16052974249656" data-latitude="14.257272666314716" data-type="theatre">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-04.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-05.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-06.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.16052974249656" data-latitude="14.257272666314716" data-type="theatre">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-02.jpg)"></div>
+                                                    <div class="card-rating rating-green">4.7</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
+                                                </div>
+                                                <div class="card-title">Swan Lake</div>
+                                                <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br> Solo performance</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">John Wick 4</div>
-                                    <div class="page-map-list-item-text">From May to July, </div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-concert" data-longitude="46.19306891285658" data-latitude="14.59950325899278" data-type="concert">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-07.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-08.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-09.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.19306891285658" data-latitude="14.59950325899278" data-type="concert">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-03.jpg)"></div>
+                                                    <div class="card-rating rating-red">2.2</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
+                                                </div>
+                                                <div class="card-title">Female friendship, or How to get married</div>
+                                                <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">The play "Resurrection"</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-standup" data-longitude="46.03187623273909" data-latitude="14.810142126040391" data-type="standup">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-10.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-11.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-12.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.03187623273909" data-latitude="14.810142126040391" data-type="standup">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-04.jpg)"></div>
+                                                    <div class="card-rating rating-orange">3.9</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
+                                                </div>
+                                                <div class="card-title">Looking for a wife, cheap!</div>
+                                                <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">Death of "Tarelkin": Immortal themes</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-children" data-longitude="45.976609318829084" data-latitude="14.21522714894923" data-type="children">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-01.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-02.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-03.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="45.976609318829084" data-latitude="14.21522714894923" data-type="children">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-05.jpg)"></div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
+                                                </div>
+                                                <div class="card-title">Swan Lake</div>
+                                                <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br> Solo performance</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">Looking for a wife, cheap!</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, Empire Lounge, Empire Lounge, Live music, Live music</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-sport" data-longitude="46.23266325649101" data-latitude="14.042434232781842" data-type="sport">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-04.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-05.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-06.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.23266325649101" data-latitude="14.042434232781842" data-type="sport">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-06.jpg)"></div>
+                                                    <div class="card-rating rating-black">1.1</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
+                                                </div>
+                                                <div class="card-title">Female friendship, or How to get married</div>
+                                                <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">John Wick 4</div>
-                                    <div class="page-map-list-item-text">From May to July, </div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-event" data-longitude="46.3720054302783" data-latitude="14.923870631054024" data-type="event">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-07.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-08.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-09.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="46.3720054302783" data-latitude="14.923870631054024" data-type="event">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-07.jpg)"></div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
+                                                </div>
+                                                <div class="card-title">Looking for a wife, cheap!</div>
+                                                <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">The play "Resurrection"</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
-                                </div>
-                                <div class="page-map-list-item page-map-list-item-event" data-longitude="45.761396008334984" data-latitude="14.503734207466264" data-type="event">
-                                    <div class="page-map-list-item-photos">
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-10.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-11.jpg)"></div>
-                                        <div class="page-map-list-item-photo" style="background-image:url(files/events-map-12.jpg)"></div>
+                                    <!-- card END -->
+
+                                    <!-- card -->
+                                    <div class="card" data-longitude="45.761396008334984" data-latitude="14.503734207466264" data-type="event">
+                                        <div class="card-inner">
+                                            <a href="#" class="card-content">
+                                                <div class="card-preview">
+                                                    <div class="card-preview-bg" style="background-image:url(files/theatre-08.jpg)"></div>
+                                                    <div class="card-rating rating-red">2.7</div>
+                                                    <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
+                                                </div>
+                                                <div class="card-title">Swan Lake</div>
+                                                <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br> Solo performance</div>
+                                            </a>
+                                            <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                            <div class="card-more-link"><a href="#">more info<svg><use xlink:href="images/sprite.svg#card-more-link"></use></svg></a></div>
+                                        </div>
                                     </div>
-                                    <div class="page-map-list-item-title">Death of "Tarelkin": Immortal themes</div>
-                                    <div class="page-map-list-item-text">April 15 at 21:00, at the theater named</div>
-                                    <a href="#" class="page-map-list-item-link">more info<svg><use xlink:href="images/sprite.svg#page-map-list-item-link"></use></svg></a>
+                                    <!-- card END -->
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="page-map-list-close"><svg><use xlink:href="images/sprite.svg#page-map-list-close"></use></svg></a>
-                    </div>
-                    <!-- page map list END -->
+                        <!-- page map list END -->
 
-                    <!-- page map filters -->
-                    <div class="page-map-filters">
-                        <!-- filters -->
-                        <div class="filters">
-                            <form action="ajax/events-map.html" method="post">
+                        <!-- page map filters -->
+                        <div class="page-map-filters">
+                            <!-- filters -->
+                            <div class="filters">
+                                <form action="ajax/events-map.html" method="post">
 
-                                <div class="filters-params">
-                                    <div class="filters-params-inner">
-                                        <div class="filters-params-item">
-                                            <div class="filters-select">
-                                                <a href="#" class="filters-select-title">type of event<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
-                                                <div class="filters-select-content">
-                                                    <div class="filters-select-content-inner">
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[Premieres]"><span>movie</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[theatre]"><span>theatre</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[RESTAURANTS]"><span>RESTAURANTS</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[STAND-UP]"><span>STAND-UP</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[CONCERTS]"><span>CONCERTS</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[EXHIBITIONS]"><span>EXHIBITIONS</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[children]"><span>children</span></label></div>
-                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="type[sport]"><span>sport</span></label></div>
+                                    <div class="filters-params">
+                                        <div class="filter-params-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#filter-params-mobile-link"></use></svg>Filter</a></div>
+                                        <div class="filters-params-inner">
+                                            <div class="filters-params-item">
+                                                <div class="filters-search">
+                                                    <a href="#" class="filters-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><span data-default="Search">Search</span><div class="filters-search-link-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                    <div class="filters-search-content">
+                                                        <div class="filters-search-inner">
+                                                            <div class="filters-search-input"><input type="text" name="search" value="" placeholder=""></div>
+                                                            <div class="filters-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                                        </div>
+                                                        <div class="filters-search-reset"><a href="#">Reset</a></div>
                                                     </div>
                                                 </div>
-                                                <div class="filters-params-item-selected">
-                                                    <div class="filters-params-item-selected-values"></div>
-                                                    <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
-                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="filters-params-item">
-                                            <div class="filters-date">
-                                                <a href="#" class="filters-date-title">date<svg><use xlink:href="images/sprite.svg#filters-date"></use></svg></a>
-                                                <div class="filters-date-content">
-                                                    <input type="hidden" name="date" value="">
-                                                    <div class="filters-date-calendar" id="filters-date-calendar"></div>
-                                                    <div class="filters-date-submit"><input type="submit" value="Apply" class="btn"></div>
-                                                 </div>
-                                                <div class="filters-params-item-selected">
-                                                    <div class="filters-params-item-selected-values"></div>
-                                                    <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="filters-params-item">
-                                            <div class="filters-select" id="price-select">
-                                                <a href="#" class="filters-select-title">price<svg><use xlink:href="images/sprite.svg#filters-select"></use></svg></a>
-                                                <div class="filters-select-content">
-                                                    <div class="filters-select-content-inner">
-                                                        <div class="filters-select-range">
-                                                            <div class="filters-select-range-fields">
-                                                                <div class="filters-select-range-field">
-                                                                    <div class="filters-select-range-field-title"><strong>from</strong> <span>€</span></div>
-                                                                    <div class="filters-select-range-field-input"><input type="text" name="from" value="0" data-default="0"></div>
-                                                                </div>
-                                                                <div class="filters-select-range-field">
-                                                                    <div class="filters-select-range-field-title"><strong>to</strong> <span>€</span></div>
-                                                                    <div class="filters-select-range-field-input"><input type="text" name="to" value="1000" data-default="1000"></div>
-                                                                </div>
+                                            <div class="filters-params-item">
+                                                <div class="filters-date">
+                                                    <div class="filters-date-mobile-header">
+                                                        <div class="filters-date-mobile-title">Set the date</div>
+                                                        <div class="filters-date-mobile-values"></div>
+                                                    </div>
+                                                    <a href="#" class="filters-date-title"><span data-default="Set the date">Set the date</span><svg><use xlink:href="images/sprite.svg#filters-date"></use></svg><div class="filters-date-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                    <div class="filters-date-content">
+                                                        <div class="filters-date-container">
+                                                            <div class="filters-date-mobile-subtitle">Set the date<a href="#" class="filters-date-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
+                                                            <input type="hidden" name="date" value="">
+                                                            <div class="filters-date-calendar" id="filters-date-calendar"></div>
+                                                            <div class="filters-date-content-results">
+                                                                <div class="filters-date-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-date-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                             </div>
-                                                            <div class="filters-select-range-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                        </div>
+                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-item">
+                                                <div class="filters-select">
+                                                    <a href="#" class="filters-select-title">Genre<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                    <div class="filters-select-content">
+                                                        <div class="filters-select-content-search">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                        </div>
+                                                        <div class="filters-select-content-inner">
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Premieres]"><span>Premieres</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Ballet]"><span>Ballet</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Childish]"><span>Childish</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dramatic]"><span>Dramatic</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Comedies]"><span>Comedies</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Musicals]"><span>Musicals</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Operettas]"><span>Operettas</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Opera]"><span>Opera</span></label></div>
+                                                            <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Circus]"><span>Circus</span></label></div>
+                                                        </div>
+                                                        <div class="filters-select-content-results">
+                                                            <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                            <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                            <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="filters-params-item-selected">
-                                                    <div class="filters-params-item-selected-values"></div>
-                                                    <div class="filters-params-item-selected-clear"><a href="#">clear<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a></div>
+                                            </div>
+                                            <div class="filters-params-item">
+                                                <div class="filters-select">
+                                                    <a href="#" class="filters-select-title">Price<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                    <div class="filters-select-content filters-select-content-range">
+                                                        <div class="filters-select-range" data-currency="€">
+                                                            <div class="filters-select-range-examples">
+                                                                <div data-from="10" data-to="30"><span>10–30€</span></div>
+                                                                <div data-from="30" data-to="100"><span>30–100€</span></div>
+                                                                <div data-from="100" data-to="500"><span>100–500€</span></div>
+                                                                <div data-from="500" data-to="5000"><span>500–5000€</span></div>
+                                                            </div>
+                                                            <input type="hidden" name="priceFrom" value="10" class="filters-select-range-from">
+                                                            <input type="hidden" name="priceTo" value="5000" class="filters-select-range-to">
+                                                            <div class="filters-select-range-text">
+                                                                <div class="filters-select-range-text-from">10</div>
+                                                                <div class="filters-select-range-text-to">5000</div>
+                                                            </div>
+                                                            <div class="filters-select-range-slider">
+                                                                <div class="filters-select-range-slider-inner"></div>
+                                                            </div>
+                                                            <div class="filters-select-range-hints">
+                                                                <div class="filters-select-range-hints-item filters-select-range-hints-from">From: <span></span></div>
+                                                                <div class="filters-select-range-hints-item filters-select-range-hints-to">To: <span></span></div>
+                                                            </div>
+                                                            <div class="filters-select-range-params">
+                                                                <div class="filters-select-range-min">10</div>
+                                                                <div class="filters-select-range-max">5000</div>
+                                                                <div class="filters-select-range-step">1</div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Reset</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="filters-params-item">
-                                            <div class="filters-checkbox" id="free-checkbox"><label><input type="checkbox" name="free"><span>free tickets</span></label></div>
-                                        </div>
-                                        <div class="filters-params-clearall">
-                                            <a href="#">clear all<svg><use xlink:href="images/sprite.svg#filters-search-close"></use></svg></a>
+                                            <div class="filters-params-item">
+                                                <div class="filters-checkbox">
+                                                    <div class="filters-checkbox-mobile-header">
+                                                        <div class="filters-checkbox-mobile-title">Free tickets</div>
+                                                        <div class="filters-checkbox-mobile-values"></div>
+                                                    </div>
+                                                    <div class="filters-checkbox-content">
+                                                        <div class="filters-checkbox-container">
+                                                            <div class="filters-checkbox-mobile-subtitle">Free tickets<a href="#" class="filters-checkbox-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
+                                                            <label><input type="checkbox" name="free"><span><em>Free tickets</em><em>Yes</em><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></span></label>
+                                                            <div class="filters-checkbox-content-results">
+                                                                <div class="filters-checkbox-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-checkbox-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="filters-params-clearall">
+                                                <a href="#"><svg><use xlink:href="images/sprite.svg#filters-params-clearall"></use></svg>Clear All</a>
+                                            </div>
+                                            <div class="filters-params-ctrl-mobile">
+                                                <a href="#" class="filters-params-ctrl-mobile-reset">Clear All</a>
+                                                <a href="#" class="btn filters-params-ctrl-mobile-apply">Apply</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
 
-                            </form>
+                                </form>
+                            </div>
+                            <!-- filters END -->
                         </div>
-                        <!-- filters END -->
+                        <!-- page map filters END -->
                     </div>
-                    <!-- page map filters END -->
+                    <!-- page map content END -->
+
+                    <div class="page-map-list-view">
+                        <div class="container">
+                            <a href="#"><svg><use xlink:href="images/sprite.svg#list-view"></use></svg>List view</a>
+                        </div>
+                    </div>
+
                 </div>
                 <!-- page map container END -->
 
@@ -580,54 +474,36 @@
             <footer>
                 <div class="container">
 
-                    <div class="footer-top">
-                        <div class="footer-subscribe">
-                            <div class="footer-subscribe-title">Subscribe</div>
-                            <div class="footer-subscribe-form">
-                                <form action="#" method="post">
-                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
-                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
-                                </form>
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                            <div class="footer-social">
+                                <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                                <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
                             </div>
                         </div>
-                        <div class="footer-catalogue">
-                            <ul>
-                                <li><a href="#">Movie</a></li>
-                                <li><a href="#">Theatre</a></li>
-                                <li><a href="#">Restaurants</a></li>
-                                <li><a href="#">Stand-up</a></li>
-                                <li class="on-mobile"><a href="#">Events on the map</a></li>
-                                <li><a href="#">Concerts</a></li>
-                                <li><a href="#">Exhibitions</a></li>
-                                <li><a href="#">Children</a></li>
-                                <li><a href="#">Sport</a></li>
-                            </ul>
-                        </div>
+
                         <div class="footer-menu">
                             <ul>
-                                <li class="no-mobile"><a href="#">Events on the map</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Persons</a></li>
+                                <li><a href="#">Event Venues</a></li>
+                                <li><a href="#">Events on the map</a></li>
                                 <li><a href="#">About US</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Legal information</a></li>
                             </ul>
                         </div>
 
-                        <div class="footer-lang">
-                            <div class="footer-lang-select">
-                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                <ul>
-                                    <li><a href="#">RU</a></li>
-                                    <li><a href="#">SLO</a></li>
-                                </ul>
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="Subscribe" class="btn"></div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom">
-                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
-                        <div class="footer-social">
-                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
-                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                            <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
                         </div>
                     </div>
 
@@ -646,12 +522,14 @@
         <script>svg4everybody();</script>
 
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/slick/slick.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/air-datepicker/air-datepicker.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

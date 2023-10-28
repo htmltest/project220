@@ -5,13 +5,16 @@
         <title>Zabava</title>
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
     <body>
@@ -25,43 +28,97 @@
                 <header>
                     <div class="container">
                         <div class="header-inner">
-                            <div class="menu-burger-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-burger-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-burger-close"></use></svg></a></div>
-
                             <div class="logo">
                                 <a href="#">
-                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
-                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                    <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
                                 </a>
                             </div>
 
-                            <div class="header-location">
-                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
-                            </div>
+                            <!-- header container -->
+                            <div class="header-container">
+                                <div class="header-location">
+                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></a>
+                                    <div class="header-location-window">
+                                        <div class="header-location-window-search">
+                                            <input type="text" value="">
+                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                        </div>
+                                        <div class="header-location-window-inner">
+                                            <div class="header-location-window-item"><a href="#"><span>Celje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Domžale</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Izola</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Jesenice</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kamnik</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Koper</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kostanjevica na Krki</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kranj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item active"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Logatec</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Maribor</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Murska Sobota</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Nova Gorica</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Novo Mesto</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Postojna</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Ptuj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Škofja Loka</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Trbovlje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Velenje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Vrhnika</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="header-menu">
-                                <ul>
-                                    <li><a href="#">Movie</a></li>
-                                    <li><a href="#">Theatre</a></li>
-                                    <li class="active"><a href="#">Restaurants</a></li>
-                                    <li><a href="#">Stand-up</a></li>
-                                    <li class="with-more">
-                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
-                                        <ul>
-                                            <li><a href="#">Concerts</a></li>
-                                            <li><a href="#">Exhibitions</a></li>
-                                            <li><a href="#">Children</a></li>
-                                            <li><a href="#">Sport</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <div class="header-menu">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="#">Events<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                            <ul>
+                                                <li><a href="#"><span class="header-menu-category category-film"></span>Film<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-music"></span>Music<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-culture"></span>Culture<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li class="active"><a href="#"><span class="header-menu-category category-sports"></span>Sports<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-children"></span>For children<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-education"></span>Education<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-gastronomic"></span>Gastronomic events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-exhibitions"></span>Fairs, trade, and promotional exhibitions<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-social"></span>Social and charity events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Restaurants</a></li>
+                                        <li><a href="#">Persons</a></li>
+                                        <li><a href="#">Event Venues</a></li>
+                                    </ul>
+                                    <div class="header-menu-mobile">
+                                        <div class="header-menu-mobile-item"><a href="#">Events on the map</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">About US</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Privacy Policy</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Legal information</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- header container END -->
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>EN</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">SI<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                        <li class="active"><a href="#">EN<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="header-search">
-                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-search-form">
                                     <form action="#" method="post">
-                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-content">
+                                            <div class="header-search-title">Search</div>
+                                            <div class="header-search-input"><input type="text" name="search" value="" placeholder="Event, actor, place"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></div>
+                                        </div>
                                         <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                        <div class="header-search-submit-mobile"><button type="submit" class="btn">Search</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -70,87 +127,201 @@
                                 <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
                             </div>
 
-                            <div class="header-lang">
-                                <div class="header-lang-select">
-                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                    <ul>
-                                        <li><a href="#">RU</a></li>
-                                        <li><a href="#">SLO</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="menu-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a></div>
                         </div>
                     </div>
                 </header>
 
-                <div class="add-menu">
-                    <div class="container">
-                        <ul>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><strong>John stenj 2</strong></div>
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span>Typography</div>
 
-                    <h1>John stenj 2, druga Druga vrstica je primer dolgega besedila š ž</h1>
-                    <p>A&nbsp;chamber restaurant that has been operating on&nbsp;Sretensky Boulevard for more than 15&nbsp;years, with classics of&nbsp;Italian cuisine and author&rsquo;s recipes from the chef, who can often be&nbsp;found in&nbsp;the hall chatting with guests or&nbsp;cooking pasta in&nbsp;a&nbsp;cheese head. Special attention is&nbsp;paid to&nbsp;the quality of&nbsp;products: ingredients are delivered from the Apennine Peninsula, cheeses are ordered from farmers, tomato sauce is&nbsp;cooked according to&nbsp;a&nbsp;secret recipe. Generous portions of&nbsp;pasta (15&nbsp;types!) in&nbsp;osteria, they are served in&nbsp;plates made by&nbsp;hand from the famous Italian ceramics from Umbria. Attention to&nbsp;detail can be&nbsp;traced not only in&nbsp;the elegant serving, but also in&nbsp;the interior&nbsp;&mdash; the oven is&nbsp;decorated with handmade tiles, the ceilings are painted in&nbsp;Florentine style, chandeliers and Murano glass balls that were ordered in&nbsp;Venice</p>
-                    <h2>John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</h2>
-                    <p>A&nbsp;chamber restaurant that has been operating on&nbsp;Sretensky Boulevard for more than 15&nbsp;years, with classics of&nbsp;Italian cuisine and author&rsquo;s recipes from the chef, who can often be&nbsp;found in&nbsp;the hall chatting with guests or&nbsp;cooking pasta in&nbsp;a&nbsp;cheese head. Special attention is&nbsp;paid to&nbsp;the quality of&nbsp;products: ingredients are delivered from the Apennine Peninsula, cheeses are ordered from farmers, tomato sauce is&nbsp;cooked according to&nbsp;a&nbsp;secret recipe. Generous portions of&nbsp;pasta (15&nbsp;types!) in&nbsp;osteria, they are served in&nbsp;plates made by&nbsp;hand from the famous Italian ceramics from Umbria. Attention to&nbsp;detail can be&nbsp;traced not only in&nbsp;the elegant serving, but also in&nbsp;the interior&nbsp;&mdash; the oven is&nbsp;decorated with handmade tiles, the ceilings are painted in&nbsp;Florentine style, chandeliers and Murano glass balls that were ordered in&nbsp;Venice</p>
-                    <h3>John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</h3>
-                    <p>A&nbsp;chamber restaurant that has been operating on&nbsp;Sretensky Boulevard for more than 15&nbsp;years, with classics of&nbsp;Italian cuisine and author&rsquo;s recipes from the chef, who can often be&nbsp;found in&nbsp;the hall chatting with guests or&nbsp;cooking pasta in&nbsp;a&nbsp;cheese head. Special attention is&nbsp;paid to&nbsp;the quality of&nbsp;products: ingredients are delivered from the Apennine Peninsula, cheeses are ordered from farmers, tomato sauce is&nbsp;cooked according to&nbsp;a&nbsp;secret recipe. Generous portions of&nbsp;pasta (15&nbsp;types!) in&nbsp;osteria, they are served in&nbsp;plates made by&nbsp;hand from the famous Italian ceramics from Umbria. Attention to&nbsp;detail can be&nbsp;traced not only in&nbsp;the elegant serving, but also in&nbsp;the interior&nbsp;&mdash; the oven is&nbsp;decorated with handmade tiles, the ceilings are painted in&nbsp;Florentine style, chandeliers and Murano glass balls that were ordered in&nbsp;Venice</p>
-                    <p>John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</p>
-                    <p>A&nbsp;chamber restaurant that has been operating on&nbsp;Sretensky Boulevard for more than 15&nbsp;years, with classics of&nbsp;Italian cuisine and author&rsquo;s recipes from the chef, who can often be&nbsp;found in&nbsp;the hall chatting with guests or&nbsp;cooking pasta in&nbsp;a&nbsp;cheese head. Special attention is&nbsp;paid to&nbsp;the quality of&nbsp;products: ingredients are delivered from the Apennine Peninsula, cheeses are ordered from farmers, tomato sauce is&nbsp;cooked according to&nbsp;a&nbsp;secret recipe. Generous portions of&nbsp;pasta (15&nbsp;types!) in&nbsp;osteria, they are served in&nbsp;plates made by&nbsp;hand from the famous Italian ceramics from Umbria. Attention to&nbsp;detail can be&nbsp;traced not only in&nbsp;the elegant serving, but also in&nbsp;the interior&nbsp;&mdash; the oven is&nbsp;decorated with handmade tiles, the ceilings are painted in&nbsp;Florentine style, chandeliers and Murano glass balls that were ordered in&nbsp;Venice</p>
-                    <p class="small">John Wick 4<br> Druga vrstica je primer dolgega besedila Č š ž</p>
-
-                    <h2>Form</h2>
-                    <form action="ajax/success.html" method="post" class="ajax-form">
-                        <div class="form-field">
-                            <div class="form-label">Your first and last name</div>
-                            <div class="form-input"><input type="text" name="name" value="" class="required"></div>
+                    <div style="max-width:880px">
+                        <h1>h1. A&nbsp;platform where you can find everything</h1>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <h2>h2. A&nbsp;platform where you can find everything</h2>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <h3>h3. A&nbsp;platform where you can find everything</h3>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <h4>h4. A&nbsp;platform where you can find everything</h4>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship <span class="text-with-hint"><svg><use xlink:href="images/sprite.svg#text-hint-icon"></use></svg><span class="text-with-hint-content">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</span></span> of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <div class="blockquote">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</div>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</p>
+                        <div class="gallery swiper">
+                            <div class="gallery-list swiper-wrapper">
+                                <div class="gallery-item swiper-slide">
+                                    <div class="gallery-item-photo"><img src="files/typography.jpg" alt=""></div>
+                                    <div class="gallery-item-text">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#slider-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#slider-next"></use></svg></div>
                         </div>
-                        <div class="form-field">
-                            <div class="form-label">Country</div>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</p>
+                        <div class="gallery swiper">
+                            <div class="gallery-list swiper-wrapper">
+                                <div class="gallery-item swiper-slide">
+                                    <div class="gallery-item-photo"><img src="files/typography.jpg" alt=""></div>
+                                    <div class="gallery-item-text">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div>
+                                </div>
+                                <div class="gallery-item swiper-slide">
+                                    <div class="gallery-item-photo"><img src="files/typography.jpg" alt=""></div>
+                                    <div class="gallery-item-text">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div>
+                                </div>
+                                <div class="gallery-item swiper-slide">
+                                    <div class="gallery-item-photo"><img src="files/typography.jpg" alt=""></div>
+                                    <div class="gallery-item-text">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#slider-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#slider-next"></use></svg></div>
+                        </div>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <ol>
+                            <li>Film</li>
+                            <li>Music</li>
+                            <li>
+                                Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.
+                                <ol>
+                                    <li>The leading actor of&nbsp;TT&nbsp;Albert Makar.</li>
+                                    <li>The performance is&nbsp;a&nbsp;concert</li>
+                                </ol>
+                            </li>
+                            <li>For children</li>
+                            <li>Gastronomic events</li>
+                        </ol>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                        <ul>
+                            <li>Film</li>
+                            <li>Music</li>
+                            <li>
+                                Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.
+                                <ul>
+                                    <li>The leading actor of&nbsp;TT&nbsp;Albert Makar.</li>
+                                    <li>The performance is&nbsp;a&nbsp;concert</li>
+                                </ul>
+                            </li>
+                            <li>For children</li>
+                            <li>Gastronomic events</li>
+                        </ul>
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                    </div>
+                    <table class="content-table">
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th style="width:193px">time 1</th>
+                                <th style="width:193px">time 2</th>
+                                <th style="width:193px">time 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Gastronomic events</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>For children</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>Music</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="max-width:880px">
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+                    </div>
+                    <table class="content-table content-table-rows">
+                        <tbody>
+                            <tr>
+                                <td>Gastronomic events</td>
+                                <td style="width:193px"><b>20:00</b></td>
+                                <td style="width:193px"><b>21:00</b></td>
+                                <td style="width:193px"><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>For children</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                            <tr>
+                                <td>Music</td>
+                                <td><b>20:00</b></td>
+                                <td><b>21:00</b></td>
+                                <td><b>22:00</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="max-width:880px">
+                        <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar.</p>
+
+                        <h3>Downloads</h3>
+                        <div class="file-link">
+                            <a href="#">
+                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#icon-menu-doc"></use></svg></div>
+                                <div class="file-link-title">Protokol_dopuska_2-A_1.06.pdf</div>
+                                <div class="file-link-info">№ 1233-00 &nbsp;<span>|</span>&nbsp; 15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                            </a>
+                        </div>
+                        <div class="file-link">
+                            <a href="#">
+                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#icon-menu-doc"></use></svg></div>
+                                <div class="file-link-title">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.docx</div>
+                                <div class="file-link-info">№ 1233-00 &nbsp;<span>|</span>&nbsp; 15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                            </a>
+                        </div>
+                        <div class="file-link">
+                            <a href="#">
+                                <div class="file-link-icon"><svg><use xlink:href="images/sprite.svg#icon-menu-doc"></use></svg></div>
+                                <div class="file-link-title">Ticket_224158.pdf</div>
+                                <div class="file-link-info">№ 1233-00 &nbsp;<span>|</span>&nbsp; 15 апреля 2020 &nbsp;<span>|</span>&nbsp; 2.4 Мб</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <h3>Forms</h3>
+                    <form action="ajax/success.html" method="post" class="ajax-form">
+                        <div style="max-width:880px">
+                            <div class="message message-success">
+                                <div class="message-title">Sent</div>
+                                <div class="message-text">The ad&nbsp;block has been verified. Brand management, of&nbsp;course, is&nbsp;a&nbsp;heterogeneous specification of&nbsp;the placement budget. Targeted traffic changes the sociometric ad&nbsp;unit. The market situation slows down the dictatorship of&nbsp;the consumer.</div>
+                            </div>
+
+                            <div class="message message-error">
+                                <div class="message-title">Error</div>
+                                <div class="message-text">The ad&nbsp;block has been verified. Brand management, of&nbsp;course, is&nbsp;a&nbsp;heterogeneous specification of&nbsp;the placement budget. Targeted traffic changes the sociometric ad&nbsp;unit. The market situation slows down the dictatorship of&nbsp;the consumer.</div>
+                            </div>
+                        </div>
+
+                        <div style="max-width:580px">
+                            <div class="form-input"><span>First Name</span><input type="text" name="firstname" value="Mattew" class="required"></div>
+                            <div class="form-input"><span>Last Name</span><input type="text" name="lastname" value="" class="required"></div>
                             <div class="form-select">
-                                <select name="country" class="required" data-placeholder="">
+                                <select name="country" class="required" data-placeholder="Country">
                                     <option value=""></option>
                                     <option value="Afghanistan, Islamic Republic of">Afghanistan, Islamic Republic of</option>
                                     <option value="Albania">Albania</option>
@@ -182,24 +353,64 @@
                                     <option value="Burundi">Burundi</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="form-field">
-                            <div class="form-checkbox">
-                                <label><input type="checkbox" name="checkbox" class="required"><span>Consent to the processing of personal data <a href="#">privacy policy</a></span></label>
+                            <div class="form-input"><span>Text Here</span><textarea name="message" cols="1" rows="1">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
+                            <div class="form-input form-input-date"><span>Set the date</span><input type="text" name="date" value=""></div>
+                            <div class="form-file">
+                                <div class="form-file-input">
+                                    <input type="file" name="file" class="required" />
+                                    <span data-placeholder="Attach"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Attach</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-field">
-                            <div class="form-label">Do you like?</div>
-                            <div class="form-radio">
-                                <label><input type="radio" name="radio" value="0" checked><span>Yes</span></label>
+                            <h4>Get Event</h4>
+                            <div style="display:flex; flex-wrap:wrap;">
+                                <div style="margin-right:120px">
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox1" class="required"><span>Ballet</span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox2"><span>Baby</span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox3"><span>Dramatic</span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox4"><span>Immercive</span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox5"><span>Classic drama</span></label>
+                                    </div>
+                                    <div class="form-checkbox">
+                                        <label><input type="checkbox" name="checkbox6"><span>Musical</span></label>
+                                    </div>
+                                </div>
+                                <div style="margin-right:120px">
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="1"><span>Ballet</span></label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="2"><span>Baby</span></label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="3"><span>Dramatic</span></label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="4"><span>Immercive</span></label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="5"><span>Classic drama</span></label>
+                                    </div>
+                                    <div class="form-radio">
+                                        <label><input type="radio" name="radio" value="6"><span>Musical</span></label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-radio">
-                                <label><input type="radio" name="radio" value="1"><span>Dont know</span></label>
+                            <div class="form-ctrl">
+                                <div class="form-reset"><input type="reset" value="Clear All"></div>
+                                <div class="form-submit"><input type="submit" value="Send big button" class="btn"></div>
                             </div>
+                            <div class="captcha-container"></div>
+                            <div class="captcha-notice">This site uses <a href="https://yandex.com/legal/smartcaptcha_notice/" target="_blank">Yandex SmartCaptcha</a>.</div>
                         </div>
-                        <div class="form-submit"><input type="submit" value="Submit" class="btn"></div>
-                        <div class="captcha-container"></div>
-                        <div class="captcha-notice">This site uses <a href="https://yandex.com/legal/smartcaptcha_notice/" target="_blank">Yandex SmartCaptcha</a>.</div>
                     </form>
 
                 </div>
@@ -211,54 +422,36 @@
             <footer>
                 <div class="container">
 
-                    <div class="footer-top">
-                        <div class="footer-subscribe">
-                            <div class="footer-subscribe-title">Subscribe</div>
-                            <div class="footer-subscribe-form">
-                                <form action="#" method="post">
-                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
-                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
-                                </form>
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                            <div class="footer-social">
+                                <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                                <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
                             </div>
                         </div>
-                        <div class="footer-catalogue">
-                            <ul>
-                                <li><a href="#">Movie</a></li>
-                                <li><a href="#">Theatre</a></li>
-                                <li><a href="#">Restaurants</a></li>
-                                <li><a href="#">Stand-up</a></li>
-                                <li class="on-mobile"><a href="#">Events on the map</a></li>
-                                <li><a href="#">Concerts</a></li>
-                                <li><a href="#">Exhibitions</a></li>
-                                <li><a href="#">Children</a></li>
-                                <li><a href="#">Sport</a></li>
-                            </ul>
-                        </div>
+
                         <div class="footer-menu">
                             <ul>
-                                <li class="no-mobile"><a href="#">Events on the map</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Persons</a></li>
+                                <li><a href="#">Event Venues</a></li>
+                                <li><a href="#">Events on the map</a></li>
                                 <li><a href="#">About US</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Legal information</a></li>
                             </ul>
                         </div>
 
-                        <div class="footer-lang">
-                            <div class="footer-lang-select">
-                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                <ul>
-                                    <li><a href="#">RU</a></li>
-                                    <li><a href="#">SLO</a></li>
-                                </ul>
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="Subscribe" class="btn"></div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom">
-                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
-                        <div class="footer-social">
-                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
-                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                            <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
                         </div>
                     </div>
 
@@ -277,12 +470,14 @@
         <script>svg4everybody();</script>
 
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/slick/slick.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/air-datepicker/air-datepicker.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

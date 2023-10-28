@@ -5,16 +5,19 @@
         <title>Zabava</title>
 
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
         <link rel="stylesheet" href="js/air-datepicker/air-datepicker.css">
+        <link rel="stylesheet" href="js/nouislider/nouislider.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width">
+
+        <link rel="icon" type="image/png" href="favicon.png">
     </head>
 
-    <body class="page-theatre">
+    <body>
 
         <!-- wrapper -->
         <div class="wrapper">
@@ -25,43 +28,97 @@
                 <header>
                     <div class="container">
                         <div class="header-inner">
-                            <div class="menu-burger-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-burger-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-burger-close"></use></svg></a></div>
-
                             <div class="logo">
                                 <a href="#">
-                                    <svg class="logo-left"><use xlink:href="images/sprite.svg#logo-left"></use></svg>
-                                    <svg class="logo-right"><use xlink:href="images/sprite.svg#logo-right"></use></svg>
+                                    <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
                                 </a>
                             </div>
 
-                            <div class="header-location">
-                                <div class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></div>
-                            </div>
+                            <!-- header container -->
+                            <div class="header-container">
+                                <div class="header-location">
+                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></a>
+                                    <div class="header-location-window">
+                                        <div class="header-location-window-search">
+                                            <input type="text" value="">
+                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                        </div>
+                                        <div class="header-location-window-inner">
+                                            <div class="header-location-window-item"><a href="#"><span>Celje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Domžale</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Izola</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Jesenice</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kamnik</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Koper</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kostanjevica na Krki</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Kranj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item active"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Logatec</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Maribor</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Murska Sobota</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Nova Gorica</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Novo Mesto</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Postojna</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Ptuj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Škofja Loka</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Trbovlje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Velenje</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Vrhnika</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <div class="header-menu">
-                                <ul>
-                                    <li><a href="#">Movie</a></li>
-                                    <li class="active"><a href="#">Theatre</a></li>
-                                    <li><a href="#">Restaurants</a></li>
-                                    <li><a href="#">Stand-up</a></li>
-                                    <li class="with-more">
-                                        <a href="#">More<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
-                                        <ul>
-                                            <li><a href="#">Concerts</a></li>
-                                            <li><a href="#">Exhibitions</a></li>
-                                            <li><a href="#">Children</a></li>
-                                            <li><a href="#">Sport</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <div class="header-menu">
+                                    <ul>
+                                        <li class="active">
+                                            <a href="#">Events<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                            <ul>
+                                                <li><a href="#"><span class="header-menu-category category-film"></span>Film<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-music"></span>Music<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-culture"></span>Culture<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-sports"></span>Sports<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-children"></span>For children<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-education"></span>Education<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-gastronomic"></span>Gastronomic events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-exhibitions"></span>Fairs, trade, and promotional exhibitions<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                                <li><a href="#"><span class="header-menu-category category-social"></span>Social and charity events<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Restaurants</a></li>
+                                        <li><a href="#">Persons</a></li>
+                                        <li><a href="#">Event Venues</a></li>
+                                    </ul>
+                                    <div class="header-menu-mobile">
+                                        <div class="header-menu-mobile-item"><a href="#">Events on the map</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">About US</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Privacy Policy</a></div>
+                                        <div class="header-menu-mobile-item"><a href="#">Legal information</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- header container END -->
+
+                            <div class="header-lang">
+                                <div class="header-lang-select">
+                                    <div class="header-lang-select-current"><span>EN</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
+                                    <ul>
+                                        <li><a href="#">SI<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                        <li class="active"><a href="#">EN<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="header-search">
-                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                                <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-search-form">
                                     <form action="#" method="post">
-                                        <div class="header-search-input"><input type="text" name="search" value="" placeholder="EVENT, ACTOR, PLACE"></div>
+                                        <div class="header-search-content">
+                                            <div class="header-search-title">Search</div>
+                                            <div class="header-search-input"><input type="text" name="search" value="" placeholder="Event, actor, place"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></div>
+                                        </div>
                                         <div class="header-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                        <div class="header-search-submit-mobile"><button type="submit" class="btn">Search</button></div>
                                     </form>
                                 </div>
                             </div>
@@ -70,103 +127,70 @@
                                 <a href="windows/auth.html" class="header-user-link window-link"><svg><use xlink:href="images/sprite.svg#header-user"></use></svg></a>
                             </div>
 
-                            <div class="header-lang">
-                                <div class="header-lang-select">
-                                    <div class="header-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                    <ul>
-                                        <li><a href="#">RU</a></li>
-                                        <li><a href="#">SLO</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <div class="menu-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#menu-mobile-link"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a></div>
                         </div>
                     </div>
                 </header>
 
-                <div class="add-menu">
-                    <div class="container">
-                        <ul>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                            <li><a href="#">movie</a></li>
-                            <li><a href="#">theatre</a></li>
-                            <li><a href="#">RESTAURANTS</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">STAND-UP</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">CONCERTS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">EXHIBITIONS</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">children</a></li>
-                            <li><a href="#">sport</a></li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><a href="#">Theatre</a><span>&raquo;</span><strong>Vertinsky. Touring in moscow</strong></div>
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span><a href="#">Theatre</a><span>&raquo;</span>Vertinsky. Touring in moscow</div>
 
-                    <h1>Vertinsky. Touring vertinsky in&nbsp;moscow</h1>
+                    <h1 class="page-title page-title-theatre">Vertinsky. Touring vertinsky in&nbsp;moscow</h1>
 
                     <!-- detail media -->
                     <div class="detail-media">
 
-                        <div class="detail-media-slider">
-                            <div class="detail-media-slider-list">
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
+                        <div class="detail-media-slider swiper">
+                            <div class="detail-media-slider-list swiper-wrapper">
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><div class="youtube-video" data-href="https://www.youtube.com/embed/x0mqfNZI1VE"></div></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><div class="youtube-video" data-id="x0mqfNZI1VE"></div></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><div class="youtube-video" data-id="AOLdn36K7Xk"></div></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
                                 </div>
-                                <div class="detail-media-slider-list-item">
-                                    <div class="detail-media-slider-list-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
+                                <div class="detail-media-slider-item swiper-slide">
+                                    <div class="detail-media-slider-item-inner"><img src="files/detail-theatre-1.jpg" alt=""></div>
                                 </div>
                             </div>
-                            <div class="detail-media-slider-preview">
-                                <a href="#"><img src="files/detail-theatre-1-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-theatre-2-preview.jpg" alt=""><span><svg><use xlink:href="images/sprite.svg#detail-media-video"></use></svg></span></a>
-                                <a href="#"><img src="files/detail-theatre-3-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-theatre-4-preview.jpg" alt=""></a>
-                                <a href="#"><img src="files/detail-theatre-5-preview.jpg" alt=""></a>
+
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#detail-media-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#detail-media-next"></use></svg></div>
+
+                            <div class="detail-media-header">
+                                <div class="detail-media-header-content">
+                                    <div class="detail-media-rating rating-green">4.7</div>
+                                </div>
+                                <a href="#" class="detail-media-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                            </div>
+
+                            <div class="detail-media-info">
+                                <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-price"></use></svg>170-300</div>
+                                <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-date"></use></svg>April 2 at 19:00</div>
+                                <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-place"></use></svg>Ljubljana, Sretensky b-r, 4</div>
                             </div>
                         </div>
 
-                        <div class="detail-media-info">
-                            <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-date"></use></svg>April 2 at 19:00</div>
-                            <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-place"></use></svg>Ljubljana, Empire Lounge</div>
-                            <div class="detail-media-info-item"><svg><use xlink:href="images/sprite.svg#detail-media-info-price"></use></svg>from 22€</div>
+                        <div class="detail-media-slider-preview">
+                            <div class="detail-media-slider-preview-list swiper">
+                                <div class="detail-media-slider-preview-inner swiper-wrapper">
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-theatre-1-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-theatre-3-preview.jpg" alt=""><svg><use xlink:href="images/sprite.svg#detail-media-video"></use></svg></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-theatre-2-preview.jpg" alt=""><svg><use xlink:href="images/sprite.svg#detail-media-video"></use></svg></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-theatre-4-preview.jpg" alt=""></a></div>
+                                    <div class="detail-media-slider-preview-item swiper-slide"><a href="#"><img src="files/detail-theatre-5-preview.jpg" alt=""></a></div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#detail-media-prev"></use></svg></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#detail-media-next"></use></svg></div>
                         </div>
                     </div>
                     <!-- detail media END -->
@@ -181,6 +205,14 @@
 
                             <!-- detail info tab -->
                             <div class="detail-info-tab" data-title="Description">
+
+                                <div class="detail-info-ctrl">
+                                    <div class="detail-info-ctrl-left">
+                                        <a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>Buy a&nbsp;ticket</a>
+                                    </div>
+                                    <a href="#" class="detail-info-ctrl-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg>Add to Favorites</span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg>In Favorites</span></a>
+                                </div>
+
                                 <p>Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makarov and the amazing jazz pianist Alexander Kolesnikov will create before your eyes a&nbsp;special Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era. The leading actor of&nbsp;TT&nbsp;Albert Makar</p>
                                 <p>In&nbsp;an&nbsp;hour and a&nbsp;half you will live an&nbsp;artist&rsquo;s life full of&nbsp;happiness and pain. Alexander Vertinsky?.. Albert Makarov?.. No&nbsp;matter whose fate you see in&nbsp;the reflections of&nbsp;mirrors, you will not want to&nbsp;look away. You won&rsquo;t want this bright world to&nbsp;dissolve with the last chord of&nbsp;the piano. Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;conc</p>
 
@@ -199,23 +231,132 @@
                                     </div>
                                 </div>
 
-                                <div class="detail-info-social">
-                                    <div class="detail-info-social-item">
-                                        <div class="detail-info-social-item-title">Website</div>
-                                        <div class="detail-info-social-item-value"><a href="https://docs.google.com/" target="_blank">https://docs.google.com/</a></div>
-                                    </div>
-                                    <div class="detail-info-social-item">
-                                        <div class="detail-info-social-item-title">Social media event</div>
-                                        <div class="detail-info-social-item-value">
-                                            <a href="#" target="_blank"><img src="images/detail-social-fb.svg" alt=""></a>
-                                            <a href="#" target="_blank"><img src="images/detail-social-instagram.svg" alt=""></a>
-                                            <a href="#" target="_blank"><img src="images/detail-social-tiktok.svg" alt=""></a>
+                                <!-- detail info map -->
+                                <div class="detail-info-map">
+                                    <div class="detail-info-map-title">Establishment "Imperial Café" on the map</div>
+                                    <div id="map" class="detail-info-map-container"></div>
+                                    <script src="js/map-config.js"></script>
+                                    <script>
+                                        var map;
+                                        var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
+
+                                        function initMap() {
+                                            map = new google.maps.Map(document.getElementById("map"), {
+                                                center: coordinates,
+                                                styles: styleArray,
+                                                zoom: 12,
+                                                zoomControl: false,
+                                                mapTypeControl: false,
+                                                scaleControl: false,
+                                                streetViewControl: false,
+                                                rotateControl: false,
+                                                fullscreenControl: true,
+                                                fullscreenControlOptions: {
+                                                    position: google.maps.ControlPosition.RIGHT_BOTTOM,
+                                                },
+                                            });
+                                            var marker = new google.maps.Marker({
+                                                position: coordinates,
+                                                map: map,
+                                                icon: new google.maps.MarkerImage(
+                                                    'images/map-icon-restaurants.svg',
+                                                    new google.maps.Size(46, 46),
+                                                    new google.maps.Point(0, 0),
+                                                    new google.maps.Point(23, 23)
+                                                ),
+                                            });
+                                        }
+                                    </script>
+                                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly&key=AIzaSyA0WMOe8YWd0yua6Z4Fr_fOmST1CJs1OW0"></script>
+                                </div>
+                                <!-- detail info map END -->
+
+                                <!-- detail info persones -->
+                                <div class="detail-info-persones">
+                                    <div class="detail-info-persones-title">Persons</div>
+                                    <!-- cards -->
+                                    <div class="cards">
+
+                                        <!-- card -->
+                                        <div class="card">
+                                            <div class="card-inner">
+                                                <a href="#" class="card-content">
+                                                    <div class="card-preview">
+                                                        <div class="card-preview-bg" style="background-image:url(files/persones-02.jpg)"></div>
+                                                    </div>
+                                                    <div class="card-title">Ivan Petrov</div>
+                                                    <div class="card-text">Stand-up, Russia</div>
+                                                </a>
+                                            </div>
                                         </div>
+                                        <!-- card END -->
+
+                                        <!-- card -->
+                                        <div class="card">
+                                            <div class="card-inner">
+                                                <a href="#" class="card-content">
+                                                    <div class="card-preview">
+                                                        <div class="card-preview-bg" style="background-image:url(files/persones-03.jpg)"></div>
+                                                    </div>
+                                                    <div class="card-title">Vladimir Rublev</div>
+                                                    <div class="card-text">Stand-up, Russia</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- card END -->
+
+                                        <!-- card -->
+                                        <div class="card">
+                                            <div class="card-inner">
+                                                <a href="#" class="card-content">
+                                                    <div class="card-preview">
+                                                        <div class="card-preview-bg" style="background-image:url(files/persones-05.jpg)"></div>
+                                                    </div>
+                                                    <div class="card-title">Leo DiCaprio</div>
+                                                    <div class="card-text">Cinema, USA</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- card END -->
+
+                                        <!-- card -->
+                                        <div class="card">
+                                            <div class="card-inner">
+                                                <a href="#" class="card-content">
+                                                    <div class="card-preview">
+                                                        <div class="card-preview-bg" style="background-image:url(files/persones-07.jpg)"></div>
+                                                    </div>
+                                                    <div class="card-title">Mihail G</div>
+                                                    <div class="card-text">Cinema, Russia</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- card END -->
+
+                                        <!-- card -->
+                                        <div class="card">
+                                            <div class="card-inner">
+                                                <a href="#" class="card-content">
+                                                    <div class="card-preview">
+                                                        <div class="card-preview-bg" style="background-image:url(files/persones-09.jpg)"></div>
+                                                    </div>
+                                                    <div class="card-title">Nikas Safronov</div>
+                                                    <div class="card-text">Concerts, Russia</div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- card END -->
+
                                     </div>
-                                    <div class="detail-info-social-item">
-                                        <div class="detail-info-social-item-title">Share in FB</div>
-                                        <div class="detail-info-social-item-value"><img src="files/share-fb.png" alt=""></div>
+                                    <!-- cards END -->
+                                </div>
+                                <!-- detail info persones END -->
+
+                                <div class="detail-info-ctrl">
+                                    <div class="detail-info-ctrl-left">
+                                        <a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>Buy a&nbsp;ticket</a>
                                     </div>
+                                    <a href="#" class="detail-info-ctrl-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg>Add to Favorites</span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg>In Favorites</span></a>
                                 </div>
 
                             </div>
@@ -223,66 +364,426 @@
 
                             <!-- detail info tab -->
                             <div class="detail-info-tab" data-title="Schedule">
-                                <p>The performance is&nbsp;held from May 20&nbsp;to&nbsp;May&nbsp;25 (inclusive)</p>
                                 <div class="detail-schedule">
                                     <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 20</div>
-                                        <div class="detail-schedule-time">at 19:00</div>
-                                        <div class="detail-schedule-year">2023</div>
+                                        <div class="detail-schedule-date">
+                                            <div class="detail-schedule-date-day">07</div>
+                                            <div class="detail-schedule-date-text">
+                                                <div class="detail-schedule-date-weekday">Thursday</div>
+                                                <div class="detail-schedule-date-weekday-short">Th</div>
+                                                <div class="detail-schedule-date-month">September</div>
+                                                <div class="detail-schedule-date-month-short">Sep</div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-schedule-content">
+                                            <div class="detail-schedule-time">19:00</div>
+                                            <div class="detail-schedule-place">Moscow Theater</div>
+                                            <div class="detail-schedule-tickets"><a href="#" class="btn-border">from €40</a></div>
+                                        </div>
                                     </div>
                                     <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 21</div>
-                                        <div class="detail-schedule-time">at 19:00</div>
-                                        <div class="detail-schedule-year">2023</div>
+                                        <div class="detail-schedule-date">
+                                            <div class="detail-schedule-date-day">08</div>
+                                            <div class="detail-schedule-date-text">
+                                                <div class="detail-schedule-date-weekday">Friday</div>
+                                                <div class="detail-schedule-date-weekday-short">Fr</div>
+                                                <div class="detail-schedule-date-month">September</div>
+                                                <div class="detail-schedule-date-month-short">Sep</div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-schedule-content">
+                                            <div class="detail-schedule-time">19:00</div>
+                                            <div class="detail-schedule-place">Moscow Theater</div>
+                                            <div class="detail-schedule-tickets"><a href="#" class="btn-border">from €40</a></div>
+                                        </div>
                                     </div>
                                     <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 22</div>
-                                        <div class="detail-schedule-time">at 19:00</div>
-                                        <div class="detail-schedule-year">2023</div>
+                                        <div class="detail-schedule-date">
+                                            <div class="detail-schedule-date-day">09</div>
+                                            <div class="detail-schedule-date-text">
+                                                <div class="detail-schedule-date-weekday">Saturday</div>
+                                                <div class="detail-schedule-date-weekday-short">Sa</div>
+                                                <div class="detail-schedule-date-month">September</div>
+                                                <div class="detail-schedule-date-month-short">Sep</div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-schedule-content">
+                                            <div class="detail-schedule-time">20:00</div>
+                                            <div class="detail-schedule-place">Moscow Theater</div>
+                                            <div class="detail-schedule-tickets"><a href="#" class="btn-border">from €40</a></div>
+                                        </div>
                                     </div>
                                     <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 23</div>
-                                        <div class="detail-schedule-time">at 21:00</div>
-                                        <div class="detail-schedule-year">2023</div>
+                                        <div class="detail-schedule-date">
+                                            <div class="detail-schedule-date-day">10</div>
+                                            <div class="detail-schedule-date-text">
+                                                <div class="detail-schedule-date-weekday">Sunday</div>
+                                                <div class="detail-schedule-date-weekday-short">Su</div>
+                                                <div class="detail-schedule-date-month">September</div>
+                                                <div class="detail-schedule-date-month-short">Sep</div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-schedule-content">
+                                            <div class="detail-schedule-time">16:00</div>
+                                            <div class="detail-schedule-place">Moscow Theater</div>
+                                            <div class="detail-schedule-tickets"><a href="#" class="btn-border">from €40</a></div>
+                                        </div>
                                     </div>
                                     <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 24</div>
-                                        <div class="detail-schedule-time">at 20:00</div>
-                                        <div class="detail-schedule-year">2023</div>
-                                    </div>
-                                    <div class="detail-schedule-row">
-                                        <div class="detail-schedule-date">May 25</div>
-                                        <div class="detail-schedule-time">at 19:00</div>
-                                        <div class="detail-schedule-year">2023</div>
+                                        <div class="detail-schedule-date">
+                                            <div class="detail-schedule-date-day">11</div>
+                                            <div class="detail-schedule-date-text">
+                                                <div class="detail-schedule-date-weekday">Monday</div>
+                                                <div class="detail-schedule-date-weekday-short">Mo</div>
+                                                <div class="detail-schedule-date-month">September</div>
+                                                <div class="detail-schedule-date-month-short">Sep</div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-schedule-content">
+                                            <div class="detail-schedule-time">19:00</div>
+                                            <div class="detail-schedule-place">Moscow Theater</div>
+                                            <div class="detail-schedule-tickets"><a href="#" class="btn-border">from €70</a></div>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="detail-schedule-more"><a href="#">Show more</a></div>
                             </div>
                             <!-- detail info tab END -->
 
                             <!-- detail info tab -->
                             <div class="detail-info-tab" data-title="Reviews">
 
-                                <div class="detail-info-reviews">
-                                    <div class="detail-info-review">
-                                        <div class="detail-info-review-header">
-                                            <div class="detail-info-review-author">Anonim</div>
-                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
-                                        </div>
-                                        <div class="detail-info-review-text">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                <div class="detail-info-reviews-ctrl">
+                                    <div class="detail-info-reviews-ctrl-link">
+                                        <a href="#" class="btn">send a review</a>
                                     </div>
-                                    <div class="detail-info-review">
-                                        <div class="detail-info-review-header">
-                                            <div class="detail-info-review-author">Margarita B</div>
-                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                    <div class="detail-info-reviews-rating">
+                                        <div class="detail-info-reviews-rating-stars">
+                                            <div class="detail-info-reviews-rating-stars-back">
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                            </div>
+                                            <div class="detail-info-reviews-rating-stars-front" style="width:94%">
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#rating-star"></use></svg>
+                                            </div>
                                         </div>
-                                        <div class="detail-info-review-text">Everything is super!</div>
+                                        <div class="detail-info-reviews-rating-value rating-green-text">4.7</div>
                                     </div>
                                 </div>
+
+                                <!-- detail info reviews -->
+                                <div class="detail-info-reviews">
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Sergey B</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Margarita A</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">In an hour and a half you will live an artist's life full of happiness and pain. Alexander Vertinsky?.. Albert Makarov?.. No matter whose fate you see in the reflections of mirrors, you will not want to look away. You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a conc You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word.</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Ignat_1964</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:60%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Sergey B</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Margarita A</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">In an hour and a half you will live an artist's life full of happiness and pain. Alexander Vertinsky?.. Albert Makarov?.. No matter whose fate you see in the reflections of mirrors, you will not want to look away. You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a conc You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word.</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Ignat_1964</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:60%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Sergey B</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Margarita A</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:80%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">In an hour and a half you will live an artist's life full of happiness and pain. Alexander Vertinsky?.. Albert Makarov?.. No matter whose fate you see in the reflections of mirrors, you will not want to look away. You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a conc You won't want this bright world to dissolve with the last chord of the piano. Lyrical, ironic, subtle, achingly sad and sincere story to the last word.</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+
+                                    <!-- detail info review -->
+                                    <div class="detail-info-review">
+                                        <div class="detail-info-review-header">
+                                            <div class="detail-info-review-author">Ignat_1964</div>
+                                            <div class="detail-info-review-date">April 2 at 19:00, 2023</div>
+                                            <div class="detail-info-review-rating">
+                                                <div class="detail-info-review-rating-stars">
+                                                    <div class="detail-info-review-rating-stars-back">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg>
+                                                    </div>
+                                                    <div class="detail-info-review-rating-stars-front" style="width:60%">
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                        <svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="detail-info-review-text">
+                                            <div class="detail-info-review-text-inner">Everything is super! A gorgeous performance. We went in a crowd, it turned out to be inexpensive. We advise everyone. Go — you will not lose</div>
+                                        </div>
+                                        <div class="detail-info-review-text-more"><a href="#"><span>Read more</span><span>Hide</span><svg><use xlink:href="images/sprite.svg#review-text-more"></use></svg></a></div>
+                                    </div>
+                                    <!-- detail info review END -->
+                                </div>
+                                <!-- detail info reviews END -->
+
+                                <div class="detail-reviews-more"><a href="#"><strong>Show more <span>0</span></strong><strong>Hide</strong></a></div>
+
                                 <div class="detail-info-review-new">
-                                    <div class="detail-info-review-new-title">Write a comment</div>
-                                    <form action="#" method="post">
-                                        <div class="form-input"><textarea name="comment" rows="5" cols="10" class="required"></textarea></div>
-                                        <div class="form-submit"><input type="submit" value="send" class="btn"></div>
+                                    <div class="detail-info-review-new-title">Review</div>
+                                    <form action="ajax/review-success.html" method="post">
+                                        <div class="detail-info-review-new-rating" data-error="It is necessary to set an estimate">
+                                            <input type="radio" id="star-5" name="rating" value="5" />
+                                            <label for="star-5" title="Оценка «5»"><svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg><svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg></label>
+                                            <input type="radio" id="star-4" name="rating" value="4" />
+                                            <label for="star-4" title="Оценка «4»"><svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg><svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg></label>
+                                            <input type="radio" id="star-3" name="rating" value="3" />
+                                            <label for="star-3" title="Оценка «3»"><svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg><svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg></label>
+                                            <input type="radio" id="star-2" name="rating" value="2" />
+                                            <label for="star-2" title="Оценка «2»"><svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg><svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg></label>
+                                            <input type="radio" id="star-1" name="rating" value="1" />
+                                            <label for="star-1" title="Оценка «1»"><svg><use xlink:href="images/sprite.svg#rating-star-back"></use></svg><svg><use xlink:href="images/sprite.svg#rating-star-front"></use></svg></label>
+                                        </div>
+                                        <div class="form-input"><span>Text Here</span><textarea name="comment" rows="5" cols="10" class="required"></textarea></div>
+                                        <div class="detail-info-review-new-ctrl">
+                                            <div class="form-reset"><input type="reset" value="Clear"></div>
+                                            <div class="form-submit"><input type="submit" value="send a review" class="btn"></div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -290,20 +791,12 @@
 
                         </div>
                         <!-- detail info tabs END -->
-
-                        <div class="detail-info-ctrl">
-                            <div class="detail-info-ctrl-left">
-                                <a href="#" class="btn btn-orange"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>Buy a&nbsp;ticket</a>
-                                <div class="detail-info-ctrl-price">from 22€</div>
-                            </div>
-                            <a href="#" class="detail-info-ctrl-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg><span>Add to<br> Favorites</span></a>
-                        </div>
                     </div>
                     <!-- detail info END -->
 
                     <!-- other section -->
                     <div class="other-section">
-                        <h2>other performances</h2>
+                        <div class="other-section-title">Events</div>
 
                         <!-- cards -->
                         <div class="cards">
@@ -312,13 +805,15 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-01.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
                                             <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
                                         </div>
-                                        <h3>Looking for a wife, cheap!</h3>
+                                        <div class="card-title">Looking for a wife, cheap!</div>
                                         <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
@@ -327,13 +822,15 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-02.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
                                             <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
                                         </div>
-                                        <h3>Female friendship, or How to get married</h3>
+                                        <div class="card-title">Swan Lake</div>
                                         <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br> Solo performance</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
@@ -342,111 +839,105 @@
                             <div class="card">
                                 <div class="card-inner">
                                     <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/theatre-03.jpg)"></div>
+                                            <div class="card-rating rating-red">2.2</div>
                                             <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
                                         </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
-                                        </div>
-                                        <h3>Looking for a wife, cheap!</h3>
-                                        <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
-                                        </div>
-                                        <h3>Swan Lake</h3>
+                                        <div class="card-title">Female friendship, or How to get married</div>
                                         <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
                                     </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
-                                        </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-01.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 22€</div>
-                                        </div>
-                                        <h3>Looking for a wife, cheap!</h3>
-                                        <div class="card-text">April 15 at 21:00, Empire Lounge,<br> Live music</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-02.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 25€</div>
-                                        </div>
-                                        <h3>Swan Lake</h3>
-                                        <div class="card-text">April, May, Pavilion No. 14 "Azerbaijan"</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
-                                </div>
-                            </div>
-                            <!-- card END -->
-
-                            <!-- card -->
-                            <div class="card">
-                                <div class="card-inner">
-                                    <a href="#" class="card-content">
-                                        <div class="card-preview" style="background-image:url(files/theatre-03.jpg)">
-                                            <div class="card-ticket"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 30€</div>
-                                        </div>
-                                        <h3>Jackpot for your beloved</h3>
-                                        <div class="card-text">April 2 at 19:00, Teresa Durova Theater,<br /> Solo performance</div>
-                                    </a>
-                                    <a href="#" class="card-favourite"><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
                                 </div>
                             </div>
                             <!-- card END -->
 
                         </div>
                         <!-- cards END -->
+
+                        <div class="other-section-more"><a href="#">Show more</a></div>
                     </div>
-                    <!-- main section END -->
+                    <!-- other section END -->
+
+                    <!-- other section -->
+                    <div class="other-section">
+                        <div class="other-section-title"><em>Other</em> establishments</div>
+
+                        <!-- cards -->
+                        <div class="cards">
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/restaurants-01.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
+                                            <div class="card-cost card-cost-3">
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Imperial Café</div>
+                                        <div class="card-text">Krasnoprudnaya, 12, Moscow Marriott Imperial<br> Plaza Hotel, from 12:00 to 23:00</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/restaurants-02.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
+                                            <div class="card-cost card-cost-2">
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="card-title">The Bull</div>
+                                        <div class="card-text">Sushchevskaya, 27, p. 1, BC "Atmosphere",<br> from 12:00 to 23:00</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                            <!-- card -->
+                            <div class="card">
+                                <div class="card-inner">
+                                    <a href="#" class="card-content">
+                                        <div class="card-preview">
+                                            <div class="card-preview-bg" style="background-image:url(files/restaurants-03.jpg)"></div>
+                                            <div class="card-rating rating-green">4.7</div>
+                                            <div class="card-cost card-cost-3">
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                                <svg><use xlink:href="images/sprite.svg#card-cost"></use></svg>
+                                            </div>
+                                        </div>
+                                        <div class="card-title">Grand Cru</div>
+                                        <div class="card-text">Petrovsky b-r, 14, from 12:00 to 23:00</div>
+                                    </a>
+                                    <a href="#" class="card-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                </div>
+                            </div>
+                            <!-- card END -->
+
+                        </div>
+                        <!-- cards END -->
+
+                        <div class="other-section-more"><a href="#">Show more</a></div>
+                    </div>
+                    <!-- other section END -->
 
                 </div>
                 <!-- container END -->
@@ -457,54 +948,36 @@
             <footer>
                 <div class="container">
 
-                    <div class="footer-top">
-                        <div class="footer-subscribe">
-                            <div class="footer-subscribe-title">Subscribe</div>
-                            <div class="footer-subscribe-form">
-                                <form action="#" method="post">
-                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
-                                    <div class="footer-subscribe-submit"><input type="submit" value="send" class="btn"></div>
-                                </form>
+                    <div class="footer-content">
+                        <div class="footer-left">
+                            <div class="footer-logo"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                            <div class="footer-social">
+                                <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
+                                <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
                             </div>
                         </div>
-                        <div class="footer-catalogue">
-                            <ul>
-                                <li><a href="#">Movie</a></li>
-                                <li><a href="#">Theatre</a></li>
-                                <li><a href="#">Restaurants</a></li>
-                                <li><a href="#">Stand-up</a></li>
-                                <li class="on-mobile"><a href="#">Events on the map</a></li>
-                                <li><a href="#">Concerts</a></li>
-                                <li><a href="#">Exhibitions</a></li>
-                                <li><a href="#">Children</a></li>
-                                <li><a href="#">Sport</a></li>
-                            </ul>
-                        </div>
+
                         <div class="footer-menu">
                             <ul>
-                                <li class="no-mobile"><a href="#">Events on the map</a></li>
+                                <li><a href="#">Events</a></li>
+                                <li><a href="#">Restaurants</a></li>
+                                <li><a href="#">Persons</a></li>
+                                <li><a href="#">Event Venues</a></li>
+                                <li><a href="#">Events on the map</a></li>
                                 <li><a href="#">About US</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Legal information</a></li>
                             </ul>
                         </div>
 
-                        <div class="footer-lang">
-                            <div class="footer-lang-select">
-                                <div class="footer-lang-select-current"><span>ENG</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></div>
-                                <ul>
-                                    <li><a href="#">RU</a></li>
-                                    <li><a href="#">SLO</a></li>
-                                </ul>
+                        <div class="footer-subscribe">
+                            <div class="footer-subscribe-form">
+                                <form action="#" method="post">
+                                    <div class="footer-subscribe-input"><input type="text" name="email" value="" placeholder="YOUR E-MAIL" class="required email"></div>
+                                    <div class="footer-subscribe-submit"><input type="submit" value="Subscribe" class="btn"></div>
+                                </form>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom">
-                        <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
-                        <div class="footer-social">
-                            <a href="#" target="_blank" class="footer-social-facebook"><svg><use xlink:href="images/sprite.svg#footer-social-facebook"></use></svg></a>
-                            <a href="#" target="_blank" class="footer-social-instagram"><svg><use xlink:href="images/sprite.svg#footer-social-instagram"></use></svg></a>
+                            <div class="footer-copyrights">© Zabava.Si — slogan saita dlinny ili ne dlinny</div>
                         </div>
                     </div>
 
@@ -523,12 +996,14 @@
         <script>svg4everybody();</script>
 
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/slick/slick.min.js"></script>
         <script src="js/jquery.mask.min.js"></script>
         <script src="js/validation/jquery.validate.min.js"></script>
         <script src="js/select2/select2.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/air-datepicker/air-datepicker.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
+        <script src="js/nouislider/nouislider.min.js"></script>
+        <script src="js/nouislider/wNumb.js"></script>
         <script src="js/tools.js"></script>
 
     </body>
