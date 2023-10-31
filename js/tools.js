@@ -1582,89 +1582,95 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
         }
         if (curIndex > -1) {
             $('.page-map-list .card').eq(curIndex).find('.card-content').click();
-            $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
+            window.setTimeout(function() {
+                $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
+            }, 300);
         }
     });
     google.maps.event.addListener(marker, 'mouseover', function () {
-        var curIndex = -1;
-        for (var i = 0; i < markers.length; i++) {
-            if (marker == markers[i]) {
-                curIndex = i;
+        if ($(window).width() > 1199) {
+            var curIndex = -1;
+            for (var i = 0; i < markers.length; i++) {
+                if (marker == markers[i]) {
+                    curIndex = i;
+                }
             }
-        }
-        if (curIndex > -1) {
-            var curItem = $('.card').eq(curIndex);
-            if (!curItem.hasClass('active')) {
-                var curIcon = null;
-                var iconImg = '';
-                var iconWidth = 0;
-                var iconHeight = 0;
-                var iconCenterX = 0;
-                var iconCenterY = 0;
+            if (curIndex > -1) {
+                var curItem = $('.card').eq(curIndex);
+                if (!curItem.hasClass('active')) {
+                    var curIcon = null;
+                    var iconImg = '';
+                    var iconWidth = 0;
+                    var iconHeight = 0;
+                    var iconCenterX = 0;
+                    var iconCenterY = 0;
 
-                for (var j = 0; j < mapIcons.length; j++) {
-                    if (mapIcons[j].type == curItem.attr('data-type')) {
-                        curIcon = mapIcons[j];
+                    for (var j = 0; j < mapIcons.length; j++) {
+                        if (mapIcons[j].type == curItem.attr('data-type')) {
+                            curIcon = mapIcons[j];
+                        }
                     }
+
+                    iconImg = curIcon.iconBigURL;
+                    iconWidth = curIcon.iconBigWidth;
+                    iconHeight = curIcon.iconBigHeight;
+                    iconCenterX = curIcon.iconBigCenterX;
+                    iconCenterY = curIcon.iconBigCenterY;
+
+                    marker.setIcon(new google.maps.MarkerImage(
+                        iconImg,
+                        new google.maps.Size(iconWidth, iconHeight),
+                        new google.maps.Point(0, 0),
+                        new google.maps.Point(iconCenterX, iconCenterY)
+                    ));
                 }
 
-                iconImg = curIcon.iconBigURL;
-                iconWidth = curIcon.iconBigWidth;
-                iconHeight = curIcon.iconBigHeight;
-                iconCenterX = curIcon.iconBigCenterX;
-                iconCenterY = curIcon.iconBigCenterY;
-
-                marker.setIcon(new google.maps.MarkerImage(
-                    iconImg,
-                    new google.maps.Size(iconWidth, iconHeight),
-                    new google.maps.Point(0, 0),
-                    new google.maps.Point(iconCenterX, iconCenterY)
-                ));
+                $('.page-map-list .card').eq(curIndex).addClass('hover');
+                $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
             }
-
-            $('.page-map-list .card').eq(curIndex).addClass('hover');
-            $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
         }
     });
 
     google.maps.event.addListener(marker, 'mouseout', function () {
-        var curIndex = -1;
-        for (var i = 0; i < markers.length; i++) {
-            if (marker == markers[i]) {
-                curIndex = i;
+        if ($(window).width() > 1199) {
+            var curIndex = -1;
+            for (var i = 0; i < markers.length; i++) {
+                if (marker == markers[i]) {
+                    curIndex = i;
+                }
             }
-        }
-        if (curIndex > -1) {
-            var curItem = $('.card').eq(curIndex);
-            if (!curItem.hasClass('active')) {
-                var curIcon = null;
-                var iconImg = '';
-                var iconWidth = 0;
-                var iconHeight = 0;
-                var iconCenterX = 0;
-                var iconCenterY = 0;
+            if (curIndex > -1) {
+                var curItem = $('.card').eq(curIndex);
+                if (!curItem.hasClass('active')) {
+                    var curIcon = null;
+                    var iconImg = '';
+                    var iconWidth = 0;
+                    var iconHeight = 0;
+                    var iconCenterX = 0;
+                    var iconCenterY = 0;
 
-                for (var j = 0; j < mapIcons.length; j++) {
-                    if (mapIcons[j].type == curItem.attr('data-type')) {
-                        curIcon = mapIcons[j];
+                    for (var j = 0; j < mapIcons.length; j++) {
+                        if (mapIcons[j].type == curItem.attr('data-type')) {
+                            curIcon = mapIcons[j];
+                        }
                     }
+
+                    iconImg = curIcon.iconURL;
+                    iconWidth = curIcon.iconWidth;
+                    iconHeight = curIcon.iconHeight;
+                    iconCenterX = curIcon.iconCenterX;
+                    iconCenterY = curIcon.iconCenterY;
+
+                    marker.setIcon(new google.maps.MarkerImage(
+                        iconImg,
+                        new google.maps.Size(iconWidth, iconHeight),
+                        new google.maps.Point(0, 0),
+                        new google.maps.Point(iconCenterX, iconCenterY)
+                    ));
                 }
 
-                iconImg = curIcon.iconURL;
-                iconWidth = curIcon.iconWidth;
-                iconHeight = curIcon.iconHeight;
-                iconCenterX = curIcon.iconCenterX;
-                iconCenterY = curIcon.iconCenterY;
-
-                marker.setIcon(new google.maps.MarkerImage(
-                    iconImg,
-                    new google.maps.Size(iconWidth, iconHeight),
-                    new google.maps.Point(0, 0),
-                    new google.maps.Point(iconCenterX, iconCenterY)
-                ));
+                $('.page-map-list .card').eq(curIndex).removeClass('hover');
             }
-
-            $('.page-map-list .card').eq(curIndex).removeClass('hover');
         }
     });
     return marker;
