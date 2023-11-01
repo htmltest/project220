@@ -10,8 +10,7 @@
 .select2-container.select2-container--full .select2-selection--multiple .select2-selection__rendered {margin:23px 0 0 0}
 .select2-container .select2-search--inline {display:inline-block; vertical-align:top; margin:0; padding:0}
 .select2-container .select2-search--inline::before {display:none}
-.select2-container .select2-search--inline .select2-search__field {box-sizing:border-box; border:none; font-size:18px; font-weight:normal; line-height:24px; letter-spacing:0; margin:0 0 0 19px; color:#080825; max-width:calc(100% - 8px); padding:0}
-.fonts-loaded .select2-container .select2-search--inline .select2-search__field {font-family:Mulish, sans-serif}
+.select2-container .select2-search--inline .select2-search__field {box-sizing:border-box; border:none; font-size:18px; font-weight:normal; line-height:24px; font-family:Mulish, sans-serif; letter-spacing:0; margin:0 0 0 19px; color:#080825; max-width:calc(100% - 8px); padding:0}
 .select2-container.select2-container--full .select2-search--inline .select2-search__field {padding:10px 0 0 0}
 .select2-container .select2-search--inline .select2-search__field::-webkit-input-placeholder {opacity:1; color:#787B8E}
 .select2-container .select2-search--inline .select2-search__field::-moz-placeholder {opacity:1; color:#787B8E}
@@ -32,8 +31,7 @@
 .select2-container--open .select2-dropdown--below {margin-top:5px}
 .select2-search--dropdown {display:block; padding:0}
 
-.select2-search--dropdown .select2-search__field {position:relative; border:none; font:500 14px/24px Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:40px; box-sizing:border-box; outline:none; border-radius:0; background:#F0F0F0; -webkit-appearance:none}
-.fonts-loaded .select2-search--dropdown .select2-search__field {font-family:Mulish, sans-serif}
+.select2-search--dropdown .select2-search__field {position:relative; border:none; font:500 14px/24px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:40px; box-sizing:border-box; outline:none; border-radius:0; background:#F0F0F0; -webkit-appearance:none}
 .select2-search--dropdown .select2-search__field::-webkit-search-cancel-button {-webkit-appearance:none}
 .select2-search--dropdown.select2-search--hide {display:none}
 
