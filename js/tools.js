@@ -422,6 +422,16 @@ $(document).ready(function() {
         }
         if ($('.filters-calendar-month-day.active').length == 2) {
             $('.filters-calendar-input').val($('.filters-calendar-month-day.active').eq(0).attr('data-date') + ',' + $('.filters-calendar-month-day.active').eq(1).attr('data-date'));
+            $('.filters-params-dates span').html($('.filters-calendar-month-day.active').eq(0).attr('data-date') + '-' + $('.filters-calendar-month-day.active').eq(1).attr('data-date'));
+            $('.filters form').trigger('submit');
+        }
+        if ($('.filters-calendar-month-day.active').length == 1) {
+            $('.filters-calendar-input').val($('.filters-calendar-month-day.active').eq(0).attr('data-date'));
+            $('.filters-params-dates span').html($('.filters-calendar-month-day.active').eq(0).attr('data-date'));
+            $('.filters form').trigger('submit');
+        }
+        if ($('.filters-calendar-month-day.active').length == 0) {
+            $('.filters-calendar-input').val('');
             $('.filters form').trigger('submit');
         }
         if ($('.filters-calendar-month-day.active').length == 3) {
@@ -430,6 +440,26 @@ $(document).ready(function() {
             curDay.addClass('active');
         }
     });
+
+    if ($('.filters-calendar-month-day.active').length > 0) {
+        if ($('.filters-calendar-month-day.active').length == 2) {
+            var activeIndex = $('.filters-calendar-month-day').index($('.filters-calendar-month-day.active').eq(0));
+            var curIndex = $('.filters-calendar-month-day').index($('.filters-calendar-month-day.active').eq(1));
+            var fromIndex = activeIndex + 1;
+            var toIndex = curIndex - 1;
+            for (var i = fromIndex; i < toIndex; i++) {
+                $('.filters-calendar-month-day').eq(i).addClass('in-range');
+            }
+        }
+        if ($('.filters-calendar-month-day.active').length == 2) {
+            $('.filters-calendar-input').val($('.filters-calendar-month-day.active').eq(0).attr('data-date') + ',' + $('.filters-calendar-month-day.active').eq(1).attr('data-date'));
+            $('.filters-params-dates span').html($('.filters-calendar-month-day.active').eq(0).attr('data-date') + '-' + $('.filters-calendar-month-day.active').eq(1).attr('data-date'));
+        }
+        if ($('.filters-calendar-month-day.active').length == 1) {
+            $('.filters-calendar-input').val($('.filters-calendar-month-day.active').eq(0).attr('data-date'));
+            $('.filters-params-dates span').html($('.filters-calendar-month-day.active').eq(0).attr('data-date'));
+        }
+    }
 
     $('.filters-calendar-month-day').mouseenter(function() {
         if ($('.filters-calendar-month-day.active').length == 1) {
@@ -449,6 +479,7 @@ $(document).ready(function() {
     });
 
     $('.filter-letters input').change(function() {
+        $('.filters-params-letters span').html($('.filter-letters input:checked').length);
         $('.filters form').trigger('submit');
     });
 
@@ -757,6 +788,27 @@ $(document).ready(function() {
             var dp = curDate.find('.filters-date-calendar').data('dp');
             dp.clear();
         });
+
+        $('.filters-calendar-month-day.active').removeClass('active');
+        $('.filters-calendar-month-day.in-range').removeClass('in-range');
+        $('.filters-calendar-input').val('');
+        $('.filter-letters input').prop('checked', false);
+
+        $('.filters form').trigger('submit');
+        e.preventDefault();
+    });
+
+    $('.filters-params-dates').click(function(e) {
+        $('.filters-calendar-month-day.active').removeClass('active');
+        $('.filters-calendar-month-day.in-range').removeClass('in-range');
+        $('.filters-calendar-input').val('');
+
+        $('.filters form').trigger('submit');
+        e.preventDefault();
+    });
+
+    $('.filters-params-letters').click(function(e) {
+        $('.filter-letters input').prop('checked', false);
 
         $('.filters form').trigger('submit');
         e.preventDefault();
@@ -1186,9 +1238,11 @@ function updateFiltersStatus() {
 
     $('.filters-params').each(function() {
         var curStatus = false;
+        var countFilters = 0;
 
         if ($('.filters-search-input input').length == 1 && $('.filters-search-input input').val() != '') {
             curStatus = true;
+            countFilters++;
             $('.filters-search').addClass('active');
             $('.filters-search .filters-search-link span').html($('.filters-search-input input').val());
         } else {
@@ -1217,6 +1271,7 @@ function updateFiltersStatus() {
             }
             if (isSelected) {
                 curStatus = true;
+                countFilters++;
                 curSelect.addClass('active');
             } else {
                 curSelect.removeClass('active');
@@ -1229,6 +1284,7 @@ function updateFiltersStatus() {
             var curInput = curDate.find('.filters-date-content input[type="hidden"]');
             if (curInput.val() != '') {
                 curStatus = true;
+                countFilters++;
                 curDate.addClass('active');
                 var curValue = curInput.val().split(',');
                 curDate.find('.filters-date-title span').html(curValue.join('-'));
@@ -1244,12 +1300,31 @@ function updateFiltersStatus() {
             var curCheckbox = $(this);
             if (curCheckbox.find('input').prop('checked')) {
                 curStatus = true;
+                countFilters++;
                 curCheckbox.addClass('active');
                 curCheckbox.find('.filters-checkbox-mobile-values').append('<div class="filters-checkbox-mobile-value">' + curCheckbox.find('span em').eq(1).text() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#filters-select-mobile-value-remove"></use></svg></a></div>');
             } else {
                 curCheckbox.removeClass('active');
             }
         });
+
+        if ($('.filters-calendar-input').length == 1 && $('.filters-calendar-input').val() != '') {
+            curStatus = true;
+            countFilters++;
+            $('.filters-params-dates').addClass('visible');
+        } else {
+            $('.filters-params-dates').removeClass('visible');
+        }
+
+        if ($('.filter-letters input:checked').length > 0) {
+            curStatus = true;
+            countFilters++;
+            $('.filters-params-letters').addClass('visible');
+        } else {
+            $('.filters-params-letters').removeClass('visible');
+        }
+        
+        $('.filter-params-mobile-link a span').html(countFilters);
 
         if (curStatus) {
             $('.filters-params').addClass('active');

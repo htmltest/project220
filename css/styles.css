@@ -872,6 +872,8 @@ header.fixed .logo svg {width:100px; height:19px}
     .filter-params-mobile-link {display:flex; flex-grow:1}
     .filter-params-mobile-link a {display:flex; align-items:center; padding:0 12px; height:36px; background:#F7F8FC; border-radius:5px; font-weight:600; font-size:14px; line-height:18px; color:#080825}
     .filter-params-mobile-link a svg {display:block; width:20px; height:20px; margin:0 10px 0 0; fill:#1C1B1F}
+    .filter-params-mobile-link a span {display:none; margin:0 0 0 10px; min-width:18px; height:18px; padding:0 5px; text-align:center; font-size:12px; line-height:18px; color:#FFFFFF; border-radius:9px; background:#D75078}
+    .filters-params.active .filter-params-mobile-link a span {display:block}
     .filters-params-inner {display:none}
 
     .filters-mobile-open,
@@ -882,6 +884,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .filters-mobile-open .filter-params-mobile-link {display:block}
     .filters-mobile-open .filter-params-mobile-link a {display:block; position:relative; padding:15px; height:auto; background:none; border-radius:0; font-weight:bold; font-size:24px; line-height:30px}
     .filters-mobile-open .filter-params-mobile-link a svg {display:none}
+    .filters-mobile-open .filters-params.active .filter-params-mobile-link a span {display:none}
     .filters-mobile-open .filter-params-mobile-link a::after {content:""; position:absolute; right:18px; top:18px; width:24px; height:24px; background:url(../images/filters-mobile-close.svg) no-repeat}
     .filters-mobile-open .filters-params-count {display:none}
     .filters-mobile-open .filters-params-map {display:none}
@@ -1005,7 +1008,7 @@ header.fixed .logo svg {width:100px; height:19px}
 .filters-select-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
 
 @media (max-width:1199px) {
-    .filters-select-content-inner {margin:15px}
+    .filters-select-content-inner {margin:15px; max-height:calc(100vh - 203px)}
 }
 
 .filters-select-checkbox {margin:10px 0 0 0; display:flex}
@@ -1165,6 +1168,24 @@ header.fixed .logo svg {width:100px; height:19px}
     .filters-date-content-results-reset a {color:#787B8E; text-decoration:none}
     .filters-date-content-results-submit {flex-grow:1}
     .filters-date-content-results-submit .btn-border {display:block; width:100%; padding:17px 0; font-weight:800; font-size:16px; line-height:20px}
+}
+
+.filters-params-dates {display:none; margin:0 0 10px 10px}
+.filters-params-dates.visible {display:block}
+.filters-params-dates a {display:flex; text-decoration:none; align-items:center; height:34px; border-radius:5px; background:#6768AB; position:relative; padding:0 12px; font-weight:600; font-size:14px; line-height:18px; color:#FFFFFF; transition:background 0.2s, color 0.2s}
+.filters-params-dates a svg {display:block; width:24px; height:24px; fill:#FFFFFF; margin:0 -6px 0 6px}
+
+@media (max-width:1199px) {
+    .filters-params-dates.visible {display:none}
+}
+
+.filters-params-letters {display:none; margin:0 0 10px 10px}
+.filters-params-letters.visible {display:block}
+.filters-params-letters a {display:flex; text-decoration:none; align-items:center; height:34px; border-radius:5px; background:#6768AB; position:relative; padding:0 12px; font-weight:600; font-size:14px; line-height:18px; color:#FFFFFF; transition:background 0.2s, color 0.2s}
+.filters-params-letters a svg {display:block; width:24px; height:24px; fill:#FFFFFF; margin:0 -6px 0 6px}
+
+@media (max-width:1199px) {
+    .filters-params-letters.visible {display:none}
 }
 
 .filters-params-clearall {display:none; margin:0 0 0 10px}
@@ -2181,7 +2202,7 @@ header.fixed .logo svg {width:100px; height:19px}
 .search-form form {display:flex; margin:0; padding:0}
 .search-input {flex-grow:1}
 .search-input {position:relative}
-.search-input input {position:relative; border:1px solid #080825; font:600 12px/15px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:22.5px 20px 22.5px 53px; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:12px; background:#FFFFFF; -webkit-appearance:none}
+.search-input input {position:relative; border:1px solid #080825; font:normal 18px/18px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:20px 20px 20px 53px; width:100%; height:60px; box-sizing:border-box; outline:none; border-radius:12px; background:#FFFFFF; -webkit-appearance:none}
 .search-input input::-webkit-input-placeholder {opacity:1; color:#080825}
 .search-input input::-moz-placeholder {opacity:1; color:#080825}
 .search-input input:-ms-input-placeholder {opacity:1; color:#080825}
@@ -2385,4 +2406,13 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 
 @media (max-width:1199px) {
     .window-auth-notice {margin:16px 0 0 0; font-size:12px; line-height:15px}
+}
+
+.catalogue-empty {margin:40px 0 0 0; background:#F8F8FC; border-radius:12px; text-align:center; padding:60px 40px}
+.catalogue-empty svg {display:block; width:60px; height:60px; margin:0 auto; fill:#080825}
+.catalogue-empty-title {margin:20px 0 0 0; font-weight:600; font-size:24px; line-height:36px; color:#080825}
+.catalogue-empty-text {margin:10px 0 0 0; font-weight:normal; font-size:16px; line-height:24px; color:#787B8E}
+
+@media (max-width:1199px) {
+    .catalogue-empty {margin:25px 0 0 0}
 }
