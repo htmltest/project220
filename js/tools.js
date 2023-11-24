@@ -66,7 +66,7 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.window-close', function(e) {
+    $('body').on('click', '.window-close, .window-close-btn', function(e) {
         windowClose();
         e.preventDefault();
     });
@@ -255,8 +255,7 @@ $(document).ready(function() {
     function initMainPage() {
         $('.main-events-list').each(function() {
             var curGallery = $(this);
-            curGallery.find('.main-events-ctrl-preview').eq(0).addClass('active');
-            const swiper = new Swiper(curGallery[0], {
+            var options = {
                 loop: true,
                 speed: 1000,
                 touchAngle: 30,
@@ -273,20 +272,21 @@ $(document).ready(function() {
                     el: '.swiper-pagination',
                     clickable: true
                 },
-                on: {
-                    slideChangeTransitionStart: function () {
-                        var curSlide = curGallery.find('.swiper-pagination-bullet').index(curGallery.find('.swiper-pagination-bullet-active'));
-                        curGallery.find('.main-events-ctrl-preview.active').removeClass('active');
-                        curGallery.find('.main-events-ctrl-preview').eq(curSlide).addClass('active');
+                breakpoints: {
+                    1200: {
+                        pagination: {
+                            type: 'fraction'
+                        },
                     }
                 }
-            });
-            curGallery.find('.main-events-ctrl-preview').click(function() {
-                if (!$(this).hasClass('active')) {
-                    var curSlide = curGallery.find('.main-events-ctrl-preview').index($(this));
-                    swiper.slideTo(curSlide);
-                }
-            });
+            }
+            if ($(window).width() > 1199) {
+                options['effect'] = 'fade';
+            }
+            if ($('.main-events-item').length > 4) {
+                options['pagination']['dynamicBullets'] = true;
+            }
+            const swiper = new Swiper(curGallery[0], options);
         });
 
         $('.main-section .cards').each(function() {
@@ -903,7 +903,11 @@ $(document).ready(function() {
                     $('.catalogue').removeClass('loading');
                 }).done(function(html) {
                     $('.catalogue').html($(html).html());
-                    $('.filters-params-count span, .filters-select-content-results-count span').html($(html).find('.cards').attr('data-count'));
+                    var count = 0;
+                    $(html).find('.cards').each(function() {
+                        count += Number($(this).attr('data-count'));
+                    });
+                    $('.filters-params-count span, .filters-select-content-results-count span').html(count);
 
                     updateFiltersStatus();
 
@@ -1323,7 +1327,7 @@ function updateFiltersStatus() {
         } else {
             $('.filters-params-letters').removeClass('visible');
         }
-        
+
         $('.filter-params-mobile-link a span').html(countFilters);
 
         if (curStatus) {
@@ -1451,15 +1455,15 @@ function initForm(curForm) {
             });
 
             if (!smartCaptchaWaiting) {
+                var formData = new FormData(form);
+
+                if (curForm.find('[type=file]').length != 0) {
+                    var file = curForm.find('[type=file]')[0].files[0];
+                    formData.append('file', file);
+                }
 
                 if (curForm.hasClass('ajax-form')) {
                     curForm.addClass('loading');
-                    var formData = new FormData(form);
-
-                    if (curForm.find('[type=file]').length != 0) {
-                        var file = curForm.find('[type=file]')[0].files[0];
-                        formData.append('file', file);
-                    }
 
                     $.ajax({
                         type: 'POST',
@@ -1482,6 +1486,8 @@ function initForm(curForm) {
                         }
                         curForm.removeClass('loading');
                     });
+                } else if (curForm.hasClass('window-form')) {
+                    windowOpen(curForm.attr('action'), formData);
                 } else {
                     form.submit();
                 }

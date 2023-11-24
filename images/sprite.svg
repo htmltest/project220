@@ -188,11 +188,11 @@
     </symbol>
 
     <symbol viewBox="0 0 36 36" id="main-events-prev">
-        <path d="M18 17.1L11.1 24L9 21.9L18 12.9L27 21.9L24.9 24L18 17.1Z" />
+        <path d="M19.9993 26.4808L11.5186 18L19.9993 9.51929L21.58 11.1L14.68 18L21.58 24.9L19.9993 26.4808Z" />
     </symbol>
 
     <symbol viewBox="0 0 36 36" id="main-events-next">
-        <path d="M18 18.9L24.9 12L27 14.1L18 23.1L9 14.1L11.1 12L18 18.9Z" />
+        <path d="M16.0007 9.51924L24.4814 18L16.0007 26.4807L14.42 24.9L21.32 18L14.42 11.1L16.0007 9.51924Z" />
     </symbol>
 
     <symbol viewBox="0 0 16 17" id="card-cost">

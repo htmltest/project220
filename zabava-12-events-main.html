@@ -29,13 +29,15 @@
                     <div class="container">
                         <div class="header-inner">
                             <div class="logo">
-                                <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
+                                <a href="#">
+                                    <svg><use xlink:href="images/sprite.svg#logo"></use></svg>
+                                </a>
                             </div>
 
                             <!-- header container -->
                             <div class="header-container">
                                 <div class="header-location">
-                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>Lenart v Slovenskih Goricah</span></a>
+                                    <a href="#" class="header-location-current"><svg><use xlink:href="images/sprite.svg#header-location"></use></svg><span>ljubljana</span></a>
                                     <div class="header-location-window">
                                         <div class="header-location-window-search">
                                             <input type="text" value="">
@@ -50,8 +52,8 @@
                                             <div class="header-location-window-item"><a href="#"><span>Koper</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
                                             <div class="header-location-window-item"><a href="#"><span>Kostanjevica na Krki</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
                                             <div class="header-location-window-item"><a href="#"><span>Kranj</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
-                                            <div class="header-location-window-item active"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
-                                            <div class="header-location-window-item"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item"><a href="#"><span>Lenart v Slovenskih Goricah</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
+                                            <div class="header-location-window-item active"><a href="#"><span>Ljubljana</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
                                             <div class="header-location-window-item"><a href="#"><span>Logatec</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
                                             <div class="header-location-window-item"><a href="#"><span>Maribor</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
                                             <div class="header-location-window-item"><a href="#"><span>Murska Sobota</span><svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></div>
@@ -69,7 +71,7 @@
 
                                 <div class="header-menu">
                                     <ul>
-                                        <li>
+                                        <li class="active">
                                             <a href="#">Events<svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
                                             <ul>
                                                 <li><a href="#"><span class="header-menu-category category-film"></span>Film<svg><use xlink:href="images/sprite.svg#menu-active"></use></svg></a></li>
@@ -133,141 +135,227 @@
                 <!-- container -->
                 <div class="container">
 
-                    <!-- slider -->
-                    <div class="slider swiper">
-                        <div class="swiper-wrapper">
+                    <div class="breadcrumbs"><a href="#">Home</a><span>&raquo;</span>Events</div>
 
-                            <!-- slider item -->
-                            <div class="slider-item swiper-slide">
-                                <div class="slider-item-content">
-                                    <div class="slider-item-bg" style="background-image:url(files/slider-1.jpg)"></div>
-                                    <div class="slider-item-header">
-                                        <div class="slider-item-header-content">
-                                            <div class="slider-item-rating rating-green">4.7</div>
-                                            <div class="slider-item-tags">
-                                                <a href="#">Action</a>
-                                                <span>Science Fiction</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="slider-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                    <h1 class="page-title page-title-theatre">Events</h1>
+
+                    <!-- main events list -->
+                    <div class="main-events-list swiper">
+                        <div class="main-events-list-inner swiper-wrapper">
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-5.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                        <div class="main-events-item-header-tag">Dramas</div>
+                                        <div class="main-events-item-header-tag">18+</div>
                                     </div>
-                                    <div class="slider-item-container">
-                                        <h1><a href="#">The Chronicles of&nbsp;Narnia: The Lion, the Witch and the Wardrobe</a></h1>
-                                        <div class="slider-item-info">
-                                            <div class="slider-item-info-text">April 15&nbsp;at 21:00, Empire Lounge, Live music</div>
-                                            <div class="slider-item-btn"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Game of&nbsp;Thrones</a></div>
+                                        <div class="main-events-item-anonce">A&nbsp;legendary epic that changed television forever. The Game of&nbsp;Thrones series is&nbsp;based on&nbsp;the A&nbsp;Song of&nbsp;Ice and Fire novel series by&nbsp;George R.&nbsp;R. Martin.</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
+                                            <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- slider item END -->
-
-                            <!-- slider item -->
-                            <div class="slider-item swiper-slide in-favourite">
-                                <div class="slider-item-content">
-                                    <div class="slider-item-bg" style="background-image:url(files/slider-2.jpg)"></div>
-                                    <div class="slider-item-header">
-                                        <div class="slider-item-header-content">
-                                            <div class="slider-item-rating rating-green">4.7</div>
-                                            <div class="slider-item-cost slider-item-cost-3"><span>€</span><span>€</span><span>€</span><span>€</span></div>
-                                        </div>
-                                        <a href="#" class="slider-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                    </div>
-                                    <div class="slider-item-container">
-                                        <h1><a href="#">A chamber restaurant<br> on Sretensky Boulevard</a></h1>
-                                        <div class="slider-item-info">
-                                            <div class="slider-item-info-text">Krasnoprudnaya, 12, Moscow Marriott Imperial Plaza<br> Hotel, from 12:00 to 23:00</div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
+                                            <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- slider item END -->
-
-                            <!-- slider item -->
-                            <div class="slider-item swiper-slide">
-                                <div class="slider-item-content">
-                                    <div class="slider-item-bg" style="background-image:url(files/slider-3.jpg)"></div>
-                                    <div class="slider-item-header">
-                                        <div class="slider-item-header-content">
-                                            <div class="slider-item-rating rating-green">4.7</div>
-                                            <div class="slider-item-tags">
-                                                <a href="#">Action</a>
-                                                <span>Science Fiction</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="slider-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                            <div class="main-events-item swiper-slide in-favourite">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
                                     </div>
-                                    <div class="slider-item-container">
-                                        <h1><a href="#">Loftblackout</a></h1>
-                                        <div class="slider-item-info">
-                                            <div class="slider-item-info-text">Slovenia, Ljubljana, 100 square meters,<br> capacity 150 people</div>
-                                            <div class="slider-item-btn"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>22€ per hour</a></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- slider item END -->
-
-                            <!-- slider item -->
-                            <div class="slider-item swiper-slide">
-                                <div class="slider-item-content">
-                                    <div class="slider-item-bg" style="background-image:url(files/slider-4.jpg)"></div>
-                                    <div class="slider-item-header">
-                                        <div class="slider-item-header-content">
-                                            <div class="slider-item-rating rating-green">4.7</div>
-                                            <div class="slider-item-tags">
-                                                <a href="#">Cinema</a>
-                                                <span>Great Britain</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="slider-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
                                     </div>
-                                    <div class="slider-item-container">
-                                        <h1><a href="#">Jake Gyllenhaal</a></h1>
-                                        <div class="slider-item-info">
-                                            <div class="slider-item-info-text">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
+                                        <div class="main-events-item-btns">
+                                            <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
+                                            <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- slider item END -->
-
-                            <!-- slider item -->
-                            <div class="slider-item swiper-slide">
-                                <div class="slider-item-content">
-                                    <div class="slider-item-bg" style="background-image:url(files/slider-1.jpg)"></div>
-                                    <div class="slider-item-header">
-                                        <div class="slider-item-header-content">
-                                            <div class="slider-item-rating rating-green">4.7</div>
-                                            <div class="slider-item-tags">
-                                                <a href="#">Action</a>
-                                                <span>Science Fiction</span>
-                                            </div>
-                                        </div>
-                                        <a href="#" class="slider-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></svg></span><span><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
                                     </div>
-                                    <div class="slider-item-container">
-                                        <h1><a href="#">The Chronicles of&nbsp;Narnia: The Lion, the Witch and the Wardrobe</a></h1>
-                                        <div class="slider-item-info">
-                                            <div class="slider-item-info-text">Continuation of&nbsp;the dashing action movie with Keanu Reeves: new enemies and powerful allies</div>
-                                            <div class="slider-item-btn"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- slider item END -->
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
+                                            <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide in-favourite">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
+                                        <div class="main-events-item-btns">
+                                            <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
+                                            <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
+                                            <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide in-favourite">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
+                                        <div class="main-events-item-btns">
+                                            <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
+                                            <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main-events-item swiper-slide">
+                                <div class="main-events-item-inner">
+                                    <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
+                                    <div class="main-events-item-header">
+                                        <div class="main-events-item-rating rating-green">4.7</div>
+                                    </div>
+                                    <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
+                                    <div class="main-events-item-content">
+                                        <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
+                                        <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
+                                        <div class="main-events-item-btns">
+                                            <a href="#" class="btn main-events-item-more">learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#slider-prev"></use></svg></div>
-                        <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#slider-next"></use></svg></div>
-
+                        <div class="main-events-ctrl">
+                            <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#main-events-prev"></use></svg></div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#main-events-next"></use></svg></div>
+                        </div>
                     </div>
-                    <!-- slider END -->
+                    <!-- main events list END -->
 
                     <!-- filters -->
                     <div class="filters">
-                        <form action="ajax/home.html" method="post">
+                        <form action="ajax/events-main.html" method="post">
 
                             <div class="filters-calendar-wrapper">
                                 <div class="filters-calendar-container">
@@ -277,9 +365,9 @@
                                             <div class="filters-calendar-month">
                                                 <div class="filters-calendar-month-title">August</div>
                                                 <div class="filters-calendar-month-days">
-                                                    <div class="filters-calendar-month-day current" data-date="08/16/2023"><span><em>WE</em>16</span></div>
+                                                    <div class="filters-calendar-month-day" data-date="08/16/2023"><span><em>WE</em>16</span></div>
                                                     <div class="filters-calendar-month-day" data-date="08/17/2023"><span><em>TH</em>17</span></div>
-                                                    <div class="filters-calendar-month-day" data-date="08/18/2023"><span><em>FR</em>18</span></div>
+                                                    <div class="filters-calendar-month-day current" data-date="08/18/2023"><span><em>FR</em>18</span></div>
                                                     <div class="filters-calendar-month-day" data-date="08/19/2023"><span class="weekend"><em>SA</em>19</span></div>
                                                     <div class="filters-calendar-month-day" data-date="08/20/2023"><span class="weekend"><em>SU</em>20</span></div>
                                                     <div class="filters-calendar-month-day" data-date="08/21/2023"><span><em>MO</em>21</span></div>
@@ -335,15 +423,130 @@
                                 </div>
                             </div>
 
+                            <div class="filters-params">
+                                <div class="filter-params-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#filter-params-mobile-link"></use></svg>Filter<span></span></a></div>
+                                <div class="filters-params-inner">
+                                    <div class="filters-params-item">
+                                        <div class="filters-search">
+                                            <a href="#" class="filters-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><span data-default="Search">Search</span><div class="filters-search-link-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                            <div class="filters-search-content">
+                                                <div class="filters-search-inner">
+                                                    <div class="filters-search-input"><input type="text" name="search" value="" placeholder=""></div>
+                                                    <div class="filters-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                                </div>
+                                                <div class="filters-search-reset"><a href="#">Reset</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Genre<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                            <div class="filters-select-content">
+                                                <div class="filters-select-content-search">
+                                                    <input type="text" value="">
+                                                    <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                </div>
+                                                <div class="filters-select-content-inner">
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Premieres]"><span>Premieres</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Ballet]"><span>Ballet</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Childish]"><span>Childish</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dramatic]"><span>Dramatic</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Comedies]"><span>Comedies</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Musicals]"><span>Musicals</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Operettas]"><span>Operettas</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Opera]"><span>Opera</span></label></div>
+                                                    <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Circus]"><span>Circus</span></label></div>
+                                                </div>
+                                                <div class="filters-select-content-results">
+                                                    <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                    <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                    <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-select">
+                                            <a href="#" class="filters-select-title">Price<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                            <div class="filters-select-content filters-select-content-range">
+                                                <div class="filters-select-range" data-currency="€">
+                                                    <div class="filters-select-range-examples">
+                                                        <div data-from="10" data-to="30"><span>10–30€</span></div>
+                                                        <div data-from="30" data-to="100"><span>30–100€</span></div>
+                                                        <div data-from="100" data-to="500"><span>100–500€</span></div>
+                                                        <div data-from="500" data-to="5000"><span>500–5000€</span></div>
+                                                    </div>
+                                                    <input type="hidden" name="priceFrom" value="10" class="filters-select-range-from">
+                                                    <input type="hidden" name="priceTo" value="5000" class="filters-select-range-to">
+                                                    <div class="filters-select-range-text">
+                                                        <div class="filters-select-range-text-from">10</div>
+                                                        <div class="filters-select-range-text-to">5000</div>
+                                                    </div>
+                                                    <div class="filters-select-range-slider">
+                                                        <div class="filters-select-range-slider-inner"></div>
+                                                    </div>
+                                                    <div class="filters-select-range-hints">
+                                                        <div class="filters-select-range-hints-item filters-select-range-hints-from">From: <span></span></div>
+                                                        <div class="filters-select-range-hints-item filters-select-range-hints-to">To: <span></span></div>
+                                                    </div>
+                                                    <div class="filters-select-range-params">
+                                                        <div class="filters-select-range-min">10</div>
+                                                        <div class="filters-select-range-max">5000</div>
+                                                        <div class="filters-select-range-step">1</div>
+                                                    </div>
+                                                    <div class="filters-select-content-results">
+                                                        <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                        <div class="filters-select-content-results-reset"><a href="#">Reset</a></div>
+                                                        <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-item">
+                                        <div class="filters-checkbox">
+                                            <div class="filters-checkbox-mobile-header">
+                                                <div class="filters-checkbox-mobile-title">Free tickets</div>
+                                                <div class="filters-checkbox-mobile-values"></div>
+                                            </div>
+                                            <div class="filters-checkbox-content">
+                                                <div class="filters-checkbox-container">
+                                                    <div class="filters-checkbox-mobile-subtitle">Free tickets<a href="#" class="filters-checkbox-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
+                                                    <label><input type="checkbox" name="free"><span><em>Free tickets</em><em>Yes</em><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></span></label>
+                                                    <div class="filters-checkbox-content-results">
+                                                        <div class="filters-checkbox-content-results-reset"><a href="#">Clear All</a></div>
+                                                        <div class="filters-checkbox-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="filters-params-dates">
+                                        <a href="#">Dates:&nbsp;<span></span><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></a>
+                                    </div>
+                                    <div class="filters-params-clearall">
+                                        <a href="#"><svg><use xlink:href="images/sprite.svg#filters-params-clearall"></use></svg>Clear All</a>
+                                    </div>
+                                    <div class="filters-params-ctrl-mobile">
+                                        <a href="#" class="filters-params-ctrl-mobile-reset">Clear All</a>
+                                        <a href="#" class="btn filters-params-ctrl-mobile-apply">Apply</a>
+                                    </div>
+                                </div>
+                                <div class="filters-params-count"><span>48</span> events</div>
+                                <a href="#" class="filters-params-map"><svg><use xlink:href="images/sprite.svg#icon-map"></use></svg>View on map</a>
+                            </div>
+
                         </form>
                     </div>
                     <!-- filters END -->
 
                     <!-- catalogue -->
                     <div class="catalogue">
+
                         <!-- main section -->
-                        <div class="main-section main-section-theatre">
-                            <h2><a href="#">Events in the coming days<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
+                        <div class="main-section main-section-films">
+                            <h2><a href="#">Films<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
 
                             <!-- cards -->
                             <div class="cards">
@@ -555,7 +758,7 @@
 
                         <!-- main section -->
                         <div class="main-section main-section-concerts">
-                            <h2><a href="#">Recommended concerts<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
+                            <h2><a href="#">Music<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
 
                             <!-- cards -->
                             <div class="cards">
@@ -710,298 +913,9 @@
                         </div>
                         <!-- main section END -->
 
-                        <!-- main events -->
-                        <div class="main-events">
-                            <h2>Now in the&nbsp;<a href="#">cinema<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
-                            <!-- main events list -->
-                            <div class="main-events-list swiper">
-                                <div class="main-events-list-inner swiper-wrapper">
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-5.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                                <div class="main-events-item-header-tag">Dramas</div>
-                                                <div class="main-events-item-header-tag">18+</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Game of&nbsp;Thrones</a></div>
-                                                <div class="main-events-item-anonce">A&nbsp;legendary epic that changed television forever. The Game of&nbsp;Thrones series is&nbsp;based on&nbsp;the A&nbsp;Song of&nbsp;Ice and Fire novel series by&nbsp;George R.&nbsp;R. Martin.</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
-                                                    <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
-                                                    <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide in-favourite">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
-                                                    <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
-                                                    <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide in-favourite">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
-                                                    <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-1.jpg)"></div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Pattie et la colère de Poséidon</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn btn-brown main-events-item-tickets"><svg><use xlink:href="images/sprite.svg#icon-ticket"></use></svg>from 10€</a>
-                                                    <a href="#" class="btn-border main-events-item-schedule"><svg><use xlink:href="images/sprite.svg#icon-schedule"></use></svg>schedule</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide in-favourite">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-2.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">The second restaurant of&nbsp;Ksenia Sobchak and the White Rabbit Family alliance on&nbsp;White Square</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-3.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Jake Gyllenhaal</a></div>
-                                                <div class="main-events-item-btns">
-                                                    <div class="main-events-item-tag"><svg><use xlink:href="images/sprite.svg#icon-tag-movie"></use></svg>Cinema</div>
-                                                    <div class="main-events-item-country"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Great Britain</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="main-events-item swiper-slide">
-                                        <div class="main-events-item-inner">
-                                            <div class="main-events-item-bg" style="background-image:url(files/main-events-4.jpg)"></div>
-                                            <div class="main-events-item-header">
-                                                <div class="main-events-item-rating rating-green">4.7</div>
-                                            </div>
-                                            <a href="#" class="main-events-item-favourite"><span><svg><use xlink:href="images/sprite.svg#icon-favourite"></use></span><span></svg><svg><use xlink:href="images/sprite.svg#icon-favourite-active"></use></svg></span></a>
-                                            <div class="main-events-item-content">
-                                                <div class="main-events-item-title"><a href="#">Loftblackout</a></div>
-                                                <div class="main-events-item-anonce">The brave mouse Patty lives in&nbsp;the heart of&nbsp;Ancient Greece, where absolutely everything is&nbsp;possible. Admiring the local heroes and heavenly...</div>
-                                                <div class="main-events-item-btns">
-                                                    <a href="#" class="btn main-events-item-more">learn more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="main-events-ctrl">
-                                    <div class="swiper-button-prev"><svg><use xlink:href="images/sprite.svg#main-events-prev"></use></svg></div>
-                                    <div class="swiper-pagination"></div>
-                                    <div class="swiper-button-next"><svg><use xlink:href="images/sprite.svg#main-events-next"></use></svg></div>
-                                </div>
-                            </div>
-                            <!-- main events list END -->
-                        </div>
-                        <!-- main events END -->
-
-                        <!-- main restaurants -->
-                        <div class="main-restaurants">
-                            <div class="main-restaurants-subtitle">Slovenian</div>
-                            <div class="main-restaurants-title">Restaurants</div>
-                            <div class="main-restaurants-list">
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-01.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Restaurants in<br> Ljubljana</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-02.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Vegetarian<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-03.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Slovenian<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-04.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Italian<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-05.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Georgian<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-06.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Chinese<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-07.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Bars</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-08.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Coffee<br> shops</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-09.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Georgian<br> cuisine</div>
-                                    </a>
-                                </div>
-                                <div class="main-restaurants-item">
-                                    <a href="#">
-                                        <div class="main-restaurants-item-photo"><div class="main-restaurants-item-photo-inner" style="background-image:url(files/main-restaurants-10.jpg)"></div></div>
-                                        <div class="main-restaurants-item-title">Wine<br> restaurants</div>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="main-restaurants-btn"><a href="#" class="btn btn-red">All restaurants</a></div>
-                        </div>
-                        <!-- main restaurants END -->
-
                         <!-- main section -->
-                        <div class="main-section main-section-concerts">
-                            <h2><a href="#">Persons<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
+                        <div class="main-section main-section-theatre">
+                            <h2><a href="#">Culture<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
 
                             <!-- cards -->
                             <div class="cards">
@@ -1147,8 +1061,8 @@
                         <!-- main section END -->
 
                         <!-- main section -->
-                        <div class="main-section main-section-concerts">
-                            <h2><a href="#">Places<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
+                        <div class="main-section main-section-children">
+                            <h2><a href="#">For&nbsp;children<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
 
                             <!-- cards -->
                             <div class="cards">
@@ -1423,8 +1337,8 @@
                         <!-- main section END -->
 
                         <!-- main section -->
-                        <div class="main-section main-section-concerts">
-                            <h2><a href="#">Event Venues<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
+                        <div class="main-section main-section-sport">
+                            <h2><a href="#">Sport<svg><use xlink:href="images/sprite.svg#main-section-title"></use></svg></a></h2>
 
                             <!-- cards -->
                             <div class="cards">
