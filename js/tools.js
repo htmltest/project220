@@ -269,22 +269,12 @@ $(document).ready(function() {
                     prevEl: '.swiper-button-prev',
                 },
                 pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true
-                },
-                breakpoints: {
-                    1200: {
-                        pagination: {
-                            type: 'fraction'
-                        },
-                    }
+                    type: 'fraction',
+                    el: '.swiper-pagination'
                 }
             }
             if ($(window).width() > 1199) {
                 options['effect'] = 'fade';
-            }
-            if ($('.main-events-item').length > 4) {
-                options['pagination']['dynamicBullets'] = true;
             }
             const swiper = new Swiper(curGallery[0], options);
         });
