@@ -2102,6 +2102,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .page-map-list-content {left:0; top:5px; bottom:5px; right:0}
     .page-map-list-content .catalogue {display:flex}
     .page-map-list-content .card {min-width:255px; max-width:255px; padding:0 0 0 5px; margin:0}
+    .page-map-list-content .card-inner {width:250px}
     .page-map-list-content .card-preview {height:150px}
     .page-map-list-content .card.active .card-content {padding-bottom:32px}
     .page-map-list-content .card-title {font-size:15px; line-height:20px; max-height:40px; position:relative; overflow:hidden}

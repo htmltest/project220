@@ -1033,6 +1033,8 @@ $(document).ready(function() {
                 new google.maps.Point(0, 0),
                 new google.maps.Point(iconCenterX, iconCenterY)
             ));
+
+            map.panTo(markers[curIndex].getPosition());
         }
         e.preventDefault();
     });
@@ -1656,6 +1658,9 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
             window.setTimeout(function() {
                 $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
             }, 300);
+            if (mapSwiper) {
+                mapSwiper.slideTo(curIndex);
+            }
         }
     });
     google.maps.event.addListener(marker, 'mouseover', function () {
@@ -1813,9 +1818,18 @@ $(window).on('load resize scroll', function() {
     });
 });
 
+var mapSwiper;
+
 $(window).on('load resize', function() {
     if ($(window).width() > 1199) {
         if ($('.page-map-list-content').length > 0) {
+            var curSlider = $('.page-map-list-content');
+            if (curSlider.hasClass('swiper-initialized') && mapSwiper) {
+                mapSwiper.destroy();
+                curSlider.removeClass('swiper');
+                curSlider.find('.catalogue').removeClass('swiper-wrapper');
+                curSlider.find('.card').removeClass('swiper-slide');
+            }
             $('.page-map-list-content').mCustomScrollbar('destroy');
             $('.page-map-list-content').mCustomScrollbar({
                 axis: 'y'
@@ -1824,9 +1838,23 @@ $(window).on('load resize', function() {
     } else {
         if ($('.page-map-list-content').length > 0) {
             $('.page-map-list-content').mCustomScrollbar('destroy');
-            $('.page-map-list-content').mCustomScrollbar({
-                axis: 'x'
-            });
+
+            var curSlider = $('.page-map-list-content');
+            if (!curSlider.hasClass('swiper-initialized')) {
+                curSlider.addClass('swiper');
+                curSlider.find('.catalogue').addClass('swiper-wrapper');
+                curSlider.find('.card').addClass('swiper-slide');
+                curSlider.find('.card-content').eq(0).trigger('click');
+                mapSwiper = new Swiper(curSlider[0], {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    on: {
+                        slideChange: function () {
+                            curSlider.find('.card-content').eq(mapSwiper.activeIndex).trigger('click');
+                        },
+                    },
+                });
+            }
         }
     }
 
