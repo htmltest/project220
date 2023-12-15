@@ -1251,6 +1251,8 @@ header.fixed .logo svg {width:100px; height:19px}
 .card-cost-1 svg:nth-child(n+2) {opacity:0.2}
 .card-cost-2 svg:nth-child(n+3) {opacity:0.2}
 .card-cost-3 svg:nth-child(n+4) {opacity:0.2}
+.card-cost-per {font-size:12px; line-height:15px; font-weight:800; text-transform:uppercase}
+.card-cost-per svg {width:24px; height:24px; margin:0 10px 0 0}
 .card-past {position:absolute; display:flex; align-items:center; left:14px; top:14px; padding:0 19px; font-weight:800; font-size:12px; line-height:15px; height:37px; border-radius:30px; color:#080825; text-transform:uppercase; background:#F3F4FA}
 .card-title {margin:12px 0 0 0; font-weight:600; font-size:20px; line-height:26px; color:#080825; transition:color 0.2s}
 @media (min-width:1200px) {
@@ -1276,7 +1278,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .card-rating {left:10px; top:10px}
     .card-ticket {left:10px; bottom:10px; padding:0 12px; border-radius:8px; height:32px}
     .card-ticket svg {margin:0 12px 0 0}
-    .card-cost {left:10px; top:10px; padding:0 15px}
+    .card-cost {left:10px; bottom:10px; padding:0 12px; font-size:10px; line-height:13px; height:28px}
     .card-past {left:10px; top:10px; padding:0 13px; font-size:10px; line-height:13px; height:28px}
     .card-title {margin:10px 0 0 0; font-size:15px; line-height:23px}
     .card-text {margin:2px 0 0 0; font-size:12px; line-height:18px}
