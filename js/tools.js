@@ -1035,6 +1035,9 @@ $(document).ready(function() {
             ));
 
             map.panTo(markers[curIndex].getPosition());
+            if ($('.page-map-list-content').hasClass('swiper-initialized') && mapSwiper) {
+                mapSwiper.slideTo(curIndex);
+            }
         }
         e.preventDefault();
     });
