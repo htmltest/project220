@@ -557,6 +557,16 @@ $(document).ready(function() {
         });
         curSelect.find('.filters-select-checkbox.first-child').removeClass('first-child');
         curSelect.find('.filters-select-checkbox:not(.hidden)').eq(0).addClass('first-child');
+        curSelect.find('.filters-select-group').each(function() {
+            var curGroup = $(this);
+            if (curGroup.find('.filters-select-checkbox:not(.hidden)').length == 0) {
+                curGroup.addClass('hidden');
+            } else {
+                curGroup.removeClass('hidden');
+            }
+        });
+        curSelect.find('.filters-select-group.first-child').removeClass('first-child');
+        curSelect.find('.filters-select-group:not(.hidden)').eq(0).addClass('first-child');
     });
 
     $('.filters-select-content-search input').each(function() {
