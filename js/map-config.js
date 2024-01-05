@@ -3,7 +3,7 @@ var styleArray = [
     "elementType": "geometry",
     "stylers": [
       {
-        "color": "#f5f5f5"
+        "color": "#e5e5e5"
       }
     ]
   },
@@ -27,7 +27,7 @@ var styleArray = [
     "elementType": "labels.text.stroke",
     "stylers": [
       {
-        "color": "#f5f5f5"
+        "color": "#e5e5e5"
       }
     ]
   },

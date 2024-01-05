@@ -1018,7 +1018,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .filters-select-content-search {display:none}
 }
 
-.filters-select-content-inner {position:relative; max-height:288px; overflow:auto; padding:0 13px 0 0; margin:0 5px 0 0}
+.filters-select-content-inner {position:relative; max-height:272px; overflow:auto; padding:0 13px 0 0; margin:0 5px 0 0}
 .filters-select-content-inner::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
 .filters-select-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
 
@@ -1026,11 +1026,11 @@ header.fixed .logo svg {width:100px; height:19px}
     .filters-select-content-inner {margin:15px; max-height:calc(100vh - 203px)}
 }
 
-.filters-select-group {margin:10px 0 0 0}
+.filters-select-group {margin:20px 0 0 0}
 .filters-select-group.hidden {display:none}
 .filters-select-group:first-child,
 .filters-select-group.first-child {margin:0}
-.filters-select-group-title {font-weight:600; font-size:18px; line-height:27px}
+.filters-select-group-title {font-weight:bold; font-size:18px; line-height:27px; margin:0 0 10px 0}
 .filters-select-checkbox {margin:10px 0 0 0; display:flex}
 .filters-select-checkbox.hidden {display:none}
 .filters-select-checkbox:first-child,
@@ -1046,9 +1046,10 @@ header.fixed .logo svg {width:100px; height:19px}
 .filters-select-checkbox input:checked+span::before {background-color:#6768AB; background-position:center}
 
 @media (max-width:1199px) {
-    .filters-select-checkbox {margin:15px 0 0 0}
+    .filters-select-checkbox {margin:12px 0 0 0}
     .filters-select-checkbox:first-child,
     .filters-select-checkbox.first-child {margin:0}
+    .filters-select-group-title {margin:0 0 12px 0}
 }
 
 .filters-select-content-results {margin:10px -10px 0 -10px; border-top:1px solid #DFDFDF; padding:10px 10px 0 10px; display:flex; align-items:center}
@@ -1193,19 +1194,35 @@ header.fixed .logo svg {width:100px; height:19px}
 .filters-params-dates {display:none; margin:0 0 10px 10px}
 .filters-params-dates.visible {display:block}
 .filters-params-dates a {display:flex; text-decoration:none; align-items:center; height:34px; border-radius:5px; background:#6768AB; position:relative; padding:0 12px; font-weight:600; font-size:14px; line-height:18px; color:#FFFFFF; transition:background 0.2s, color 0.2s}
+.filters-params-dates em {font-style:normal}
+.filters-params-dates i {font-style:normal}
 .filters-params-dates a svg {display:block; width:24px; height:24px; fill:#FFFFFF; margin:0 -6px 0 6px}
 
 @media (max-width:1199px) {
+    .filters-params-dates {margin:50px 0 0 0}
     .filters-params-dates.visible {display:none}
+    .filters-mobile-open .filters-params-dates.visible {display:flex}
+    .filters-params-dates a {height:28px; font-size:12px; line-height:28px; padding:0 31px 0 10px; color:#787B8E; background:#F7F8FC; position:relative}
+    .filters-params-dates a svg {width:16px; height:16px; fill:#787B8E; position:absolute; margin:0; right:10px; top:6px}
+    .filters-params-dates em {display:block; position:absolute; left:0; top:-30px; font-weight:800; font-size:16px; line-height:20px; text-transform:uppercase; color:#080825}
+    .filters-params-dates i {display:none}
 }
 
 .filters-params-letters {display:none; margin:0 0 10px 10px}
 .filters-params-letters.visible {display:block}
 .filters-params-letters a {display:flex; text-decoration:none; align-items:center; height:34px; border-radius:5px; background:#6768AB; position:relative; padding:0 12px; font-weight:600; font-size:14px; line-height:18px; color:#FFFFFF; transition:background 0.2s, color 0.2s}
+.filters-params-letters em {font-style:normal}
+.filters-params-letters i {font-style:normal}
 .filters-params-letters a svg {display:block; width:24px; height:24px; fill:#FFFFFF; margin:0 -6px 0 6px}
 
 @media (max-width:1199px) {
+    .filters-params-letters {margin:50px 0 0 0}
     .filters-params-letters.visible {display:none}
+    .filters-mobile-open .filters-params-letters.visible {display:flex}
+    .filters-params-letters a {height:28px; font-size:12px; line-height:28px; padding:0 31px 0 10px; color:#787B8E; background:#F7F8FC; position:relative}
+    .filters-params-letters a svg {width:16px; height:16px; fill:#787B8E; position:absolute; margin:0; right:10px; top:6px}
+    .filters-params-letters em {display:block; position:absolute; left:0; top:-30px; font-weight:800; font-size:16px; line-height:20px; text-transform:uppercase; color:#080825}
+    .filters-params-letters i {display:none}
 }
 
 .filters-params-clearall {display:none; margin:0 0 0 10px}
@@ -1696,6 +1713,14 @@ header.fixed .logo svg {width:100px; height:19px}
 .detail-info-map-title {font-weight:bold; font-size:20px; line-height:25px}
 .detail-info-map-container {margin:20px 0 0 0; height:300px; position:relative; border-radius:16px}
 .detail-info-map-container .gm-fullscreen-control {background:transparent !important; box-shadow:none !important}
+.detail-info-map-container .gm-control-active+div {background:none !important; height:10px !important}
+.detail-info-map-container .gm-bundled-control {right:16px !important; top:16px !important; margin:0 !important}
+.detail-info-map-container .gm-bundled-control .gmnoprint {position:relative !important; left:auto !important; top:auto !important}
+.detail-info-map-container .gm-bundled-control .gmnoprint > div {background:none !important; width:32px !important; height:auto !important; box-shadow:none !important}
+.detail-info-map-container .gm-control-active {border-radius:8px !important; width:32px !important; height:32px !important; box-shadow:none !important; background:#F7F8FC url(../images/google-map-zoom-in.svg) no-repeat center !important}
+.detail-info-map-container .gm-control-active+div+.gm-control-active {background-image:url(../images/google-map-zoom-out.svg) !important}
+.detail-info-map-container .gm-control-active>img {display:none !important}
+.detail-info-map-container .gm-control-active.gm-fullscreen-control {width:44px !important; height:44px !important; background:#F7F8FC url(../images/google-map-fullscreen.svg) no-repeat center !important; right:16px !important; bottom:16px !important; margin:0 !important}
 
 @media (max-width:1199px) {
     .detail-info-map {margin:30px 0}
@@ -2059,10 +2084,10 @@ header.fixed .logo svg {width:100px; height:19px}
 }
 
 .page-map-container-map .gm-control-active+div {background:none !important; height:10px !important}
-.page-map-container-map .gm-bundled-control {right:62px !important; bottom:40px !important}
+.page-map-container-map .gm-bundled-control {right:20px !important; bottom:20px !important; margin:0 !important}
 .page-map-container-map .gm-bundled-control .gmnoprint {position:relative !important; left:auto !important; top:auto !important}
-.page-map-container-map .gm-bundled-control .gmnoprint > div {background:none !important; width:60px !important; height:auto !important; box-shadow:none !important}
-.page-map-container-map .gm-control-active {border-radius:50% !important; width:60px !important; height:60px !important; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15) !important; background:#F7F8FC url(../images/google-map-zoom-in.svg) no-repeat center !important}
+.page-map-container-map .gm-bundled-control .gmnoprint > div {background:none !important; width:32px !important; height:auto !important; box-shadow:none !important}
+.page-map-container-map .gm-control-active {border-radius:8px !important; width:32px !important; height:32px !important; box-shadow:none !important; background:#F7F8FC url(../images/google-map-zoom-in.svg) no-repeat center !important}
 .page-map-container-map .gm-control-active+div+.gm-control-active {background-image:url(../images/google-map-zoom-out.svg) !important}
 .page-map-container-map .gm-control-active>img {display:none !important}
 
@@ -2072,10 +2097,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .page-map-container-map::after {height:96px}
 
     .page-map-container-map .gm-control-active+div {height:8px !important}
-    .page-map-container-map .gm-bundled-control {right:10px !important; bottom:10px !important}
-    .page-map-container-map .gm-bundled-control .gmnoprint > div {width:40px !important}
-    .page-map-container-map .gm-control-active {width:40px !important; height:40px !important; background-image:url(../images/google-map-zoom-in-mobile.svg) !important}
-    .page-map-container-map .gm-control-active+div+.gm-control-active {background-image:url(../images/google-map-zoom-out-mobile.svg) !important}
+    .page-map-container-map .gm-bundled-control {right:15px !important; bottom:65px !important}
 }
 
 .page-map-content {position:absolute; left:0; top:0; bottom:0}
@@ -2157,7 +2179,8 @@ header.fixed .logo svg {width:100px; height:19px}
     .page-map-filters {left:15px; top:10px}
 }
 
-.page-map-list-view {position:absolute; left:0; top:20px; right:0}
+.page-map-list-view {position:absolute; top:20px; right:20px}
+.page-map-list-view .container {max-width:none; padding:0}
 .page-map-list-view .container::after {display:none}
 .page-map-list-view a {float:right; display:flex; height:34px; background:#FFFFFF; text-decoration:none; align-items:center; padding:0 12px; border-radius:5px; color:#080825; font-weight:800; font-size:12px; line-height:15px; letter-spacing:0.05em; text-transform:uppercase; transition:background 0.2s, color 0.2s}
 .page-map-list-view a svg {display:block; width:20px; height:20px; fill:#080825; transition:fill 0.2s; margin:0 8px 0 0}
@@ -2167,7 +2190,7 @@ header.fixed .logo svg {width:100px; height:19px}
 }
 
 @media (max-width:1199px) {
-    .page-map-list-view {left:auto; top:10px; right:0}
+    .page-map-list-view {top:10px; right:15px}
     .page-map-list-view a {height:36px; line-height:14px; line-height:18px; font-weight:600; text-transform:none}
 }
 
