@@ -2285,12 +2285,14 @@ header.fixed .logo svg {width:100px; height:19px}
 .card-more svg {display:block; width:24px; height:24px; fill:#787B8E; margin:0 0 0 10px}
 
 footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#080825 url(../images/footer.svg) no-repeat center top}
+.page-map footer {padding:0}
 
 @media (max-width:1199px) {
     footer {margin:60px 0 0 0; padding:30px 0; background-image:none}
 }
 
 .footer-content {display:flex}
+.page-map .footer-content {flex-wrap:wrap}
 
 @media (max-width:1199px) {
     .footer-content {display:block}
@@ -2317,6 +2319,14 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .footer-social a:last-child {margin:0}
 }
 
+.page-map .footer-left {order:1; min-width:100%; max-width:100%; display:flex; align-items:center; padding:12px 0}
+.page-map .footer-logo {min-width:108px}
+.page-map .footer-logo svg {width:108px; height:20px}
+.page-map .footer-social {margin:0 0 0 40px}
+.page-map .footer-social a {min-width:20px}
+.page-map .footer-social a:last-child {margin:0}
+.page-map .footer-social svg {width:20px; height:20px}
+
 .footer-menu {flex-grow:1; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase}
 .footer-menu ul {display:inline-block; vertical-align:top; margin:0 0 -20px 0; padding:0; list-style:none; column-count:2; column-gap:80px}
 .footer-menu ul li {margin:0; padding:0 0 20px 0; -webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
@@ -2333,6 +2343,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .footer-menu ul li {padding:0; border-top:1px solid #141430}
     .footer-menu ul li a {display:flex; padding:12px 0}
 }
+
+.page-map .footer-menu {order:0; min-width:100%; max-width:100%; border-bottom:1px solid rgba(255, 255, 255, 0.1); padding:10px 0}
+.page-map .footer-menu ul {display:flex; margin:0; column-count:1; column-gap:0; justify-content:space-between}
+.page-map .footer-menu ul li {padding:0}
+.page-map .footer-menu ul li a {display:flex; height:20px; align-items:center; white-space:nowrap}
 
 .footer-subscribe {min-width:478px; max-width:478px}
 .footer-subscribe-form form {margin:0; padding:0; display:flex}
@@ -2366,10 +2381,24 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .footer-subscribe-submit .btn {display:block; padding:20px; font-size:16px; line-height:21px; font-weight:800}
 }
 
+.page-map .footer-subscribe {display:none}
+
 .footer-copyrights {margin:50px 0 0 0; text-align:right; color:#A1A5BC; font-weight:600; font-size:13px; line-height:20px}
+
+.page-map .footer-copyrights {text-align:center; width:100%; margin:0; font-weight:500; font-size:12px; line-height:18px}
 
 @media (max-width:1199px) {
     .footer-copyrights {margin:30px 0 0 0; text-align:left}
+}
+
+.footer-add-menu {font-weight:500; font-size:12px; line-height:18px; white-space:nowrap}
+.footer-add-menu ul {display:flex; margin:0; padding:0; list-style:none}
+.footer-add-menu ul li {margin:0 0 0 30px; padding:0}
+.footer-add-menu ul li:first-child {margin:0}
+.footer-add-menu ul li::before {display:none}
+.footer-add-menu ul li a {color:#A1A5BC; transition:color 0.2s}
+@media (min-width:1200px) {
+    .footer-add-menu ul li a:hover {color:#FFFFFF}
 }
 
 .window-open,
