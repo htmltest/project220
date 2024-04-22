@@ -91,6 +91,10 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
     .btn-border:active {border-color:#D23E6A; background:#D23E6A; color:#FFFFFF; text-decoration:none}
 }
 
+@media (max-width:1199px) {
+    .btn-border {padding:14px 23px; font-size:15px; line-height:19px}
+}
+
 .message {margin:40px 0; padding:21px; display:flex; background:#FFFFFF; border:1px solid #000000; border-radius:12px}
 .message-title {font-weight:600; position:relative; min-width:157px; max-width:157px; margin:0 20px 0 53px; padding:0 20px 0 0; font-size:24px; line-height:41px; border-right:1px solid #C7CAD8}
 .message-title::before {content:""; display:block; position:absolute; left:-53px; top:0px; width:38px; height:38px}
@@ -134,12 +138,36 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:13px; line-height:20px; text-align:left; color:#D75078; letter-spacing:0; position:static}
 .form-input label.error::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-error.svg) no-repeat}
 
+@media (max-width:1199px) {
+    .form-input > span {top:24.5px; font-size:15px; line-height:15px}
+    .form-input.focus > span,
+    .form-input.full > span {top:8px}
+    .form-input input,
+    .form-input textarea {font-size:15px; line-height:23px; padding:21px 50px 3px 19px; height:49px}
+    .form-input label.error::after {top:12.5px}
+}
+
 .form-input input:-webkit-autofill,
 .form-input input:-webkit-autofill:active,
 .form-input input:-webkit-autofill:focus,
 .form-input input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
 
 .form-input-date::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-date.svg) no-repeat; pointer-events:none}
+
+@media (max-width:1199px) {
+    .form-input-date::after {top:12.5px}
+}
+
+.form-input-password-view {position:absolute; right:20px; top:16px; width:24px}
+.form-input input.error+label.error+.form-input-password-view {right:64px}
+.form-input-password-view svg {display:block; width:24px; height:24px; fill:#C7CAD8}
+.form-input.password-view .form-input-password-view svg {display:none; fill:#787B8E}
+.form-input-password-view svg:nth-child(2) {display:none}
+.form-input.password-view .form-input-password-view svg:nth-child(2) {display:block}
+
+@media (max-width:1199px) {
+    .form-input-password-view {top:12.5px}
+}
 
 .air-datepicker.form-input-datepicker {border:none; border-radius:8px; background:#FFFFFF; box-shadow:0px 0px 20px 0px rgba(7, 21, 66, 0.10); padding:0; width:404px}
 .air-datepicker.form-input-datepicker .air-datepicker--pointer {display:none}
@@ -203,10 +231,6 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-checkbox label.error {position:absolute; left:0; bottom:0; right:0; white-space:nowrap}
 .form-checkbox a {text-decoration:none; color:#6768AB}
 
-@media (max-width:1199px) {
-    .form-checkbox {font-size:10px}
-}
-
 .form-radio {margin:10px 0; font-weight:500; font-size:15px; line-height:23px; display:flex}
 .form-radio label {display:block; position:relative}
 .form-radio input {display:none}
@@ -226,10 +250,6 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-radio input:checked+span::after,
 .form-radio input:checked+label.error+span::after {content:""; display:block; width:12px; height:12px; background:#6768AB; border-radius:50%; position:absolute; left:4px; top:5px}
 .form-radio label.error {position:absolute; left:0; bottom:0; right:0; white-space:nowrap}
-
-@media (max-width:1199px) {
-    .form-radio {font-size:10px}
-}
 
 .form-file {position:relative; margin:20px 0}
 .form-file-input {position:relative; overflow:hidden; cursor:pointer}
@@ -266,11 +286,11 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
     .form-submit {margin:14px 0}
 }
 
-.form-group {margin:20px 0; border-top:1px solid #EEEFF8; padding:20px 0 0 0}
+.form-group {margin:40px 0; border-top:1px solid #DFDFDF; padding:40px 0 0 0}
 .form-group:first-child {margin:0; border-top:none; padding:0}
 .form-group > *:first-child {margin-top:0}
 .form-group > *:last-child {margin-bottom:0}
-.form-group-title {font-size:13px; line-height:16px}
+.form-group-title {font-weight:600; font-size:24px; line-height:25px}
 
 @media (max-width:1199px) {
     .form-group {margin:14px 0 0 0}
@@ -2553,3 +2573,86 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .window-success-text {font-size:15px; line-height:23px}
     .window-success-btn a {width:100%}
 }
+
+.cookies-message {position:fixed; z-index:99; left:50%; bottom:15px; width:1000px; margin:0 0 0 -500px; display:flex; align-items:center; padding:16px; background:rgba(8, 8, 37, 0.85); backdrop-filter:blur(5px); border-radius:10px}
+.cookies-message-text {width:100%; font-weight:500; color:#FFFFFF}
+.cookies-message-ctrl {display:flex; align-items:center; white-space:nowrap}
+.cookies-message-link {margin:0 0 0 47px; font-weight:500}
+.cookies-message-link a {color:#D75078; text-decoration:underline}
+@media (min-width:1200px) {
+    .cookies-message-link a:hover {text-decoration:none}
+}
+.cookies-message-btn {margin:0 0 0 47px}
+.cookies-message-btn .btn {padding:12px 30px}
+
+@media screen and (max-width:1199px) {
+    .cookies-message {width:345px; display:block; margin:0 0 0 -172.5px; padding:15px}
+    .cookies-message-text {width:auto}
+    .cookies-message-ctrl {margin:12px 0 0 0; justify-content:space-between}
+    .cookies-message-link {margin:0}
+    .cookies-message-btn {margin:0}
+}
+
+.auth {margin:40px 0 0 0}
+.auth h1 {margin:0; text-align:center}
+.auth-form {margin:40px auto 0 auto; max-width:580px}
+.auth-form form {margin:0; padding:0}
+.auth-form-ctrl {margin:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.auth-form-ctrl-links {display:flex; align-items:center; font-weight:500; font-size:18px; line-height:27px}
+.auth-form-ctrl-link-sep {margin:0 24px; width:1px; background:#C7CAD8; height:27px}
+.auth-form-ctrl-link a {color:#D75078}
+@media (min-width:1200px) {
+    .auth-form-ctrl-link a:hover {color:#EA435D}
+}
+.auth-form-ctrl .form-submit {margin:0}
+.auth-social {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.auth-social a {min-width:calc(50% - 7px); max-width:calc(50% - 7px); display:flex; align-items:center; justify-content:center; height:56px; border:1px solid #DFDFDF; border-radius:12px; font-weight:500; color:#080825; transition:border-color 0.2s}
+.auth-social a img {min-width:18px; max-width:18px; height:18px; margin:0 10px 0 0}
+@media (min-width:1200px) {
+    .auth-social a:hover {border-color:#D75078}
+}
+.auth-feedback {margin:60px 0 0 0; padding:40px 0 0 0; border-top:1px solid #DFDFDF; text-align:center}
+.auth-feedback-title {font-weight:600; font-size:24px; line-height:24px}
+.auth-feedback-btn {margin:20px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .auth {margin:20px 0 0 0}
+    .auth-form {margin:48px 0 0 0; max-width:none}
+    .auth-form-ctrl {display:block}
+    .auth-form-ctrl-links {justify-content:space-between; font-size:15px; line-height:23px}
+    .auth-form-ctrl-link-sep {height:23px}
+    .auth-form-ctrl .form-submit {margin:20px 0 0 0}
+    .auth-form-ctrl .form-submit .btn {width:100%}
+    .auth-social {margin:48px 0 0 0; display:block}
+    .auth-social a {margin:14px 0 0 0; min-width:0; max-width:none; height:49px; font-size:15px; line-height:23px}
+    .auth-feedback {margin:48px 0 0 0}
+    .auth-feedback-title {font-size:20px; line-height:25px}
+    .auth-feedback-btn .btn-border {width:100%}
+}
+
+.recovery-text {margin:40px auto 0 auto; max-width:640px; text-align:center}
+.recovery-text a {color:#D75078}
+@media (min-width:1200px) {
+    .recovery-text a:hover {color:#EA435D}
+}
+
+@media screen and (max-width:1199px) {
+    .recovery-text {margin:48px 0 -8px 0; max-width:none; line-height:26px}
+}
+
+.reg-menu {margin:40px 0 0 0; display:flex; justify-content:center; font-weight:bold; font-size:16px; line-height:21px; text-transform:uppercase; letter-spacing:0.05em}
+.reg-menu ul {margin:0; padding:0; display:flex; list-style:none; border-bottom:1px solid #DFDFDF}
+.reg-menu ul li {margin:0 0 0 40px; padding:0 0 9px 0; position:relative}
+.reg-menu ul li::before {display:none}
+.reg-menu ul li:first-child {margin:0}
+.reg-menu ul li::after {content:""; position:absolute; left:0; bottom:-1px; right:0; height:2px; background:#080825; transition:transform 0.2s; transform-origin:left center; transform:scale(0, 1)}
+.reg-menu ul li.active::after {transform:scale(1, 1)}
+.reg-menu ul li a {color:#787B8E; transition:color 0.2s; text-decoration:none}
+@media (min-width:1200px) {
+    .reg-menu ul li a:hover {color:#080825}
+}
+.reg-menu ul li.active a {color:#080825}
+
+.reg-tabs {position:relative}
+.reg-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+.reg-tab.active {position:relative; left:auto; top:auto; opacity:1}

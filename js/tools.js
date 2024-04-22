@@ -1255,6 +1255,35 @@ $(document).ready(function() {
         $(this).parent().toggleClass('open');
     });
 
+    $('.cookies-message-btn').click(function(e) {
+        $('.cookies-message').fadeOut(500);
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.form-input-password-view', function(e) {
+        var curField = $(this).parents().filter('.form-input');
+        if (curField.find('input').attr('type') == 'password') {
+            curField.find('input').attr('type', 'text');
+            curField.addClass('password-view');
+        } else {
+            curField.find('input').attr('type', 'password');
+            curField.removeClass('password-view');
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.reg-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.reg-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.reg-menu ul li').index(curLi);
+            $('.reg-tab.active').removeClass('active');
+            $('.reg-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
 });
 
 $(window).on('load', function() {
