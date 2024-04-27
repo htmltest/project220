@@ -210,26 +210,13 @@
                             <div class="reg-tab">
                                 <div class="auth-form">
                                     <form action="#" method="post">
-                                        <div class="form-select">
-                                            <select name="legal_entity" class="required" data-placeholder="Legal entity">
-                                                <option value=""></option>
-                                                <option value="company">company</option>
-                                                <option value="cooperative (co-ops)">cooperative (co-ops)</option>
-                                                <option value="corporation">corporation</option>
-                                                <option value="municipality">municipality</option>
-                                                <option value="natural person">natural person</option>
-                                                <option value="political party">political party</option>
-                                                <option value="sovereign">sovereign</option>
-                                                <option value="state">state</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-input"><span>VAT ID</span><input type="text" name="vatid" value="" class="required"></div>
+                                        <div class="form-input"><span>Legal entity</span><input type="text" name="legal_entity" value="" class="required"></div>
+                                        <div class="form-input"><span>Company registration number</span><input type="text" name="reg_number" value="" class="required"></div>
 
                                         <div class="form-group">
                                             <div class="form-group-title">Company</div>
                                             <div class="form-input"><span>Company name</span><input type="text" name="company_name" value="" class="required"></div>
                                             <div class="form-input"><span>Address</span><input type="text" name="company_address" value="" class="required"></div>
-                                            <div class="form-input"><span>Address and bank name</span><input type="text" name="company_bank" value="" class="required"></div>
                                             <div class="form-input"><span>Postal code</span><input type="text" name="company_postal" value="" class="required"></div>
                                             <div class="form-select">
                                                 <select name="country" class="required" data-placeholder="Country">
@@ -267,12 +254,16 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="form-input"><span>Tax identification number</span><input type="text" name="tax_id" value="" class="required"></div>
-                                            <div class="form-input"><span>Company registration number</span><input type="text" name="reg_number" value="" class="required"></div>
-                                            <div class="form-input"><span>Transaction account number</span><input type="text" name="transaction_account" value="" class="required"></div>
-                                            <div class="form-input"><span>Postal code</span><input type="text" name="company_postal" value="" class="required"></div>
+                                            <div class="form-input"><span>Tax identification number</span><input type="text" name="tax_id" value=""></div>
+                                            <div class="form-input"><span>Vat ID</span><input type="text" name="vat_id" value=""></div>
+                                            <div class="form-input"><span>Transaction account number</span><input type="text" name="transaction_account" value=""></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="form-input"><span>Address and bank name</span><input type="text" name="company_bank" value=""></div>
+                                            <div class="form-input"><span>Postal code</span><input type="text" name="bank_postal" value=""></div>
                                             <div class="form-select">
-                                                <select name="country" class="required" data-placeholder="Country">
+                                                <select name="bank_country" data-placeholder="Country">
                                                     <option value=""></option>
                                                     <option value="Afghanistan, Islamic Republic of">Afghanistan, Islamic Republic of</option>
                                                     <option value="Albania">Albania</option>
@@ -302,6 +293,7 @@
                                                     <option value="Bulgaria">Bulgaria</option>
                                                     <option value="Burkina Faso">Burkina Faso</option>
                                                     <option value="Burundi">Burundi</option>
+                                                    <option value="Slovenija">Slovenija</option>
                                                 </select>
                                             </div>
                                         </div>

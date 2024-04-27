@@ -63,7 +63,7 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow {height:56px; position:absolute; top:0; right:0; width:64px}
 .select2-container--default .select2-selection--single .select2-selection__arrow b {width:24px; height:24px; left:50%; margin-left:-12px; margin-top:-12px; position:absolute; background:url(arrow.svg) no-repeat; top:50%}
 
-.select2-container--default.select2-container--disabled .select2-selection--single {border-color:#F3F3F3; background:#F3F3F3; color:#808080; cursor:default}
+.select2-container--default.select2-container--disabled .select2-selection--single {border-color:#C7CAD8; background:rgba(230, 233, 246, 0.5); color:#787B8E; cursor:default}
 .select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear {display:none}
 
 .select2-container--default .select2-selection--multiple {background:#FFFFFF; border:1px solid #C7CAD8; border-radius:8px; cursor:text; transition:border-color 0.2s}

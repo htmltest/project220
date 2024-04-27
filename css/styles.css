@@ -137,6 +137,8 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 .form-input textarea.error {border-color:#D75078}
 label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:13px; line-height:20px; text-align:left; color:#D75078; letter-spacing:0; position:static}
 .form-input label.error::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-error.svg) no-repeat}
+.form-input input:disabled,
+.form-input textarea:disabled {background:rgba(230, 233, 246, 0.5); border-color:#C7CAD8; color:#787B8E; cursor:default; pointer-events:none}
 
 @media (max-width:1199px) {
     .form-input > span {top:24.5px; font-size:15px; line-height:15px}
@@ -160,6 +162,7 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 
 .form-input-password-view {position:absolute; right:20px; top:16px; width:24px}
 .form-input input.error+label.error+.form-input-password-view {right:64px}
+.form-input input:disabled+.form-input-password-view {pointer-events:none}
 .form-input-password-view svg {display:block; width:24px; height:24px; fill:#C7CAD8}
 .form-input.password-view .form-input-password-view svg {display:none; fill:#787B8E}
 .form-input-password-view svg:nth-child(2) {display:none}
@@ -224,6 +227,8 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-checkbox input.error+label.error+span {padding-bottom:25px}
 .form-checkbox input.error+span::before,
 .form-checkbox input.error+label.error+span::before {border-color:#D75078}
+.form-checkbox input:disabled+span {color:#787B8E; cursor:default; pointer-events:none}
+.form-checkbox input:disabled+span::before {border-color:#C7CAD8}
 .form-checkbox input:checked+span,
 .form-checkbox input:checked+label.error+span {border-color:#6768AB}
 .form-checkbox input:checked+span::before,
@@ -647,6 +652,50 @@ header.fixed .logo svg {width:100px; height:19px}
 @media (max-width:1199px) {
     .header-user {order:3; margin:0 30px 0 0}
 }
+
+.header-user-notifications {position:relative; min-width:32px; max-width:32px; margin:0 10px 0 0}
+.header-user-notifications-link {width:32px; height:32px; position:relative; display:flex; align-items:center; justify-content:center; transition:background 0.2s; border-radius:4px}
+@media (min-width:1200px) {
+    .header-user-notifications-link:hover {background:#E7E7EA}
+}
+.header-user-notifications-open .header-user-notifications-link {background:#E7E7EA}
+.header-user-notifications-link svg {display:block; width:24px; height:24px; fill:#1C1B1F}
+.header-user-notifications-link span {position:absolute; right:5px; top:5px; width:10px; height:10px; border:2px solid #FFFFFF; background:#EA435D; border-radius:50%; transition:border-color 0.2s}
+@media (min-width:1200px) {
+    .header-user-notifications-link:hover span {border-color:#E7E7EA}
+}
+.header-user-notifications-open .header-user-notifications-link span {border-color:#E7E7EA}
+.header-user-notifications-list {display:none; position:absolute; left:0; top:100%; margin-top:13px; width:287px; padding:4px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:6px}
+.header-user-notifications-open .header-user-notifications-list {display:block}
+.header-user-notifications-list .account-profile-notification {margin:2px 0 0 0; border-bottom:none; padding:8px 12px 8px 38px; position:relative; border-radius:6px; display:block}
+.header-user-notifications-list .account-profile-notification:first-child {margin:0}
+.header-user-notifications-list .account-profile-notification-header {display:block}
+.header-user-notifications-list .account-profile-notification-icon {position:absolute; left:12px; top:8px; margin:0}
+.header-user-notifications-list .account-profile-notification-date {margin:2px 0 0 0; font-size:13px; line-height:20px}
+.header-user-notifications-sep {margin:8px 0; height:1px; background:#DFDFDF}
+
+.header-user-account {position:relative}
+.header-user-account-link {display:flex; align-items:center; height:23px; padding:0 10px; white-space:nowrap; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; cursor:pointer; color:#080825; border-radius:5px; transition:background 0.2s}
+@media (min-width:1200px) {
+    .header-user-account-link:hover {color:#080825; background:rgba(8, 8, 37, 0.05)}
+}
+.header-user-menu-open .header-user-account-link {background:rgba(8, 8, 37, 0.05)}
+.header-user-account-link span {max-width:140px; position:relative; overflow:hidden; text-overflow:ellipsis}
+.header-user-account-link svg {display:block; width:8px; height:6px; fill:#080825; margin:0 0 0 10px; transition:transform 0.2s}
+.header-user-menu-open .header-user-account-link svg {transform:rotate(-180deg)}
+.header-user-account-menu {display:none; position:absolute; right:0; top:100%; margin:6px 0 0 0; min-width:100%; padding:4px; background:#FFFFFF; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15); border-radius:8px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; white-space:nowrap}
+.header-user-menu-open .header-user-account-menu {display:block}
+.header-user-account-menu-item {margin:2px 0 0 0}
+.header-user-account-menu-item:first-child {margin:0}
+.header-user-account-menu-item a {display:flex; align-items:center; justify-content:space-between; padding:8px 10px; color:#080825; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; border-radius:6px; transition:background 0.2s}
+@media (min-width:1200px) {
+    .header-user-account-menu-item a:hover {background:rgba(8, 8, 37, 0.05)}
+}
+.header-user-account-menu-item.active a {background:rgba(8, 8, 37, 0.05)}
+.header-user-account-menu-item a strong {font-weight:800; flex:1}
+.header-user-account-menu-item a span {margin:0 0 0 10px; color:#FFFFFF; min-width:18px; height:18px; padding:0 3px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:600; font-size:10px; line-height:13px; background:#D75078; border-radius:9px}
+.header-user-account-menu-item a svg {margin:0 0 0 10px; min-width:20px; max-width:20px; height:20px; fill:#080825}
+.header-user-account-menu-sep {margin:2px 0 0 0; height:1px; background:rgba(199, 202, 216, 0.5)}
 
 .header-lang {margin:0 30px 0 0}
 .header-lang-select {position:relative; cursor:pointer}
@@ -2656,3 +2705,173 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .reg-tabs {position:relative}
 .reg-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
 .reg-tab.active {position:relative; left:auto; top:auto; opacity:1}
+
+.page-account .wrapper-inner {background:none}
+.page-account header {border-bottom:1px solid #DFDFDF}
+.page-account header.fixed {border-bottom:none}
+
+.account {margin:60px 0 0 0}
+.account-title {margin:68px 0 0 0; font-size:48px; line-height:62px; font-family:YesevaOne, sans-serif}
+
+.account-container {margin:40px 0 0 0; display:flex; align-items:flex-start}
+.account-menu {min-width:199px; max-width:199px; background:#080825; border-radius:8px; padding:4px}
+.account-menu-item {margin:4px 0 0 0}
+.account-menu-item:first-child {margin:0}
+.account-menu-item a {display:flex; align-items:center; justify-content:space-between; padding:12px 16px; color:#FFFFFF; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; border-radius:6px; transition:background 0.2s}
+@media (min-width:1200px) {
+    .account-menu-item a:hover {background:#25254D}
+}
+.account-menu-item.active a {background:#25254D}
+.account-menu-item a strong {font-weight:800; flex:1}
+.account-menu-item a span {margin:0 0 0 10px; white-space:nowrap; min-width:18px; height:18px; padding:0 3px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:600; font-size:10px; line-height:13px; background:#D75078; border-radius:9px}
+.account-menu-sep {margin:2px 0 -2px 0; height:1px; background:#25254D}
+
+.account-content {flex:1; margin:0 0 0 60px}
+
+.account-profile-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
+
+.account-profile-menu {margin:20px 0 0 0; display:flex; font-size:15px; line-height:19px; font-weight:600}
+.account-profile-menu-inner {display:flex; padding:2px; background:#E6E9F6; border-radius:6px}
+.account-profile-menu-item {margin:0 0 0 2px}
+.account-profile-menu-item:first-child {margin:0}
+.account-profile-menu-item a {display:block; padding:10px 12px; color:#080825; border-radius:4px; transition:background 0.2s}
+@media (min-width:1200px) {
+    .account-profile-menu-item a:hover {background:#FFFFFF}
+}
+.account-profile-menu-item.active a {background:#FFFFFF}
+.account-profile-menu-item a span {display:inline-block; vertical-align:top; width:4px; height:4px; margin:0 0 0 2px; border-radius:50%; background:#FF3672}
+
+.account-profile-tabs {margin:24px 0 0 0; position:relative}
+.account-profile-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+.account-profile-tab.active {position:relative; left:auto; top:auto; opacity:1}
+.account-profile-form {position:relative; max-width:662px}
+
+.account-profile-form-edit {position:absolute; right:0; top:-66px}
+.account-profile-form.editable .account-profile-form-edit {display:none}
+.account-profile-form-edit .btn-border {padding:10px 20px; color:#6768AB; border-color:#6768AB; width:100%; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
+@media (min-width:1200px) {
+    .account-profile-form-edit .btn-border:hover {background:#5253A6; border-color:#5253A6; color:#FFFFFF}
+    .account-profile-form-edit .btn-border:active {background:#4243A9; border-color:#4243A9; color:#FFFFFF}
+}
+.account-profile-form-edit .btn-border svg {min-width:20px; max-width:20px; height:20px; fill:#6768AB; margin:0 10px 0 0; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-profile-form-edit .btn-border:hover svg {fill:#FFFFFF}
+    .account-profile-form-edit .btn-border:active svg {fill:#FFFFFF}
+}
+
+.account-profile-form-save {display:none; position:absolute; right:0; top:-66px}
+.account-profile-form.editable .account-profile-form-save {display:block}
+.account-profile-form-save .btn {padding:11px 20px; background:#6768AB; width:100%; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
+@media (min-width:1200px) {
+    .account-profile-form-save .btn:hover {background:#5253A6}
+    .account-profile-form-save .btn:active {background:#4243A9}
+}
+.account-profile-form-save .btn svg {min-width:20px; max-width:20px; height:20px; fill:#FFFFFF; margin:0 10px 0 0; transition:fill 0.2s}
+
+.account-profile-form form {margin:0; padding:0}
+.account-profile-form .form-input {margin:24px 0}
+.account-profile-form .form-group > *:first-child {margin-top:0}
+.account-profile-form .form-group > *:last-child {margin-bottom:0}
+
+.account-profile-form-password-edit {margin:-12px 0 0 0; text-align:right; font-size:15px; line-height:15px}
+.account-profile-form-password-edit a {color:#D75078; border-bottom:1px dashed #D75078; transition:border-color 0.2s}
+.account-profile-form-password-edit a:hover {border-bottom-color:transparent}
+.account-profile-form-password-edit a span:nth-child(2) {display:none}
+.account-profile-form.password-editable .account-profile-form-password-edit a span:nth-child(1) {display:none}
+.account-profile-form.password-editable .account-profile-form-password-edit a span:nth-child(2) {display:inline}
+.account-profile-form-password-edit-block {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; background:#F7F8FC; border-radius:12px; padding:20px; transition:opacity 0.2s; margin:12px 0 0 0}
+.account-profile-form.password-editable .account-profile-form-password-edit-block {position:relative; left:auto; top:auto; opacity:1}
+.account-profile-form-password-edit-block .form-input:first-child {margin-top:0}
+.account-profile-form-password-sep {margin:20px 0; height:1px; background:#C7CAD8}
+.account-profile-form-password-edit-block .form-submit {margin:0; display:flex; justify-content:flex-end}
+.account-profile-form-password-edit-block .form-submit .btn {padding:10px 20px; background:#6768AB; font-weight:bold; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
+@media (min-width:1200px) {
+    .account-profile-form-password-edit-block .form-submit .btn:hover {background:#5253A6}
+    .account-profile-form-password-edit-block .form-submit .btn:active {background:#4243A9}
+}
+
+.account-profile-notifications-checkbox {margin:24px 0}
+.account-profile-notifications-checkbox span {padding:14px 20px 14px 52px; font-size:18px; line-height:28px; border-radius:8px; background:#F7F7FC}
+.account-profile-notifications-checkbox span::before {left:20px; top:18px; background-color:#FFFFFF}
+.account-profile-notifications-checkbox label.error {z-index:1}
+
+.account-profile-form .form-ctrl {display:none; margin:24px 0 0 0}
+.account-profile-form.editable .form-ctrl {display:flex}
+.account-profile-form .form-reset input {font-weight:600; font-size:16px; line-height:21px; color:rgba(8, 8, 37, 0.4); text-transform:uppercase}
+.account-profile-form .form-submit input {border-radius:8px; font-weight:bold}
+
+.account-profile-form-support {max-width:662px; margin:80px 0 0 0; padding:24px 0 0 0; border-top:1px solid #C7CAD8}
+.account-profile-form-support-title {font-weight:600; font-size:24px; line-height:36px}
+.account-profile-form-support-text {margin:8px 0 0 0; font-weight:600; font-size:18px; line-height:27px; max-width:450px}
+.account-profile-form-support-ctrl {margin:30px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.account-profile-form-support-link .btn {padding:10px 20px; background:#6768AB; width:100%; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
+@media (min-width:1200px) {
+    .account-profile-form-support-link .btn:hover {background:#5253A6}
+    .account-profile-form-support-link .btn:active {background:#4243A9}
+}
+.account-profile-form-support-link .btn svg {min-width:20px; max-width:20px; height:20px; fill:#FFFFFF; margin:0 10px 0 0}
+.account-profile-form-delete-link .btn-border {padding:10px 20px; color:#787B8E; border-color:#E3E4EB; width:100%; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
+@media (min-width:1200px) {
+    .account-profile-form-delete-link .btn-border:hover {background:#D75078; border-color:#D75078; color:#FFFFFF}
+    .account-profile-form-delete-link .btn-border:active {background:#D23E6A; border-color:#D75078; color:#FFFFFF}
+}
+.account-profile-form-delete-link .btn-border svg {min-width:20px; max-width:20px; height:20px; fill:#787B8E; margin:0 10px 0 0; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-profile-form-delete-link .btn-border:hover svg {fill:#FFFFFF}
+    .account-profile-form-delete-link .btn-border:active svg {fill:#FFFFFF}
+}
+
+.account-profile-notifications {border-top:1px solid #DFDFDF}
+.account-profile-notification {border-bottom:1px solid #DFDFDF; display:flex; align-items:center; padding:16px 0; justify-content:space-between; transition:background 0.2s; color:#080825}
+@media (min-width:1200px) {
+    a.account-profile-notification:hover {color:#080825; background:#F3F4FB}
+}
+.account-profile-notification-header {display:flex; align-items:flex-start}
+.account-profile-notification-icon {min-width:16px; max-width:16px; height:22px; display:flex; align-items:center; margin:0 10px 0 0; position:relative}
+.account-profile-notification-icon svg {width:16px}
+.account-profile-notification-icon span {position:absolute; right:-4px; top:0; width:9px; height:9px; border:2px solid #FFFFFF; background:#EA435D; border-radius:50%}
+.account-profile-notification-success .account-profile-notification-icon svg {height:16px; fill:#83B858}
+.account-profile-notification-cancel .account-profile-notification-icon svg {height:16px; fill:#D77E70}
+.account-profile-notification-reviews .account-profile-notification-icon svg {height:16px; fill:#EA435D}
+.account-profile-notification-messages .account-profile-notification-icon svg {height:13px; fill:#EA435D}
+.account-profile-notification-archive .account-profile-notification-icon svg {fill:#787B8E}
+.account-profile-notification-title {font-size:15px; line-height:22px}
+.account-profile-notification-archive .account-profile-notification-title {color:#787B8E}
+.account-profile-notification-title span {color:#D75078}
+.account-profile-notification-archive .account-profile-notification-title span {color:#787B8E}
+.account-profile-notification-date {margin:0 0 0 20px; white-space:nowrap; font-size:15px; line-height:23px; color:#787B8E}
+
+.account-events-header {display:flex; align-items:center; justify-content:space-between}
+.account-events-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
+.account-events-header-add .btn {display:flex; align-items:center; padding:10px 20px; border-radius:6px; font-weight:bold; font-size:12px; line-height:15px}
+.account-events-header-add .btn svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#FFFFFF}
+
+.account-events-list {margin:20px 0 0 0; border-bottom:1px solid #DFDFDF}
+.account-events-item {border-top:1px solid #DFDFDF; padding:16px 0; display:flex; align-items:flex-start}
+.account-events-item-id-date {min-width:160px; max-width:160px}
+.account-events-item-id {font-size:15px; line-height:23px; color:#787B8E}
+.account-events-item-date {margin:3px 0 0 0; font-size:13px; line-height:20px; color:rgba(120, 123, 142, 0.5)}
+.account-events-item-preview {min-width:80px; max-width:80px}
+.account-events-item-preview-inner {height:46px; border-radius:4px; background:no-repeat center; background-size:cover}
+.account-events-item-title {width:100%; margin:0 0 0 20px; font-weight:600; font-size:15px; line-height:23px}
+.account-events-item-info {margin:0 0 0 20px; min-width:170px; max-width:170px; font-size:15px; line-height:23px; color:#787B8E}
+.account-events-item-info-item {padding:0 0 0 30px; position:relative}
+.account-events-item-info-item svg {position:absolute; left:0; top:2px; width:20px; height:20px; fill:#787B8E}
+.account-events-item-stats {margin:0 0 0 20px; min-width:97px; max-width:97px; display:flex; align-items:center; height:35px; border-radius:20px; padding:0 0 0 16px; font-weight:bold; font-size:15px; line-height:23px}
+.account-events-item-stats.to-up {background:rgba(131, 184, 88, 0.1)}
+.account-events-item-stats.to-down {background:rgba(215, 126, 112, 0.1)}
+.account-events-item-stats svg {min-width:20px; max-width:20px; height:20px; margin:0 0 0 6px}
+.account-events-item-stats.to-up svg {fill:#83B858}
+.account-events-item-stats.to-down svg {fill:#D1533F; transform:scale(1, -1)}
+.account-events-item-ctrl {margin:0 0 0 20px; min-width:36px; max-width:36px; height:36px; position:relative; cursor:pointer}
+.account-events-item-ctrl-icon {display:flex; width:36px; height:36px; border-radius:50%; align-items:center; justify-content:center; transition:background 0.2s}
+.account-events-item-ctrl:hover .account-events-item-ctrl-icon {background:rgba(230, 233, 246, 0.5)}
+.account-events-item-ctrl-icon svg {width:24px; height:24px; fill:#787B8E}
+.account-events-item-ctrl-list {display:none; position:absolute; right:0; top:100%; margin-top:9px; padding:4px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:6px; z-index:9}
+.account-events-item-ctrl:hover .account-events-item-ctrl-list {display:block}
+.account-events-item-ctrl-list::before {content:""; position:absolute; left:0; top:-9px; right:0; height:9px}
+.account-events-item-ctrl-list a {display:flex; align-items:center; height:35px; color:#080825; font-weight:600; font-size:15px; line-height:19px; white-space:nowrap; padding:0 10px; border-radius:4px; transition:background 0.2s}
+@media (min-width:1200px) {
+    .account-events-item-ctrl-list a:hover {background:#E6E9F6}
+}
+.account-events-item-ctrl-list a svg {min-width:18px; max-width:18px; height:18px; margin:0 10px 0 0; fill:rgba(8, 8, 37, 0.5)}

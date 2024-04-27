@@ -1981,3 +1981,78 @@ $(window).on('load resize', function() {
         }
     });
 });
+
+$(document).ready(function() {
+
+    $('.header-user-notifications-link').click(function(e) {
+        $('html').toggleClass('header-user-notifications-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.header-user-notifications').length == 0) {
+            $('html').removeClass('header-user-notifications-open');
+        }
+    });
+
+    $('.header-user-account-link').click(function(e) {
+        $('html').toggleClass('header-user-menu-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.header-user-account').length == 0) {
+            $('html').removeClass('header-user-menu-open');
+        }
+    });
+
+    $('.account-profile-menu-item a').click(function(e) {
+        var curItem = $(this).parent();
+        if (!curItem.hasClass('active')) {
+            $('.account-profile-menu-item.active').removeClass('active');
+            curItem.addClass('active');
+            var curIndex = $('.account-profile-menu-item').index(curItem);
+            $('.account-profile-tab.active').removeClass('active');
+            $('.account-profile-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
+    $('.account-profile-form-edit a').click(function(e) {
+        var curForm = $(this).parents().filter('.account-profile-form').find('form');
+        curForm.parent().addClass('editable');
+        curForm.find('.accout-profile-field-editable').prop('disabled', false);
+        e.preventDefault();
+    });
+
+    $('.account-profile-form-save a').click(function(e) {
+        var curForm = $(this).parents().filter('.account-profile-form').find('form');
+        curForm.find('.form-submit input').trigger('click');
+        e.preventDefault();
+    });
+
+    $('.account-profile-form .form-reset input').click(function() {
+        var curForm = $(this).parents().filter('.account-profile-form').find('form');
+        window.setTimeout(function() {
+            curForm.find('label.error').remove();
+            curForm.find('.error').removeClass('error');
+            curForm.find('input').trigger('blur');
+            curForm.parent().removeClass('editable');
+            curForm.find('.accout-profile-field-editable').prop('disabled', true);
+        }, 100);
+    });
+
+    $('.account-profile-form-password-edit a').click(function(e) {
+        var curForm = $(this).parents().filter('.account-profile-form');
+        curForm.toggleClass('password-editable');
+        if (curForm.hasClass('password-editable')) {
+            curForm.find('.account-profile-form-password-edit-block .form-input input').addClass('required');
+        } else {
+            curForm.find('.account-profile-form-password-edit-block .form-input input').removeClass('required error');
+            curForm.find('.account-profile-form-password-edit-block .form-input label.error').remove();
+            curForm.find('.account-profile-form-password-edit-block .form-input input').val('').trigger('blur');
+        }
+        e.preventDefault();
+    });
+
+});
