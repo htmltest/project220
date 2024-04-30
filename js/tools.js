@@ -2055,4 +2055,9 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.account-support-card-new-message-link a').click(function(e) {
+        $('.account-support-card-new-message').addClass('open');
+        e.preventDefault();
+    });
+
 });

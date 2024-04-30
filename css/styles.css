@@ -2875,3 +2875,96 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-events-item-ctrl-list a:hover {background:#E6E9F6}
 }
 .account-events-item-ctrl-list a svg {min-width:18px; max-width:18px; height:18px; margin:0 10px 0 0; fill:rgba(8, 8, 37, 0.5)}
+
+.account-support-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
+.account-support-header {display:flex; align-items:center; margin:40px 0 0 0}
+.account-support-filter {width:100%; display:flex; align-items:center}
+.account-support-filter-link {display:flex; align-items:center; padding:0 19px; height:40px; border:1px solid #9397AA; border-radius:6px; color:#080825; font-weight:bold; font-size:12px; line-height:14px; letter-spacing:0.01em; text-transform:uppercase; transition:background 0.2s, border-color 0.2s, color 0.2s}
+@media (min-width:1200px) {
+    .account-support-filter-link:hover {background:#D75078; border-color:#D75078; color:#FFFFFF}
+}
+.account-support-filter-link svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#080825; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-support-filter-link:hover svg {fill:#FFFFFF}
+}
+.account-support-filter-link strong {font-weight:bold}
+.account-support-filter-link span {display:none; margin:0 0 0 10px; min-width:18px; max-width:18px; height:18px; align-items:center; justify-content:center; background:#D75078; color:#FFFFFF; font-weight:600; border-radius:50%; transition:color 0.2s, background 0.2s}
+@media (min-width:1200px) {
+    .account-support-filter-link:hover span {background:#FFFFFF; color:#D75078}
+}
+.account-support-filter-link span.visible {display:flex}
+.account-support-archive-link {margin:0 0 0 20px; height:40px; font-weight:bold; display:flex; align-items:center; padding:0 19px; border-color:#9397AA; color:#080825; border-radius:6px; font-size:12px; line-height:14px}
+@media (min-width:1200px) {
+    .account-support-archive-link:hover {border-color:#D75078; color:#FFFFFF}
+    .account-support-archive-link:active {border-color:#D23E6A; color:#FFFFFF}
+}
+.account-support-archive-link svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#080825; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-support-archive-link:hover svg {fill:#FFFFFF}
+}
+.account-support-archive-link strong {font-weight:bold}
+
+.account-support-add-link {display:flex; margin:0 0 0 20px; align-items:center; padding:20px; height:40px; border-radius:6px; font-weight:bold; font-size:12px; line-height:14px; white-space:nowrap}
+.account-support-add-link svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#FFFFFF}
+
+.account-support-list {margin:20px 0 0 0; border-bottom:1px solid #DFDFDF}
+.account-support-item {border-top:1px solid #DFDFDF}
+.account-support-item a {display:flex; align-items:flex-start; transition:background 0.2s; padding:16px 0}
+@media (min-width:1200px) {
+    .account-support-item a:hover {background:#F3F4FB}
+}
+.account-support-item-ticket {min-width:184px; max-width:184px; padding:6px 0 0 44px; position:relative}
+.account-support-item-ticket svg {position:absolute; left:0; top:6px; width:24px; height:24px; fill:#D75078}
+.account-support-item.old .account-support-item-ticket svg {fill:rgba(147, 151, 170, 0.25)}
+.account-support-item-ticket-title {font-size:15px; line-height:23px; color:#787B8E}
+.account-support-item-ticket-date {margin:3px 0 0 0; font-size:13px; line-height:20px; color:rgba(120, 123, 142, 0.5)}
+.account-support-item-title {width:100%; margin:6px 0 0 20px; font-weight:bold; font-size:15px; line-height:23px; color:#080825}
+.account-support-item.old .account-support-item-title {font-weight:normal}
+.account-support-item-answers {margin:0 0 0 20px; min-width:115px}
+.account-support-item-answers span {display:block; padding:0 6px 2px 6px; white-space:nowrap; font-weight:500; font-size:12px; line-height:20px; color:#FFFFFF; border-radius:2px; background:#76B145}
+
+.account-support-ctrl {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.account-support-ctrl .pager {margin:0}
+
+.pager-size {display:flex; align-items:center}
+.pager-size-title {font-weight:500; font-size:16px; line-height:20px; color:#787B8E; margin:0 12px 0 0}
+.pager-size-select {position:relative}
+.pager-size-select-current {display:flex; align-items:center; padding:0 11px; height:40px; border:1px solid #C7CAD8; border-radius:6px; font-size:16px; line-height:16px; color:#787B8E; cursor:pointer}
+.pager-size-select-current svg {margin:0 0 0 16px; min-width:12px; max-width:12px; height:8px; fill:#787B8E}
+
+.account-support-back {display:flex}
+.account-support-back a {display:flex; align-items:flex-start; font-weight:600; font-size:30px; line-height:45px; color:#080825}
+.account-support-back a span {display:flex; min-width:64px; max-width:64px; margin:2.5px 24px 0 0; height:40px; border-radius:6px; background:#F7F8FC; align-items:center; justify-content:center}
+.account-support-back a span svg {min-width:24px; max-width:24px; height:24px; fill:rgba(8, 8, 37, 0.4)}
+
+.account-support-card-resolved {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:rgba(118, 177, 69, 0.1); border-radius:8px}
+.account-support-card-resolved-title {font-size:15px; line-height:26px}
+.account-support-card-resolved-link {margin:0 0 0 20px; white-space:nowrap; display:flex; align-items:center; padding:0 19px; height:40px; border:1px solid #76B145; border-radius:6px; color:#080825; font-size:12px; line-height:14px; letter-spacing:0.1em; text-transform:uppercase; font-weight:bold}
+@media (min-width:1200px) {
+    .account-support-card-resolved-link:hover {color:#080825}
+}
+.account-support-card-resolved-link svg {margin:0 10px 0 0; min-width:20px; max-width:20px; height:20px; fill:#76B145}
+
+.account-support-card-new-message {margin:40px 0 0 0; position:relative}
+.account-support-card-new-message-link {display:flex}
+.account-support-card-new-message.open .account-support-card-new-message-link {display:none}
+.account-support-card-new-message-link a {display:flex; align-items:center; padding:20px; height:40px; border-radius:6px; font-weight:bold; font-size:12px; line-height:14px; white-space:nowrap}
+.account-support-card-new-message-link a svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#FFFFFF}
+.account-support-card-new-message-form {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; border-bottom:1px solid #DFDFDF; padding:0 0 40px 0}
+.account-support-card-new-message.open .account-support-card-new-message-form {position:relative; left:auto; top:auto; opacity:1}
+.account-support-card-new-message-form form {margin:0; padding:0}
+.account-support-card-new-message-form .form-submit {margin:40px 0 0 0; display:flex; justify-content:flex-end}
+.account-support-card-new-message-form .form-submit .btn {font-weight:bold; display:flex; align-items:center; padding:0 30px; height:56px}
+.account-support-card-new-message-form .form-submit .btn svg {width:20px; height:20px; fill:#FFFFFF; margin:0 0 0 10px}
+
+.account-support-card-content {margin:40px 0 0 0}
+.account-support-card-message {margin:40px 0 0 0}
+.account-support-card-message-author {font-weight:bold; font-size:18px; line-height:31px}
+.account-support-card-message-date {margin:8px 0 0 0; display:flex; align-items:center; font-size:15px; line-height:23px; color:rgba(8, 8, 37, 0.5)}
+.account-support-card-message-date span {margin:0 20px; width:1px; height:23px; background:#DFDFDF}
+.account-support-card-message-text {margin:6px 0 0 0}
+.account-support-card-message-files {margin:12px 0 0 0}
+.account-support-card-message-files .file-link {margin:12px 0 0 0; line-height:27px}
+.account-support-card-message-files .file-link-icon {top:3px}
+.account-support-card-message-answer {margin:12px 0 0 32px; position:relative; background:#F7F8FC; border-radius:12px; padding:20px}
+.account-icon-support-answer {position:absolute; left:-30px; top:28px; width:14px; height:14px; fill:#080825}
