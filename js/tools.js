@@ -42,6 +42,71 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.form-files').each(function() {
+        var curFiles = $(this);
+        if (curFiles.find('.form-files-list-item').length > 0) {
+            curFiles.addClass('full');
+            curFiles.find('.files-required').val('true');
+        }
+    });
+
+    $('body').on('click', '.form-files-list-item-remove', function(e) {
+        var curLink = $(this);
+        var curFiles = curLink.parents().filter('.form-files');
+        $.ajax({
+            type: 'GET',
+            url: curLink.attr('href'),
+            dataType: 'json',
+            cache: false
+        }).done(function(data) {
+            curLink.parent().remove();
+            if (curFiles.find('.form-files-list-item-progress, .form-files-list-item').length == 0) {
+                curFiles.removeClass('full');
+                curFiles.find('.files-required').val('');
+            }
+        });
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.form-files-list-item-cancel', function(e) {
+        var curLink = $(this);
+        var curFiles = curLink.parents().filter('.form-files');
+        curLink.parent().remove();
+        if (curFiles.find('.form-files-list-item-progress, .form-files-list-item').length == 0) {
+            curFiles.removeClass('full');
+            curFiles.find('.files-required').val('');
+        }
+        e.preventDefault();
+    });
+
+    $(document).bind('drop dragover', function (e) {
+        e.preventDefault();
+    });
+
+    $(document).bind('dragover', function (e) {
+        var dropZones = $('.form-files-dropzone'),
+            timeout = window.dropZoneTimeout;
+        if (timeout) {
+            clearTimeout(timeout);
+        } else {
+            dropZones.addClass('in');
+        }
+        var hoveredDropZone = $(e.target).closest(dropZones);
+        dropZones.not(hoveredDropZone).removeClass('hover');
+        hoveredDropZone.addClass('hover');
+        window.dropZoneTimeout = setTimeout(function () {
+            window.dropZoneTimeout = null;
+            dropZones.removeClass('in hover');
+        }, 100);
+    });
+
+    $('body').on('click', '.form-files-dropzone', function(e) {
+        var curLink = $(this);
+        var curFiles = $(this).parents().filter('.form-files');
+        curFiles.find('.form-files-input input').click();
+        e.preventDefault();
+    });
+
     $('form').each(function() {
         initForm($(this));
     });
@@ -1505,6 +1570,49 @@ function initForm(curForm) {
         }
     });
 
+    curForm.find('.form-files').each(function() {
+        var curFiles = $(this);
+        var curInput = curFiles.find('.form-files-input input');
+
+        var uploadURL = curInput.attr('data-uploadurl');
+        var uploadFiles = curInput.attr('data-uploadfiles');
+        var removeURL = curInput.attr('data-removeurl');
+        curInput.fileupload({
+            url: uploadURL,
+            dataType: 'json',
+            dropZone: curFiles.find('.form-files-dropzone'),
+            pasteZone: curFiles.find('.form-files-dropzone'),
+            add: function(e, data) {
+                if (typeof curInput.attr('multiple') !== 'undefined') {
+                    curFiles.find('.form-files-list').append('<div class="form-files-list-item-progress"><span class="form-files-list-item-cancel"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></span></div>');
+                } else {
+                    curFiles.find('.form-files-list').html('<div class="form-files-list-item-progress"><span class="form-files-list-item-cancel"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></span></div>');
+                }
+                data.submit();
+                curFiles.addClass('full');
+            },
+            done: function (e, data) {
+                curFiles.find('.form-files-list-item-progress').eq(0).remove();
+                if (data.result.status == 'success') {
+                    if (typeof curInput.attr('multiple') !== 'undefined') {
+                        curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                    } else {
+                        curFiles.find('.form-files-list').html('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                    }
+                    curFiles.find('.files-required').val('true');
+                    curFiles.find('label.error').remove();
+                } else {
+                    if (typeof curInput.attr('multiple') !== 'undefined') {
+                        curFiles.find('.form-files-list').append('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name">' + data.result.text + '</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                    } else {
+                        curFiles.find('.form-files-list').html('<div class="form-files-list-item error"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name">' + data.result.text + '</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                    }
+                }
+                curFiles.addClass('full');
+            }
+        });
+    });
+
     curForm.validate({
         ignore: '',
         submitHandler: function(form) {
@@ -2059,5 +2167,26 @@ $(document).ready(function() {
         $('.account-support-card-new-message').addClass('open');
         e.preventDefault();
     });
+
+    $('.pager-size-select-current').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.pager-size-select').length == 0) {
+            $('.pager-size-select').removeClass('open');
+        }
+    });
+
+    $('.pager-size-select-item label input').change(function() {
+        var curSelect = $(this).parents().filter('.pager-size');
+        var curText = '';
+        curSelect.find('.pager-size-select-item label input:checked').each(function() {
+            curText = $(this).parent().find('span').html();
+        });
+        curSelect.find('.pager-size-select-current span').html(curText);
+        $('.pager-size-select').removeClass('open');
+    });
+
 
 });

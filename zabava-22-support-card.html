@@ -205,11 +205,11 @@
                                         <div class="account-support-card-new-message-form">
                                             <form action="#" method="post">
                                                 <div class="form-input"><span>Text Here</span><textarea name="message" cols="1" rows="1"></textarea></div>
-                                                <div class="form-file">
-                                                    <div class="form-file-input">
-                                                        <input type="file" name="file" />
-                                                        <span data-placeholder="Attach"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Attach</span>
-                                                    </div>
+                                                <div class="form-files-header">Load Files</div>
+                                                <div class="form-files">
+                                                    <div class="form-files-dropzone"><span>Drag files here or click to select</span></div>
+                                                    <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/index.php" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /></div>
+                                                    <div class="form-files-list"></div>
                                                 </div>
                                                 <div class="form-submit"><button type="submit" class="btn">Send<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
                                             </form>
@@ -335,6 +335,10 @@
         <script src="js/swiper/swiper-bundle.min.js"></script>
         <script src="js/nouislider/nouislider.min.js"></script>
         <script src="js/nouislider/wNumb.js"></script>
+        <script src="js/fileupload/jquery.ui.widget.js"></script>
+        <script src="js/fileupload/jquery.iframe-transport.js"></script>
+        <script src="js/fileupload/jquery.fileupload.js"></script>
+        <script src="js/fileupload/jquery.fileupload-ui.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

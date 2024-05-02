@@ -144,7 +144,59 @@
                             </div>
 
                             <div class="header-user-notifications">
-                                <a href="#" class="header-user-notifications-link"><svg><use xlink:href="images/sprite.svg#account-icon-notifications"></use></svg></a>
+                                <a href="#" class="header-user-notifications-link"><svg><use xlink:href="images/sprite.svg#account-icon-notifications"></use></svg><span></span></a>
+                                <div class="header-user-notifications-list">
+                                    <a href="#" class="account-profile-notification account-profile-notification-success">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-success"></use></svg></div>
+                                            <div class="account-profile-notification-title">2 events were moderated</div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </a>
+                                    <a href="#" class="account-profile-notification account-profile-notification-cancel">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-cancel"></use></svg></div>
+                                            <div class="account-profile-notification-title"><span>"Swan Lake"</span> has not passed moderation, the photo needs to be re-uploaded</div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </a>
+                                    <a href="#" class="account-profile-notification account-profile-notification-success">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-success"></use></svg></div>
+                                            <div class="account-profile-notification-title">16 events were moderated</div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </a>
+                                    <a href="#" class="account-profile-notification account-profile-notification-reviews">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-reviews"></use></svg></div>
+                                            <div class="account-profile-notification-title"><span>New Review</span></div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </a>
+                                    <a href="#" class="account-profile-notification account-profile-notification-messages">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-message"></use></svg><span></span></div>
+                                            <div class="account-profile-notification-title"><span>New message from Support</span></div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </a>
+                                    <div class="header-user-notifications-sep"></div>
+                                    <div class="account-profile-notification account-profile-notification-messages account-profile-notification-archive">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-message"></use></svg></div>
+                                            <div class="account-profile-notification-title"><span>New message from Support</span></div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </div>
+                                    <div class="account-profile-notification account-profile-notification-success account-profile-notification-archive">
+                                        <div class="account-profile-notification-header">
+                                            <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-success"></use></svg></div>
+                                            <div class="account-profile-notification-title">7 events were moderated</div>
+                                        </div>
+                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="header-user-account">
@@ -168,21 +220,19 @@
 
                     <!-- account -->
                     <div class="account">
-                        <div class="account-title">Organizer&rsquo;s personal account</div>
-
                         <!-- account container -->
                         <div class="account-container">
 
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
-                                <div class="account-menu-item active"><a href="#"><strong>Support</strong><span>17</span></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>Support</strong><span>17</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Profile</strong></a></div>
                             </div>
                             <!-- account menu END -->
@@ -190,112 +240,104 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <!-- account support -->
-                                <div class="account-support">
+                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Event</a></div>
 
-                                    <div class="account-support-title">Support</div>
-
-                                    <div class="account-support-header">
-                                        <div class="account-support-filter">
-                                            <a href="#" class="account-support-filter-link"><svg><use xlink:href="images/sprite.svg#account-icon-filter"></use></svg><strong>Filter</strong><span class="visible">4</span></a>
+                                <div class="account-event-add-steps">
+                                    <div class="account-event-add-step active">
+                                        <div class="account-event-add-step-number">
+                                            <span>1</span>
+                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
+                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
-                                        <a href="#" class="btn-border account-support-archive-link"><svg><use xlink:href="images/sprite.svg#account-icon-archive"></use></svg><span>Archive</span></a>
-                                        <a href="#" class="btn account-support-add-link"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>New request</a>
+                                        <div class="account-event-add-step-title">Basic</div>
+                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-
-                                    <!-- account support list -->
-                                    <div class="account-support-list">
-                                        <div class="account-support-item">
-                                            <a href="#">
-                                                <div class="account-support-item-ticket">
-                                                    <svg><use xlink:href="images/sprite.svg#account-icon-support-new"></use></svg>
-                                                    <div class="account-support-item-ticket-title">Ticket №3047876</div>
-                                                    <div class="account-support-item-ticket-date">12.10.2024</div>
-                                                </div>
-                                                <div class="account-support-item-title">Question about submitting documents</div>
-                                                <div class="account-support-item-answers"><span>There&rsquo;s an&nbsp;answer</span></div>
-                                            </a>
+                                    <div class="account-event-add-step">
+                                        <div class="account-event-add-step-number">
+                                            <span>2</span>
+                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
+                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
-
-                                        <div class="account-support-item">
-                                            <a href="#">
-                                                <div class="account-support-item-ticket">
-                                                    <svg><use xlink:href="images/sprite.svg#account-icon-support-new"></use></svg>
-                                                    <div class="account-support-item-ticket-title">Ticket №3047876</div>
-                                                    <div class="account-support-item-ticket-date">12.10.2024</div>
-                                                </div>
-                                                <div class="account-support-item-title">Urban slope of&nbsp;the Hindu Kush: Caribbean or&nbsp;East African plateau?</div>
-                                                <div class="account-support-item-answers"><span>There&rsquo;s an&nbsp;answer</span></div>
-                                            </a>
-                                        </div>
-
-                                        <div class="account-support-item old">
-                                            <a href="#">
-                                                <div class="account-support-item-ticket">
-                                                    <svg><use xlink:href="images/sprite.svg#account-icon-support-old"></use></svg>
-                                                    <div class="account-support-item-ticket-title">Ticket №3047876</div>
-                                                    <div class="account-support-item-ticket-date">12.10.2024</div>
-                                                </div>
-                                                <div class="account-support-item-title">The superstructure is&nbsp;degenerate. Liberation transforms the transcendental law of&nbsp;the exclusive third, although in&nbsp;officialdom the opposite is&nbsp;accepted. The Reality of&nbsp;Controlling Complex Taoism</div>
-                                                <div class="account-support-item-answers"></div>
-                                            </a>
-                                        </div>
-
-                                        <div class="account-support-item old">
-                                            <a href="#">
-                                                <div class="account-support-item-ticket">
-                                                    <svg><use xlink:href="images/sprite.svg#account-icon-support-old"></use></svg>
-                                                    <div class="account-support-item-ticket-title">Ticket №3047876</div>
-                                                    <div class="account-support-item-ticket-date">12.10.2024</div>
-                                                </div>
-                                                <div class="account-support-item-title">Civil payment document: background and development</div>
-                                                <div class="account-support-item-answers"></div>
-                                            </a>
-                                        </div>
-
-                                        <div class="account-support-item old">
-                                            <a href="#">
-                                                <div class="account-support-item-ticket">
-                                                    <svg><use xlink:href="images/sprite.svg#account-icon-support-old"></use></svg>
-                                                    <div class="account-support-item-ticket-title">Ticket №3047876</div>
-                                                    <div class="account-support-item-ticket-date">12.10.2024</div>
-                                                </div>
-                                                <div class="account-support-item-title">Why is&nbsp;the story parallel?</div>
-                                                <div class="account-support-item-answers"></div>
-                                            </a>
-                                        </div>
+                                        <div class="account-event-add-step-title">Schedule</div>
+                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-                                    <!-- account support list END -->
-
-                                    <div class="account-support-ctrl">
-                                        <div class="pager">
-                                            <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
-                                            <a href="#" data-value="1">1</a>
-                                            <span>...</span>
-                                            <a href="#" class="active" data-value="5">5</a>
-                                            <a href="#" data-value="6">6</a>
-                                            <a href="#" data-value="7">7</a>
-                                            <span>...</span>
-                                            <a href="#" data-value="17">17</a>
-                                            <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                                    <div class="account-event-add-step">
+                                        <div class="account-event-add-step-number">
+                                            <span>3</span>
+                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
+                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
+                                        <div class="account-event-add-step-title">Description</div>
+                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
+                                    </div>
+                                    <div class="account-event-add-step">
+                                        <div class="account-event-add-step-number">
+                                            <span>4</span>
+                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
+                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
+                                        </div>
+                                        <div class="account-event-add-step-title">Media</div>
+                                        <svg class="account-icon-step-finish"><use xlink:href="images/sprite.svg#account-icon-step-finish"></use></svg>
+                                    </div>
+                                </div>
 
-                                        <div class="pager-size">
-                                            <div class="pager-size-title">On the page:</div>
-                                            <div class="pager-size-select">
-                                                <div class="pager-size-select-current"><span>20</span><svg><use xlink:href="images/sprite.svg#pager-size-current"></use></svg></div>
-                                                <div class="pager-size-select-list">
-                                                    <div class="pager-size-select-item"><label><input type="radio" name="size" value="20" checked="checked"><span>20</span></label></div>
-                                                    <div class="pager-size-select-item"><label><input type="radio" name="size" value="40"><span>40</span></label></div>
-                                                    <div class="pager-size-select-item"><label><input type="radio" name="size" value="60"><span>60</span></label></div>
-                                                    <div class="pager-size-select-item"><label><input type="radio" name="size" value="80"><span>80</span></label></div>
+                                <!-- account event add -->
+                                <div class="account-event-add">
+                                    <form action="#" method="post">
+
+                                        <!-- account event add group -->
+                                        <div class="account-event-add-group">
+                                            <div class="account-event-add-group-title">Basic information</div>
+                                            <div class="account-event-add-group-content">
+                                                <div class="form-input"><span>Event name <em>*</em></span><input type="text" name="event_name" value="" class="required"></div>
+                                                <div class="account-event-add-subfield">
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Event name English <em>*</em></span><input type="text" name="event_name_english" value="" class="required"></div>
                                                 </div>
+                                                <div class="form-select">
+                                                    <select name="categories" data-placeholder="Categories">
+                                                        <option value=""></option>
+                                                        <option value="Premieres">Premieres</option>
+                                                        <option value="Ballet">Ballet</option>
+                                                        <option value="Childish">Childish</option>
+                                                        <option value="Dramatic">Dramatic</option>
+                                                        <option value="Comedies">Comedies</option>
+                                                        <option value="Dollhouse">Dollhouse</option>
+                                                        <option value="Musicals">Musicals</option>
+                                                        <option value="Operettas">Operettas</option>
+                                                        <option value="Opera">Opera</option>
+                                                        <option value="Circus">Circus</option>
+                                                    </select>
+                                                </div>
+                                                <div class="account-event-add-row">
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-input"><span>Age restrictions</span><input type="text" name="age" value=""></div>
+                                                    </div>
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-select">
+                                                            <select name="format" data-placeholder="Format">
+                                                                <option value=""></option>
+                                                                <option value="Concert">Concert</option>
+                                                                <option value="Sport">Sport</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Booking link</span><input type="text" name="booking_link" value="" class="url"><div class="form-notice">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div></div>
                                             </div>
                                         </div>
-                                    </div>
+                                        <!-- account event add group END -->
 
+                                        <div class="account-event-add-ctrl">
+                                            <div class="account-event-add-ctrl-group">
+                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>Back</a></div>
+                                                <div class="account-event-add-save"><button type="submit" name="save" class="btn-border">Save</button></div>
+                                            </div>
+                                            <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Next<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
+                                        </div>
+
+                                    </form>
                                 </div>
-                                <!-- account support END -->
+                                <!-- account event add END -->
 
                             </div>
                             <!-- account content END -->
