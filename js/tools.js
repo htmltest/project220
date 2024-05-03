@@ -2188,5 +2188,54 @@ $(document).ready(function() {
         $('.pager-size-select').removeClass('open');
     });
 
+    $('.account-event-card').each(function() {
+        var menuHTML =  '<ul>';
+
+        $('.account-event-card-tab').each(function() {
+            menuHTML +=     '<li><a href="#">' + $(this).attr('data-title') + '</a></li>';
+        });
+
+        menuHTML +=     '</ul>';
+
+        $('.account-event-card-menu').html(menuHTML);
+        $('.account-event-card-menu ul li').eq(0).addClass('active');
+        $('.account-event-card-tab').eq(0).addClass('active');
+    });
+
+    $('body').on('click', '.account-event-card-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.account-event-card-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.account-event-card-menu ul li').index(curLi);
+            $('.account-event-card-tab.active').removeClass('active');
+            $('.account-event-card-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.account-event-card-media-video-player-start', function(e) {
+        var curLink = $(this);
+        var curPlayer = curLink.parent();
+        var curHREF = curLink.attr('href');
+        if (curHREF.indexOf('?') == -1) {
+            curHREF += '?autoplay=1';
+        } else {
+            curHREF += '&autoplay=1';
+        }
+        curPlayer.html('<iframe width="560" height="315" src="' + curHREF + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
+        e.preventDefault();
+    });
+
+    $('.account-event-card-schedule').each(function() {
+        if ($('.account-event-card-schedule-item').length > 5) {
+            $('.account-event-card-schedule-more').addClass('visible');
+        }
+    });
+
+    $('.account-event-card-schedule-more a').click(function(e) {
+        $('.account-event-card-schedule').toggleClass('open');
+        e.preventDefault();
+    });
 
 });

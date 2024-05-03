@@ -3117,3 +3117,121 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-submit {margin:0 0 0 20px}
 .account-event-add-submit .btn {font-weight:bold; display:flex; align-items:center; padding:0 30px; height:56px; white-space:nowrap; border-radius:8px}
 .account-event-add-submit .btn svg {width:20px; height:20px; fill:#FFFFFF; margin:0 0 0 10px}
+
+.account-event-card {margin:40px 0 0 0}
+.account-event-card-menu {border-bottom:1px solid #DFDFDF; font-weight:bold; font-size:16px; line-height:20px; letter-spacing:0.05em; text-transform:uppercase}
+.account-event-card-menu ul {display:flex; margin:0; padding:0; list-style:none}
+.account-event-card-menu ul li {margin:0 0 0 40px; padding:0}
+.account-event-card-menu ul li:first-child {margin:0}
+.account-event-card-menu ul li::before {display:none}
+.account-event-card-menu ul li a {display:block; padding:0 0 9px 0; position:relative; color:#787B8E}
+@media (min-width:1200px) {
+    .account-event-card-menu ul li a:hover {color:#080825}
+}
+.account-event-card-menu ul li.active a {color:#080825}
+.account-event-card-menu ul li a::before {content:""; position:absolute; left:0; bottom:-1px; right:0; height:2px; background:#080825; transform:scale(0, 1); transform-origin:left center; transition:transform 0.2s}
+.account-event-card-menu ul li.active a::before {transform:scale(1)}
+
+.account-event-card-tabs {position:relative}
+.account-event-card-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+.account-event-card-tab.active {position:relative; left:auto; top:auto; opacity:1}
+
+.account-event-card-general-header {margin:40px 0 0 0; display:flex}
+.account-event-card-general-poster {width:100%}
+.account-event-card-general-poster img {display:block; width:100%; border-radius:8px}
+.account-event-card-general-stats {display:flex; flex-direction:column; min-width:260px; max-width:260px; margin:0 0 0 20px; min-height:326px; justify-content:space-between}
+.account-event-card-general-stat {display:flex; flex-direction:column; min-height:calc(50% - 10px); max-height:calc(50% - 10px); border-radius:8px; color:#FFFFFF; padding:12px}
+.account-event-card-general-stat.up {background:#70A843}
+.account-event-card-general-stat.down {background:#D1533F}
+.account-event-card-general-stat-title {height:100%; font-weight:600; font-size:18px; line-height:23px}
+.account-event-card-general-stat-results {margin:10px 0 0 0; display:flex; align-items:center}
+.account-event-card-general-stat-results-value {font-size:30px; line-height:38px}
+.account-event-card-general-stat-results-percent {margin:0 0 0 10px; display:flex; align-items:center; height:27px; padding:0 10px; background:rgba(255, 255, 255, 0.2); border-radius:14px; font-weight:600; font-size:15px; line-height:19px}
+.account-event-card-general-stat-results-percent svg {min-width:18px; max-width:18px; height:18px; margin:0 4px 0 0; fill:#FFFFFF}
+.account-event-card-general-stat-results-percent.down svg {transform:scale(1, -1)}
+.account-event-card-general-stat-than {margin:10px 0 0 0; display:flex; align-items:center; font-weight:500; font-size:15px; line-height:19px; color:rgba(255, 255, 255, 0.4)}
+.account-event-card-general-stat-than span {margin:0 10px 0 0; font-weight:600; color:#FFFFFF}
+
+.account-event-card-general-info {margin:40px 0 0 0}
+.account-event-card-general-info-group {margin:40px 0 0 0; border-top:1px solid #DFDFDF; padding:40px 0 0 0}
+.account-event-card-general-info-group:first-child {margin:0; border-top:none; padding:0}
+.account-event-card-general-info-row {margin:20px 0 0 0; display:flex}
+.account-event-card-general-info-row:first-child {margin:0}
+.account-event-card-general-info-row-name {min-width:180px; max-width:180px; margin:0 20px 0 0; font-size:16px; line-height:24px; letter-spacing:0.05em; text-transform:uppercase; color:#787B8E}
+.account-event-card-general-info-row-value {font-weight:bold; font-size:18px; line-height:27px}
+.account-event-card-general-info-row-categories {position:relative; overflow:hidden}
+.account-event-card-general-info-row-categories-inner {display:flex; margin:0 0 0 -33px}
+.account-event-card-general-info-row-category {border-left:1px solid rgba(120, 123, 142, 0.25); margin:0 0 0 16px; padding:0 0 0 16px}
+.account-event-card-general-info-row-price {display:flex; align-items:center}
+.account-event-card-general-info-row-price svg {min-width:20px; max-width:20px; height:20px; fill:#080825; margin:0 4px 0 16px}
+
+.account-event-card-media {margin:57px 0 0 0}
+.account-event-card-media:first-child {margin:40px 0 0 0}
+.account-event-card-media-title {font-weight:600; font-size:24px; line-height:36px}
+.account-event-card-media-photos {margin:0 -10px; display:flex; flex-wrap:wrap}
+.account-event-card-media-photo {min-width:50%; max-width:50%; padding:20px 10px 0 10px}
+.account-event-card-media-photo img {display:block; width:100%; border-radius:8px}
+.account-event-card-media-videos {margin:0 -10px; display:flex; flex-wrap:wrap}
+.account-event-card-media-video {min-width:50%; max-width:50%; padding:20px 10px 0 10px}
+.account-event-card-media-video-player {padding:56.25% 0 0 0; position:relative; border-radius:8px; overflow:hidden}
+.account-event-card-media-video-player-start {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; border-radius:8px; display:flex; align-items:center; justify-content:center}
+.account-event-card-media-video-player-start svg {display:block; width:100px; height:100px; fill:rgba(255, 255, 255, 0.7); transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-card-media-video-player-start:hover svg {fill:#FFFFFF}
+}
+.account-event-card-media-video-player iframe {position:absolute; left:0; top:0; width:100%; height:100%; border-radius:8px}
+
+.account-event-card-schedule {margin:10px 0 0 0}
+.account-event-card-schedule-item {display:flex; padding:30px 0; border-top:1px solid #DFDFDF; align-items:center}
+.account-event-card-schedule-item:first-child {border-top:none}
+.account-event-card-schedule-item:nth-child(n + 6) {display:none}
+.account-event-card-schedule.open .account-event-card-schedule-item:nth-child(n + 6) {display:flex}
+.account-event-card-schedule-item-date {min-width:200px; max-width:200px; display:flex; align-items:center}
+.account-event-card-schedule-item-date-day {min-width:65px; max-width:65px; font-weight:600; font-size:40px; line-height:44px}
+.account-event-card-schedule-item-date-detail-weekday {font-size:10px; line-height:13px; text-transform:uppercase; color:#9397AA}
+.account-event-card-schedule-item-date-detail-month {font-weight:500; font-size:16px; line-height:18px}
+.account-event-card-schedule-item-time {min-width:200px; max-width:200px; display:flex; align-items:center; justify-content:center; font-weight:500; font-size:18px; line-height:20px}
+.account-event-card-schedule-item-place {width:100%; color:#787B8E; font-weight:500; font-size:18px; line-height:20px}
+.account-event-card-schedule-item-price {min-width:101px; max-width:101px; height:39px; display:flex; align-items:center; justify-content:center; border:1px solid #D75078; border-radius:8px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; color:#D75078}
+.account-event-card-schedule-more {display:none; margin:20px 0 0 0}
+.account-event-card-schedule-more.visible {display:block}
+.account-event-card-schedule-more a {display:flex; align-items:center; justify-content:center; height:60px; background:#F7F8FC; color:#787B8E; font-weight:bold; font-size:16px; line-height:20px; text-transform:uppercase; letter-spacing:0.1em; transition:background 0.2s, color 0.2s; border-radius:12px}
+@media (min-width:1200px) {
+    .account-event-card-schedule-more a:hover {background:#6768AB; color:#FFFFFF}
+}
+.account-event-card-schedule-more span:nth-child(2) {display:none}
+.account-event-card-schedule.open+.account-event-card-schedule-more span:nth-child(1) {display:none}
+.account-event-card-schedule.open+.account-event-card-schedule-more span:nth-child(2) {display:block}
+
+.account-event-card-stats-main {margin:0 -10px; display:flex; flex-wrap:wrap}
+.account-event-card-stats-main-item {display:flex; min-width:33.33%; max-width:33.33%; padding:20px 10px 0 10px}
+.account-event-card-stats-main-item-inner {display:flex; width:100%; flex-direction:column; padding:20px; border-radius:8px; background:#F7F8FC}
+.account-event-card-stats-main-item-title {height:100%; font-size:12px; line-height:18px; letter-spacing:0.05em; text-transform:uppercase; color:#787B8E}
+.account-event-card-stats-main-item-results {margin:20px 0 0 0; display:flex; align-items:center}
+.account-event-card-stats-main-item-results-value {font-weight:500; font-size:24px; line-height:36px}
+.account-event-card-stats-main-item-results-change {margin:0 0 0 10px; display:flex; align-items:center; height:35px; border-radius:18px; padding:0 16px; font-weight:bold; font-size:15px; line-height:23px}
+.account-event-card-stats-main-item-results-change.up {background:rgba(131, 184, 88, 0.1); color:#83B858}
+.account-event-card-stats-main-item-results-change.down {background:#FBF3F1; color:#D1533F}
+.account-event-card-stats-main-item-results-change svg {width:20px; height:20px; margin:0 0 0 6px}
+.account-event-card-stats-main-item-results-change.up svg {fill:#83B858}
+.account-event-card-stats-main-item-results-change.down svg {fill:#D1533F; transform:scale(1, -1)}
+.account-event-card-stats-main-item-than {margin:12px 0 0 0; display:flex; align-items:center; font-weight:500; font-size:15px; line-height:19px; color:rgba(8, 8, 37, 0.5)}
+.account-event-card-stats-main-item-than span {font-weight:600; color:#080825; margin:0 10px 0 0}
+
+.account-event-card-reviews {margin:30px 0 0 0}
+.account-event-card-review {margin:20px 0 0 0; position:relative; padding:20px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.08); border-radius:12px}
+.account-event-card-review-author {font-weight:bold}
+.account-event-card-review-info {margin:6px 0 0 0; display:flex; align-items:center; font-size:15px; line-height:23px; color:rgba(8, 8, 37, 0.5)}
+.account-event-card-review-info-time {margin:0 0 0 20px; padding:0 0 0 20px; border-left:1px solid #DFDFDF}
+.account-event-card-review-info-rating {margin:0 0 0 20px; padding:0 0 0 20px; border-left:1px solid #DFDFDF}
+.account-event-card-review-info-rating-container {position:relative}
+.account-event-card-review-text {margin:20px 0 0 0}
+.account-event-card-review-answer-link {position:absolute; right:20px; top:20px}
+.account-event-card-review-answer-link a {display:flex; padding:0 19px; height:40px; align-items:center; border:1px solid #9397AA; border-radius:6px; color:#080825; font-weight:bold; font-size:12px; line-height:15px; letter-spacing:0.1em; text-transform:uppercase; transition:border-color 0.2s, background 0.2s, color 0.2s}
+.account-event-card-review-answer-link a svg {width:20px; height:20px; margin:0 10px 0 0; fill:#080825; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-card-review-answer-link a:hover {border-color:#D75078; background:#D75078; color:#FFFFFF}
+    .account-event-card-review-answer-link a:hover svg {fill:#FFFFFF}
+}
+.account-event-card-review-answer {margin:20px 0 0 32px; position:relative; background:#F7F8FC; border-radius:12px; padding:20px}
+.account-event-card-review-icon-answer {position:absolute; left:-30px; top:28px; width:14px; height:14px; fill:#080825}
