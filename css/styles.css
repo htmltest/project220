@@ -164,6 +164,7 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-notice {margin:6px 0 0 0; font-size:13px; line-height:20px; color:#787B8E}
 
 .form-input-date::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-date.svg) no-repeat; pointer-events:none}
+.form-input-date label.error::after {right:54px}
 
 @media (max-width:1199px) {
     .form-input-date::after {top:12.5px}
@@ -301,15 +302,21 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 
 .form-files-input {display:none}
 
-.form-files-list {display:none; margin:0 0 0 -20px; flex-wrap:wrap}
+.form-files-list {display:none; margin:0 0 0 -20px; flex-wrap:wrap; align-items:flex-start}
+.form-files-images {margin:0 0 0 -12px}
 .form-files.full .form-files-list {display:flex}
 .form-files-list-item-progress {width:180px; height:129px; background:#F7F8FC url(../images/loading.svg) no-repeat center; border-radius:8px; margin:20px 0 0 20px; position:relative}
+.form-files-images .form-files-list-item-progress {margin:12px 0 0 12px}
 .form-files-list-item {width:180px; height:129px; padding:38px 0 0 0; background:#F7F8FC; border-radius:8px; margin:20px 0 0 20px; position:relative}
+.form-files-images .form-files-list-item {margin:12px 0 0 12px}
+.form-files-list-item-img {width:156px; height:100px; padding:0; border-radius:6px; background:#F7F8FC no-repeat center; background-size:cover}
 .form-files-list-item.error {border-color:#D75078}
 .form-files-list-item-remove,
 .form-files-list-item-cancel {display:block; position:absolute; right:20px; top:10px; width:18px; height:18px; cursor:pointer}
+.form-files-list-item-img .form-files-list-item-remove {right:10px; width:24px; height:24px}
 .form-files-list-item-remove svg,
 .form-files-list-item-cancel svg {display:block; width:18px; height:18px; fill:#787B8E; transition:fill 0.2s}
+.form-files-list-item-img .form-files-list-item-remove svg {width:24px; height:24px; fill:#FFFFFF}
 @media (min-width:1200px) {
     .form-files-list-item-remove:hover svg,
     .form-files-list-item-cancel:hover svg {fill:#6768AB}
@@ -2909,8 +2916,12 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-events-item-id {font-size:15px; line-height:23px; color:#787B8E}
 .account-events-item-date {margin:3px 0 0 0; font-size:13px; line-height:20px; color:rgba(120, 123, 142, 0.5)}
 .account-events-item-preview {min-width:80px; max-width:80px}
-.account-events-item-preview-inner {height:46px; border-radius:4px; background:no-repeat center; background-size:cover}
+.account-events-item-preview-inner {display:block; height:46px; border-radius:4px; background:no-repeat center; background-size:cover}
 .account-events-item-title {width:100%; margin:0 0 0 20px; font-weight:600; font-size:15px; line-height:23px}
+.account-events-item-title a {color:#080825; padding:5px 0}
+@media (min-width:1200px) {
+    .account-events-item-title a:hover {color:#D75078}
+}
 .account-events-item-info {margin:0 0 0 20px; min-width:170px; max-width:170px; font-size:15px; line-height:23px; color:#787B8E}
 .account-events-item-info-item {padding:0 0 0 30px; position:relative}
 .account-events-item-info-item svg {position:absolute; left:0; top:2px; width:20px; height:20px; fill:#787B8E}
@@ -3085,7 +3096,59 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-group-content .account-event-add-row-field .form-select {margin:0}
 .account-event-add-group-content .account-event-add-row-field .form-file {margin:0}
 
-.account-event-add-schedule {margin:24px 0 0 0; padding:20px 162px 4px 20px; position:relative; background:#F7F8FC; border-radius:12px}
+.account-event-add-category {margin:24px 0 0 0; position:relative}
+.account-event-add-category-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
+@media (min-width:1200px) {
+    .account-event-add-category-current:hover {border-color:#787B8E}
+}
+.account-event-add-category-validfield.error+label.error+.account-event-add-category-current {border-color:#D75078; margin-bottom:49px}
+.account-event-add-category label.error {position:absolute; left:0; top:100%; right:0; white-space:nowrap}
+
+.account-event-add-category-current-placeholder {position:absolute; left:19px; top:19px; font-size:18px; line-height:18px; color:#787B8E; transition:top 0.2s, font-size 0.2s, line-height 0.2s}
+.account-event-add-category.full .account-event-add-category-current-placeholder {top:10px; font-size:13px; line-height:13px}
+.account-event-add-category.open .account-event-add-category-current {border-color:#787B8E}
+.account-event-add-category-current-value {margin:25px 63px 0 19px; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis; font-size:18px; line-height:22px}
+.account-event-add-category-current-arrow {position:absolute; right:20px; top:16px}
+.account-event-add-category-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
+
+.account-event-add-category-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
+.account-event-add-category.open .account-event-add-category-content {display:block}
+
+.account-event-add-category-content-search {position:relative; margin:0 0 10px 0}
+.account-event-add-category-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
+.account-event-add-category-content-search input::-webkit-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-category-content-search input::-moz-placeholder {opacity:1; color:#787B8E}
+.account-event-add-category-content-search input:-ms-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-category-content-search input:-webkit-autofill,
+.account-event-add-category-content-search input:-webkit-autofill:active,
+.account-event-add-category-content-search input:-webkit-autofill:focus,
+.account-event-add-category-content-search input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+.account-event-add-category-content-search svg {position:absolute; left:16px; top:50%; width:16px; height:16px; margin:-8px 0 0 0; fill:#080825}
+
+.account-event-add-category-content-inner {position:relative; max-height:302px; overflow:auto; padding:0 13px 0 0; margin:0 5px 0 0}
+.account-event-add-category-content-inner::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
+.account-event-add-category-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
+
+.account-event-add-category-group {margin:20px 0 0 0}
+.account-event-add-category-group.hidden {display:none}
+.account-event-add-category-group:first-child,
+.account-event-add-category-group.first-child {margin:0}
+.account-event-add-category-group-title {font-weight:600; font-size:20px; line-height:30px; margin:0 0 10px 0}
+.account-event-add-category-checkbox {margin:10px 0 0 0; display:flex}
+.account-event-add-category-checkbox.hidden {display:none}
+.account-event-add-category-checkbox:first-child,
+.account-event-add-category-checkbox.first-child {margin:0}
+.account-event-add-category-checkbox label {cursor:pointer}
+.account-event-add-category-checkbox input {display:none}
+.account-event-add-category-checkbox span {display:block; position:relative; padding:0 0 0 32px; font-weight:600; font-size:15px; line-height:23px; color:#080825; transition:color 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-category-checkbox label:hover span {color:#6768AB}
+}
+.account-event-add-category-checkbox input:checked+span {color:#6768AB}
+.account-event-add-category-checkbox span::before {content:""; position:absolute; left:0; top:1.5px; width:20px; height:20px; background:#F0F0F0 url(../images/filters-select-checkbox.svg) no-repeat -999px -999px; border-radius:3px}
+.account-event-add-category-checkbox input:checked+span::before {background-color:#6768AB; background-position:center}
+
+.account-event-add-schedule {margin:24px 0 0 0; padding:20px 162px 4px 20px; position:relative; background:#F7F8FC; border-radius:12px; min-height:78px}
 .account-event-add-schedule-edit {position:absolute; right:20px; top:20px}
 .account-event-add-schedule-edit .btn {padding:0 20px; height:38px; display:flex; align-items:center; font-size:12px; line-height:15px; border-radius:6px}
 .account-event-add-schedule-edit .btn svg {width:24px; height:24px; margin:0 10px 0 0; fill:#FFFFFF}
@@ -3099,9 +3162,201 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-schedule-item-sep {min-width:24px; margin:0 0 0 33px; text-align:left}
 .account-event-add-schedule-item-end {min-width:76px; text-align:right}
 
+.window-account-event-add-schedule-template {display:none}
+.window-account-event-add-schedule {width:760px; padding:20px}
+.window-account-event-add-schedule-container {margin:20px 0 0 0; border-top:1px solid #DFDFDF; padding:12px 0 0 0}
+.window-account-event-add-schedule-item {margin:12px 0 0 0; display:flex; align-items:flex-start}
+.window-account-event-add-schedule-item .form-input {margin:0}
+.window-account-event-add-schedule-item-date {width:100%}
+.window-account-event-add-schedule-item-start {min-width:172px; max-width:172px; margin:0 0 0 12px}
+.window-account-event-add-schedule-item-end {min-width:172px; max-width:172px; margin:0 0 0 12px}
+.window-account-event-add-schedule-item-remove {min-width:24px; max-width:24px; margin:16px 0 0 20px}
+.window-account-event-add-schedule-item-remove svg {display:block; width:24px; height:24px; fill:#9397AA; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .window-account-event-add-schedule-item-remove a:hover svg {fill:#6768AB}
+}
+.window-account-event-add-schedule-add {margin:24px 0 0 0; display:flex}
+.window-account-event-add-schedule-add a {display:flex; align-items:center; height:36px; padding:0 15px; border:1px solid #6768AB; border-radius:4px; font-weight:bold; font-size:12px; line-height:15px; color:#6768AB; text-transform:uppercase; transition:color 0.2s, background 0.2s}
+@media (min-width:1200px) {
+    .window-account-event-add-schedule-add a:hover {background:#6768AB; color:#FFFFFF}
+}
+.window-account-event-add-schedule-add a svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#6768AB; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .window-account-event-add-schedule-add a:hover svg {fill:#FFFFFF}
+}
+.window-account-event-add-schedule-ctrl {margin:24px 0 0 0; border-top:1px solid #DFDFDF; padding:20px 0 0 0; display:flex; align-items:center; justify-content:space-between}
+.window-account-event-add-schedule-cancel a {display:flex; align-items:center; height:56px; padding:0 30px; background:#F7F8FC; font-weight:600; font-size:16px; line-height:21px; text-transform:uppercase; color:rgba(8, 8, 37, 0.4); border-radius:8px; transition:background 0.2s, color 0.2s}
+@media (min-width:1200px) {
+    .window-account-event-add-schedule-cancel a:hover {background:#6768AB; color:#FFFFFF}
+}
+.window-account-event-add-schedule-save .btn-border {font-weight:bold; display:flex; align-items:center; padding:0 29px; height:56px; border-radius:8px}
+
+.account-event-add-location {margin:24px 0 0 0; position:relative}
+.account-event-add-location-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
+@media (min-width:1200px) {
+    .account-event-add-location-current:hover {border-color:#787B8E}
+}
+.account-event-add-location-validfield.error+label.error+.account-event-add-location-current {border-color:#D75078; margin-bottom:49px}
+.account-event-add-location label.error {position:absolute; left:0; top:100%; right:0; white-space:nowrap}
+
+.account-event-add-location-current-placeholder {position:absolute; left:19px; top:19px; font-size:18px; line-height:18px; color:#787B8E; transition:top 0.2s, font-size 0.2s, line-height 0.2s}
+.account-event-add-location.full .account-event-add-location-current-placeholder {top:10px; font-size:13px; line-height:13px}
+.account-event-add-location.open .account-event-add-location-current {border-color:#787B8E}
+.account-event-add-location-current-value {margin:25px 63px 0 19px; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis; font-size:18px; line-height:22px}
+.account-event-add-location-current-arrow {position:absolute; right:20px; top:16px}
+.account-event-add-location-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
+
+.account-event-add-location-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
+.account-event-add-location.open .account-event-add-location-content {display:block}
+
+.account-event-add-location-content-search {position:relative; margin:0 0 10px 0}
+.account-event-add-location-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
+.account-event-add-location-content-search input::-webkit-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-location-content-search input::-moz-placeholder {opacity:1; color:#787B8E}
+.account-event-add-location-content-search input:-ms-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-location-content-search input:-webkit-autofill,
+.account-event-add-location-content-search input:-webkit-autofill:active,
+.account-event-add-location-content-search input:-webkit-autofill:focus,
+.account-event-add-location-content-search input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+.account-event-add-location-content-search svg {position:absolute; left:16px; top:50%; width:16px; height:16px; margin:-8px 0 0 0; fill:#080825}
+
+.account-event-add-location-content-inner {position:relative; max-height:190px; overflow:auto; padding:0 13px 0 0; margin:0 5px 0 0; min-height:40px}
+.account-event-add-location-content-inner.loading {overflow:hidden}
+.account-event-add-location-content-inner.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.5) url(../images/loading.svg) no-repeat center}
+.account-event-add-location-content-inner::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
+.account-event-add-location-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
+
+.account-event-add-location-content-placeholder {font-size:15px; line-height:23px}
+.account-event-add-location-empty {font-size:15px; line-height:23px}
+
+.account-event-add-location-checkbox {margin:10px 0 0 0; display:flex}
+.account-event-add-location-checkbox:first-child {margin:0}
+.account-event-add-location-checkbox label {cursor:pointer; display:block; width:100%}
+.account-event-add-location-checkbox input {display:none}
+.account-event-add-location-checkbox-container {display:flex; padding:4px; align-items:center; border-radius:6px; transition:background 0.2s; width:100%; position:relative; overflow:hidden}
+@media (min-width:1200px) {
+    .account-event-add-location-checkbox label:hover .account-event-add-location-checkbox-container {background:#F7F8FC}
+}
+.account-event-add-location-checkbox input:checked+.account-event-add-location-checkbox-container {background:#F7F8FC}
+.account-event-add-location-checkbox-photo {display:block; min-width:60px; max-width:60px; height:44px; margin:0 12px 0 0; border-radius:3px; background:no-repeat center; background-size:cover}
+.account-event-add-location-checkbox-content {display:block; width:100%; white-space:nowrap; overflow:hidden; position:relative}
+.account-event-add-location-checkbox-title {display:block; position:relative; width:100%; overflow:hidden; text-overflow:ellipsis; font-weight:600; font-size:18px; line-height:27px}
+.account-event-add-location-checkbox-text {display:block; margin:2px 0 0 0; position:relative; width:100%; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:15px; line-height:15px; color:#787B8E}
+.account-event-add-location-checkbox-detail {display:none}
+
+.account-event-add-location-detail {margin:12px 0 0 0; background:#F7F8FC; padding:20px; border-radius:12px; display:none}
+.account-event-add-location-detail.visible {display:flex}
+.account-event-add-location-detail-info {width:100%}
+.account-event-add-location-detail-info-row {display:flex; margin:10px 0 0 0; font-size:16px; line-height:24px}
+.account-event-add-location-detail-info-row:first-child {margin:0}
+.account-event-add-location-detail-info-row-name {min-width:136px; max-width:136px; display:flex; align-items:center; color:#787B8E; letter-spacing:0.05em; text-transform:uppercase}
+.account-event-add-location-detail-info-row-name img {min-width:20px; max-width:20px; margin:0 10px 0 0}
+.account-event-add-location-detail-info-row-value {font-weight:600}
+.account-event-add-location-detail-point-latitude {display:none}
+.account-event-add-location-detail-point-longitude {display:none}
+.account-event-add-location-detail-btn {margin:0 0 0 20px; white-space:nowrap}
+.account-event-add-location-detail-btn a {display:flex; align-items:center; height:39px; padding:0 20px; font-weight:800; font-size:12px; line-height:15px; border-radius:6px}
+
+.account-event-add-point {margin:24px 0 0 0}
+.account-event-add-point-map {margin:12px 0 0 0; border-radius:8px; height:237px}
+.account-event-add-point .account-event-add-row {margin-top:12px}
+
+.account-event-add-price .form-input-with-icon svg {width:36px; height:36px; position:absolute; right:20px; top:10px; fill:#9397AA; z-index:2; pointer-events:none}
+
+.account-event-add-persons {margin:24px 0 0 0; position:relative}
+.account-event-add-persons-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
+@media (min-width:1200px) {
+    .account-event-add-persons-current:hover {border-color:#787B8E}
+}
+.account-event-add-persons-validfield.error+label.error+.account-event-add-persons-current {border-color:#D75078; margin-bottom:49px}
+.account-event-add-persons label.error {position:absolute; left:0; top:100%; right:0; white-space:nowrap}
+
+.account-event-add-persons-current-placeholder {position:absolute; left:19px; top:19px; font-size:18px; line-height:18px; color:#787B8E; transition:top 0.2s, font-size 0.2s, line-height 0.2s}
+.account-event-add-persons.open .account-event-add-persons-current {border-color:#787B8E}
+.account-event-add-persons-current-arrow {position:absolute; right:20px; top:16px}
+.account-event-add-persons-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
+
+.account-event-add-persons-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
+.account-event-add-persons.open .account-event-add-persons-content {display:block}
+
+.account-event-add-persons-content-search {position:relative; margin:0 0 10px 0}
+.account-event-add-persons-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
+.account-event-add-persons-content-search input::-webkit-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-persons-content-search input::-moz-placeholder {opacity:1; color:#787B8E}
+.account-event-add-persons-content-search input:-ms-input-placeholder {opacity:1; color:#787B8E}
+.account-event-add-persons-content-search input:-webkit-autofill,
+.account-event-add-persons-content-search input:-webkit-autofill:active,
+.account-event-add-persons-content-search input:-webkit-autofill:focus,
+.account-event-add-persons-content-search input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
+.account-event-add-persons-content-search svg {position:absolute; left:16px; top:50%; width:16px; height:16px; margin:-8px 0 0 0; fill:#080825}
+
+.account-event-add-persons-content-inner {position:relative; max-height:190px; overflow:auto; padding:0 13px 0 0; margin:0 5px 0 0; min-height:40px}
+.account-event-add-persons-content-inner.loading {overflow:hidden}
+.account-event-add-persons-content-inner.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.5) url(../images/loading.svg) no-repeat center}
+.account-event-add-persons-content-inner::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
+.account-event-add-persons-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
+
+.account-event-add-persons-content-placeholder {font-size:15px; line-height:23px}
+.account-event-add-persons-empty {font-size:15px; line-height:23px}
+
+.account-event-add-persons-checkbox {margin:4px 0 0 0; display:flex}
+.account-event-add-persons-checkbox:first-child {margin:0}
+.account-event-add-persons-checkbox label {cursor:pointer; display:block; width:100%}
+.account-event-add-persons-checkbox input {display:none}
+.account-event-add-persons-checkbox-container {display:flex; padding:4px 32px 4px 4px; align-items:center; border-radius:6px; transition:background 0.2s; width:100%; position:relative; overflow:hidden}
+@media (min-width:1200px) {
+    .account-event-add-persons-checkbox label:hover .account-event-add-persons-checkbox-container {background:#F7F8FC}
+}
+.account-event-add-persons-checkbox input:checked+.account-event-add-persons-checkbox-container {background:#F7F8FC}
+.account-event-add-persons-checkbox-photo {display:block; min-width:40px; max-width:40px; height:44px; margin:0 12px 0 0; border-radius:3px; background:no-repeat center; background-size:cover}
+.account-event-add-persons-checkbox-content {display:block; width:100%; white-space:nowrap; overflow:hidden; position:relative}
+.account-event-add-persons-checkbox-title {display:block; position:relative; width:100%; overflow:hidden; text-overflow:ellipsis; font-weight:600; font-size:18px; line-height:27px}
+.account-event-add-persons-checkbox-text {display:block; margin:2px 0 0 0; position:relative; width:100%; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:15px; line-height:15px; color:#787B8E}
+.account-event-add-persons-checkbox-container svg {position:absolute; right:8px; top:18px; width:16px; height:16px; fill:#787B8E; opacity:0; transition:opacity 0.2s}
+.account-event-add-persons-checkbox input:checked+.account-event-add-persons-checkbox-container svg {opacity:1}
+
+.account-event-add-persons-list {margin:0 -10px; display:flex; flex-wrap:wrap}
+.account-event-add-persons-item {min-width:185px; max-width:185px; padding:12px 10px 0 10px}
+.account-event-add-persons-item-photo {height:180px; border-radius:8px; background:no-repeat center; background-size:cover; position:relative}
+.account-event-add-persons-item-photo a {position:absolute; right:10px; top:10px}
+.account-event-add-persons-item-photo a svg {display:block; width:24px; height:24px; fill:#FFFFFF; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-persons-item-photo a:hover svg {fill:#6768AB}
+}
+.account-event-add-persons-item-name {margin:12px 0 0 0; font-size:16px; line-height:21px; font-weight:600}
+.account-event-add-persons-item-text {margin:5px 0 0 0; font-size:13px; line-height:20px; color:#787B8E}
+
 .account-event-add-subgroup {margin:36px 0 0 0}
 .account-event-add-subgroup:first-child {margin:0}
 .account-event-add-subgroup-title {font-weight:600; font-size:20px; line-height:30px}
+
+.form-input-youtube > img {position:absolute; left:12px; top:10px; width:36px; z-index:1; pointer-events:none}
+.form-input-youtube > span {left:58px}
+.form-input-youtube input {padding-left:57px}
+
+.account-event-add-main-photo-preview {display:none; position:relative; margin:12px 0 0 0}
+.account-event-add-main-photo-preview.visible {display:block}
+.account-event-add-main-photo-preview img {display:block; width:100%; border-radius:8px}
+.account-event-add-main-photo-preview a {position:absolute; right:20px; top:20px}
+.account-event-add-main-photo-preview a svg {display:block; width:24px; height:24px; fill:#FFFFFF; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-main-photo-preview a:hover svg {fill:#6768AB}
+}
+
+.account-event-add-media-video-preview {display:none; position:relative; margin:12px 0 0 0}
+.account-event-add-media-video-preview.visible {display:block}
+.account-event-add-media-video-player {padding:56.25% 0 0 0; position:relative; border-radius:8px; overflow:hidden}
+.account-event-add-media-video-player-start {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; border-radius:8px; display:flex; align-items:center; justify-content:center}
+.account-event-add-media-video-player-start svg {display:block; width:100px; height:100px; fill:rgba(255, 255, 255, 0.7); transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-media-video-player-start:hover svg {fill:#FFFFFF}
+}
+.account-event-add-media-video-player iframe {position:absolute; left:0; top:0; width:100%; height:100%; border-radius:8px}
+.account-event-add-media-video-preview-remove {position:absolute; right:20px; top:20px}
+.account-event-add-media-video-preview-remove svg {display:block; width:24px; height:24px; fill:#FFFFFF; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-media-video-preview-remove:hover svg {fill:#6768AB}
+}
 
 .account-event-add-ctrl {margin:40px 0 0 0; border-top:1px solid #C7CAD8; padding:24px 0 0 0; display:flex}
 .account-event-add-ctrl-group {width:100%; display:flex; justify-content:space-between}

@@ -57,7 +57,7 @@
 .form-select select.error+.select2-container--default .select2-selection--multiple,
 .form-select select.error+label.error+.select2-container--default .select2-selection--multiple {border-color:#D1233E}
 
-.select2-container--default .select2-selection--single .select2-selection__rendered {color:#787B8E; padding-top:0; line-height:54px}
+.select2-container--default .select2-selection--single .select2-selection__rendered {color:#080825; padding-top:0; line-height:54px}
 .select2-container--default .select2-selection--single .select2-selection__clear {cursor:pointer; position:absolute; right:0; top:0; bottom:0; width:44px; background:#fff; background:url(clear.svg) no-repeat center; z-index:1; color:rgba(0, 0, 0, 0)}
 .select2-container--default .select2-selection--single .select2-selection__placeholder {color:#787B8E}
 .select2-container--default .select2-selection--single .select2-selection__arrow {height:56px; position:absolute; top:0; right:0; width:64px}

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css?sid=002">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -296,17 +296,18 @@
 
                                                     <div class="form-file">
                                                         <div class="form-file-input">
-                                                            <input type="file" name="main_photo">
+                                                            <input type="file" name="main_photo" class="account-event-add-main-photo" value="">
                                                             <span data-placeholder="Attach"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Attach</span>
                                                         </div>
                                                     </div>
+                                                    <div class="account-event-add-main-photo-preview"><img src="" alt=""><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a></div>
                                                 </div>
                                                 <!-- account event add subgroup END -->
 
                                                 <!-- account event add subgroup -->
                                                 <div class="account-event-add-subgroup">
                                                     <div class="account-event-add-subgroup-title">Additional Photo</div>
-                                                    <div class="form-files">
+                                                    <div class="form-files form-files-images">
                                                         <div class="form-files-dropzone"><span>Drag files here or click to select</span></div>
                                                         <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/index.php" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /></div>
                                                         <div class="form-files-list"></div>
@@ -320,16 +321,22 @@
 
                                                     <div class="account-event-add-row">
                                                         <div class="account-event-add-row-field">
-                                                            <div class="form-input form-input-youtube"><img src="images/form-input-icon-youtube.svg" alt=""><span>YouTube</span><input type="text" name="youtube" value="" class="url"></div>
+                                                            <div class="form-input form-input-youtube"><img src="images/form-input-icon-youtube.svg" alt=""><span>YouTube</span><input type="text" name="youtube" value="" class="url account-event-add-video"></div>
                                                         </div>
                                                         <div class="account-event-add-row-field">
                                                             <div class="form-file">
                                                                 <div class="form-file-input">
-                                                                    <input type="file" name="video_preview">
+                                                                    <input type="file" name="video_preview" class="account-event-add-video-preview">
                                                                     <span data-placeholder="Video preview image"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Video preview image</span>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="account-event-add-media-video-preview">
+                                                        <div class="account-event-add-media-video-player">
+                                                            <a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="images/sprite.svg#account-icon-video-play"></use></svg></a>
+                                                        </div>
+                                                        <a href="#" class="account-event-add-media-video-preview-remove"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a>
                                                     </div>
                                                 </div>
                                                 <!-- account event add subgroup END -->
@@ -427,7 +434,7 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js"></script>
+        <script src="js/tools.js?sid=002"></script>
 
     </body>
 </html>

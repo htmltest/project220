@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css?sid=002">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -299,29 +299,48 @@
                                                     </div>
                                                     <div class="account-event-add-schedule-list">
                                                         <div class="account-event-add-schedule-item">
-                                                            <div class="account-event-add-schedule-item-date">17.05.2024</div>
+                                                            <input type="hidden" name="schedule[0][date]" value="05/17/2024" class="account-event-add-schedule-item-date">
+                                                            <input type="hidden" name="schedule[0][start]" value="19:00" class="account-event-add-schedule-item-start">
+                                                            <input type="hidden" name="schedule[0][end]" value="22:00" class="account-event-add-schedule-item-end">
+                                                            <div class="account-event-add-schedule-item-date">05/17/2024</div>
                                                             <div class="account-event-add-schedule-item-start">19:00</div>
                                                             <div class="account-event-add-schedule-item-sep">—</div>
                                                             <div class="account-event-add-schedule-item-end">22:00</div>
                                                         </div>
                                                         <div class="account-event-add-schedule-item">
-                                                            <div class="account-event-add-schedule-item-date">17.05.2024</div>
-                                                            <div class="account-event-add-schedule-item-start">19:00</div>
+                                                            <input type="hidden" name="schedule[1][date]" value="05/18/2024" class="account-event-add-schedule-item-date">
+                                                            <input type="hidden" name="schedule[1][start]" value="16:00" class="account-event-add-schedule-item-start">
+                                                            <input type="hidden" name="schedule[1][end]" value="19:00" class="account-event-add-schedule-item-end">
+                                                            <div class="account-event-add-schedule-item-date">05/18/2024</div>
+                                                            <div class="account-event-add-schedule-item-start">16:00</div>
                                                             <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">22:00</div>
+                                                            <div class="account-event-add-schedule-item-end">19:00</div>
                                                         </div>
                                                         <div class="account-event-add-schedule-item">
-                                                            <div class="account-event-add-schedule-item-date">17.05.2024</div>
-                                                            <div class="account-event-add-schedule-item-start">19:00</div>
+                                                            <input type="hidden" name="schedule[2][date]" value="05/19/2024" class="account-event-add-schedule-item-date">
+                                                            <input type="hidden" name="schedule[2][start]" value="15:00" class="account-event-add-schedule-item-start">
+                                                            <input type="hidden" name="schedule[2][end]" value="18:00" class="account-event-add-schedule-item-end">
+                                                            <div class="account-event-add-schedule-item-date">05/19/2024</div>
+                                                            <div class="account-event-add-schedule-item-start">15:00</div>
                                                             <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">22:00</div>
+                                                            <div class="account-event-add-schedule-item-end">18:00</div>
                                                         </div>
                                                     </div>
                                                 </div>
 
+                                                <div class="window-account-event-add-schedule-template">
+                                                    <div class="window-account-event-add-schedule-template-title">Schedule</div>
+                                                    <div class="window-account-event-add-schedule-template-cancel">Cancel</div>
+                                                    <div class="window-account-event-add-schedule-template-save">Save</div>
+                                                    <div class="window-account-event-add-schedule-template-add">Add date event</div>
+                                                    <div class="window-account-event-add-schedule-template-date">Date Event</div>
+                                                    <div class="window-account-event-add-schedule-template-start">Start Event</div>
+                                                    <div class="window-account-event-add-schedule-template-end">End Event</div>
+                                                </div>
+
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input"><span>Duration</span><input type="text" name="Duration" value=""></div>
+                                                        <div class="form-input"><span>Duration</span><input type="text" name="Duration" value="2h 15m"></div>
                                                     </div>
                                                 </div>
 
@@ -418,7 +437,7 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js"></script>
+        <script src="js/tools.js?sid=002"></script>
 
     </body>
 </html>

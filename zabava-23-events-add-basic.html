@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css?sid=002">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -289,47 +289,73 @@
                                         <div class="account-event-add-group">
                                             <div class="account-event-add-group-title">Basic information</div>
                                             <div class="account-event-add-group-content">
-                                                <div class="form-input"><span>Event name <em>*</em></span><input type="text" name="event_name" value="" class="required"></div>
+                                                <div class="form-input"><span>Event name <em>*</em></span><input type="text" name="event_name" value="Lepotica in zver" class="required"></div>
                                                 <div class="account-event-add-subfield">
-                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Event name English <em>*</em></span><input type="text" name="event_name_english" value="" class="required"></div>
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Event name English <em>*</em></span><input type="text" name="event_name_english" value="Beauty And The Beast" class="required"></div>
                                                 </div>
-                                                <div class="form-select">
-                                                    <select name="categories" data-placeholder="Categories">
-                                                        <option value=""></option>
-                                                        <option value="Premieres">Premieres</option>
-                                                        <option value="Ballet">Ballet</option>
-                                                        <option value="Childish">Childish</option>
-                                                        <option value="Dramatic">Dramatic</option>
-                                                        <option value="Comedies">Comedies</option>
-                                                        <option value="Dollhouse">Dollhouse</option>
-                                                        <option value="Musicals">Musicals</option>
-                                                        <option value="Operettas">Operettas</option>
-                                                        <option value="Opera">Opera</option>
-                                                        <option value="Circus">Circus</option>
-                                                    </select>
+
+                                                <!-- account event add category -->
+                                                <div class="account-event-add-category">
+                                                    <input type="hidden" name="categoriesrequired" value="" class="account-event-add-category-validfield required">
+                                                    <div class="account-event-add-category-current">
+                                                        <div class="account-event-add-category-current-placeholder">Categories</div>
+                                                        <div class="account-event-add-category-current-value"></div>
+                                                        <div class="account-event-add-category-current-arrow"><svg><use xlink:href="images/sprite.svg#account-icon-select"></use></svg></div>
+                                                    </div>
+                                                    <div class="account-event-add-category-content">
+                                                        <div class="account-event-add-category-content-search">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                        </div>
+                                                        <div class="account-event-add-category-content-inner">
+                                                            <div class="account-event-add-category-group">
+                                                                <div class="account-event-add-category-group-title">Music</div>
+                                                                <div class="account-event-add-category-group-list">
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Premieres]" checked><span>Premieres</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Ballet]"><span>Ballet</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Childish]" checked><span>Childish</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Dramatic]" checked><span>Dramatic</span></label></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="account-event-add-category-group">
+                                                                <div class="account-event-add-category-group-title">Cinema</div>
+                                                                <div class="account-event-add-category-group-list">
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Comedies]"><span>Comedies</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Musicals]"><span>Musicals</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Operettas]"><span>Operettas</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Opera]"><span>Opera</span></label></div>
+                                                                    <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Circus]"><span>Circus</span></label></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                                <!-- account event add category END -->
+
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input"><span>Age restrictions</span><input type="text" name="age" value=""></div>
+                                                        <div class="form-input"><span>Age restrictions</span><input type="text" name="age" value="12+"></div>
                                                     </div>
                                                     <div class="account-event-add-row-field">
                                                         <div class="form-select">
                                                             <select name="format" data-placeholder="Format">
                                                                 <option value=""></option>
+                                                                <option value="Film" selected>Film</option>
                                                                 <option value="Concert">Concert</option>
                                                                 <option value="Sport">Sport</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Booking link</span><input type="text" name="booking_link" value="" class="url"><div class="form-notice">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div></div>
+                                                <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Booking link</span><input type="text" name="booking_link" value="https://Book.com/gng84kjkg94" class="url"><div class="form-notice">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div></div>
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
 
                                         <div class="account-event-add-ctrl">
                                             <div class="account-event-add-ctrl-group">
-                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>Back</a></div>
+                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>cancel</a></div>
                                                 <div class="account-event-add-save"><button type="submit" name="save" class="btn-border">Save</button></div>
                                             </div>
                                             <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Next<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
@@ -416,7 +442,7 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js"></script>
+        <script src="js/tools.js?sid=002"></script>
 
     </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    $allowed = array('png', 'jpg', 'gif', 'pdf');
+    $allowed = array('png', 'jpg', 'gif');
 
     if (isset($_FILES)) {
         foreach ($_FILES as $value) {

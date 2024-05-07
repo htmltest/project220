@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css?sid=002">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -289,14 +289,160 @@
                                         <div class="account-event-add-group">
                                             <div class="account-event-add-group-title">Location</div>
                                             <div class="account-event-add-group-content">
+
+                                                <!-- account event add location -->
+                                                <div class="account-event-add-location">
+                                                    <input type="hidden" name="locationrequired" value="" class="account-event-add-location-validfield required">
+                                                    <div class="account-event-add-location-current">
+                                                        <div class="account-event-add-location-current-placeholder">Location</div>
+                                                        <div class="account-event-add-location-current-value"></div>
+                                                        <div class="account-event-add-location-current-arrow"><svg><use xlink:href="images/sprite.svg#account-icon-select"></use></svg></div>
+                                                    </div>
+                                                    <div class="account-event-add-location-content">
+                                                        <div class="account-event-add-location-content-search" data-url="ajax/account-event-add-location.html">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                        </div>
+                                                        <div class="account-event-add-location-content-inner">
+                                                            <div class="account-event-add-location-content-placeholder">Type at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- account event add location END -->
+
+                                                <div class="account-event-add-location-detail">
+                                                    <div class="account-event-add-location-detail-info">
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name">City</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-city"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name"><img src="files/flags/SI - Slovenia.svg" alt="">Address</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-address"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Address</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-address-english"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-point-latitude"></div>
+                                                        <div class="account-event-add-location-detail-point-longitude"></div>
+                                                    </div>
+                                                    <div class="account-event-add-location-detail-btn"><a href="#" class="btn">Fill in the form</a></div>
+                                                </div>
+                                                <div class="form-select">
+                                                    <select name="city" data-placeholder="City" class="account-event-add-location-city">
+                                                        <option value=""></option>
+                                                        <option value="Celje">Celje</option>
+                                                        <option value="Domžale">Domžale</option>
+                                                        <option value="Izola">Izola</option>
+                                                        <option value="Jesenice">Jesenice</option>
+                                                        <option value="Kamnik">Kamnik</option>
+                                                        <option value="Koper">Koper</option>
+                                                        <option value="Kostanjevica na Krki">Kostanjevica na Krki</option>
+                                                        <option value="Kranj">Kranj</option>
+                                                        <option value="Lenart v Slovenskih Goricah">Lenart v Slovenskih Goricah</option>
+                                                        <option value="Ljubljana">Ljubljana</option>
+                                                        <option value="Logatec">Logatec</option>
+                                                        <option value="Maribor">Maribor</option>
+                                                        <option value="Metelkova">Metelkova</option>
+                                                        <option value="Murska Sobota">Murska Sobota</option>
+                                                        <option value="Nova Gorica">Nova Gorica</option>
+                                                        <option value="Novo Mesto">Novo Mesto</option>
+                                                        <option value="Postojna">Postojna</option>
+                                                        <option value="Ptuj">Ptuj</option>
+                                                        <option value="Škofja Loka">Škofja Loka</option>
+                                                        <option value="Trbovlje">Trbovlje</option>
+                                                        <option value="Velenje">Velenje</option>
+                                                        <option value="Vrhnika">Vrhnika</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-input"><span>Address</span><input type="text" name="address" value="" class="account-event-add-location-address"></div>
+                                                <div class="account-event-add-subfield">
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Address English</span><input type="text" name="address_english" value="" class="account-event-add-location-address-english"></div>
+                                                </div>
+
+                                                <!-- account event add point -->
+                                                <div class="account-event-add-point">
+                                                    <div class="account-event-add-subgroup-title">Point on map</div>
+                                                    <div class="account-event-add-point-map" id="map"></div>
+                                                    <script src="js/map-config.js"></script>
+                                                    <script>
+                                                        var map;
+
+                                                        var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
+
+                                                        var marker;
+
+                                                        function initMap() {
+                                                            map = new google.maps.Map(document.getElementById('map'), {
+                                                                center: coordinates,
+                                                                styles: styleArray,
+                                                                zoom: 16,
+                                                                zoomControl: true,
+                                                                zoomControlOptions: {
+                                                                    position: google.maps.ControlPosition.RIGHT_BOTTOM,
+                                                                },
+                                                                mapTypeControl: false,
+                                                                scaleControl: false,
+                                                                streetViewControl: false,
+                                                                rotateControl: false,
+                                                                fullscreenControl: false,
+                                                            });
+
+                                                            marker = new google.maps.Marker({
+                                                                position: new google.maps.LatLng(coordinates.lat, coordinates.lng),
+                                                                draggable: true,
+                                                            });
+
+                                                            marker.setMap(map);
+
+                                                            marker.addListener('dragend', (event) => {
+                                                                var position = marker.position;
+                                                                $('.account-event-add-location-address-latitude').val(position.lat).parents().filter('.form-input').addClass('full');
+                                                                $('.account-event-add-location-address-longitude').val(position.lng).parents().filter('.form-input').addClass('full');
+                                                            });
+                                                        }
+                                                    </script>
+                                                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly&key=AIzaSyA0WMOe8YWd0yua6Z4Fr_fOmST1CJs1OW0"></script>
+
+                                                    <div class="account-event-add-row">
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-input"><span>Latitude</span><input type="text" name="latitude" value="" class="account-event-add-location-address-latitude" readonly></div>
+                                                        </div>
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-input"><span>Latitude</span><input type="text" name="longitude" value="" class="account-event-add-location-address-longitude" readonly></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- account event add point END -->
+
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
 
                                         <!-- account event add group -->
-                                        <div class="account-event-add-group">
+                                        <div class="account-event-add-group account-event-add-price">
                                             <div class="account-event-add-group-title">Price</div>
                                             <div class="account-event-add-group-content">
+                                                <div class="form-checkbox account-profile-notifications-checkbox">
+                                                    <label><input type="checkbox" name="free_tickets"><span>Free tickets</span></label>
+                                                </div>
+                                                <div class="account-event-add-row">
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-select">
+                                                            <select name="format" data-placeholder="Price level">
+                                                                <option value=""></option>
+                                                                <option value="Low">Low</option>
+                                                                <option value="Middle" selected>Middle</option>
+                                                                <option value="High">High</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-input form-input-with-icon"><svg><use xlink:href="images/sprite.svg#account-icon-euro"></use></svg><span>Price from</span><input type="text" name="price_from" value="20"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
@@ -305,6 +451,40 @@
                                         <div class="account-event-add-group">
                                             <div class="account-event-add-group-title">Persons</div>
                                             <div class="account-event-add-group-content">
+
+                                                <!-- account event add persons -->
+                                                <div class="account-event-add-persons">
+                                                    <input type="hidden" name="personsrequired" value="" class="account-event-add-persons-validfield required">
+                                                    <div class="account-event-add-persons-current">
+                                                        <div class="account-event-add-persons-current-placeholder">Persons</div>
+                                                        <div class="account-event-add-persons-current-arrow"><svg><use xlink:href="images/sprite.svg#account-icon-select"></use></svg></div>
+                                                    </div>
+                                                    <div class="account-event-add-persons-content">
+                                                        <div class="account-event-add-persons-content-search" data-url="ajax/account-event-add-persons.html">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                        </div>
+                                                        <div class="account-event-add-persons-content-inner">
+                                                            <div class="account-event-add-persons-content-placeholder">Type at least 3 characters</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- account event add persons END -->
+
+                                                <div class="account-event-add-persons-list">
+                                                    <div class="account-event-add-persons-item">
+                                                        <input type="hidden" name="persons_selected[]" value="Leo DiCaprio">
+                                                        <div class="account-event-add-persons-item-photo" style="background-image:url(files/persones-05.jpg)"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a></div>
+                                                        <div class="account-event-add-persons-item-name">Leo DiCaprio</div>
+                                                        <div class="account-event-add-persons-item-text">Cinema, USA</div>
+                                                    </div>
+                                                    <div class="account-event-add-persons-item">
+                                                        <input type="hidden" name="persons_selected[]" value="Claus Maine">
+                                                        <div class="account-event-add-persons-item-photo" style="background-image:url(files/persones-04.jpg)"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a></div>
+                                                        <div class="account-event-add-persons-item-name">Claus Maine</div>
+                                                        <div class="account-event-add-persons-item-text">Concerts, Great Britain</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
@@ -313,9 +493,9 @@
                                         <div class="account-event-add-group">
                                             <div class="account-event-add-group-title">Description</div>
                                             <div class="account-event-add-group-content">
-                                                <div class="form-input"><span>Text Here</span><textarea name="description" rows="1" cols="1"></textarea></div>
+                                                <div class="form-input"><span>Text Here</span><textarea name="description" rows="1" cols="1">Lirična, ironična, subtilna, boleče žalostna in do zadnje besede iskrena zgodba. Predstava je koncert o odnosu človeka do lastnega daru in dobe.</textarea></div>
                                                 <div class="account-event-add-subfield">
-                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Text Here</span><textarea name="description_eng" rows="1" cols="1"></textarea></div>
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Text Here</span><textarea name="description_eng" rows="1" cols="1">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -327,7 +507,7 @@
                                             <div class="account-event-add-group-content">
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Website</span><input type="text" name="website" value="" class="url"></div>
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Website</span><input type="text" name="website" value="https://BeautyAndTheBeast.com" class="url"></div>
                                                     </div>
                                                     <div class="account-event-add-row-field">
                                                         <div class="form-input form-input-with-icon"><img src="images/form-input-icon-tiktok.svg" alt=""><span>TikTok</span><input type="text" name="tiktok" value="" class="url"></div>
@@ -336,10 +516,10 @@
 
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-instagram.svg" alt=""><span>Instagram</span><input type="text" name="instagram" value="" class="url"></div>
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-instagram.svg" alt=""><span>Instagram</span><input type="text" name="instagram" value="https://instagram.com/Movies_SL" class="url"></div>
                                                     </div>
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-facebook.svg" alt=""><span>Facebook</span><input type="text" name="facebook" value="" class="url"></div>
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-facebook.svg" alt=""><span>Facebook</span><input type="text" name="facebook" value="https://facebook.com/Movies_SL" class="url"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -435,7 +615,7 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js"></script>
+        <script src="js/tools.js?sid=002"></script>
 
     </body>
 </html>

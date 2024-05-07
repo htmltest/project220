@@ -36,7 +36,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.form-file-input span em a', function(e) {
         var curField = $(this).parents().filter('.form-file');
-        curField.find('input').val('');
+        curField.find('input').val('').trigger('change');
         curField.find('.form-file-input span').html('<svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#input-file"></use></svg>' + curField.find('.form-file-input span').attr('data-placeholder'));
         curField.removeClass('full');
         e.preventDefault();
@@ -1497,7 +1497,7 @@ function initForm(curForm) {
         $(this).val($(this).val()).change();
     });
 
-    var indexFormInput = 0;
+    var indexFormInput = Date.now();
     curForm.find('.form-input-date input').each(function() {
         var curInput = $(this);
         curInput.attr('autocomplete', 'off');
@@ -1595,9 +1595,17 @@ function initForm(curForm) {
                 curFiles.find('.form-files-list-item-progress').eq(0).remove();
                 if (data.result.status == 'success') {
                     if (typeof curInput.attr('multiple') !== 'undefined') {
-                        curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                        if (!curFiles.hasClass('form-files-images')) {
+                            curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                        } else {
+                            curFiles.find('.form-files-list').append('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(' + data.result.url + ')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
+                        }
                     } else {
-                        curFiles.find('.form-files-list').html('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                        if (!curFiles.hasClass('form-files-images')) {
+                            curFiles.find('.form-files-list').html('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
+                        } else {
+                            curFiles.find('.form-files-list').html('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(' + data.result.url + ')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
+                        }
                     }
                     curFiles.find('.files-required').val('true');
                     curFiles.find('label.error').remove();
@@ -2235,6 +2243,477 @@ $(document).ready(function() {
 
     $('.account-event-card-schedule-more a').click(function(e) {
         $('.account-event-card-schedule').toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.account-event-add-category-current').click(function() {
+        var curSelect = $(this).parent();
+        if (curSelect.hasClass('open')) {
+            curSelect.removeClass('open');
+        } else {
+            $('.account-event-add-category.open').removeClass('open');
+            curSelect.addClass('open');
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.account-event-add-category').length == 0) {
+            $('.account-event-add-category.open').removeClass('open');
+        }
+    });
+
+    $('.account-event-add-category').each(function() {
+        var curSelect = $(this);
+        var newValue = '';
+        curSelect.find('.account-event-add-category-checkbox input:checked').each(function() {
+            if (newValue != '') {
+                newValue += ', ';
+            }
+            newValue += $(this).parent().find('span').html();
+        });
+        curSelect.find('.account-event-add-category-validfield').val(newValue);
+        curSelect.find('.account-event-add-category-current-value').html(newValue);
+        if (newValue == '') {
+            curSelect.removeClass('full');
+        } else {
+            curSelect.addClass('full');
+        }
+    });
+
+    $('.account-event-add-category-content-search input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.account-event-add-category-content-search input').on('keyup blur change', function() {
+        var curInput = $(this);
+        var curValue = curInput.val().toLowerCase();
+        var curSelect = curInput.parents().filter('.account-event-add-category');
+        curSelect.find('.account-event-add-category-checkbox').each(function() {
+            var curItem = $(this);
+
+            var curIndex = curItem.find('span').text().toLowerCase().indexOf(curValue);
+            if (curIndex == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
+            }
+        });
+        curSelect.find('.account-event-add-category-checkbox.first-child').removeClass('first-child');
+        curSelect.find('.account-event-add-category-checkbox:not(.hidden)').eq(0).addClass('first-child');
+        curSelect.find('.account-event-add-category-group').each(function() {
+            var curGroup = $(this);
+            if (curGroup.find('.account-event-add-category-checkbox:not(.hidden)').length == 0) {
+                curGroup.addClass('hidden');
+            } else {
+                curGroup.removeClass('hidden');
+            }
+        });
+        curSelect.find('.account-event-add-category-group.first-child').removeClass('first-child');
+        curSelect.find('.account-event-add-category-group:not(.hidden)').eq(0).addClass('first-child');
+    });
+
+    $('.account-event-add-category-content-search input').each(function() {
+        var curInput = $(this);
+        var curValue = curInput.val().toLowerCase();
+        var curSelect = curInput.parents().filter('.account-event-add-category');
+        curSelect.find('.account-event-add-category-checkbox').each(function() {
+            var curItem = $(this);
+
+            var curIndex = curItem.find('span').text().toLowerCase().indexOf(curValue);
+            if (curIndex == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
+            }
+        });
+        curSelect.find('.account-event-add-category-checkbox.first-child').removeClass('first-child');
+        curSelect.find('.account-event-add-category-checkbox:not(.hidden)').eq(0).addClass('first-child');
+    });
+
+    $('.account-event-add-category-checkbox input').change(function() {
+        var curSelect = $(this).parents().filter('.account-event-add-category');
+        var newValue = '';
+        curSelect.find('.account-event-add-category-checkbox input:checked').each(function() {
+            if (newValue != '') {
+                newValue += ', ';
+            }
+            newValue += $(this).parent().find('span').html();
+        });
+        curSelect.find('.account-event-add-category-validfield').val(newValue).removeClass('error');
+        curSelect.find('label.error').remove();
+        curSelect.find('.account-event-add-category-current-value').html(newValue);
+        if (newValue == '') {
+            curSelect.removeClass('full');
+        } else {
+            curSelect.addClass('full');
+        }
+    });
+
+    $('.account-event-add-schedule-edit a').click(function(e) {
+        var curPadding = $('.wrapper').width();
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('window-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        $('body').append('<div class="window"><div class="window-loading"></div></div>')
+
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+
+        var newHTML =   '<div class="window-account-event-add-schedule">' +
+                            '<form action="#" method="post">' +
+                                '<div class="window-title">' + $('.window-account-event-add-schedule-template-title').html() + '</div>' +
+                                '<div class="window-account-event-add-schedule-container">';
+
+        $('.account-event-add-schedule-item').each(function() {
+            var curItem = $(this);
+            newHTML +=              '<div class="window-account-event-add-schedule-item">' +
+                                        '<div class="window-account-event-add-schedule-item-date">' +
+                                            '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-date').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-date').attr('value') + '" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-start">' +
+                                            '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-end">' +
+                                            '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                    '</div>';
+        });
+
+        newHTML +=              '</div>' +
+                                '<div class="window-account-event-add-schedule-add"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-add"></use></svg>' + $('.window-account-event-add-schedule-template-add').html() + '</a></div>' +
+                                '<div class="window-account-event-add-schedule-ctrl">' +
+                                    '<div class="window-account-event-add-schedule-cancel"><a href="#" class="window-close-btn">' + $('.window-account-event-add-schedule-template-cancel').html() + '</a></div>' +
+                                    '<div class="window-account-event-add-schedule-save"><input type="submit" value="' + $('.window-account-event-add-schedule-template-save').html() + '" class="btn-border"></a></div>' +
+                                '</div>' +
+                            '</form>' +
+                        '</div>';
+
+        $('.window').html('<div class="window-container window-container-preload">' + newHTML + '<a href="#" class="window-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-close"></use></svg></a></div>');
+
+        window.setTimeout(function() {
+            $('.window-container-preload').removeClass('window-container-preload');
+        }, 100);
+
+        $('.window form').each(function() {
+            initForm($(this));
+            var curForm = $(this);
+            var validator = curForm.validate();
+            if (validator) {
+                validator.destroy();
+            }
+            curForm.validate({
+                ignore: '',
+                submitHandler: function(form) {
+                    var updateHTML = '';
+
+                    $('.window-account-event-add-schedule-item').each(function() {
+                        var curItem = $(this);
+                        updateHTML +=   '<div class="account-event-add-schedule-item">' +
+                                            '<input type="hidden" name="' + curItem.find('.window-account-event-add-schedule-item-date input').attr('name') + '" value="' + curItem.find('.window-account-event-add-schedule-item-date input').val() + '" class="account-event-add-schedule-item-date">' +
+                                            '<input type="hidden" name="' + curItem.find('.window-account-event-add-schedule-item-start input').attr('name') + '" value="' + curItem.find('.window-account-event-add-schedule-item-start input').val() + '" class="account-event-add-schedule-item-start">' +
+                                            '<input type="hidden" name="' + curItem.find('.window-account-event-add-schedule-item-end input').attr('name') + '" value="' + curItem.find('.window-account-event-add-schedule-item-end input').val() + '" class="account-event-add-schedule-item-end">' +
+                                            '<div class="account-event-add-schedule-item-date">' + curItem.find('.window-account-event-add-schedule-item-date input').val() + '</div>' +
+                                            '<div class="account-event-add-schedule-item-start">' + curItem.find('.window-account-event-add-schedule-item-start input').val() + '</div>' +
+                                            '<div class="account-event-add-schedule-item-sep">—</div>' +
+                                            '<div class="account-event-add-schedule-item-end">' + curItem.find('.window-account-event-add-schedule-item-end input').val() + '</div>' +
+                                        '</div>';
+                    });
+
+                    $('.account-event-add-schedule-list').html(updateHTML);
+                    $('.window-account-event-add-schedule-container').html('');
+                    windowClose();
+                }
+            });
+        });
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-account-event-add-schedule-item-remove a', function(e) {
+        $(this).parents().filter('.window-account-event-add-schedule-item').remove();
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-account-event-add-schedule-add a', function(e) {
+        var newID = Date.now();
+        $('.window-account-event-add-schedule-container').append(
+                                '<div class="window-account-event-add-schedule-item">' +
+                                    '<div class="window-account-event-add-schedule-item-date">' +
+                                        '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" id="form-input-date-id-' + newID + '" name="schedule[' + newID + '][date]" value="" class="required"></div>' +
+                                    '</div>' +
+                                    '<div class="window-account-event-add-schedule-item-start">' +
+                                        '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
+                                    '</div>' +
+                                    '<div class="window-account-event-add-schedule-item-end">' +
+                                        '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
+                                    '</div>' +
+                                    '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                '</div>');
+        $('#form-input-date-id-' + newID).each(function() {
+            var curInput = $(this);
+            curInput.attr('autocomplete', 'off');
+            curInput.prop('readonly', true);
+            new AirDatepicker('#form-input-date-id-' + newID, {
+                classes: 'form-input-datepicker',
+                prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+            });
+        });
+        e.preventDefault();
+    });
+
+    $('.account-event-add-location-current').click(function() {
+        var curSelect = $(this).parent();
+        if (curSelect.hasClass('open')) {
+            curSelect.removeClass('open');
+        } else {
+            $('.account-event-add-location.open').removeClass('open');
+            curSelect.addClass('open');
+            curSelect.find('.account-event-add-location-content-search input').trigger('focus');
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.account-event-add-location').length == 0) {
+            $('.account-event-add-location.open').removeClass('open');
+        }
+    });
+
+    $('.account-event-add-location').each(function() {
+        var curSelect = $(this);
+        var newValue = '';
+        curSelect.find('.account-event-add-location-checkbox input:checked').each(function() {
+            newValue = $(this).parent().find('span.account-event-add-location-checkbox-title').html();
+        });
+        curSelect.find('.account-event-add-location-validfield').val(newValue);
+        curSelect.find('.account-event-add-location-current-value').html(newValue);
+        if (newValue == '') {
+            curSelect.removeClass('full');
+        } else {
+            curSelect.addClass('full');
+        }
+    });
+
+    $('.account-event-add-location-content-search input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.account-event-add-location-content-search input').on('keyup', function() {
+        var curInput = $(this);
+        var curValue = curInput.val();
+        if (curValue.length > 2) {
+            var curSelect = curInput.parents().filter('.account-event-add-location');
+            curSelect.find('.account-event-add-location-content-inner').addClass('loading');
+            $.ajax({
+                type: 'POST',
+                url: curSelect.find('.account-event-add-location-content-search').attr('data-url'),
+                processData: false,
+                contentType: false,
+                dataType: 'html',
+                data: curInput.serialize(),
+                cache: false
+            }).done(function(html) {
+                curSelect.find('.account-event-add-location-content-inner').html(html);
+                curSelect.find('.account-event-add-location-content-inner').removeClass('loading');
+            });
+        }
+    });
+
+    $('body').on('change', '.account-event-add-location-checkbox input', function() {
+        var curSelect = $(this).parents().filter('.account-event-add-location');
+        var newValue = '';
+        curSelect.find('.account-event-add-location-checkbox input:checked').each(function() {
+            var curCheckbox = $(this).parent();
+            newValue = curCheckbox.find('span.account-event-add-location-checkbox-title').html();
+            $('.account-event-add-location-detail-city').html(curCheckbox.find('span.account-event-add-location-checkbox-detail-city').html());
+            $('.account-event-add-location-detail-address').html(curCheckbox.find('span.account-event-add-location-checkbox-detail-address').html());
+            $('.account-event-add-location-detail-address-english').html(curCheckbox.find('span.account-event-add-location-checkbox-detail-address-english').html());
+            $('.account-event-add-location-detail-point-latitude').html(curCheckbox.find('span.account-event-add-location-checkbox-detail-address-latitude').html());
+            $('.account-event-add-location-detail-point-longitude').html(curCheckbox.find('span.account-event-add-location-checkbox-detail-address-longitude').html());
+        });
+        curSelect.find('.account-event-add-location-validfield').val(newValue).removeClass('error');
+        curSelect.find('label.error').remove();
+        curSelect.find('.account-event-add-location-current-value').html(newValue);
+        if (newValue == '') {
+            curSelect.removeClass('full');
+            $('.account-event-add-location-detail').removeClass('visible');
+        } else {
+            curSelect.addClass('full');
+            $('.account-event-add-location-detail').addClass('visible');
+        }
+        curSelect.removeClass('open');
+    });
+
+    $('.account-event-add-location-detail-btn a').click(function(e) {
+        $('.account-event-add-location-city').val($('.account-event-add-location-detail-city').html()).trigger('change').trigger({type: 'select2:select'});
+        $('.account-event-add-location-address').val($('.account-event-add-location-detail-address').html()).parents().filter('.form-input').addClass('full');;
+        $('.account-event-add-location-address-english').val($('.account-event-add-location-detail-address-english').html()).parents().filter('.form-input').addClass('full');;
+        $('.account-event-add-location-address-latitude').val($('.account-event-add-location-detail-point-latitude').html()).parents().filter('.form-input').addClass('full');;
+        $('.account-event-add-location-address-longitude').val($('.account-event-add-location-detail-point-longitude').html()).parents().filter('.form-input').addClass('full');;
+        if (map && marker) {
+            var newCoords = new google.maps.LatLng($('.account-event-add-location-detail-point-latitude').html(), $('.account-event-add-location-detail-point-longitude').html());
+            marker.setPosition(newCoords);
+            map.setCenter(newCoords);
+        }
+        e.preventDefault();
+    });
+
+    $('.account-event-add-persons-current').click(function() {
+        var curSelect = $(this).parent();
+        if (curSelect.hasClass('open')) {
+            curSelect.removeClass('open');
+        } else {
+            $('.account-event-add-persons.open').removeClass('open');
+            curSelect.addClass('open');
+            curSelect.find('.account-event-add-persons-content-search input').trigger('focus');
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.account-event-add-persons').length == 0) {
+            $('.account-event-add-persons.open').removeClass('open');
+        }
+    });
+
+    $('.account-event-add-persons-content-search input').keydown(function(e) {
+        if (e.keyCode === 13) {
+            e.preventDefault();
+        }
+    });
+
+    $('.account-event-add-persons-content-search input').on('keyup', function() {
+        var curInput = $(this);
+        var curValue = curInput.val();
+        if (curValue.length > 2) {
+            var curSelect = curInput.parents().filter('.account-event-add-persons');
+            curSelect.find('.account-event-add-persons-content-inner').addClass('loading');
+            $.ajax({
+                type: 'POST',
+                url: curSelect.find('.account-event-add-persons-content-search').attr('data-url'),
+                processData: false,
+                contentType: false,
+                dataType: 'html',
+                data: curInput.serialize(),
+                cache: false
+            }).done(function(html) {
+                curSelect.find('.account-event-add-persons-content-inner').html(html);
+                $('.account-event-add-persons-item').each(function() {
+                    var curItem = $(this);
+                    $('.account-event-add-persons-checkbox input[value="' + curItem.find('input').val() + '"]').prop('checked', true);
+                });
+                curSelect.find('.account-event-add-persons-content-inner').removeClass('loading');
+            });
+        }
+    });
+
+    $('body').on('change', '.account-event-add-persons-checkbox input', function() {
+        var curInput = $(this);
+        var curCheckbox = curInput.parent();
+        var curSelect = curInput.parents().filter('.account-event-add-persons');
+        if (curInput.prop('checked')) {
+            $('.account-event-add-persons-list').append(
+                '<div class="account-event-add-persons-item">' +
+                    '<input type="hidden" name="persons_selected[]" value="' + curInput.val() + '">' +
+                    '<div class="account-event-add-persons-item-photo" style="' + curCheckbox.find('.account-event-add-persons-checkbox-photo').attr('style') + '"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>' +
+                    '<div class="account-event-add-persons-item-name">' + curCheckbox.find('.account-event-add-persons-checkbox-title').html() + '</div>' +
+                    '<div class="account-event-add-persons-item-text">' + curCheckbox.find('.account-event-add-persons-checkbox-text').html() + '</div>' +
+                '</div>'
+            );
+        } else {
+            $('.account-event-add-persons-item input[value="' + curInput.val() + '"]').parents().filter('.account-event-add-persons-item').remove();
+        }
+        var curValue = '1';
+        if ($('.account-event-add-persons-item').length == 0) {
+            curValue = '';
+        }
+        curSelect.find('.account-event-add-persons-validfield').val(curValue).removeClass('error');
+        curSelect.find('label.error').remove();
+    });
+
+    $('body').on('click', '.account-event-add-persons-item-photo a', function(e) {
+        var curItem = $(this).parents().filter('.account-event-add-persons-item');
+        $('.account-event-add-persons-checkbox input[value="' + curItem.find('input').val() + '"]').prop('checked', false).trigger('change');
+        e.preventDefault();
+    });
+
+    $('.account-event-add-main-photo').change(function(e) {
+        var currFiles = e.target.files;
+        if (currFiles.length > 0) {
+            $('.account-event-add-main-photo-preview img').attr('src', URL.createObjectURL(currFiles[0]));
+            $('.account-event-add-main-photo-preview').addClass('visible');
+        } else {
+            $('.account-event-add-main-photo-preview img').attr('src', '');
+            $('.account-event-add-main-photo-preview').removeClass('visible');
+        }
+    });
+
+    $('.account-event-add-main-photo-preview a').click(function(e) {
+        $('.account-event-add-main-photo').val('').trigger('change');
+        e.preventDefault();
+    });
+
+    $('.account-event-add-video-preview').change(function(e) {
+        var currFiles = e.target.files;
+        if (currFiles.length > 0) {
+            $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(' + URL.createObjectURL(currFiles[0]) + ')');
+            if ($('.account-event-add-media-video-player-start').length == 0) {
+                $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
+            }
+            if ($('.account-event-add-media-video-player-start').attr('href') != '') {
+                $('.account-event-add-media-video-preview').addClass('visible');
+            }
+        } else {
+            if ($('.account-event-add-media-video-player-start').length == 0) {
+                $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
+            }
+            $('.account-event-add-media-video-player-start').attr('style', '');
+            $('.account-event-add-media-video-preview').removeClass('visible');
+        }
+    });
+
+    $('.account-event-add-video').change(function(e) {
+        var curValue = $(this).val();
+        if (curValue != '') {
+            $('.account-event-add-media-video-player-start').attr('href', curValue);
+            if ($('.account-event-add-media-video-player-start').length == 0) {
+                $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
+            }
+            if ($('.account-event-add-media-video-player-start').attr('style') != '') {
+                $('.account-event-add-media-video-preview').addClass('visible');
+            }
+        } else {
+            if ($('.account-event-add-media-video-player-start').length == 0) {
+                $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
+            }
+            $('.account-event-add-media-video-player-start').attr('href', '');
+            $('.account-event-add-media-video-preview').removeClass('visible');
+        }
+    });
+
+    $('.account-event-add-media-video-preview-remove').click(function(e) {
+        $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
+        $('.account-event-add-video').val('').trigger('change').parents().filter('.form-input').removeClass('full');
+        $('.account-event-add-video-preview').val('').trigger('change').parents().filter('.form-input').removeClass('full');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.account-event-add-media-video-player-start', function(e) {
+        var curLink = $(this);
+        var curPlayer = curLink.parent();
+        var curHREF = curLink.attr('href');
+        if (curHREF.indexOf('?') == -1) {
+            curHREF += '?autoplay=1';
+        } else {
+            curHREF += '&autoplay=1';
+        }
+        curPlayer.html('<iframe width="560" height="315" src="' + curHREF + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
         e.preventDefault();
     });
 
