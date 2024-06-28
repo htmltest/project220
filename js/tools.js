@@ -1512,6 +1512,38 @@ function initForm(curForm) {
         });
     });
 
+    curForm.find('.form-input-time input').each(function() {
+        var curInput = $(this);
+        curInput.attr('autocomplete', 'off');
+        curInput.mask('HG:MN', {
+            translation: {
+                'H': {
+                    pattern: /[0-2]/
+                },
+                'G': {
+                    pattern: /[0-9]/
+                },
+                'M': {
+                    pattern: /[0-5]/
+                },
+                'N': {
+                    pattern: /[0-9]/
+                }
+            }
+        });
+        var placement = 'top';
+        if (curInput.parent().offset().top < 320) {
+            placement = 'bottom';
+        }
+        curInput.parent().clockpicker({
+            placement: placement,
+            donetext: 'Done',
+            afterDone: function() {
+                curInput.trigger('blur');
+            }
+        });
+    });
+
     curForm.find('.form-select select').each(function() {
         var curSelect = $(this);
         var options = {
@@ -2375,10 +2407,10 @@ $(document).ready(function() {
                                             '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-date').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-date').attr('value') + '" class="required"></div>' +
                                         '</div>' +
                                         '<div class="window-account-event-add-schedule-item-start">' +
-                                            '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
                                         '</div>' +
                                         '<div class="window-account-event-add-schedule-item-end">' +
-                                            '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
                                         '</div>' +
                                         '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
                                     '</div>';
@@ -2447,10 +2479,10 @@ $(document).ready(function() {
                                         '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" id="form-input-date-id-' + newID + '" name="schedule[' + newID + '][date]" value="" class="required"></div>' +
                                     '</div>' +
                                     '<div class="window-account-event-add-schedule-item-start">' +
-                                        '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
+                                        '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
                                     '</div>' +
                                     '<div class="window-account-event-add-schedule-item-end">' +
-                                        '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
+                                        '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
                                     '</div>' +
                                     '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
                                 '</div>');
@@ -2462,6 +2494,40 @@ $(document).ready(function() {
                 classes: 'form-input-datepicker',
                 prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
                 nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+            });
+        });
+
+        $('.window-account-event-add-schedule-item:last-child').each(function() {
+            $(this).find('.form-input-time input').each(function() {
+                var curInput = $(this);
+                curInput.attr('autocomplete', 'off');
+                curInput.mask('HG:MN', {
+                    translation: {
+                        'H': {
+                            pattern: /[0-2]/
+                        },
+                        'G': {
+                            pattern: /[0-9]/
+                        },
+                        'M': {
+                            pattern: /[0-5]/
+                        },
+                        'N': {
+                            pattern: /[0-9]/
+                        }
+                    }
+                });
+                var placement = 'top';
+                if (curInput.parent().offset().top < 320) {
+                    placement = 'bottom';
+                }
+                curInput.parent().clockpicker({
+                    placement: placement,
+                    donetext: 'Done',
+                    afterDone: function() {
+                        curInput.trigger('blur');
+                    }
+                });
             });
         });
         e.preventDefault();
