@@ -1014,6 +1014,30 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.filters-sort-current').click(function() {
+        $('.filters-sort').toggleClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.filters-sort').length == 0) {
+            $('.filters-sort').removeClass('open');
+        }
+    });
+
+    $('.filters-sort-list label').click(function() {
+        $('.filters-sort').removeClass('open');
+    });
+
+    $('.filters-sort-list input').change(function() {
+        var curInput = $('.filters-sort-list input:checked');
+        $('.filters-sort-current').html(curInput.parent().find('span').html());
+        $('.filters form').trigger('submit');
+    });
+
+    $('body').on('change', '.catalogue .pager-size-select-item label input', function() {
+        $('.filters form').trigger('submit');
+    });
+
     $('body').on('click', '.catalogue .pager a', function(e) {
         var curLink = $(this);
         if (!curLink.hasClass('active')) {
@@ -1473,8 +1497,19 @@ function initForm(curForm) {
         var curID = 'form-input-date-id-' + indexFormInput;
         curInput.attr('id', curID);
         indexFormInput++;
+        var startDate = new Date();
+        if (typeof ($(this).attr('value')) != 'undefined') {
+            var curValue = $(this).val();
+            if (curValue != '') {
+                var startDateArray = curValue.split('/');
+                startDate = new Date(Number(startDateArray[2]), Number(startDateArray[0]) - 1 , Number(startDateArray[1]));
+            }
+        }
+        curInput.parents().filter('.form-input').addClass('full');
         new AirDatepicker('#' + curID, {
             classes: 'form-input-datepicker',
+            startDate: startDate,
+            selectedDates: [startDate],
             prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
             nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
         });
@@ -1598,13 +1633,13 @@ function initForm(curForm) {
                         if (!curFiles.hasClass('form-files-images')) {
                             curFiles.find('.form-files-list').append('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
                         } else {
-                            curFiles.find('.form-files-list').append('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(' + data.result.url + ')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
+                            curFiles.find('.form-files-list').append('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(\'' + data.result.url + '\')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
                         }
                     } else {
                         if (!curFiles.hasClass('form-files-images')) {
                             curFiles.find('.form-files-list').html('<div class="form-files-list-item"><div class="form-files-list-item-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-doc"></use></svg></div><div class="form-files-list-item-name"><a href="' + data.result.url + '" download>' + data.result.path + '</a></div><div class="form-files-list-item-size">' + Number(data.result.size).toFixed(2) + ' МB</div><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>');
                         } else {
-                            curFiles.find('.form-files-list').html('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(' + data.result.url + ')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
+                            curFiles.find('.form-files-list').html('<div class="form-files-list-item form-files-list-item-img" style="background-image:url(\'' + data.result.url + '\')"><a href="' + removeURL + '?file=' + data.result.path + '" class="form-files-list-item-remove"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-item-delete"></use></svg></a></div>');
                         }
                     }
                     curFiles.find('.files-required').val('true');
@@ -2119,15 +2154,30 @@ $(document).ready(function() {
         }
     });
 
-    $('.header-user-account-link').click(function(e) {
-        $('html').toggleClass('header-user-menu-open');
-        e.preventDefault();
+    $(document).click(function(e) {
+        if ($(window).width() > 1199) {
+            if ($(e.target).parents().filter('.header-user-account').length == 0) {
+                $('html').removeClass('header-user-menu-open');
+            }
+        }
     });
 
-    $(document).click(function(e) {
-        if ($(e.target).parents().filter('.header-user-account').length == 0) {
+    $('.header-user-account-link').click(function(e) {
+        if ($('html').hasClass('header-user-menu-open')) {
             $('html').removeClass('header-user-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $(window).scrollTop($('html').data('scrollTop'));
+        } else {
+            var curWidth = $(window).width();
+            if (curWidth < 375) {
+                curWidth = 375;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('header-user-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            $('html').data('scrollTop', curScroll);
         }
+        e.preventDefault();
     });
 
     $('.account-profile-menu-item a').click(function(e) {
@@ -2179,12 +2229,186 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.account-support-filter-link').click(function(e) {
+        if ($('html').hasClass('account-support-filter-open')) {
+            $('html').removeClass('account-support-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $(window).scrollTop($('html').data('scrollTop'));
+        } else {
+            var curWidth = $(window).width();
+            if (curWidth < 375) {
+                curWidth = 375;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('account-support-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            $('html').data('scrollTop', curScroll);
+        }
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(window).width() > 1199) {
+            if ($(e.target).parents().filter('.account-support-filter').length == 0 && !$(e.target).hasClass('air-datepicker-cell') && !$(e.target).hasClass('air-datepicker-nav--title') && $(e.target).parents().filter('.air-datepicker-nav--title').length == 0) {
+                $('html').removeClass('account-support-filter-open');
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+        } else {
+            if ($(e.target).hasClass('account-support-filter-window')) {
+                $('html').removeClass('account-support-filter-open');
+                $('meta[name="viewport"]').attr('content', 'width=device-width');
+                $(window).scrollTop($('html').data('scrollTop'));
+            }
+        }
+    });
+
+    $('.account-support-filter-submit .btn').click(function(e) {
+        $('html').removeClass('account-support-filter-open');
+        $('meta[name="viewport"]').attr('content', 'width=device-width');
+        $(window).scrollTop($('html').data('scrollTop'));
+    });
+
+    $('.account-support-filter-header-close').click(function(e) {
+        $('html').removeClass('account-support-filter-open');
+        $('meta[name="viewport"]').attr('content', 'width=device-width');
+        $(window).scrollTop($('html').data('scrollTop'));
+        e.preventDefault();
+    });
+
+    $('.account-support-filter-group-title a').click(function(e) {
+        $(this).parent().parent().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.account-support-filter-period .form-radio input').change(function() {
+        var curPeriod = $('.account-support-filter-period .form-radio input:checked');
+        if (curPeriod.hasClass('other')) {
+            $('.account-support-filter-range input').prop('disabled', false);
+        } else {
+            $('.account-support-filter-range input').prop('disabled', true);
+        }
+        if ($(window).width() > 1199) {
+            updateAccountSupportFilter();
+            updateAccountSupport();
+        }
+    });
+
+    $('.account-support-filter-range .form-input-date input').change(function() {
+        if ($(window).width() > 1199) {
+            updateAccountSupport();
+        }
+    });
+
+    $('.account-support-filter-group-content .form-checkbox input').change(function() {
+        if ($(window).width() > 1199) {
+            updateAccountSupportFilter();
+            updateAccountSupport();
+        }
+    });
+
+    $('.account-support-filter-period').each(function() {
+        var curPeriod = $('.account-support-filter-period .form-radio input:checked');
+        if (curPeriod.hasClass('other')) {
+            $('.account-support-filter-range input').prop('disabled', false);
+        } else {
+            $('.account-support-filter-range input').prop('disabled', true);
+        }
+        updateAccountSupportFilter();
+    });
+
+    $('.account-support-filter-clear').click(function(e) {
+        $('.account-support-filter-group-content .form-checkbox input').prop('checked', false);
+        $('.account-support-filter-period .form-radio input.default').prop('checked', true).trigger('change');
+        e.preventDefault();
+    });
+
+    function updateAccountSupportFilter() {
+        var curCount = 0;
+        curCount += $('.account-support-filter-group-content .form-checkbox input:checked').length;
+        if (!$('.account-support-filter-period .form-radio input:checked').hasClass('default')) {
+            curCount++;
+        }
+        if (curCount == 0) {
+            $('.account-support-filter-link span').removeClass('visible').html('');
+        } else {
+            $('.account-support-filter-link span').addClass('visible').html(curCount);
+        }
+    }
+
+    function updateAccountSupport() {
+        $('.account-support-filter-window form').trigger('submit');
+    }
+
+    var isPageAccountClick = false;
+
+    $('.account-support-filter-window form').each(function() {
+        var curForm = $(this);
+        var validator = curForm.validate();
+        if (validator) {
+            validator.destroy();
+        }
+        curForm.validate({
+            ignore: '',
+            submitHandler: function(form) {
+                updateAccountSupportFilter();
+                $('.account-support-list').addClass('loading');
+
+                var curData = curForm.serialize();
+                if ($('.pager a.active').length == 1) {
+                    curData += '&page=' + $('.pager a.active').attr('data-value') + '&size=' + $('.pager-size-select-item input:checked').val();
+                }
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('action'),
+                    dataType: 'html',
+                    data: curData,
+                    cache: false
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    alert('The service is temporarily unavailable, try again later.');
+                    $('.account-support-list').removeClass('loading');
+                }).done(function(html) {
+                    $('.account-support-list').html($(html).find('.account-support-list').html());
+                    $('.pager').html($(html).find('.pager').html());
+                    $('.account-support-filter-count').html($(html).find('.account-support-list').attr('data-count'));
+                    $('.account-support-list').removeClass('loading');
+
+                    if (isPageAccountClick) {
+                        isPageAccountClick = false;
+                        var curMargin = $('header').height();
+                        $('html, body').animate({'scrollTop': $('.account-support-list').offset().top - curMargin});
+                    }
+                });
+            }
+        });
+    });
+
+    $('body').on('click', '.account-support-ctrl .pager a', function(e) {
+        var curLink = $(this);
+        if (!curLink.hasClass('active')) {
+            $('.account-support-ctrl .pager a.active').removeClass('active');
+            curLink.addClass('active');
+            if (e.originalEvent === undefined) {
+                isPageAccountClick = false;
+            } else {
+                isPageAccountClick = true;
+            }
+            updateAccountSupport();
+        }
+        e.preventDefault();
+    });
+
+    $('.pager-size-select-item input').change(function() {
+        isPageAccountClick = true;
+        updateAccountSupport();
+    });
+
     $('.account-support-card-new-message-link a').click(function(e) {
         $('.account-support-card-new-message').addClass('open');
         e.preventDefault();
     });
 
-    $('.pager-size-select-current').click(function() {
+    $('body').on('click', '.pager-size-select-current', function() {
         $(this).parent().toggleClass('open');
     });
 
@@ -2194,7 +2418,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.pager-size-select-item label input').change(function() {
+    $('body').on('change', '.pager-size-select-item label input', function() {
         var curSelect = $(this).parents().filter('.pager-size');
         var curText = '';
         curSelect.find('.pager-size-select-item label input:checked').each(function() {
@@ -2704,7 +2928,7 @@ $(document).ready(function() {
     $('.account-event-add-video-preview').change(function(e) {
         var currFiles = e.target.files;
         if (currFiles.length > 0) {
-            $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(' + URL.createObjectURL(currFiles[0]) + ')');
+            $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(\'' + URL.createObjectURL(currFiles[0]) + '\')');
             if ($('.account-event-add-media-video-player-start').length == 0) {
                 $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
             }
@@ -2757,6 +2981,186 @@ $(document).ready(function() {
         }
         curPlayer.html('<iframe width="560" height="315" src="' + curHREF + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
         e.preventDefault();
+    });
+
+    $('.account-event-card-stats-detail').each(function() {
+        var now = new Date();
+        var nowMonthText = String('0' + (now.getMonth() + 1)).slice(-2);
+        var nowDateText = String('0' + now.getDate()).slice(-2);
+        var nowYear = now.getFullYear();
+
+        var week = new Date();
+        week.setDate(week.getDate() - 7);
+        var weekMonthText = String('0' + (week.getMonth() + 1)).slice(-2);
+        var weekDateText = String('0' + week.getDate()).slice(-2);
+        var weekYear = week.getFullYear();
+
+        var month = new Date();
+        month.setMonth(week.getMonth() - 1);
+        var monthMonthText = String('0' + (month.getMonth() + 1)).slice(-2);
+        var monthDateText = String('0' + month.getDate()).slice(-2);
+        var monthYear = month.getFullYear();
+
+        $('.account-event-card-stats-params-period.today .account-event-card-stats-params-period-value').html(nowMonthText + '/' + nowDateText + '/' + nowYear);
+        $('.account-event-card-stats-params-period.week .account-event-card-stats-params-period-value').html(weekMonthText + '/' + weekDateText + '/' + weekYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
+        $('.account-event-card-stats-params-period.month .account-event-card-stats-params-period-value').html(monthMonthText + '/' + monthDateText + '/' + monthYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
+        $('.account-event-card-stats-detail-ctrl-dates-range span').html(weekMonthText + '/' + weekDateText + '/' + weekYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
+        $('.account-event-card-stats-params-range-item.from input').val(weekMonthText + '/' + weekDateText + '/' + weekYear);
+        $('.account-event-card-stats-params-range-item.to input').val(nowMonthText + '/' + nowDateText + '/' + nowYear);
+    });
+
+    $('body').on('change', '.window .account-event-card-stats-params-periods input', function() {
+        var curPeriod = $('.window .account-event-card-stats-params-periods input:checked');
+        if (curPeriod.parents().filter('.account-event-card-stats-params-period').hasClass('other')) {
+            $('.window .account-event-card-stats-params-range input').prop('disabled', false);
+        } else {
+            $('.window .account-event-card-stats-params-range input').prop('disabled', true);
+        }
+    });
+
+    $('.account-event-card-stats-detail-ctrl-dates-item').click(function(e) {
+        var curItem = $(this);
+        $('.account-event-card-stats-detail-ctrl-dates-item.active').removeClass('active');
+        curItem.addClass('active');
+        if (curItem.hasClass('detail')) {
+            var curPadding = $('.wrapper').width();
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('window-open');
+            curPadding = $('.wrapper').width() - curPadding;
+            $('body').css({'margin-right': curPadding + 'px'});
+
+            $('body').append('<div class="window"><div class="window-loading"></div></div>')
+
+            $('.wrapper').css({'top': -curScroll});
+            $('.wrapper').data('curScroll', curScroll);
+
+            var newHTML =   '<div class="window-stat-details">' +
+                                '<div class="window-stat-details-title">' + $('.account-event-card-stats-params').attr('data-title') + '</div>' +
+                                '<div class="window-stat-details-container">' +
+                                    '<form action="' + $('.account-event-card-stats-params').attr('data-url') + '" method="post">' +
+                                        $('.account-event-card-stats-params').html() +
+                                    '</form>' +
+                                '</div>' +
+                            '</div>';
+
+            $('.window').html('<div class="window-container window-container-preload">' + newHTML + '<a href="#" class="window-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-close"></use></svg></a></div>');
+
+            $('.window .account-event-card-stats-params-range-item.from input').val($('.account-event-card-stats-params .account-event-card-stats-params-range-item.from input').val());
+            $('.window .account-event-card-stats-params-range-item.to input').val($('.account-event-card-stats-params .account-event-card-stats-params-range-item.to input').val());
+
+            window.setTimeout(function() {
+                $('.window-container-preload').removeClass('window-container-preload');
+            }, 100);
+
+            $('.window form').each(function() {
+                var curForm = $(this);
+                initForm(curForm);
+                var validator = curForm.validate();
+                if (validator) {
+                    validator.destroy();
+                }
+                curForm.validate({
+                    ignore: '',
+                    submitHandler: function(form) {
+                        $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').addClass('loading');
+
+                        var curData = curForm.serialize();
+                        $('.window .form-input input, .window .form-input textarea, .window .form-select select').val('');
+                        windowClose();
+
+                        $.ajax({
+                            type: 'POST',
+                            url: curForm.attr('action'),
+                            dataType: 'json',
+                            data: curData,
+                            cache: false
+                        }).fail(function(jqXHR, textStatus, errorThrown) {
+                            alert('The service is temporarily unavailable, try again later.');
+                            $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').removeClass('loading');
+                        }).done(function(data) {
+                            var chartLabels = [];
+                            var chartValues = [];
+
+                            var newTable =  '<div class="account-event-card-stats-detail-table-header">' +
+                                                '<div class="account-event-card-stats-detail-table-header-date">' + $('.account-event-card-stats-detail-table').attr('data-date') + '</div>';
+                            for (var i = 0; i < data.cols.length; i++) {
+                                newTable +=     '<div class="account-event-card-stats-detail-table-header-value">' + data.cols[i].title + '</div>';
+                            }
+                            newTable +=     '</div>';
+                            for (var i = 0; i < data.data.length; i++) {
+                                var curRow = data.data[i];
+                                chartLabels.push(curRow.date);
+                                newTable += '<div class="account-event-card-stats-detail-table-row">' +
+                                                '<div class="account-event-card-stats-detail-table-row-date">' + curRow.date + '</div>';
+                                for (var j = 0; j < data.cols.length; j++) {
+                                    newTable += '<div class="account-event-card-stats-detail-table-row-value">' + curRow[data.cols[j].name] + '</div>';
+                                    if ((typeof(data.cols[j].onchart) != 'undefined') && data.cols[j].onchart) {
+                                        chartValues.push(curRow[data.cols[j].name]);
+                                    }
+                                }
+                                newTable += '</div>';
+                            }
+                            newTable +=     '<div class="account-event-card-stats-detail-table-row summ">' +
+                                                '<div class="account-event-card-stats-detail-table-row-date">' + $('.account-event-card-stats-detail-table').attr('data-total') + '</div>';
+                            for (var j = 0; j < data.cols.length; j++) {
+                                newTable +=     '<div class="account-event-card-stats-detail-table-row-value">' + data.total[data.cols[j].name] + '</div>';
+                            }
+                            newTable +=     '</div>';
+                            $('.account-event-card-stats-detail-table').html(newTable);
+
+                            chart.data.labels = chartLabels;
+                            chart.data.datasets.data = chartValues;
+                            chart.update();
+                            $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').removeClass('loading');
+                        });
+                    }
+                });
+            });
+        }
+    });
+
+    $('.account-event-card-stats-detail-ctrl-chart a').click(function(e) {
+        $('.account-event-card-stats-detail-ctrl-chart').toggleClass('open');
+        $('.account-event-card-stats-detail-chart').toggleClass('open');
+        e.preventDefault();
+    });
+
+    var chart;
+
+    $('.account-event-card-stats-detail-chart').each(function() {
+        var ctx = $('.account-event-card-stats-detail-chart canvas')[0];
+        var skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+        chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['21.02', '22.02', '23.02', '24.02', '25.02', '26.02', '27.02', '28.02', '01.03', '02.03', '03.03', '04.03', '05.03', '06.03', '07.03', '08.03', '09.03', '10.03', '11.03', '12.03', '13.03', '14.03', '15.03', '16.03', '17.03', '18.03', '19.03'],
+                datasets: [{
+                    data: [636, 554, 554, 410, 636, 410, 492, 533, 636, 533, 492, 636, 328, 267, 410, 1723, 3015, 1743, 492, 492, 267, 267, 410, 1066, 1702, NaN, 1005],
+                    borderColor: '#EA435D',
+                    borderWidth: 2,
+                    pointStyle: false,
+                    segment: {
+                        borderDash: ctx => skipped(ctx, [6, 6]),
+                    },
+                    spanGaps: true
+                }]
+            },
+            options: {
+                plugins: {
+                    tooltip: {
+                        enabled: false
+                    },
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     });
 
 });

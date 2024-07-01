@@ -103,9 +103,9 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 .message-text p {margin:0}
 
 @media (max-width:1199px) {
-    .message-title {float:none; width:auto; margin:0; padding:0 0 0 48px}
-    .message-title::before {left:0; top:-5px}
-    .message-text {margin:16px 0 0 0; min-height:0; font-size:18px; line-height:27px; border-left:none; padding:0}
+    .message {display:block; padding:19px}
+    .message-title {min-width:none; max-width:none; padding:0; margin:0 0 0 53px; border-right:none}
+    .message-text {margin:20px 0 0 0}
 }
 
 .message-success {border-color:#76B145}
@@ -149,12 +149,18 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-input textarea:disabled {background:rgba(230, 233, 246, 0.5); border-color:#C7CAD8; color:#787B8E; cursor:default; pointer-events:none}
 
 @media (max-width:1199px) {
+    .form-input-with-flag > img {left:10px; top:17px; width:20px}
+    .form-input-with-icon > img {right:7px; top:7px}
     .form-input > span {top:24.5px; font-size:15px; line-height:15px}
     .form-input.focus > span,
     .form-input.full > span {top:8px}
     .form-input input,
     .form-input textarea {font-size:15px; line-height:23px; padding:21px 50px 3px 19px; height:49px}
+    .form-input textarea {height:173px}
     .form-input label.error::after {top:12.5px}
+    .form-input-with-flag input {padding-left:43px}
+    .form-input-with-flag textarea {padding-left:43px}
+    .form-input-with-icon input {padding-right:60px}
 }
 
 .form-input input:-webkit-autofill,
@@ -163,6 +169,10 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-input input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
 
 .form-notice {margin:6px 0 0 0; font-size:13px; line-height:20px; color:#787B8E}
+
+@media (max-width:1199px) {
+    .form-notice {margin:10px 0 0 0}
+}
 
 .form-input-date::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-date.svg) no-repeat; pointer-events:none}
 .form-input-date label.error::after {right:54px}
@@ -287,7 +297,18 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-file-input input.error+label.error+span {margin-bottom:45px; border-color:#D75078}
 .form-file-input label.error {position:absolute; left:0; bottom:0; right:0; white-space:nowrap}
 
+@media (max-width:1199px) {
+    .form-file-input span {height:49px; font-size:15px; line-height:49px}
+    .form-file.full span {line-height:13px; padding-top:4px}
+    .form-file-input span em {font-size:15px; line-height:23px}
+    .form-file-input span > svg {top:12px}
+}
+
 .form-files-header {margin:40px 0 0 0; font-weight:600; font-size:20px; line-height:30px}
+
+@media (max-width:1199px) {
+    .form-files-header {font-size:18px; line-height:27px}
+}
 
 .form-files {margin:20px 0}
 .form-files-dropzone {background:#F7F8FC; border:1px dashed #C7CAD8; height:120px; position:relative; border-radius:8px; cursor:pointer; transition:border-color 0.2s; display:flex; align-items:center; justify-content:center}
@@ -303,8 +324,14 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 
 .form-files-input {display:none}
 
+@media (max-width:1199px) {
+    .form-files-header+.form-files {margin-top:10px}
+    .form-files-dropzone {height:150px}
+    .form-files-dropzone span {font-size:15px; line-height:23px}
+}
+
 .form-files-list {display:none; margin:0 0 0 -20px; flex-wrap:wrap; align-items:flex-start}
-.form-files-images {margin:0 0 0 -12px}
+.form-files-images .form-files-list {margin:0 0 0 -12px}
 .form-files.full .form-files-list {display:flex}
 .form-files-list-item-progress {width:180px; height:129px; background:#F7F8FC url(../images/loading.svg) no-repeat center; border-radius:8px; margin:20px 0 0 20px; position:relative}
 .form-files-images .form-files-list-item-progress {margin:12px 0 0 12px}
@@ -337,8 +364,12 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 
 @media (max-width:1199px) {
     .form-files-list {margin:0 0 0 -10px}
+    .form-files-images .form-files-list {margin:0 0 0 -10px}
     .form-files-list-item-progress {width:167px; margin:10px 0 0 10px}
     .form-files-list-item {width:167px; margin:10px 0 0 10px}
+    .form-files-list-item-progress {width:163px; height:144px}
+    .form-files-list-item {width:163px; height:144px}
+    .form-files-list-item-name {font-size:14px; line-height:21px; height:21px}
 }
 
 .form-submit {margin:40px 0}
@@ -346,10 +377,18 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-ctrl {margin:40px 0; display:flex; align-items:center; justify-content:flex-end}
 .form-ctrl .form-submit {margin:0}
 
+@media (max-width:1199px) {
+    .form-ctrl {justify-content:space-between}
+}
+
 .form-reset {margin:0 40px 0 0}
 .form-reset input {display:inline-block; margin:0; padding:0; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#787B8E; border:none; border-radius:0; font:500 15px/23px Mulish, Arial, Helvetica, sans-serif; letter-spacing:0; text-transform:none; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box; transition:color 0.2s}
 @media (min-width:1200px) {
     .form-reset input:hover {color:#EA435D}
+}
+
+@media (max-width:1199px) {
+    .form-reset {margin:0}
 }
 
 @media (max-width:1199px) {
@@ -363,7 +402,8 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-group-title {font-weight:600; font-size:24px; line-height:25px}
 
 @media (max-width:1199px) {
-    .form-group {margin:14px 0 0 0}
+    .form-group {margin:24px 0 0 0; padding:24px 0 0 0}
+    .form-group-title {font-size:20px}
 }
 
 .captcha-notice {margin:17px 0 0 0; font-size:12px; line-height:15px; color:#8E9FC2}
@@ -397,6 +437,11 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
     .file-link a:hover .file-link-title {color:#ff0000}
 }
 .file-link-info {font-size:13px; line-height:20px; color:#787B8E}
+
+@media (max-width:1199px) {
+    .file-link-icon {top:0}
+    .file-link-title {font-size:15px; line-height:23px}
+}
 
 .pager {margin:60px 0 0 0; display:flex; align-items:flex-end; justify-content:center}
 .pager a {display:flex; min-width:40px; max-width:40px; height:40px; margin:0 5px; background:#F3F4FA; align-items:center; justify-content:center; font-weight:500; font-size:16px; line-height:24px; letter-spacing:0.05em; color:#53658A; text-decoration:none; border-radius:6px; transition:color 0.2s, background 0.2s}
@@ -705,6 +750,8 @@ header.fixed .logo svg {width:100px; height:19px}
     .header-search-submit {display:none}
     .header-search-submit-mobile {display:block; position:absolute; left:15px; bottom:15px; right:15px}
     .header-search-submit-mobile .btn {width:100%; padding:18px 0; font-size:16px; line-height:20px}
+
+    .page-account .header-search {display:none}
 }
 
 .header-user {min-width:24px}
@@ -739,17 +786,27 @@ header.fixed .logo svg {width:100px; height:19px}
 .header-user-notifications-list .account-profile-notification-date {margin:2px 0 0 0; font-size:13px; line-height:20px}
 .header-user-notifications-sep {margin:8px 0; height:1px; background:#DFDFDF}
 
+@media (max-width:1199px) {
+    .header-user-notifications-list {position:fixed; left:15px; top:52px; width:auto; right:15px; margin-top:0}
+    .header-user-notifications-list .account-profile-notification-header {position:static}
+}
+
 .header-user-account {position:relative}
 .header-user-account-link {display:flex; align-items:center; height:23px; padding:0 10px; white-space:nowrap; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; cursor:pointer; color:#080825; border-radius:5px; transition:background 0.2s}
 @media (min-width:1200px) {
     .header-user-account-link:hover {color:#080825; background:rgba(8, 8, 37, 0.05)}
+    .header-user-menu-open .header-user-account-link {background:rgba(8, 8, 37, 0.05)}
 }
-.header-user-menu-open .header-user-account-link {background:rgba(8, 8, 37, 0.05)}
 .header-user-account-link span {max-width:140px; position:relative; overflow:hidden; text-overflow:ellipsis}
 .header-user-account-link svg {display:block; width:8px; height:6px; fill:#080825; margin:0 0 0 10px; transition:transform 0.2s}
-.header-user-menu-open .header-user-account-link svg {transform:rotate(-180deg)}
+.header-user-account-link svg+svg {display:none}
+@media (min-width:1200px) {
+    .header-user-menu-open .header-user-account-link svg {transform:rotate(-180deg)}
+}
 .header-user-account-menu {display:none; position:absolute; right:0; top:100%; margin:6px 0 0 0; min-width:100%; padding:4px; background:#FFFFFF; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15); border-radius:8px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; white-space:nowrap}
-.header-user-menu-open .header-user-account-menu {display:block}
+@media (min-width:1200px) {
+    .header-user-menu-open .header-user-account-menu {display:block}
+}
 .header-user-account-menu-item {margin:2px 0 0 0}
 .header-user-account-menu-item:first-child {margin:0}
 .header-user-account-menu-item a {display:flex; align-items:center; justify-content:space-between; padding:8px 10px; color:#080825; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; border-radius:6px; transition:background 0.2s}
@@ -761,6 +818,17 @@ header.fixed .logo svg {width:100px; height:19px}
 .header-user-account-menu-item a span {margin:0 0 0 10px; color:#FFFFFF; min-width:18px; height:18px; padding:0 3px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:600; font-size:10px; line-height:13px; background:#D75078; border-radius:9px}
 .header-user-account-menu-item a svg {margin:0 0 0 10px; min-width:20px; max-width:20px; height:20px; fill:#080825}
 .header-user-account-menu-sep {margin:2px 0 0 0; height:1px; background:rgba(199, 202, 216, 0.5)}
+
+@media (max-width:1199px) {
+    .header-user-account-link svg {display:none}
+
+    .header-user-menu-open,
+    .header-user-menu-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidde}
+    .header-user-menu-open .menu-mobile-link {display:none}
+    .header-user-account-link svg+svg {width:24px; height:24px; fill:#1C1B1F}
+    .header-user-menu-open .header-user-account-link {padding-right:0}
+    .header-user-menu-open .header-user-account-link svg+svg {display:block}
+}
 
 .header-lang {margin:0 30px 0 0}
 .header-lang-select {position:relative; cursor:pointer}
@@ -791,6 +859,8 @@ header.fixed .logo svg {width:100px; height:19px}
     .header-lang {order:1; margin:0 35px 0 0}
     .header-lang-select.open .header-lang-select-current {background:rgba(8, 8, 37, 0.1)}
     .header-lang-select.open ul {display:block}
+
+    .page-account .header-lang {display:none}
 }
 
 .menu-mobile-link {display:none}
@@ -1393,6 +1463,25 @@ header.fixed .logo svg {width:100px; height:19px}
     .filters-mobile-open .filters-params-ctrl-mobile {display:flex}
     .filters-params-ctrl-mobile-reset {white-space:nowrap; margin:0 40px 0 0; font-weight:500; font-size:15px; line-height:23px; color:#787B8E; text-decoration:none}
     .filters-params-ctrl-mobile-apply {display:block; flex-grow:1; padding:18px 0; font-weight:800; font-size:16px; line-height:20px}
+}
+
+.filters-sort {margin:8px 0 0 20px; white-space:nowrap; font-weight:600; font-size:15px; line-height:19px; position:relative; color:#080825}
+.filters-sort-current {display:flex; align-items:center; cursor:pointer}
+.filters-sort-current svg {min-width:14px; max-width:14px; height:17px; fill:#080825; margin:0 0 0 10px}
+.filters-sort-list {display:none; z-index:20; position:absolute; right:0; top:100%; margin:9px 0 0 0}
+.filters-sort.open .filters-sort-list {display:block; padding:4px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:6px}
+.filters-sort-list label {display:block; cursor:pointer}
+.filters-sort-list input {display:none}
+.filters-sort-list span {display:flex; justify-content:space-between; align-items:center; height:35px; border-radius:4px; transition:background 0.2s; padding:0 10px}
+.filters-sort-list input:checked+span {background:#E6E9F6}
+@media (min-width:1200px) {
+    .filters-sort-list span:hover {background:#E6E9F6}
+}
+.filters-sort-list svg {min-width:14px; max-width:14px; height:17px; fill:#080825; margin:0 0 0 10px}
+
+@media (max-width:1199px) {
+    .filters-sort {margin:0}
+    .filters-mobile-open .filters-sort {display:none}
 }
 
 .catalogue.loading {position:relative}
@@ -2898,6 +2987,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .reg-menu ul li.active a {color:#080825}
 
+@media screen and (max-width:1199px) {
+    .reg-menu ul {width:100%}
+    .reg-menu ul li {margin:0; width:100%; max-width:50%; text-align:center}
+}
+
 .reg-tabs {position:relative}
 .reg-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
 .reg-tab.active {position:relative; left:auto; top:auto; opacity:1}
@@ -2906,8 +3000,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .page-account header {border-bottom:1px solid #DFDFDF}
 .page-account header.fixed {border-bottom:none}
 
+.page-account .breadcrumbs {display:none}
+
+@media (max-width:1199px) {
+    .page-account .breadcrumbs {display:flex; margin:20px 0 0 0; text-transform:uppercase}
+    .page-account .breadcrumbs a {color:rgba(8, 8, 37, 0.4)}
+}
+
 .account {margin:60px 0 0 0}
 .account-title {margin:68px 0 0 0; font-size:48px; line-height:62px; font-family:YesevaOne, sans-serif}
+
+@media (max-width:1199px) {
+    .account {margin:40px 0 0 0}
+    .account-title {display:none}
+}
 
 .account-container {margin:40px 0 0 0; display:flex; align-items:flex-start}
 .account-menu {min-width:199px; max-width:199px; background:#080825; border-radius:8px; padding:4px}
@@ -2922,9 +3028,28 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-menu-item a span {margin:0 0 0 10px; white-space:nowrap; min-width:18px; height:18px; padding:0 3px; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:600; font-size:10px; line-height:13px; background:#D75078; border-radius:9px}
 .account-menu-sep {margin:2px 0 -2px 0; height:1px; background:#25254D}
 
+@media (max-width:1199px) {
+    .account-container {display:block}
+    .account-menu {display:none; min-width:0; max-width:none; border-radius:0; background:#0E0E2F; z-index:99; position:fixed; left:0; top:54px; right:0; bottom:0; padding:0; overflow:auto}
+    .header-user-menu-open .account-menu {display:block}
+    .account-menu-item {background:#080825; margin:0; padding:0 4px 4px 4px}
+    .account-menu-item:first-child {padding:4px}
+    .account-menu-item a {padding:20px 16px; font-size:16px; line-height:20px}
+    .account-menu-item a span {min-width:24px; height:24px; font-size:12px; line-height:15px; border-radius:12px}
+    .account-menu-sep {margin:0}
+}
+
 .account-content {flex:1; margin:0 0 0 60px}
 
+@media (max-width:1199px) {
+    .account-content {margin:0}
+}
+
 .account-profile-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
+
+@media (max-width:1199px) {
+    .account-profile-title {font-size:24px; line-height:36px}
+}
 
 .account-profile-menu {margin:20px 0 0 0; display:flex; font-size:15px; line-height:19px; font-weight:600}
 .account-profile-menu-inner {display:flex; padding:2px; background:#E6E9F6; border-radius:6px}
@@ -2937,10 +3062,21 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-profile-menu-item.active a {background:#FFFFFF}
 .account-profile-menu-item a span {display:inline-block; vertical-align:top; width:4px; height:4px; margin:0 0 0 2px; border-radius:50%; background:#FF3672}
 
+@media (max-width:1199px) {
+    .account-profile-menu {margin:40px 0 0 0}
+    .account-profile-menu-inner {width:100%}
+    .account-profile-menu-item {flex:1; text-align:center}
+}
+
 .account-profile-tabs {margin:24px 0 0 0; position:relative}
 .account-profile-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
 .account-profile-tab.active {position:relative; left:auto; top:auto; opacity:1}
 .account-profile-form {position:relative; max-width:662px}
+
+@media (max-width:1199px) {
+    .account-profile-tabs {margin:20px 0 0 0}
+    .account-profile-form {max-width:none}
+}
 
 .account-profile-form-edit {position:absolute; right:0; top:-66px}
 .account-profile-form.editable .account-profile-form-edit {display:none}
@@ -2955,6 +3091,10 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-profile-form-edit .btn-border:active svg {fill:#FFFFFF}
 }
 
+@media (max-width:1199px) {
+    .account-profile-form-edit {top:-142px}
+}
+
 .account-profile-form-save {display:none; position:absolute; right:0; top:-66px}
 .account-profile-form.editable .account-profile-form-save {display:block}
 .account-profile-form-save .btn {padding:11px 20px; background:#6768AB; width:100%; font-size:12px; line-height:16px; letter-spacing:0.1em; border-radius:6px; display:flex; align-items:center}
@@ -2964,10 +3104,18 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .account-profile-form-save .btn svg {min-width:20px; max-width:20px; height:20px; fill:#FFFFFF; margin:0 10px 0 0; transition:fill 0.2s}
 
+@media (max-width:1199px) {
+    .account-profile-form-save {top:-142px}
+}
+
 .account-profile-form form {margin:0; padding:0}
 .account-profile-form .form-input {margin:24px 0}
 .account-profile-form .form-group > *:first-child {margin-top:0}
 .account-profile-form .form-group > *:last-child {margin-bottom:0}
+
+@media (max-width:1199px) {
+    .account-profile-form .form-input {margin:20px 0}
+}
 
 .account-profile-form-password-edit {margin:-12px 0 0 0; text-align:right; font-size:15px; line-height:15px}
 .account-profile-form-password-edit a {color:#D75078; border-bottom:1px dashed #D75078; transition:border-color 0.2s}
@@ -2986,10 +3134,23 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-profile-form-password-edit-block .form-submit .btn:active {background:#4243A9}
 }
 
+@media (max-width:1199px) {
+    .account-profile-form-password-edit {margin:-10px 0 0 0}
+    .account-profile-form-password-edit-block .form-submit {display:block}
+    .account-profile-form-password-edit-block .form-submit .btn {width:100%; padding:12px 0; justify-content:center}
+}
+
 .account-profile-notifications-checkbox {margin:24px 0}
 .account-profile-notifications-checkbox span {padding:14px 20px 14px 52px; font-size:18px; line-height:28px; border-radius:8px; background:#F7F7FC}
 .account-profile-notifications-checkbox span::before {left:20px; top:18px; background-color:#FFFFFF}
 .account-profile-notifications-checkbox label.error {z-index:1}
+
+@media (max-width:1199px) {
+    .account-profile-notifications-checkbox {margin:20px 0}
+    .account-profile-notifications-checkbox label {width:100%}
+    .account-profile-notifications-checkbox span {padding:11px 20px 11px 52px; font-size:18px; line-height:27px}
+    .account-profile-notifications-checkbox span::before {top:15px}
+}
 
 .account-profile-form .form-ctrl {display:none; margin:24px 0 0 0}
 .account-profile-form.editable .form-ctrl {display:flex}
@@ -3017,6 +3178,13 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-profile-form-delete-link .btn-border:active svg {fill:#FFFFFF}
 }
 
+@media (max-width:1199px) {
+    .account-profile-form-support {max-width:none; margin:40px 0 0 0}
+    .account-profile-form-support-ctrl {display:block; margin:20px 0 0 0}
+    .account-profile-form-support-link .btn {margin:10px 0 0 0; padding:14px 0; justify-content:center}
+    .account-profile-form-delete-link .btn-border {margin:10px 0 0 0; padding:13px 0; justify-content:center}
+}
+
 .account-profile-notifications {border-top:1px solid #DFDFDF}
 .account-profile-notification {border-bottom:1px solid #DFDFDF; display:flex; align-items:center; padding:16px 0; justify-content:space-between; transition:background 0.2s; color:#080825}
 @media (min-width:1200px) {
@@ -3037,10 +3205,22 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-profile-notification-archive .account-profile-notification-title span {color:#787B8E}
 .account-profile-notification-date {margin:0 0 0 20px; white-space:nowrap; font-size:15px; line-height:23px; color:#787B8E}
 
+@media (max-width:1199px) {
+    .account-profile-notification {display:block; padding:16px 0 16px 26px}
+    .account-profile-notification-header {display:block; position:relative}
+    .account-profile-notification-icon {position:absolute; left:-26px; top:0; margin:0}
+    .account-profile-notification-date {margin:5px 0 0 0; font-size:13px; line-height:20px}
+}
+
 .account-events-header {display:flex; align-items:center; justify-content:space-between}
 .account-events-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
 .account-events-header-add .btn {display:flex; align-items:center; padding:10px 20px; border-radius:6px; font-weight:bold; font-size:12px; line-height:15px}
 .account-events-header-add .btn svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#FFFFFF}
+
+@media (max-width:1199px) {
+    .account-events-title {font-size:30px; line-height:36px}
+    .account-events-header-add .btn {padding:8px 12px; font-size:15px; line-height:19px; border-radius:5px; text-transform:none}
+}
 
 .account-events-list {margin:20px 0 0 0; border-bottom:1px solid #DFDFDF}
 .account-events-item {border-top:1px solid #DFDFDF; padding:16px 0; display:flex; align-items:flex-start}
@@ -3076,9 +3256,22 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .account-events-item-ctrl-list a svg {min-width:18px; max-width:18px; height:18px; margin:0 10px 0 0; fill:rgba(8, 8, 37, 0.5)}
 
+@media (max-width:1199px) {
+    .account-events-item {padding:20px 0; position:relative; display:block}
+    .account-events-item-id-date {margin:0 0 0 90px}
+    .account-events-item-preview {position:absolute; left:0; top:20px}
+    .account-events-item-title {width:auto; margin:15px 0 0 0}
+    .account-events-item-info {margin:15px 0 0 0; min-width:0; max-width:none}
+    .account-events-item-info-item {margin:2px 0 0 0}
+    .account-events-item-info-item:first-child {margin:0}
+    .account-events-item-stats {position:absolute; margin:0; right:0; bottom:33px}
+    .account-events-item-ctrl {position:absolute; margin:0; right:0; top:20px; min-width:24px; max-width:24px; height:24px}
+    .account-events-item-ctrl-icon {width:24px; height:24px}
+}
+
 .account-support-title {font-size:36px; line-height:47px; font-family:YesevaOne, sans-serif}
 .account-support-header {display:flex; align-items:center; margin:40px 0 0 0}
-.account-support-filter {width:100%; display:flex; align-items:center}
+.account-support-filter {width:100%; display:flex; align-items:center; position:relative}
 .account-support-filter-link {display:flex; align-items:center; padding:0 19px; height:40px; border:1px solid #9397AA; border-radius:6px; color:#080825; font-weight:bold; font-size:12px; line-height:14px; letter-spacing:0.01em; text-transform:uppercase; transition:background 0.2s, border-color 0.2s, color 0.2s}
 @media (min-width:1200px) {
     .account-support-filter-link:hover {background:#D75078; border-color:#D75078; color:#FFFFFF}
@@ -3103,11 +3296,74 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-support-archive-link:hover svg {fill:#FFFFFF}
 }
 .account-support-archive-link strong {font-weight:bold}
-
 .account-support-add-link {display:flex; margin:0 0 0 20px; align-items:center; padding:20px; height:40px; border-radius:6px; font-weight:bold; font-size:12px; line-height:14px; white-space:nowrap}
 .account-support-add-link svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#FFFFFF}
 
-.account-support-list {margin:20px 0 0 0; border-bottom:1px solid #DFDFDF}
+@media (max-width:1199px) {
+    .account-support-title {font-size:30px; line-height:36px}
+    .account-support-header {margin:40px 0 0 -15px}
+    .account-support-filter {width:auto; min-width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); margin:0 0 0 15px}
+    .account-support-filter-link {width:100%; padding:0; height:36px; justify-content:center}
+    .account-support-filter-link svg {margin:0}
+    .account-support-filter-link strong {display:none}
+    .account-support-filter-link span {margin:0 0 0 8px}
+    .account-support-archive-link {width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); margin:0 0 0 15px; justify-content:center}
+    .account-support-archive-link svg {margin:0}
+    .account-support-archive-link span {display:none}
+    .account-support-add-link {width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); margin:0 0 0 15px; justify-content:center}
+    .account-support-add-link span {display:none}
+    .account-support-add-link svg {margin:0}
+}
+
+.account-support-filter-window {display:none; position:absolute; left:0; top:100%; z-index:20; margin:5px 0 0 0; width:393px; padding:24px; background:#FFFFFF; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15); border-radius:10px}
+.account-support-filter-open .account-support-filter-window {display:block}
+.account-support-filter-window form {margin:0; padding:0}
+.account-support-filter-header {display:none}
+.account-support-filter-group {margin:24px 0 0 0; border-top:1px solid #DFDFDF; padding:24px 0 0 0; position:relative}
+.account-support-filter-header+.account-support-filter-group {margin:0; border-top:none; padding:0}
+.account-support-filter-group-title {display:flex}
+.account-support-filter-group-title a {display:flex; align-items:center; font-weight:600; font-size:18px; line-height:27px; color:#080825}
+.account-support-filter-group-title a span {min-width:24px; max-width:24px; height:24px; border-radius:50%; margin:0 15px 0 0; background:#6768AB}
+.account-support-filter-group-title a svg {display:block; width:24px; height:24px; fill:#FFFFFF; transform:rotate(180deg); transition:transform 0.2s}
+.account-support-filter-group.open .account-support-filter-group-title a svg {transform:none}
+.account-support-filter-group-content {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; margin:20px 0 0 0}
+.account-support-filter-group.open .account-support-filter-group-content {position:relative; left:auto; top:auto; opacity:1}
+.account-support-filter-group-content .form-checkbox {margin:10px 0 0 0}
+.account-support-filter-group-content .form-radio {margin:15px 0 0 0; display:block}
+.account-support-filter-group-content .form-radio em {font-style:normal; position:absolute; right:0; top:0; font-weight:normal; color:#787B8E}
+.account-support-filter-range {margin:15px -5px 0 -5px; display:flex}
+.account-support-filter-range-item {min-width:50%; max-width:50%; padding:0 5px}
+.account-support-filter-range .form-input {margin:0}
+.account-support-filter-ctrl {display:flex; align-items:center; justify-content:space-between; font-size:15px; line-height:23px}
+.account-support-filter-clear {font-weight:500; color:#787B8E}
+.account-support-filter-clear:hover {color:#D75078}
+.account-support-filter-count {font-weight:bold; color:#6768AB}
+.account-support-filter-submit {display:none}
+
+@media (max-width:1199px) {
+    .account-support-filter-open,
+    .account-support-filter-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidde}
+    .account-support-filter-window {align-items:flex-end; position:fixed; left:0; top:0; z-index:999; right:0; bottom:0; margin:0; width:auto; padding:0; background:rgba(8, 8, 37, 0.7); box-shadow:none; border-radius:0; overflow:hidden}
+    .account-support-filter-open .account-support-filter-window {display:flex}
+    .account-support-filter-window form {width:100%; background:#FFFFFF; padding:0 15px 15px 15px; border-radius:12px 12px 0 0; max-height:100%; overflow:auto; position:relative}
+    .account-support-filter-header {display:flex; padding:20px 0; border-bottom:1px solid #DFDFDF; align-items:center; justify-content:space-between}
+    .account-support-filter-header-title {font-weight:bold; font-size:20px; line-height:25px; color:#080825}
+    .account-support-filter-header-close {min-width:24px; max-width:24px; height:24px; display:flex; align-items:center; justify-content:center}
+    .account-support-filter-header-close svg {width:14px; height:14px; fill:#1C1B1F}
+    .account-support-filter-group {margin:30px 0 0 0; padding:30px 0 0 0}
+    .account-support-filter-header+.account-support-filter-group {margin:0; padding:30px 0 0 0}
+    .account-support-filter-group-title a span {display:none}
+    .account-support-filter-group-content {position:relative; left:auto; top:auto; opacity:1}
+    .account-support-filter-count {display:none}
+    .account-support-filter-submit {display:block; min-width:245px}
+    .account-support-filter-submit .btn {width:100%}
+    .account-support-filter-open .air-datepicker-global-container {position:static}
+    .account-support-filter-open .air-datepicker {position:absolute !important; left:50% !important; top:50% !important; transform:translate(-50%, -50%) !important}
+}
+
+.account-support-list {margin:20px 0 0 0; border-bottom:1px solid #DFDFDF; position:relative}
+.account-support-list.loading {min-height:40px}
+.account-support-list.loading::after {content:""; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.5) url(../images/loading.svg) no-repeat center}
 .account-support-item {border-top:1px solid #DFDFDF}
 .account-support-item a {display:flex; align-items:flex-start; transition:background 0.2s; padding:16px 0}
 @media (min-width:1200px) {
@@ -3123,8 +3379,21 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-support-item-answers {margin:0 0 0 20px; min-width:115px}
 .account-support-item-answers span {display:block; padding:0 6px 2px 6px; white-space:nowrap; font-weight:500; font-size:12px; line-height:20px; color:#FFFFFF; border-radius:2px; background:#76B145}
 
+@media (max-width:1199px) {
+    .account-support-item a {display:block; padding:20px 0}
+    .account-support-item-ticket {min-width:0; max-width:none; padding:0 0 0 34px; display:flex; justify-content:space-between; align-items:center}
+    .account-support-item-ticket svg {top:0}
+    .account-support-item-ticket-date {margin:0}
+    .account-support-item-title {margin:10px 0 0 0}
+    .account-support-item-answers {margin:10px 0 0 0; min-width:0; display:flex}
+}
+
 .account-support-ctrl {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between}
 .account-support-ctrl .pager {margin:0}
+
+@media (max-width:1199px) {
+    .account-support-ctrl {margin:20px 0 0 0; display:block}
+}
 
 .pager-size {display:flex; align-items:center}
 .pager-size-title {font-weight:500; font-size:16px; line-height:20px; color:#787B8E; margin:0 12px 0 0}
@@ -3142,10 +3411,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .pager-size-select-item input:checked+span {background:#E6E9F6}
 
+@media (max-width:1199px) {
+    .pager-size {margin:20px 0 0 0; justify-content:flex-end}
+    .pager-size-title {margin:0 27px 0 0}
+}
+
 .account-support-back {display:flex}
 .account-support-back a {display:flex; align-items:flex-start; font-weight:600; font-size:30px; line-height:45px; color:#080825}
 .account-support-back a span {display:flex; min-width:64px; max-width:64px; margin:2.5px 24px 0 0; height:40px; border-radius:6px; background:#F7F8FC; align-items:center; justify-content:center}
 .account-support-back a span svg {min-width:24px; max-width:24px; height:24px; fill:rgba(8, 8, 37, 0.4)}
+
+@media (max-width:1199px) {
+    .account-support-back a {font-size:24px; line-height:36px}
+    .account-support-back a span {display:none}
+}
 
 .account-support-card-resolved {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between; padding:16px 20px; background:rgba(118, 177, 69, 0.1); border-radius:8px}
 .account-support-card-resolved-title {font-size:15px; line-height:26px}
@@ -3154,6 +3433,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-support-card-resolved-link:hover {color:#080825}
 }
 .account-support-card-resolved-link svg {margin:0 10px 0 0; min-width:20px; max-width:20px; height:20px; fill:#76B145}
+
+@media (max-width:1199px) {
+    .account-support-card-resolved {margin:20px 0 0 0; display:block; padding:15px}
+    .account-support-card-resolved-link {margin:12px 0 0 0; display:inline-flex}
+}
 
 .account-support-card-new-message {margin:40px 0 0 0; position:relative}
 .account-support-card-new-message-link {display:flex}
@@ -3167,6 +3451,15 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-support-card-new-message-form .form-submit .btn {font-weight:bold; display:flex; align-items:center; padding:0 30px; height:56px}
 .account-support-card-new-message-form .form-submit .btn svg {width:20px; height:20px; fill:#FFFFFF; margin:0 0 0 10px}
 
+@media (max-width:1199px) {
+    .account-support-card-new-message-link {display:block}
+    .account-support-card-new-message-link a {justify-content:center}
+    .account-support-card-new-message-form {padding:0 0 20px 0}
+    .account-support-card-new-message-form .form-submit {margin:20px 0 0 0}
+    .account-support-card-new-message-form .form-submit .btn {padding:0 24px; height:50px}
+    .account-support-card-new-message-form .form-files-header {margin:20px 0 0 0}
+}
+
 .account-support-card-content {margin:40px 0 0 0}
 .account-support-card-message {margin:40px 0 0 0}
 .account-support-card-message-author {font-weight:bold; font-size:18px; line-height:31px}
@@ -3179,11 +3472,25 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-support-card-message-answer {margin:12px 0 0 32px; position:relative; background:#F7F8FC; border-radius:12px; padding:20px}
 .account-icon-support-answer {position:absolute; left:-30px; top:28px; width:14px; height:14px; fill:#080825}
 
+@media (max-width:1199px) {
+    .account-support-card-message-author {font-size:15px; line-height:26px}
+    .account-support-card-message-date {margin:2px 0 0 0; font-size:13px; line-height:20px}
+    .account-support-card-message-files .file-link {line-height:23px}
+    .account-support-card-message-files .file-link-icon {top:0}
+    .account-support-card-message-answer {margin:20px 0 0 30px; padding:15px}
+    .account-icon-support-answer {left:-26px}
+}
+
 .account-support-card-message-add {margin:40px 0 0 0}
 .account-support-card-message-add form {margin:0; padding:0}
 .account-support-card-message-add .form-submit {margin:40px 0 0 0; display:flex; justify-content:flex-end}
 .account-support-card-message-add .form-submit .btn {font-weight:bold; display:flex; align-items:center; padding:0 30px; height:56px}
 .account-support-card-message-add .form-submit .btn svg {width:20px; height:20px; fill:#FFFFFF; margin:0 0 0 10px}
+
+@media (max-width:1199px) {
+    .account-support-card-message-add {margin:20px 0 0 0}
+    .account-support-card-message-add .form-submit .btn {width:100%; height:50px; padding:0; justify-content:center}
+}
 
 .account-events-ctrl {margin:40px 0 0 0; display:flex; align-items:center; justify-content:space-between}
 .account-events-ctrl .pager {margin:0}
@@ -3208,8 +3515,19 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-icon-step-finish {display:block; min-width:24px; max-width:24px; height:24px; fill:#9397AA}
 .account-event-add-step.active .account-icon-step-finish {fill:#080825}
 
+@media (max-width:1199px) {
+    .account-event-add-steps {margin:40px 0 0 0; max-width:none}
+    .account-event-add-step {justify-content:space-between}
+    .account-event-add-step-title {display:none}
+    .account-icon-step-arrow {display:block}
+}
+
 .account-event-add {margin:40px 0 0 0; max-width:660px}
 .account-event-add form {margin:0; padding:0}
+
+@media (max-width:1199px) {
+    .account-event-add {margin:20px 0 0 0; max-width:none}
+}
 
 .account-event-add-group {margin:40px 0 0 0}
 .account-event-add-group:first-child {margin:0}
@@ -3219,6 +3537,14 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-group-content .form-select {margin:24px 0 0 0}
 .account-event-add-group-content .form-file {margin:24px 0 0 0}
 
+@media (max-width:1199px) {
+    .account-event-add-group-title {font-size:20px; line-height:30px}
+    .account-event-add-group-content {margin:20px 0 0 0}
+    .account-event-add-group-content .form-input {margin:20px 0 0 0}
+    .account-event-add-group-content .form-select {margin:20px 0 0 0}
+    .account-event-add-group-content .form-file {margin:20px 0 0 0}
+}
+
 .account-event-add-subfield {margin:12px 0 0 0; padding:0 0 0 19px; border-left:1px solid #C51918}
 .account-event-add-group-content .account-event-add-subfield .form-input {margin:0}
 
@@ -3227,6 +3553,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-group-content .account-event-add-row-field .form-input {margin:0}
 .account-event-add-group-content .account-event-add-row-field .form-select {margin:0}
 .account-event-add-group-content .account-event-add-row-field .form-file {margin:0}
+
+@media (max-width:1199px) {
+    .account-event-add-row {margin:20px 0 0 0; display:block}
+    .account-event-add-row-field {min-width:0; max-width:none; padding:0; margin:20px 0 0 0}
+}
 
 .account-event-add-category {margin:24px 0 0 0; position:relative}
 .account-event-add-category-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
@@ -3243,8 +3574,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-category-current-arrow {position:absolute; right:20px; top:16px}
 .account-event-add-category-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
 
+@media (max-width:1199px) {
+    .account-event-add-category {margin:20px 0 0 0}
+    .account-event-add-category-current {height:49px}
+    .account-event-add-category-current-placeholder {font-size:15px; line-height:15px; top:16px}
+    .account-event-add-category-current-arrow {right:12px; top:13px}
+    .account-event-add-category-current-value {font-size:15px; line-height:15px}
+}
+
 .account-event-add-category-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
 .account-event-add-category.open .account-event-add-category-content {display:block}
+
+@media (max-width:1199px) {
+    .account-event-add-category-content {width:100%}
+}
 
 .account-event-add-category-content-search {position:relative; margin:0 0 10px 0}
 .account-event-add-category-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
@@ -3294,6 +3637,17 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-schedule-item-sep {min-width:24px; margin:0 0 0 33px; text-align:left}
 .account-event-add-schedule-item-end {min-width:76px; text-align:right}
 
+@media (max-width:1199px) {
+    .account-event-add-schedule {padding:15px 15px 0 15px}
+    .account-event-add-schedule-edit {right:0; top:-58px}
+    .account-event-add-schedule-header {min-width:90px; margin:0 0 0 20px}
+    .account-event-add-schedule-header:first-child {text-align:left; flex:1; margin:0}
+    .account-event-add-schedule-item {font-size:15px; line-height:15px}
+    .account-event-add-schedule-item-start {min-width:90px}
+    .account-event-add-schedule-item-sep {min-width:20px; margin:0 0 0 20px}
+    .account-event-add-schedule-item-end {min-width:70px}
+}
+
 .window-account-event-add-schedule-template {display:none}
 .window-account-event-add-schedule {width:760px; padding:20px}
 .window-account-event-add-schedule-container {margin:20px 0 0 0; border-top:1px solid #DFDFDF; padding:12px 0 0 0}
@@ -3331,6 +3685,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-location-validfield.error+label.error+.account-event-add-location-current {border-color:#D75078; margin-bottom:49px}
 .account-event-add-location label.error {position:absolute; left:0; top:100%; right:0; white-space:nowrap}
 
+@media (max-width:1199px) {
+    .account-event-add-location {margin:20px 0 0 0}
+    .account-event-add-location-current {height:49px}
+}
+
 .account-event-add-location-current-placeholder {position:absolute; left:19px; top:19px; font-size:18px; line-height:18px; color:#787B8E; transition:top 0.2s, font-size 0.2s, line-height 0.2s}
 .account-event-add-location.full .account-event-add-location-current-placeholder {top:10px; font-size:13px; line-height:13px}
 .account-event-add-location.open .account-event-add-location-current {border-color:#787B8E}
@@ -3338,8 +3697,19 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-location-current-arrow {position:absolute; right:20px; top:16px}
 .account-event-add-location-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
 
+@media (max-width:1199px) {
+    .account-event-add-location-current-placeholder {top:15px; font-size:15px; line-height:15px}
+    .account-event-add-location.full .account-event-add-location-current-placeholder {top:8px; font-size:13px; line-height:13px}
+    .account-event-add-location-current-value {font-size:15px; line-height:15px}
+    .account-event-add-location-current-arrow {right:12px; top:13px}
+}
+
 .account-event-add-location-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
 .account-event-add-location.open .account-event-add-location-content {display:block}
+
+@media (max-width:1199px) {
+    .account-event-add-location-content {width:100%}
+}
 
 .account-event-add-location-content-search {position:relative; margin:0 0 10px 0}
 .account-event-add-location-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
@@ -3376,6 +3746,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-location-checkbox-text {display:block; margin:2px 0 0 0; position:relative; width:100%; overflow:hidden; text-overflow:ellipsis; font-weight:normal; font-size:15px; line-height:15px; color:#787B8E}
 .account-event-add-location-checkbox-detail {display:none}
 
+@media (max-width:1199px) {
+    .account-event-add-location-checkbox-title {font-size:15px; line-height:23px}
+    .account-event-add-location-checkbox-text {font-size:13px; line-height:18px}
+}
+
 .account-event-add-location-detail {margin:12px 0 0 0; background:#F7F8FC; padding:20px; border-radius:12px; display:none}
 .account-event-add-location-detail.visible {display:flex}
 .account-event-add-location-detail-info {width:100%}
@@ -3389,11 +3764,33 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-location-detail-btn {margin:0 0 0 20px; white-space:nowrap}
 .account-event-add-location-detail-btn a {display:flex; align-items:center; height:39px; padding:0 20px; font-weight:800; font-size:12px; line-height:15px; border-radius:6px}
 
+@media (max-width:1199px) {
+    .account-event-add-location-detail {margin:20px 0 0 0; padding:15px}
+    .account-event-add-location-detail.visible {display:block}
+    .account-event-add-location-detail-info {width:auto}
+    .account-event-add-location-detail-info-row {display:block; font-size:15px; line-height:23px}
+    .account-event-add-location-detail-info-row-name {min-width:0; max-width:none; font-size:13px; line-height:20px}
+    .account-event-add-location-detail-info-row-value {margin:4px 0 0 0}
+    .account-event-add-location-detail-btn {margin:15px 0 0 0}
+    .account-event-add-location-detail-btn a {justify-content:center}
+}
+
 .account-event-add-point {margin:24px 0 0 0}
 .account-event-add-point-map {margin:12px 0 0 0; border-radius:8px; height:237px}
 .account-event-add-point .account-event-add-row {margin-top:12px}
 
+@media (max-width:1199px) {
+    .account-event-add-point {margin:20px 0 0 0}
+    .account-event-add-point-map {margin:10px 0 0 0; height:200px}
+    .account-event-add-point .account-event-add-row {margin-top:10px}
+    .account-event-add-point .account-event-add-row .account-event-add-row-field {margin:10px 0 0 0}
+}
+
 .account-event-add-price .form-input-with-icon svg {width:36px; height:36px; position:absolute; right:20px; top:10px; fill:#9397AA; z-index:2; pointer-events:none}
+
+@media (max-width:1199px) {
+    .account-event-add-price .form-input-with-icon svg {right:7px; top:7px}
+}
 
 .account-event-add-persons {margin:24px 0 0 0; position:relative}
 .account-event-add-persons-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
@@ -3408,8 +3805,21 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-persons-current-arrow {position:absolute; right:20px; top:16px}
 .account-event-add-persons-current-arrow svg {display:block; width:24px; height:24px; fill:#787B8E}
 
+@media (max-width:1199px) {
+    .account-event-add-persons {margin:20px 0 0 0}
+    .account-event-add-persons-current {height:49px}
+    .account-event-add-persons-current-placeholder {top:15px; font-size:15px; line-height:15px}
+    .account-event-add-persons.full .account-event-add-persons-current-placeholder {top:8px; font-size:13px; line-height:13px}
+    .account-event-add-persons-current-value {font-size:15px; line-height:15px}
+    .account-event-add-persons-current-arrow {right:12px; top:13px}
+}
+
 .account-event-add-persons-content {display:none; position:absolute; left:0; top:100%; margin-top:5px; width:520px; background:#FFFFFF; border-radius:8px; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.15); padding:10px; z-index:80}
 .account-event-add-persons.open .account-event-add-persons-content {display:block}
+
+@media (max-width:1199px) {
+    .account-event-add-persons-content {width:100%}
+}
 
 .account-event-add-persons-content-search {position:relative; margin:0 0 10px 0}
 .account-event-add-persons-content-search input {position:relative; border:none; font:500 14px/20px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:10px 10px 10px 42px; width:100%; height:36px; box-sizing:border-box; outline:none; border-radius:5px; background:#F0F0F0; -webkit-appearance:none}
@@ -3447,6 +3857,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-persons-checkbox-container svg {position:absolute; right:8px; top:18px; width:16px; height:16px; fill:#787B8E; opacity:0; transition:opacity 0.2s}
 .account-event-add-persons-checkbox input:checked+.account-event-add-persons-checkbox-container svg {opacity:1}
 
+@media (max-width:1199px) {
+    .account-event-add-persons-checkbox-title {font-size:15px; line-height:23px}
+    .account-event-add-persons-checkbox-text {font-size:13px; line-height:18px}
+}
+
 .account-event-add-persons-list {margin:0 -10px; display:flex; flex-wrap:wrap}
 .account-event-add-persons-item {min-width:185px; max-width:185px; padding:12px 10px 0 10px}
 .account-event-add-persons-item-photo {height:180px; border-radius:8px; background:no-repeat center; background-size:cover; position:relative}
@@ -3458,9 +3873,21 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-persons-item-name {margin:12px 0 0 0; font-size:16px; line-height:21px; font-weight:600}
 .account-event-add-persons-item-text {margin:5px 0 0 0; font-size:13px; line-height:20px; color:#787B8E}
 
+@media (max-width:1199px) {
+    .account-event-add-persons-list {margin:0 -5px}
+    .account-event-add-persons-item {min-width:167px; max-width:167px; padding:10px 5px 0 5px}
+    .account-event-add-persons-item-name {margin:8px 0 0 0; font-size:15px; line-height:20px}
+    .account-event-add-persons-item-text {margin:2px 0 0 0}
+}
+
 .account-event-add-subgroup {margin:36px 0 0 0}
 .account-event-add-subgroup:first-child {margin:0}
 .account-event-add-subgroup-title {font-weight:600; font-size:20px; line-height:30px}
+
+@media (max-width:1199px) {
+    .account-event-add-subgroup {margin:24px 0 0 0}
+    .account-event-add-subgroup-title {font-size:18px; line-height:27px}
+}
 
 .form-input-youtube > img {position:absolute; left:12px; top:10px; width:36px; z-index:1; pointer-events:none}
 .form-input-youtube > span {left:58px}
@@ -3505,6 +3932,18 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-submit .btn {font-weight:bold; display:flex; align-items:center; padding:0 30px; height:56px; white-space:nowrap; border-radius:8px}
 .account-event-add-submit .btn svg {width:20px; height:20px; fill:#FFFFFF; margin:0 0 0 10px}
 
+@media (max-width:1199px) {
+    .account-event-add-ctrl {padding:20px 0 0 0; justify-content:space-between}
+    .account-event-add-cancel a {height:49px; padding:0 20px; font-size:15px; line-height:19px}
+    .account-event-add-save {margin:0 0 0 10px}
+    .account-event-add-save .btn-border {padding:0 21px; height:49px; font-size:15px; line-height:19px}
+    .account-event-add-submit {margin:0 0 0 10px}
+    .account-event-add-submit .btn {padding:0 22px; font-size:15px; line-height:19px; height:49px}
+    .account-event-add-ctrl-moderation {flex-wrap:wrap}
+    .account-event-add-ctrl-moderation .account-event-add-submit {margin:20px 0 0 0; min-width:100%}
+    .account-event-add-ctrl-moderation .account-event-add-submit .btn {width:100%; justify-content:center}
+}
+
 .account-event-card {margin:40px 0 0 0}
 .account-event-card-menu {border-bottom:1px solid #DFDFDF; font-weight:bold; font-size:16px; line-height:20px; letter-spacing:0.05em; text-transform:uppercase}
 .account-event-card-menu ul {display:flex; margin:0; padding:0; list-style:none}
@@ -3518,6 +3957,16 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-menu ul li.active a {color:#080825}
 .account-event-card-menu ul li a::before {content:""; position:absolute; left:0; bottom:-1px; right:0; height:2px; background:#080825; transform:scale(0, 1); transform-origin:left center; transition:transform 0.2s}
 .account-event-card-menu ul li.active a::before {transform:scale(1)}
+
+@media (max-width:1199px) {
+    .account-event-card {margin:20px 0 0 0}
+    .account-event-card-menu {font-size:14px; line-height:18px}
+    .account-event-card-menu ul {width:100%; overflow:auto}
+    .account-event-card-menu ul::-webkit-scrollbar-thumb {background:transparent}
+    .account-event-card-menu ul::-webkit-scrollbar {width:0; height:0; background:transparent}
+    .account-event-card-menu ul li {margin:0 0 0 20px}
+    .account-event-card-menu ul li:first-child {margin:0}
+}
 
 .account-event-card-tabs {position:relative}
 .account-event-card-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
@@ -3539,6 +3988,19 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-general-stat-than {margin:10px 0 0 0; display:flex; align-items:center; font-weight:500; font-size:15px; line-height:19px; color:rgba(255, 255, 255, 0.4)}
 .account-event-card-general-stat-than span {margin:0 10px 0 0; font-weight:600; color:#FFFFFF}
 
+@media (max-width:1199px) {
+    .account-event-card-general-header {margin:20px 0 0 0; display:block}
+    .account-event-card-general-stats {margin:10px 0 0 0; flex-direction:row; min-width:0; max-width:none; min-height:0}
+    .account-event-card-general-stat {min-width:calc(50% - 5px); max-width:calc(50% - 5px); min-height:0; max-height:none; padding:12px 10px}
+    .account-event-card-general-stat-title {font-size:15px; line-height:19px}
+    .account-event-card-general-stat-results {margin:15px 0 0 0; justify-content:space-between}
+    .account-event-card-general-stat-results-value {font-size:20px; line-height:25px}
+    .account-event-card-general-stat-results-percent {height:22px; font-size:11px; line-height:14px; margin:0}
+    .account-event-card-general-stat-results-percent svg {min-width:14px; max-width:14px; height:14px; margin:0}
+    .account-event-card-general-stat-than {margin:15px 0 0 0; display:block; font-size:13px; line-height:16px}
+    .account-event-card-general-stat-than span {margin:0; display:block}
+}
+
 .account-event-card-general-info {margin:40px 0 0 0}
 .account-event-card-general-info-group {margin:40px 0 0 0; border-top:1px solid #DFDFDF; padding:40px 0 0 0}
 .account-event-card-general-info-group:first-child {margin:0; border-top:none; padding:0}
@@ -3551,6 +4013,16 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-general-info-row-category {border-left:1px solid rgba(120, 123, 142, 0.25); margin:0 0 0 16px; padding:0 0 0 16px}
 .account-event-card-general-info-row-price {display:flex; align-items:center}
 .account-event-card-general-info-row-price svg {min-width:20px; max-width:20px; height:20px; fill:#080825; margin:0 4px 0 16px}
+
+@media (max-width:1199px) {
+    .account-event-card-general-info {margin:40px 0 0 0}
+    .account-event-card-general-info-group {margin:20px 0 0 0; padding:20px 0 0 0}
+    .account-event-card-general-info-group:first-child {margin:0; padding:0}
+    .account-event-card-general-info-row {margin:10px 0 0 0; display:block}
+    .account-event-card-general-info-row:first-child {margin:0}
+    .account-event-card-general-info-row-name {min-width:0; max-width:none; margin:0 0 2px 0; font-size:13px; line-height:20px}
+    .account-event-card-general-info-row-value {font-size:15px; line-height:23px}
+}
 
 .account-event-card-media {margin:57px 0 0 0}
 .account-event-card-media:first-child {margin:40px 0 0 0}
@@ -3605,6 +4077,52 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-main-item-than {margin:12px 0 0 0; display:flex; align-items:center; font-weight:500; font-size:15px; line-height:19px; color:rgba(8, 8, 37, 0.5)}
 .account-event-card-stats-main-item-than span {font-weight:600; color:#080825; margin:0 10px 0 0}
 
+.account-event-card-stats-detail {position:relative}
+
+.account-event-card-stats-detail-ctrl {display:flex; align-items:center; justify-content:space-between}
+.account-event-card-stats-detail-ctrl-dates {display:flex; align-items:center; padding:2px; border-radius:6px; background:#E6E9F6}
+.account-event-card-stats-detail-ctrl-dates-item {margin:0 0 0 2px; border-radius:4px; height:36px; display:flex; align-items:center; padding:0 12px; font-weight:600; font-size:15px; line-height:19px; transition:background 0.2s; cursor:pointer}
+.account-event-card-stats-detail-ctrl-dates-item:first-child {margin:0}
+@media (min-width:1200px) {
+    .account-event-card-stats-detail-ctrl-dates-item:hover {background:#FFFFFF}
+}
+.account-event-card-stats-detail-ctrl-dates-item.active {background:#FFFFFF}
+.account-event-card-stats-detail-ctrl-dates-range {display:flex; align-items:center}
+.account-event-card-stats-detail-ctrl-dates-range svg {margin:0 0 0 8px; min-width:20px; max-width:20px; height:20px; fill:#1C1B1F}
+.account-event-card-stats-detail-ctrl-chart a {display:flex; align-items:center; color:#080825; font-weight:600; font-size:15px; line-height:19px}
+@media (min-width:1200px) {
+    .account-event-card-stats-detail-ctrl-chart a:hover {color:#D75078}
+}
+.account-event-card-stats-detail-ctrl-chart a span:nth-child(2) {display:none}
+.account-event-card-stats-detail-ctrl-chart.open a span:nth-child(1) {display:none}
+.account-event-card-stats-detail-ctrl-chart.open a span:nth-child(2) {display:block}
+.account-event-card-stats-detail-ctrl-chart a em {display:flex; margin:0 0 0 10px; min-width:30px; max-width:30px; height:30px; align-items:center; justify-content:center; background:#F7F8FC; border-radius:50%}
+.account-event-card-stats-detail-ctrl-chart a em svg {width:18px; height:18px; fill:#1C1B1F; transition:transform 0.2s}
+.account-event-card-stats-detail-ctrl-chart.open a em svg {transform:rotate(-180deg)}
+
+.account-event-card-stats-params {display:none}
+
+.account-event-card-stats-detail-chart {margin:20px 0 0 0; padding:20px; position:absolute; left:-9999px; top:-9999px; width:100%; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:12px; opacity:0; transition:opacity 0.2s}
+.account-event-card-stats-detail-chart.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.3) url(../images/loading.svg) no-repeat center; z-index:1}
+.account-event-card-stats-detail-chart.open {position:relative; left:auto; top:auto; opacity:1}
+.account-event-card-stats-detail-chart-container {position:relative; padding:0 0 0 36px; overflow:hidden}
+.account-event-card-stats-detail-chart-container canvas {width:100%; height:191px}
+
+.account-event-card-stats-detail {margin:40px 0 0 0}
+.account-event-card-stats-detail-table {margin:40px 0 0 0; position:relative}
+.account-event-card-stats-detail-table.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.3) url(../images/loading.svg) no-repeat center; z-index:1}
+.account-event-card-stats-detail-table-header {display:flex; padding:0 20px 12px 20px; font-size:12px; line-height:18px; letter-spacing:0.05em; text-transform:uppercase; color:#787B8E; border-bottom:1px solid #DFDFDF}
+.account-event-card-stats-detail-table-header-date {min-width:120px; max-width:120px; margin:0 20px 0 0}
+.account-event-card-stats-detail-table-header-value {flex:1; text-align:center}
+.account-event-card-stats-detail-table-header-value:last-child {text-align:right}
+.account-event-card-stats-detail-table-row {display:flex; padding:12px 20px; border-bottom:1px solid #DFDFDF; font-size:15px; line-height:26px}
+.account-event-card-stats-detail-table-row.summ {background:#F7F8FC; padding:16px 20px; font-weight:600; font-size:18px; line-height:31px}
+.account-event-card-stats-detail-table-row-date {min-width:120px; max-width:120px; margin:0 20px 0 0}
+.account-event-card-stats-detail-table-row-value {flex:1; text-align:center}
+.account-event-card-stats-detail-table-row-value:last-child {text-align:right}
+.account-event-card-stats-detail-table-row-value.highlight {font-weight:bold}
+.account-event-card-stats-detail-table-row.summ .account-event-card-stats-detail-table-row-value.highlight {font-weight:normal}
+
 .account-event-card-reviews {margin:30px 0 0 0}
 .account-event-card-review {margin:20px 0 0 0; position:relative; padding:20px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.08); border-radius:12px}
 .account-event-card-review-author {font-weight:bold}
@@ -3622,3 +4140,40 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .account-event-card-review-answer {margin:20px 0 0 32px; position:relative; background:#F7F8FC; border-radius:12px; padding:20px}
 .account-event-card-review-icon-answer {position:absolute; left:-30px; top:28px; width:14px; height:14px; fill:#080825}
+
+.window-stat-details {width:375px; padding:20px 15px 15px 15px}
+.window-stat-details-title {font-weight:bold; font-size:20px; line-height:25px; padding:0 0 20px 0; border-bottom:1px solid #DFDFDF}
+.account-event-card-stats-params-periods {margin:30px 0 0 0; font-size:15px; line-height:23px}
+.account-event-card-stats-params-period {display:flex; align-items:center; justify-content:space-between; margin:15px 0 0 0; cursor:pointer}
+.account-event-card-stats-params-period input {display:none}
+.account-event-card-stats-params-period-title {display:block; position:relative; padding:0 0 0 32px; cursor:pointer; font-weight:500}
+.account-event-card-stats-params-period-title::before {content:""; width:20px; height:20px; border:1px solid #F0F0F0; border-radius:50%; position:absolute; left:0; top:1px; background:#F0F0F0; transition:border 0.2s, background 0.2s}
+@media (min-width:1200px) {
+    .account-event-card-stats-params-period:hover .account-event-card-stats-params-period-title::before {border-color:#6768AB}
+}
+.account-event-card-stats-params-period input:checked+.account-event-card-stats-params-period-title {border-color:#6768AB}
+.account-event-card-stats-params-period input:checked+.account-event-card-stats-params-period-title::before {border-color:#6768AB; background:#FFFFFF}
+.account-event-card-stats-params-period input:checked+.account-event-card-stats-params-period-title::after {content:""; display:block; width:12px; height:12px; background:#6768AB; border-radius:50%; position:absolute; left:4px; top:5px}
+.account-event-card-stats-params-period-value {color:#787B8E}
+.account-event-card-stats-params-range {margin:15px -5px 0 -5px; display:flex}
+.account-event-card-stats-params-range-item {min-width:50%; max-width:50%; padding:0 5px}
+.account-event-card-stats-params-range .form-input {margin:0}
+.account-event-card-stats-params-details-title {margin:30px 0 0 0; padding:30px 0 0 0; font-weight:600; border-top:1px solid #DFDFDF}
+.account-event-card-stats-params-details {margin:15px 0 0 0}
+.account-event-card-stats-params-detail {margin:10px 0 0 0; font-weight:500; font-size:15px; line-height:23px; display:flex}
+.account-event-card-stats-params-detail label {position:relative; display:block}
+.account-event-card-stats-params-detail input {display:none}
+.account-event-card-stats-params-detail span {display:block; position:relative; padding:0 0 0 32px; cursor:pointer}
+.account-event-card-stats-params-detail span::before {content:""; width:20px; height:20px; border:1px solid #F0F0F0; border-radius:3px; position:absolute; left:0; top:1px; background:#F0F0F0 url(../images/checkbox.svg) no-repeat -999px -999px; transition:border-color 0.2s, background-color 0.2s}
+@media (min-width:1200px) {
+    .account-event-card-stats-params-detail label:hover span::before {border-color:#6768AB}
+}
+.account-event-card-stats-params-detail input:disabled+span {color:#787B8E; cursor:default; pointer-events:none}
+.account-event-card-stats-params-detail input:disabled+span::before {border-color:#C7CAD8}
+.account-event-card-stats-params-detail input:checked+span {border-color:#6768AB}
+.account-event-card-stats-params-detail input:checked+span::before {background-position:center; background-color:#6768AB; border-color:#6768AB}
+.account-event-card-stats-params-detail input:checked:disabled+span::before {border-color:#C7CAD8; background-color:#C7CAD8}
+.account-event-card-stats-params-ctrl {margin:30px 0 0 0; display:flex; justify-content:space-between; align-items:center}
+.account-event-card-stats-params-ctrl .form-reset {margin:0}
+.account-event-card-stats-params-ctrl .form-submit {margin:0}
+.account-event-card-stats-params-ctrl .form-submit .btn {min-width:245px}

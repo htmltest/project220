@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css?sid=002">
+        <link rel="stylesheet" href="css/styles.css?sid=005">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -201,7 +201,7 @@
                             </div>
 
                             <div class="header-user-account">
-                                <a class="header-user-account-link"><span>rocossovsky_1896</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                <a class="header-user-account-link"><span>rocossovsky_1896</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-user-account-menu">
                                     <div class="header-user-account-menu-item"><a href="#"><strong>Statistics</strong><span>1</span></a></div>
                                     <div class="header-user-account-menu-item"><a href="#"><strong>Support</strong></a></div>
@@ -218,6 +218,8 @@
 
                 <!-- container -->
                 <div class="container">
+
+                    <div class="breadcrumbs"><a href="#">My Events</a></div>
 
                     <!-- account -->
                     <div class="account">
@@ -508,6 +510,139 @@
                                                 </div>
                                             </div>
 
+                                            <!-- account event card stats detail -->
+                                            <div class="account-event-card-stats-detail">
+
+                                                <!-- account event card stats detail ctrl -->
+                                                <div class="account-event-card-stats-detail-ctrl">
+                                                    <div class="account-event-card-stats-detail-ctrl-dates">
+                                                        <!-- <div class="account-event-card-stats-detail-ctrl-dates-item week">Last Week</div>
+                                                        <div class="account-event-card-stats-detail-ctrl-dates-item month">Last Month</div>-->
+                                                        <div class="account-event-card-stats-detail-ctrl-dates-item detail active">
+                                                            <div class="account-event-card-stats-detail-ctrl-dates-range"><span></span><svg><use xlink:href="images/sprite.svg#account-event-card-stats-detail-ctrl-dates-range"></use></svg></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-ctrl-chart"><a href="#"><span>Show&nbsp;</span><span>Hide&nbsp;</span>Graphic<em><svg><use xlink:href="images/sprite.svg#account-event-card-stats-detail-ctrl-chart"></use></svg></em></a></div>
+                                                </div>
+                                                <!-- account event card stats detail ctrl END -->
+
+                                                <div class="account-event-card-stats-params" data-title="Period and Detail" data-url="ajax/account-event-card-stats.json">
+                                                    <div class="account-event-card-stats-params-periods">
+                                                        <label class="account-event-card-stats-params-period today">
+                                                            <input type="radio" name="period" value="today">
+                                                            <div class="account-event-card-stats-params-period-title">Today</div>
+                                                            <div class="account-event-card-stats-params-period-value"></div>
+                                                        </label>
+                                                        <label class="account-event-card-stats-params-period week">
+                                                            <input type="radio" name="period" value="week" checked>
+                                                            <div class="account-event-card-stats-params-period-title">Last Week</div>
+                                                            <div class="account-event-card-stats-params-period-value"></div>
+                                                        </label>
+                                                        <label class="account-event-card-stats-params-period month">
+                                                            <input type="radio" name="period" value="month">
+                                                            <div class="account-event-card-stats-params-period-title">Last month</div>
+                                                            <div class="account-event-card-stats-params-period-value"></div>
+                                                        </label>
+                                                        <label class="account-event-card-stats-params-period other">
+                                                            <input type="radio" name="period" value="other">
+                                                            <div class="account-event-card-stats-params-period-title">Other</div>
+                                                        </label>
+                                                    </div>
+                                                    <div class="account-event-card-stats-params-range">
+                                                        <div class="account-event-card-stats-params-range-item from">
+                                                            <div class="form-input form-input-date"><span>From</span><input type="text" name="from" value="" disabled></div>
+                                                        </div>
+                                                        <div class="account-event-card-stats-params-range-item to">
+                                                            <div class="form-input form-input-date"><span>To</span><input type="text" name="to" value="" disabled></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-params-details-title">Data show</div>
+                                                    <div class="account-event-card-stats-params-details">
+                                                        <div class="account-event-card-stats-params-detail"><label><input type="checkbox" name="detail[]" value="visits" checked disabled><span>Visits</span></label></div>
+                                                        <div class="account-event-card-stats-params-detail"><label><input type="checkbox" name="detail[]" value="unique" checked><span>Unique</span></label></div>
+                                                        <div class="account-event-card-stats-params-detail"><label><input type="checkbox" name="detail[]" value="clicks" checked><span>Clicks</span></label></div>
+                                                        <div class="account-event-card-stats-params-detail"><label><input type="checkbox" name="detail[]" value="favorites" checked><span>Favorites</span></label></div>
+                                                        <div class="account-event-card-stats-params-detail"><label><input type="checkbox" name="detail[]" value="conversion" checked><span>Conversion</span></label></div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-params-ctrl">
+                                                        <div class="form-reset"><input type="reset" value="Clear All"></div>
+                                                        <div class="form-submit"><input type="submit" value="Apply" class="btn"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="account-event-card-stats-detail-chart">
+                                                    <div class="account-event-card-stats-detail-chart-container">
+                                                        <div class="account-event-card-stats-detail-chart-container">
+                                                            <canvas></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <script>
+                                                </script>
+                                                <script src="js/chart.umd.js"></script>
+
+                                                <div class="account-event-card-stats-detail-table" data-date="Date" data-total="Total">
+                                                    <div class="account-event-card-stats-detail-table-header">
+                                                        <div class="account-event-card-stats-detail-table-header-date">Date</div>
+                                                        <div class="account-event-card-stats-detail-table-header-value">Visits</div>
+                                                        <div class="account-event-card-stats-detail-table-header-value">Unique</div>
+                                                        <div class="account-event-card-stats-detail-table-header-value">Clicks</div>
+                                                        <div class="account-event-card-stats-detail-table-header-value">Favorites</div>
+                                                        <div class="account-event-card-stats-detail-table-header-value">Conversion</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row">
+                                                        <div class="account-event-card-stats-detail-table-row-date">07.10.2024</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">101</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">78</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">26</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">21</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">4%</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row">
+                                                        <div class="account-event-card-stats-detail-table-row-date">08.10.2024</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">12 847</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">10 554</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">7548</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">988</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">3%</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row">
+                                                        <div class="account-event-card-stats-detail-table-row-date">09.10.2024</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">9665</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">7844</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">2004</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">654</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">27%</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row">
+                                                        <div class="account-event-card-stats-detail-table-row-date">10.10.2024</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">45</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">36</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">20</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">12</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">15%</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row">
+                                                        <div class="account-event-card-stats-detail-table-row-date">11.10.2024</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">2</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">1</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">1</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">0</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">1%</div>
+                                                    </div>
+                                                    <div class="account-event-card-stats-detail-table-row summ">
+                                                        <div class="account-event-card-stats-detail-table-row-date">Total</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">22 487</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">17544</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">9587</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value">1485</div>
+                                                        <div class="account-event-card-stats-detail-table-row-value highlight">12%</div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <!-- account event card stats detail END -->
+
                                         </div>
                                         <!-- account event card tab END -->
 
@@ -721,8 +856,8 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js?sid=002"></script>
         <script src="js/clockpicker/jquery-clockpicker.min.js"></script>
+        <script src="js/tools.js?sid=005"></script>
 
     </body>
 </html>

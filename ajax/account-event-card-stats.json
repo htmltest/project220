@@ -1,0 +1,42 @@
+{
+    "cols"  : [
+        {
+            "name"      : "visits",
+            "title"     : "Visits",
+            "onchart"   : true
+        },
+        {
+            "name"      : "unique",
+            "title"     : "Unique"
+        },
+        {
+            "name"      : "clicks",
+            "title"     : "Clicks"
+        }
+    ],
+    "data"  : [
+        {
+            "date"      : "05/10/2024",
+            "visits"    : "12847",
+            "unique"    : "10554",
+            "clicks"    : "7548"
+        },
+        {
+            "date"      : "05/11/2024",
+            "visits"    : "9665",
+            "unique"    : "7844",
+            "clicks"    : "2004"
+        },
+        {
+            "date"      : "05/11/2024",
+            "visits"    : "45",
+            "unique"    : "36",
+            "clicks"    : "20"
+        }
+    ],
+    "total" : {
+        "visits"    : "22487",
+        "unique"    : "17544",
+        "clicks"    : "9587"
+    }
+}

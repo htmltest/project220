@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css?sid=002">
+        <link rel="stylesheet" href="css/styles.css?sid=005">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -149,7 +149,7 @@
                             </div>
 
                             <div class="header-user-account">
-                                <a class="header-user-account-link"><span>rocossovsky_1896</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg></a>
+                                <a class="header-user-account-link"><span>rocossovsky_1896</span><svg><use xlink:href="images/sprite.svg#menu-arrow"></use></svg><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
                                 <div class="header-user-account-menu">
                                     <div class="header-user-account-menu-item"><a href="#"><strong>Statistics</strong><span>1</span></a></div>
                                     <div class="header-user-account-menu-item"><a href="#"><strong>Support</strong></a></div>
@@ -196,13 +196,71 @@
 
                                     <div class="account-support-title">Support</div>
 
+                                    <!-- account support header -->
                                     <div class="account-support-header">
                                         <div class="account-support-filter">
-                                            <a href="#" class="account-support-filter-link"><svg><use xlink:href="images/sprite.svg#account-icon-filter"></use></svg><strong>Filter</strong><span class="visible">4</span></a>
+                                            <a href="#" class="account-support-filter-link"><svg><use xlink:href="images/sprite.svg#account-icon-filter"></use></svg><strong>Filter</strong><span>0</span></a>
+                                            <div class="account-support-filter-window">
+                                                <form action="ajax/account-support.html" method="post">
+                                                    <div class="account-support-filter-header">
+                                                        <div class="account-support-filter-header-title">Filter</div>
+                                                        <a href="#" class="account-support-filter-header-close"><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
+                                                    </div>
+                                                    <div class="account-support-filter-group">
+                                                        <div class="account-support-filter-group-title"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-support-filter-group-title"></use></svg></span>Status</a></div>
+                                                        <div class="account-support-filter-group-content">
+                                                            <div class="form-checkbox">
+                                                                <label><input type="checkbox" name="status[answer]" checked><span>There's an answer</span></label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label><input type="checkbox" name="status[archive]"><span>Archive</span></label>
+                                                            </div>
+                                                            <div class="form-checkbox">
+                                                                <label><input type="checkbox" name="status[new]"><span>New</span></label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="account-support-filter-group">
+                                                        <div class="account-support-filter-group-title"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-support-filter-group-title"></use></svg></span>Period and Detail</a></div>
+                                                        <div class="account-support-filter-group-content account-support-filter-period">
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="period" value="today"><span>Today<em>11.10.2024</em></span></label>
+                                                            </div>
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="period" value="week"><span>This Week<em>07.10.2024 — 11.10.2024</em></span></label>
+                                                            </div>
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="period" value="month" checked class="default"><span>This month<em>07.10.2024 — 11.10.2024</em></span></label>
+                                                            </div>
+                                                            <div class="form-radio">
+                                                                <label><input type="radio" name="period" value="other" class="other"><span>Other</span></label>
+                                                            </div>
+                                                            <div class="account-support-filter-range">
+                                                                <div class="account-support-filter-range-item from">
+                                                                    <div class="form-input form-input-date"><span>From</span><input type="text" name="from" value="" disabled></div>
+                                                                </div>
+                                                                <div class="account-support-filter-range-item to">
+                                                                    <div class="form-input form-input-date"><span>To</span><input type="text" name="to" value="" disabled></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="account-support-filter-group">
+                                                        <div class="account-support-filter-ctrl">
+                                                            <a href="#" class="account-support-filter-clear">Clear All</a>
+                                                            <div class="account-support-filter-count">27 results</div>
+                                                            <div class="account-support-filter-submit"><button type="submit" class="btn">Apply</button></div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                         <a href="#" class="btn-border account-support-archive-link"><svg><use xlink:href="images/sprite.svg#account-icon-archive"></use></svg><span>Archive</span></a>
-                                        <a href="#" class="btn account-support-add-link"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>New request</a>
+                                        <a href="#" class="btn account-support-add-link"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg><span>New request</span></a>
                                     </div>
+                                    <!-- account support header END -->
 
                                     <!-- account support list -->
                                     <div class="account-support-list">
@@ -375,8 +433,8 @@
         <script src="js/fileupload/jquery.iframe-transport.js"></script>
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
-        <script src="js/tools.js?sid=002"></script>
         <script src="js/clockpicker/jquery-clockpicker.min.js"></script>
+        <script src="js/tools.js?sid=005"></script>
 
     </body>
 </html>
