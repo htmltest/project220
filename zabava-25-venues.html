@@ -229,9 +229,9 @@
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>My venues</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
@@ -244,13 +244,13 @@
                             <div class="account-content">
 
                                 <div class="account-events-header">
-                                    <div class="account-events-title">My Events</div>
-                                    <div class="account-events-header-add"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>New event</a></div>
+                                    <div class="account-events-title">My Restarauns</div>
+                                    <div class="account-events-header-add"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>Add restaraunt</a></div>
                                 </div>
 
                                 <!-- filters -->
                                 <div class="filters">
-                                    <form action="ajax/account-events.html" method="post">
+                                    <form action="ajax/account-venues.html" method="post">
 
                                         <div class="filters-params">
                                             <div class="filter-params-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#filter-params-mobile-link"></use></svg>Filter<span></span></a></div>
@@ -269,36 +269,44 @@
                                                 </div>
                                                 <div class="filters-params-item">
                                                     <div class="filters-select">
-                                                        <a href="#" class="filters-select-title">Genre<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <a href="#" class="filters-select-title">Country<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
                                                         <div class="filters-select-content">
                                                             <div class="filters-select-content-search">
                                                                 <input type="text" value="">
                                                                 <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
                                                             </div>
                                                             <div class="filters-select-content-inner">
-                                                                <div class="filters-select-group">
-                                                                    <div class="filters-select-group-title">Music</div>
-                                                                    <div class="filters-select-group-list">
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Premieres]"><span>Premieres</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Ballet]"><span>Ballet</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Childish]"><span>Childish</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dramatic]"><span>Dramatic</span></label></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="filters-select-group">
-                                                                    <div class="filters-select-group-title">Cinema</div>
-                                                                    <div class="filters-select-group-list">
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Comedies]"><span>Comedies</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dollhouse]"><span>Dollhouse</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Musicals]"><span>Musicals</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Operettas]"><span>Operettas</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Opera]"><span>Opera</span></label></div>
-                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Circus]"><span>Circus</span></label></div>
-                                                                    </div>
-                                                                </div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Afghanistan, Islamic Republic of]"><span>Afghanistan, Islamic Republic of</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Albania]"><span>Albania</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Algeria]"><span>Algeria</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Andorra]"><span>Andorra</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Angola]"><span>Angola</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Antigua and Barbuda]"><span>Antigua and Barbuda</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Argentina]"><span>Argentina</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Armenia]"><span>Armenia</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Australia]"><span>Australia</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Austria]"><span>Austria</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Azerbaijan]"><span>Azerbaijan</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bahamas, The]"><span>Bahamas, The</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bahrain]"><span>Bahrain</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bangladesh]"><span>Bangladesh</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Barbados]"><span>Barbados</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belarus]"><span>Belarus</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belgium]"><span>Belgium</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Belize]"><span>Belize</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Benin]"><span>Benin</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bhutan]"><span>Bhutan</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bolivia]"><span>Bolivia</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bosnia and Herzegovina]"><span>Bosnia and Herzegovina</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Botswana]"><span>Botswana</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Brazil]"><span>Brazil</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Brunei]"><span>Brunei</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Bulgaria]"><span>Bulgaria</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Burkina Faso]"><span>Burkina Faso</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="country[Burundi]"><span>Burundi</span></label></div>
                                                             </div>
                                                             <div class="filters-select-content-results">
-                                                                <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
                                                                 <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
                                                                 <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                             </div>
@@ -307,17 +315,131 @@
                                                 </div>
                                                 <div class="filters-params-item">
                                                     <div class="filters-select">
-                                                        <a href="#" class="filters-select-title">Price<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <a href="#" class="filters-select-title">City<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Ljubljana]"><span>Ljubljana</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Maribor]"><span>Maribor</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Kranj]"><span>Kranj</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Celje]"><span>Celje</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Koper]"><span>Koper</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="city[Velenje]"><span>Velenje</span></label></div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Type venues<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="venues[Concerts]"><span>Concerts</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="venues[Sport]"><span>Sport</span></label></div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Price per hour<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
                                                         <div class="filters-select-content filters-select-content-range">
                                                             <div class="filters-select-range" data-currency="€">
                                                                 <div class="filters-select-range-examples">
-                                                                    <div data-from="10" data-to="30"><span>10–30€</span></div>
+                                                                    <div data-from="0" data-to="30"><span>0–30€</span></div>
                                                                     <div data-from="30" data-to="100"><span>30–100€</span></div>
                                                                     <div data-from="100" data-to="500"><span>100–500€</span></div>
-                                                                    <div data-from="500" data-to="5000"><span>500–5000€</span></div>
+                                                                    <div data-from="500" data-to="1000"><span>500–1000€</span></div>
                                                                 </div>
-                                                                <input type="hidden" name="priceFrom" value="10" class="filters-select-range-from">
-                                                                <input type="hidden" name="priceTo" value="5000" class="filters-select-range-to">
+                                                                <input type="hidden" name="priceFrom" value="0" class="filters-select-range-from">
+                                                                <input type="hidden" name="priceTo" value="1000" class="filters-select-range-to">
+                                                                <div class="filters-select-range-text">
+                                                                    <div class="filters-select-range-text-from">0</div>
+                                                                    <div class="filters-select-range-text-to">1000</div>
+                                                                </div>
+                                                                <div class="filters-select-range-slider">
+                                                                    <div class="filters-select-range-slider-inner"></div>
+                                                                </div>
+                                                                <div class="filters-select-range-hints">
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-from">From: <span></span></div>
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-to">To: <span></span></div>
+                                                                </div>
+                                                                <div class="filters-select-range-params">
+                                                                    <div class="filters-select-range-min">0</div>
+                                                                    <div class="filters-select-range-max">1000</div>
+                                                                    <div class="filters-select-range-step">1</div>
+                                                                </div>
+                                                                <div class="filters-select-content-results">
+                                                                    <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                    <div class="filters-select-content-results-reset"><a href="#">Reset</a></div>
+                                                                    <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Max people<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content filters-select-content-range">
+                                                            <div class="filters-select-range" data-currency="">
+                                                                <div class="filters-select-range-examples">
+                                                                    <div data-from="0" data-to="30"><span>0–30</span></div>
+                                                                    <div data-from="30" data-to="100"><span>30–100</span></div>
+                                                                    <div data-from="100" data-to="500"><span>100–500</span></div>
+                                                                    <div data-from="500" data-to="1000"><span>500–1000</span></div>
+                                                                </div>
+                                                                <input type="hidden" name="maxpeopleFrom" value="0" class="filters-select-range-from">
+                                                                <input type="hidden" name="maxpeopleTo" value="1000" class="filters-select-range-to">
+                                                                <div class="filters-select-range-text">
+                                                                    <div class="filters-select-range-text-from">0</div>
+                                                                    <div class="filters-select-range-text-to">1000</div>
+                                                                </div>
+                                                                <div class="filters-select-range-slider">
+                                                                    <div class="filters-select-range-slider-inner"></div>
+                                                                </div>
+                                                                <div class="filters-select-range-hints">
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-from">From: <span></span></div>
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-to">To: <span></span></div>
+                                                                </div>
+                                                                <div class="filters-select-range-params">
+                                                                    <div class="filters-select-range-min">0</div>
+                                                                    <div class="filters-select-range-max">1000</div>
+                                                                    <div class="filters-select-range-step">1</div>
+                                                                </div>
+                                                                <div class="filters-select-content-results">
+                                                                    <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                    <div class="filters-select-content-results-reset"><a href="#">Reset</a></div>
+                                                                    <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Square<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content filters-select-content-range">
+                                                            <div class="filters-select-range" data-currency="m">
+                                                                <input type="hidden" name="squareFrom" value="10" class="filters-select-range-from">
+                                                                <input type="hidden" name="squareTo" value="5000" class="filters-select-range-to">
                                                                 <div class="filters-select-range-text">
                                                                     <div class="filters-select-range-text-from">10</div>
                                                                     <div class="filters-select-range-text-to">5000</div>
@@ -344,25 +466,64 @@
                                                     </div>
                                                 </div>
                                                 <div class="filters-params-item">
-                                                    <div class="filters-checkbox">
-                                                        <div class="filters-checkbox-mobile-header">
-                                                            <div class="filters-checkbox-mobile-title">Free tickets</div>
-                                                            <div class="filters-checkbox-mobile-values"></div>
-                                                        </div>
-                                                        <div class="filters-checkbox-content">
-                                                            <div class="filters-checkbox-container">
-                                                                <div class="filters-checkbox-mobile-subtitle">Free tickets<a href="#" class="filters-checkbox-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
-                                                                <label><input type="checkbox" name="free"><span><em>Free tickets</em><em>Yes</em><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></span></label>
-                                                                <div class="filters-checkbox-content-results">
-                                                                    <div class="filters-checkbox-content-results-reset"><a href="#">Clear All</a></div>
-                                                                    <div class="filters-checkbox-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
-                                                                </div>
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Equipment and Facilities<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="equipment"><span>Equipment</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="facilities"><span>Facilities</span></label></div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="filters-params-dates">
-                                                    <a href="#"><em>Dates:</em>&nbsp;<span></span><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></a>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Services and Conditions<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="services"><span>Services</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="conditions"><span>Conditions</span></label></div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Photos and Videos<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="photos"><span>Photos</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="videos"><span>Videos</span></label></div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>1567</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="filters-params-clearall">
                                                     <a href="#"><svg><use xlink:href="images/sprite.svg#filters-params-clearall"></use></svg>Clear All</a>
@@ -400,12 +561,11 @@
                                                 <div class="account-events-item-date">Added June 14, 2023</div>
                                             </div>
                                             <div class="account-events-item-preview">
-                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/theatre-01.jpg)"></a>
+                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/events-01.jpg)"></a>
                                             </div>
-                                            <div class="account-events-item-title"><a href="#">The Chronicles of Narnia: The Lion, the Witch and the Wardrobe</a></div>
-                                            <div class="account-events-item-info">
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-time"></use></svg>April 15 at 21:00</div>
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-price"></use></svg>From 22</div>
+                                            <div class="account-events-item-title">
+                                                <a href="#">Loftblackout</a>
+                                                <div class="account-events-item-address"><svg><use xlink:href="images/sprite.svg#account-events-item-address"></use></svg>Ljubljana, Sretensky b-r, 4</div>
                                             </div>
                                             <div class="account-events-item-stats to-up">17%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
                                             <div class="account-events-item-ctrl">
@@ -427,12 +587,11 @@
                                                 <div class="account-events-item-date">Added September 14, 2023</div>
                                             </div>
                                             <div class="account-events-item-preview">
-                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/theatre-02.jpg)"></a>
+                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/events-02.jpg)"></a>
                                             </div>
-                                            <div class="account-events-item-title"><a href="#">Female friendship, or How to get married</a></div>
-                                            <div class="account-events-item-info">
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-time"></use></svg>September 15 at 21:00</div>
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-price"></use></svg>From 22</div>
+                                            <div class="account-events-item-title">
+                                                <a href="#">Two Riders</a>
+                                                <div class="account-events-item-address"><svg><use xlink:href="images/sprite.svg#account-events-item-address"></use></svg>Jozefská 2991/2, 811 06 Staré Mesto</div>
                                             </div>
                                             <div class="account-events-item-stats to-down">2%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
                                             <div class="account-events-item-ctrl">
@@ -454,12 +613,11 @@
                                                 <div class="account-events-item-date">Added June 14, 2023</div>
                                             </div>
                                             <div class="account-events-item-preview">
-                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/theatre-03.jpg)"></a>
+                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/events-03.jpg)"></a>
                                             </div>
-                                            <div class="account-events-item-title"><a href="#">Swan Lake</a></div>
-                                            <div class="account-events-item-info">
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-time"></use></svg>April 15 at 21:00</div>
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-price"></use></svg>From 22</div>
+                                            <div class="account-events-item-title">
+                                                <a href="#">Tiflis</a>
+                                                <div class="account-events-item-address"><svg><use xlink:href="images/sprite.svg#account-events-item-address"></use></svg>Hviezdoslavovo námestie 7, 811 02 Bratislava</div>
                                             </div>
                                             <div class="account-events-item-stats to-up">17%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
                                             <div class="account-events-item-ctrl">
@@ -481,12 +639,11 @@
                                                 <div class="account-events-item-date">Added June 14, 2023</div>
                                             </div>
                                             <div class="account-events-item-preview">
-                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/theatre-01.jpg)"></a>
+                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/events-04.jpg)"></a>
                                             </div>
-                                            <div class="account-events-item-title"><a href="#">The Chronicles of Narnia: The Lion, the Witch and the Wardrobe</a></div>
-                                            <div class="account-events-item-info">
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-time"></use></svg>April 15 at 21:00</div>
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-price"></use></svg>From 22</div>
+                                            <div class="account-events-item-title">
+                                                <a href="#">Imperial</a>
+                                                <div class="account-events-item-address"><svg><use xlink:href="images/sprite.svg#account-events-item-address"></use></svg>Ljubljana, Sretensky b-r, 4</div>
                                             </div>
                                             <div class="account-events-item-stats to-up">17%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
                                             <div class="account-events-item-ctrl">
@@ -505,17 +662,16 @@
                                         <div class="account-events-item">
                                             <div class="account-events-item-id-date">
                                                 <div class="account-events-item-id">ID: 78646187</div>
-                                                <div class="account-events-item-date">Added April 14, 2023</div>
+                                                <div class="account-events-item-date">Added September 14, 2023</div>
                                             </div>
                                             <div class="account-events-item-preview">
-                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/theatre-02.jpg)"></a>
+                                                <a href="#" class="account-events-item-preview-inner" style="background-image:url(files/events-05.jpg)"></a>
                                             </div>
-                                            <div class="account-events-item-title"><a href="#">Female friendship, or How to get married</a></div>
-                                            <div class="account-events-item-info">
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-time"></use></svg>April 15 at 21:00</div>
-                                                <div class="account-events-item-info-item"><svg><use xlink:href="images/sprite.svg#account-events-price"></use></svg>From 22</div>
+                                            <div class="account-events-item-title">
+                                                <a href="#">Divný Janko</a>
+                                                <div class="account-events-item-address"><svg><use xlink:href="images/sprite.svg#account-events-item-address"></use></svg>Jozefská 2991/2, 811 06 Staré Mesto</div>
                                             </div>
-                                            <div class="account-events-item-stats to-up">6%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
+                                            <div class="account-events-item-stats to-down">2%<svg><use xlink:href="images/sprite.svg#account-events-stats"></use></svg></div>
                                             <div class="account-events-item-ctrl">
                                                 <div class="account-events-item-ctrl-icon"><svg><use xlink:href="images/sprite.svg#account-events-ctrl"></use></svg></div>
                                                 <div class="account-events-item-ctrl-list">

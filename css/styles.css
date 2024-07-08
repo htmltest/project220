@@ -1892,6 +1892,8 @@ header.fixed .logo svg {width:100px; height:19px}
 .detail-media-header-content {flex-grow:1; display:flex; align-items:center}
 .detail-media-header-item {display:flex; align-items:center; margin:0 10px 10px 0; padding:0 16px; height:48px; background:rgba(0, 0, 0, 0.6); border-radius:8px; color:#FFFFFF; font-weight:600; font-size:18px; line-height:23px}
 .detail-media-header-item svg {display:block; width:24px; height:24px; margin:0 10px 0 0; fill:#FFFFFF}
+.detail-media-header-item img {display:block; width:32px; height:24px; margin:0 10px 0 0}
+.detail-media-header-item sup {vertical-align:top; font-size:0.5em; margin-top:-4px}
 .detail-media-header-place {padding:0 16px; height:48px; display:flex; align-items:center; white-space:nowrap; color:#FFFFFF; background:#D75078; border-radius:8px; font-weight:600; font-size:18px; line-height:23px; transition:background 0.2s}
 @media (min-width:1200px) {
     .detail-media-header-place:hover {background:#B9325A; color:#FFFFFF}
@@ -1933,7 +1935,7 @@ header.fixed .logo svg {width:100px; height:19px}
     .detail-media-slider-preview-item a {width:52px; height:50px}
 }
 
-.detail-ctrl {margin:20px 0 0 0; display:flex; align-items:center}
+.detail-ctrl {margin:20px 0 0 0; display:flex; align-items:center; justify-content:flex-end}
 .detail-ctrl-buy {order:0}
 .detail-ctrl-buy .btn {display:flex; align-items:center; justify-content:center; height:54px; border-radius:8px; padding:0 40px; font-weight:bold; white-space:nowrap}
 .detail-ctrl-buy .btn svg {min-width:30px; max-width:30px; height:30px; margin:0 10px 0 0; fill:#FFFFFF}
@@ -1960,11 +1962,23 @@ header.fixed .logo svg {width:100px; height:19px}
 @media (min-width:1200px) {
     .detail-favourite:hover svg {fill:#D75078}
 }
-.detail-share-link {display:flex; align-items:center; justify-content:center; height:54px; background:#F3F4FA; border-radius:6px}
+.detail-share {position:relative}
+.detail-share-link {display:flex; align-items:center; justify-content:center; height:54px; background:#F3F4FA; border-radius:6px; transition:background 0.2s}
+.detail-share.open .detail-share-link {background:#D75078}
 .detail-share-link svg {display:block; width:24px; height:24px; fill:#080825; transition:fill 0.2s}
 @media (min-width:1200px) {
     .detail-share-link:hover svg {fill:#D75078}
 }
+.detail-share.open .detail-share-link svg {fill:#FFFFFF}
+.detail-share-window {display:none; position:absolute; right:0; top:100%; min-width:100%; padding:20px; align-items:center; justify-content:space-between; margin:13px 0 0 0; z-index:20; background:#FFFFFF; box-shadow:0px 0px 40px rgba(8, 8, 37, 0.2); border-radius:10px}
+.detail-share.open .detail-share-window {display:flex}
+.detail-share-window::before {content:""; position:absolute; right:28px; top:-8px; width:14px; height:12px; background:url(../images/detail-share-window.svg) no-repeat; background-size:100%}
+.detail-share-window a {min-width:32px; max-width:32px; transition:transform 0.2s; margin:0 0 0 30px}
+.detail-share-window a:first-child {margin:0}
+@media (min-width:1200px) {
+    .detail-share-window a:hover {transform:scale(1.2)}
+}
+.detail-share-window a svg {display:block; width:32px; height:32px; fill:none}
 
 @media (max-width:1199px) {
     .detail-ctrl {flex-wrap:wrap}
@@ -1976,6 +1990,9 @@ header.fixed .logo svg {width:100px; height:19px}
     .detail-ctrl-social-item {margin:0 0 0 10px; min-width:56px; max-width:56px}
     .detail-favourite {height:35px}
     .detail-share-link {height:35px}
+    .detail-share-window {padding:20px 30px}
+    .detail-share-window a {margin:0 0 0 52px}
+    .detail-share-window a:first-child {margin:0}
 }
 
 .detail-info {margin:48px 0 0 0}
@@ -2167,6 +2184,31 @@ header.fixed .logo svg {width:100px; height:19px}
     .detail-schedule-more a {border-radius:12px}
 }
 
+.detail-info-reviews-ctrl {margin:40px 0 0 0; display:flex; align-items:center}
+.detail-info-reviews-ctrl-link {flex-grow:1}
+.detail-info-reviews-ctrl-link .btn {padding:17px 30px; font-weight:bold}
+.detail-info-reviews-rating {display:flex; align-items:center}
+.detail-info-reviews-rating-stars {display:flex; position:relative; min-width:140px; max-width:140px}
+.detail-info-reviews-rating-stars svg {display:block; min-width:20px; max-width:20px; height:20px; margin:0 0 0 10px}
+.detail-info-reviews-rating-stars svg:first-child {margin:0}
+.detail-info-reviews-rating-stars-back {display:flex; min-width:140px; max-width:140px}
+.detail-info-reviews-rating-stars-back svg {fill:#DFDFDF}
+.detail-info-reviews-rating-stars-front {display:flex; position:absolute; left:0; top:0; overflow:hidden}
+.detail-info-reviews-rating-stars-front svg {fill:#D75078}
+.detail-info-reviews-rating-value {margin:0 0 0 16px; font-weight:bold; font-size:30px; line-height:33px; white-space:nowrap}
+.detail-info-reviews-rating-not {line-height:26px; color:#787B8E}
+
+@media (max-width:1199px) {
+    .detail-info-reviews-ctrl {margin:30px 0 0 0; flex-wrap:wrap}
+    .detail-info-reviews-ctrl-link {width:100%; order:1; margin:20px 0 0 0; flex-grow:0}
+    .detail-info-reviews-ctrl-link .btn {width:100%; font-size:16px; line-height:20px}
+    .detail-info-reviews-rating {width:100%; order:0}
+    .detail-info-reviews-rating-stars {order:1; min-width:160px; max-width:160px}
+    .detail-info-reviews-rating-stars svg {min-width:24px; max-width:24px; height:24px}
+    .detail-info-reviews-rating-stars-back {min-width:160px; max-width:160px}
+    .detail-info-reviews-rating-value {order:0; margin:0; flex-grow:1}
+}
+
 .detail-info-reviews {margin:40px 0 0 0}
 .detail-info-review {padding:30px 0; border-top:1px solid #DFDFDF}
 .detail-info-review.my {margin:0 -40px; background:#FFFBF0; border-top:none; padding:30px 40px; border-radius:12px}
@@ -2352,8 +2394,9 @@ header.fixed .logo svg {width:100px; height:19px}
     .detail-info-equipments-group.open .detail-info-equipments-group-title span {color:#EA435D; border-color:#EA435D}
     .detail-info-equipments-group-title svg {display:block; position:absolute; right:0; top:50%; width:24px; height:24px; margin:-12px 0 0 0; fill:#080825; transition:transform 0.2s, fill 0.2s}
     .detail-info-equipments-group.open .detail-info-equipments-group-title svg {fill:#EA435D; transform:rotate(-180deg)}
-    .detail-info-equipments-group-list {display:none; margin:25px 0 0 0; column-count:1}
-    .detail-info-equipments-group.open .detail-info-equipments-group-list {display:block}
+    .detail-info-equipments-group-list {margin:25px 0 0 0; column-count:1}
+    .detail-info-equipments-group-title+.detail-info-equipments-group-list {display:none}
+    .detail-info-equipments-group.open .detail-info-equipments-group-title+.detail-info-equipments-group-list {display:block}
     .detail-info-equipments-item {padding:0; margin:15px 0 0 0}
     .detail-info-equipments-item:first-child {margin:0}
     .detail-info-equipments-item-title {min-width:0; max-width:none; flex-grow:1}
@@ -3234,6 +3277,8 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 @media (min-width:1200px) {
     .account-events-item-title a:hover {color:#D75078}
 }
+.account-events-item-address {margin:2px 0 0 0; display:flex; align-items:center; color:#787B8E; font-weight:500}
+.account-events-item-address svg {min-width:16px; max-width:16px; height:16px; margin:0 10px 0 0; fill:#787B8E}
 .account-events-item-info {margin:0 0 0 20px; min-width:170px; max-width:170px; font-size:15px; line-height:23px; color:#787B8E}
 .account-events-item-info-item {padding:0 0 0 30px; position:relative}
 .account-events-item-info-item svg {position:absolute; left:0; top:2px; width:20px; height:20px; fill:#787B8E}
@@ -3260,7 +3305,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-events-item {padding:20px 0; position:relative; display:block}
     .account-events-item-id-date {margin:0 0 0 90px}
     .account-events-item-preview {position:absolute; left:0; top:20px}
-    .account-events-item-title {width:auto; margin:15px 0 0 0}
+    .account-events-item-title {width:auto; margin:15px 100px 0 0}
     .account-events-item-info {margin:15px 0 0 0; min-width:0; max-width:none}
     .account-events-item-info-item {margin:2px 0 0 0}
     .account-events-item-info-item:first-child {margin:0}
@@ -3662,7 +3707,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .window-account-event-add-schedule-item-remove a:hover svg {fill:#6768AB}
 }
 .window-account-event-add-schedule-add {margin:24px 0 0 0; display:flex}
-.window-account-event-add-schedule-add a {display:flex; align-items:center; height:36px; padding:0 15px; border:1px solid #6768AB; border-radius:4px; font-weight:bold; font-size:12px; line-height:15px; color:#6768AB; text-transform:uppercase; transition:color 0.2s, background 0.2s}
+.window-account-event-add-schedule-add a {display:flex; align-items:center; justify-content:center; height:36px; padding:0 15px; border:1px solid #6768AB; border-radius:4px; font-weight:bold; font-size:12px; line-height:15px; color:#6768AB; text-transform:uppercase; transition:color 0.2s, background 0.2s}
 @media (min-width:1200px) {
     .window-account-event-add-schedule-add a:hover {background:#6768AB; color:#FFFFFF}
 }
@@ -3676,6 +3721,21 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .window-account-event-add-schedule-cancel a:hover {background:#6768AB; color:#FFFFFF}
 }
 .window-account-event-add-schedule-save .btn-border {font-weight:bold; display:flex; align-items:center; padding:0 29px; height:56px; border-radius:8px}
+
+@media (max-width:1199px) {
+    .window-account-event-add-schedule {width:375px; padding:20px 15px 15px 15px}
+    .window-account-event-add-schedule form {margin:0; padding:0}
+    .window-account-event-add-schedule .window-title {font-weight:bold; font-size:20px; line-height:25px}
+    .window-account-event-add-schedule+.window-close {top:21px; right:15px}
+    .window-account-event-add-schedule-container {padding:0}
+    .window-account-event-add-schedule-item {margin:30px 0 0 0; flex-wrap:wrap}
+    .window-account-event-add-schedule-item-date {width:auto; min-width:calc(100% - 44px); max-width:calc(100% - 44px); order:0}
+    .window-account-event-add-schedule-item-start {order:2; min-width:calc(50% - 6px); max-width:calc(50% - 6px); margin:10px 0 0 0}
+    .window-account-event-add-schedule-item-end {order:3;  min-width:calc(50% - 6px); max-width:calc(50% - 6px); margin:10px 0 0 12px}
+    .window-account-event-add-schedule-item-remove {order:1; margin:12px 0 0 20px}
+    .window-account-event-add-schedule-add {margin:30px 0 0 0; display:block}
+    .window-account-event-add-schedule-ctrl {margin:30px 0 0 0; padding:30px 0 0 0}
+}
 
 .account-event-add-location {margin:24px 0 0 0; position:relative}
 .account-event-add-location-current {position:relative; border:1px solid #C7CAD8; border-radius:8px; height:56px; transition:border-color 0.2s; cursor:pointer}
@@ -4001,6 +4061,23 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-event-card-general-stat-than span {margin:0; display:block}
 }
 
+.account-restaurants-card-general-header {margin:40px 0 0 0; display:flex; justify-content:space-between}
+.account-restaurants-card-general-poster {min-width:calc(50% - 10px); max-width:calc(50% - 10px)}
+.account-restaurants-card-general-poster img {display:block; width:100%; border-radius:8px}
+.account-restaurants-card-general-stats {min-width:calc(50% - 10px); max-width:calc(50% - 10px); padding:16px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:8px}
+.account-restaurants-card-general-stats-header {display:flex; justify-content:space-between; align-items:center}
+.account-restaurants-card-general-stats-title {font-weight:600; font-size:18px; line-height:23px; color:#9397AA}
+.account-restaurants-card-general-stats-value {font-weight:500; font-size:36px; line-height:45px}
+.account-restaurants-card-general-stats-chart {margin:20px 0 0 0; padding:20px 0 0 0; border-top:1px solid rgba(147, 151, 170, 0.2)}
+.account-restaurants-card-general-stats-chart-container {margin:20px 0 0 0}
+.account-restaurants-card-general-stats-chart-container canvas {width:100%; height:168px}
+
+@media (max-width:1199px) {
+    .account-restaurants-card-general-header {margin:20px 0 0 0; display:block}
+    .account-restaurants-card-general-poster {min-width:0; max-width:none}
+    .account-restaurants-card-general-stats {margin:10px 0 0 0; min-width:0; max-width:none}
+}
+
 .account-event-card-general-info {margin:40px 0 0 0}
 .account-event-card-general-info-group {margin:40px 0 0 0; border-top:1px solid #DFDFDF; padding:40px 0 0 0}
 .account-event-card-general-info-group:first-child {margin:0; border-top:none; padding:0}
@@ -4024,11 +4101,30 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-event-card-general-info-row-value {font-size:15px; line-height:23px}
 }
 
+.account-event-card-description {margin:40px 0 0 0; padding:0 0 40px 0; border-bottom:1px solid #DFDFDF}
+.account-event-card-description-title {font-weight:600; font-size:24px; line-height:36px}
+.account-event-card-description-text {margin:10px 0 0 0}
+
+@media (max-width:1199px) {
+    .account-event-card-description-title {font-size:20px; line-height:30px}
+}
+
+.account-event-card-general-info-link {margin:20px 0 0 0; display:flex; align-items:center}
+.account-event-card-general-info-link:first-child {margin:0}
+.account-event-card-general-info-link a {display:flex; color:#D75078; align-items:center}
+@media (min-width:1200px) {
+    .account-event-card-general-info-link a:hover {color:#EA435D}
+}
+.account-event-card-general-info-link img {min-width:36px; max-width:36px; margin:0 20px 0 0}
+
 .account-event-card-media {margin:57px 0 0 0}
 .account-event-card-media:first-child {margin:40px 0 0 0}
 .account-event-card-media-title {font-weight:600; font-size:24px; line-height:36px}
-.account-event-card-media-photos {margin:0 -10px; display:flex; flex-wrap:wrap}
-.account-event-card-media-photo {min-width:50%; max-width:50%; padding:20px 10px 0 10px}
+.account-event-card-media-photos,
+.account-event-card-media-photos.swiper {margin:0 -10px}
+.account-event-card-media-photos .swiper-wrapper {display:flex; flex-wrap:wrap}
+.account-event-card-media-photo,
+.account-event-card-media-photo.swiper-slide {width:auto; min-width:50%; max-width:50%; padding:20px 10px 0 10px}
 .account-event-card-media-photo img {display:block; width:100%; border-radius:8px}
 .account-event-card-media-videos {margin:0 -10px; display:flex; flex-wrap:wrap}
 .account-event-card-media-video {min-width:50%; max-width:50%; padding:20px 10px 0 10px}
@@ -4040,6 +4136,24 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .account-event-card-media-video-player iframe {position:absolute; left:0; top:0; width:100%; height:100%; border-radius:8px}
 
+@media (max-width:1199px) {
+    .account-event-card-media {margin:60px 0 0 0}
+    .account-event-card-media:first-child {margin:40px 0 0 0}
+    .account-event-card-media-title {font-size:20px; line-height:30px}
+    .account-event-card-media-photos,
+    .account-event-card-media-photos.swiper {margin:20px -15px 0 -15px}
+    .account-event-card-media-photos .swiper-wrapper {flex-wrap:nowrap}
+    .account-event-card-media-photo,
+    .account-event-card-media-photo.swiper-slide {min-width:322px; max-width:322px; padding:0 0 0 15px}
+    .account-event-card-media-photo:last-child,
+    .account-event-card-media-photo.swiper-slide:last-child {min-width:337px; max-width:337px; padding:0 15px}
+    .account-event-card-media-photos.swiper-horizontal>.swiper-scrollbar,
+    .account-event-card-media-photos .swiper-scrollbar.swiper-scrollbar-horizontal {position:relative; left:auto; bottom:auto; right:auto; margin:20px 15px 0 15px; width:auto; height:2px; border-radius:2px; background:#DFDFDF}
+    .account-event-card-media-photos .swiper-scrollbar-drag {background:#D75078; border-radius:2px}
+    .account-event-card-media-videos {margin:20px 0 0 0; display:block}
+    .account-event-card-media-video {min-width:0; max-width:none; padding:0; margin:20px 0 0 0}
+}
+
 .account-event-card-schedule {margin:10px 0 0 0}
 .account-event-card-schedule-item {display:flex; padding:30px 0; border-top:1px solid #DFDFDF; align-items:center}
 .account-event-card-schedule-item:first-child {border-top:none}
@@ -4048,7 +4162,10 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-schedule-item-date {min-width:200px; max-width:200px; display:flex; align-items:center}
 .account-event-card-schedule-item-date-day {min-width:65px; max-width:65px; font-weight:600; font-size:40px; line-height:44px}
 .account-event-card-schedule-item-date-detail-weekday {font-size:10px; line-height:13px; text-transform:uppercase; color:#9397AA}
+.account-event-card-schedule-item-date-detail-weekday-short {display:none}
 .account-event-card-schedule-item-date-detail-month {font-weight:500; font-size:16px; line-height:18px}
+.account-event-card-schedule-item-date-detail-month-short {display:none}
+.account-event-card-schedule-item-content {display:flex; align-items:center; width:100%}
 .account-event-card-schedule-item-time {min-width:200px; max-width:200px; display:flex; align-items:center; justify-content:center; font-weight:500; font-size:18px; line-height:20px}
 .account-event-card-schedule-item-place {width:100%; color:#787B8E; font-weight:500; font-size:18px; line-height:20px}
 .account-event-card-schedule-item-price {min-width:101px; max-width:101px; height:39px; display:flex; align-items:center; justify-content:center; border:1px solid #D75078; border-radius:8px; font-weight:800; font-size:12px; line-height:15px; text-transform:uppercase; color:#D75078}
@@ -4061,6 +4178,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-schedule-more span:nth-child(2) {display:none}
 .account-event-card-schedule.open+.account-event-card-schedule-more span:nth-child(1) {display:none}
 .account-event-card-schedule.open+.account-event-card-schedule-more span:nth-child(2) {display:block}
+
+@media (max-width:1199px) {
+    .account-event-card-schedule-item {padding:20px 0}
+    .account-event-card-schedule-item-date {min-width:55px; max-width:55px; display:block; text-align:center}
+    .account-event-card-schedule-item-date-day {min-width:0; max-width:0; margin:0}
+    .account-event-card-schedule-item-date-detail-weekday {display:none}
+    .account-event-card-schedule-item-date-detail-weekday-short {display:block; font-size:10px; line-height:13px; text-transform:uppercase; color:#9397AA}
+    .account-event-card-schedule-item-date-detail-month {display:none}
+    .account-event-card-schedule-item-date-detail-month-short {display:block; font-weight:500; font-size:15px; line-height:17px}
+    .account-event-card-schedule-item-content {margin:0 0 0 40px; display:block}
+    .account-event-card-schedule-item-time {display:block; min-width:0; max-width:none; font-size:15px; line-height:17px; text-align:left}
+    .account-event-card-schedule-item-place {margin:5px 0 0 0; font-size:15px; line-height:17px}
+    .account-event-card-schedule-item-price {margin:10px 0 0 0}
+}
 
 .account-event-card-stats-main {margin:0 -10px; display:flex; flex-wrap:wrap}
 .account-event-card-stats-main-item {display:flex; min-width:33.33%; max-width:33.33%; padding:20px 10px 0 10px}
@@ -4077,7 +4208,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-main-item-than {margin:12px 0 0 0; display:flex; align-items:center; font-weight:500; font-size:15px; line-height:19px; color:rgba(8, 8, 37, 0.5)}
 .account-event-card-stats-main-item-than span {font-weight:600; color:#080825; margin:0 10px 0 0}
 
-.account-event-card-stats-detail {position:relative}
+@media (max-width:1199px) {
+    .account-event-card-stats-main {margin:10px -5px 0 -5px}
+    .account-event-card-stats-main-item {min-width:50%; max-width:50%; padding:10px 5px 0 5px}
+    .account-event-card-stats-main-item:nth-child(3n) {min-width:100%; max-width:100%}
+    .account-event-card-stats-main-item-inner {padding:10px}
+    .account-event-card-stats-main-item-results {justify-content:space-between}
+    .account-event-card-stats-main-item:nth-child(3n) .account-event-card-stats-main-item-results {justify-content:flex-start}
+    .account-event-card-stats-main-item-results-value {font-size:20px; line-height:30px}
+    .account-event-card-stats-main-item-results-change {height:23px; padding:0 6px; font-size:11px; line-height:17px}
+    .account-event-card-stats-main-item-results-change svg {width:16px; height:16px}
+    .account-event-card-stats-main-item-than {font-size:13px; line-height:16px}
+}
+
+.account-event-card-stats-detail {margin:40px 0 0 0; position:relative}
 
 .account-event-card-stats-detail-ctrl {display:flex; align-items:center; justify-content:space-between}
 .account-event-card-stats-detail-ctrl-dates {display:flex; align-items:center; padding:2px; border-radius:6px; background:#E6E9F6}
@@ -4100,6 +4244,13 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-detail-ctrl-chart a em svg {width:18px; height:18px; fill:#1C1B1F; transition:transform 0.2s}
 .account-event-card-stats-detail-ctrl-chart.open a em svg {transform:rotate(-180deg)}
 
+@media (max-width:1199px) {
+    .account-event-card-stats-detail-ctrl-dates-item {margin:0; padding:0 8px}
+    .account-event-card-stats-detail-ctrl-dates-item.active {background:none}
+    .account-event-card-stats-detail-ctrl-chart a span {display:none}
+    .account-event-card-stats-detail-ctrl-chart.open a span:nth-child(2) {display:none}
+}
+
 .account-event-card-stats-params {display:none}
 
 .account-event-card-stats-detail-chart {margin:20px 0 0 0; padding:20px; position:absolute; left:-9999px; top:-9999px; width:100%; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:12px; opacity:0; transition:opacity 0.2s}
@@ -4108,7 +4259,11 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-detail-chart-container {position:relative; padding:0 0 0 36px; overflow:hidden}
 .account-event-card-stats-detail-chart-container canvas {width:100%; height:191px}
 
-.account-event-card-stats-detail {margin:40px 0 0 0}
+@media (max-width:1199px) {
+    .account-event-card-stats-detail-chart {margin:20px -15px 0 -15px; padding:15px; width:calc(100% + 30px)}
+    .account-event-card-stats-detail-chart-container {padding:0}
+}
+
 .account-event-card-stats-detail-table {margin:40px 0 0 0; position:relative}
 .account-event-card-stats-detail-table.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.3) url(../images/loading.svg) no-repeat center; z-index:1}
 .account-event-card-stats-detail-table-header {display:flex; padding:0 20px 12px 20px; font-size:12px; line-height:18px; letter-spacing:0.05em; text-transform:uppercase; color:#787B8E; border-bottom:1px solid #DFDFDF}
@@ -4120,8 +4275,19 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-detail-table-row-date {min-width:120px; max-width:120px; margin:0 20px 0 0}
 .account-event-card-stats-detail-table-row-value {flex:1; text-align:center}
 .account-event-card-stats-detail-table-row-value:last-child {text-align:right}
+.account-event-card-stats-detail-table-row-value span {display:none}
 .account-event-card-stats-detail-table-row-value.highlight {font-weight:bold}
-.account-event-card-stats-detail-table-row.summ .account-event-card-stats-detail-table-row-value.highlight {font-weight:normal}
+
+@media (max-width:1199px) {
+    .account-event-card-stats-detail-table {margin:20px -15px 0 -15px}
+    .account-event-card-stats-detail-table-header {display:none}
+    .account-event-card-stats-detail-table-row {display:block; padding:15px}
+    .account-event-card-stats-detail-table-row.summ {padding:15px; font-size:15px; line-height:26px}
+    .account-event-card-stats-detail-table-row-date {min-width:0; max-width:none; margin:0; font-size:18px; line-height:31px}
+    .account-event-card-stats-detail-table-row-value {display:flex; align-items:center; text-align:left; justify-content:space-between}
+    .account-event-card-stats-detail-table-row-value:last-child {text-align:left}
+    .account-event-card-stats-detail-table-row-value span {display:block; font-weight:normal; font-size:12px; line-height:26px; color:#787B8E; text-transform:uppercase; letter-spacing:0.05em}
+}
 
 .account-event-card-reviews {margin:30px 0 0 0}
 .account-event-card-review {margin:20px 0 0 0; position:relative; padding:20px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.08); border-radius:12px}
@@ -4140,6 +4306,20 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 .account-event-card-review-answer {margin:20px 0 0 32px; position:relative; background:#F7F8FC; border-radius:12px; padding:20px}
 .account-event-card-review-icon-answer {position:absolute; left:-30px; top:28px; width:14px; height:14px; fill:#080825}
+
+@media (max-width:1199px) {
+    .account-event-card-reviews {margin:20px 0 0 0}
+    .account-event-card-review {margin:15px -15px 0 -15px; padding:20px 15px}
+    .account-event-card-review-author {font-size:18px; line-height:31px}
+    .account-event-card-review .detail-info-review-rating-stars {min-width:125px; max-width:125px}
+    .account-event-card-review .detail-info-review-rating-stars-back {min-width:120px; max-width:120px}
+    .account-event-card-review .detail-info-review-rating-stars svg {min-width:20px; max-width:20px; height:20px; margin:0 0 0 5px}
+    .account-event-card-review .detail-info-review-rating-stars svg:first-child {margin:0}
+    .account-event-card-review-text {margin:10px 0 0 0}
+    .account-event-card-review-answer-link {position:relative; right:auto; top:auto; margin:15px 0 0 0; display:flex}
+    .account-event-card-review-answer {margin:20px 0 0 26px}
+    .account-event-card-review-icon-answer {left:-26px}
+}
 
 .window-stat-details {width:375px; padding:20px 15px 15px 15px}
 .window-stat-details-title {font-weight:bold; font-size:20px; line-height:25px; padding:0 0 20px 0; border-bottom:1px solid #DFDFDF}
@@ -4177,3 +4357,17 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-params-ctrl .form-reset {margin:0}
 .account-event-card-stats-params-ctrl .form-submit {margin:0}
 .account-event-card-stats-params-ctrl .form-submit .btn {min-width:245px}
+
+.up-link {display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; position:fixed; z-index:90; left:50%; margin:0 0 0 631px; bottom:30px; width:54px; height:54px; border-radius:50%; background:rgba(255, 255, 255, 0.9); transition:opacity 0.2s, background 0.2s, border-color 0.2s; border:1px solid rgba(120, 123, 142, 0.5)}
+.up-link.visible {opacity:1; visibility:visible}
+@media (min-width:1200px) {
+    .up-link:hover {background:#EA435D; border-color:#EA435D}
+}
+.up-link svg {display:block; width:24px; height:24px; fill:#000000; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .up-link:hover svg {fill:#FFFFFF}
+}
+
+@media (max-width:1199px) {
+    .up-link {left:auto; margin:0; right:12px; bottom:12px; width:44px; height:44px; box-shadow:0px 0px 40px rgba(0, 0, 0, 0.25)}
+}
