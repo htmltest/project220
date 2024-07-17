@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Zabava</title>
 
-        <link rel="stylesheet" href="css/styles.css?sid=005">
+        <link rel="stylesheet" href="css/styles.css?sid=006">
         <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
         <link rel="stylesheet" href="js/select2/select2.css">
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css">
@@ -557,17 +557,17 @@
                                                 <!-- account event card stats detail ctrl -->
                                                 <div class="account-event-card-stats-detail-ctrl">
                                                     <div class="account-event-card-stats-detail-ctrl-dates">
-                                                        <!-- <div class="account-event-card-stats-detail-ctrl-dates-item week">Last Week</div>
-                                                        <div class="account-event-card-stats-detail-ctrl-dates-item month">Last Month</div>-->
-                                                        <div class="account-event-card-stats-detail-ctrl-dates-item detail active">
-                                                            <div class="account-event-card-stats-detail-ctrl-dates-range"><span></span><svg><use xlink:href="images/sprite.svg#account-event-card-stats-detail-ctrl-dates-range"></use></svg></div>
+                                                        <div class="account-event-card-stats-detail-ctrl-dates-item active" data-period="week">Last Week</div>
+                                                        <div class="account-event-card-stats-detail-ctrl-dates-item" data-period="month">Last Month</div>
+                                                        <div class="account-event-card-stats-detail-ctrl-dates-item detail" data-period="other">
+                                                            <div class="account-event-card-stats-detail-ctrl-dates-range"><span>07.10.2024 — 11.10.2024</span><svg><use xlink:href="images/sprite.svg#account-event-card-stats-detail-ctrl-dates-range"></use></svg></div>
                                                         </div>
                                                     </div>
                                                     <div class="account-event-card-stats-detail-ctrl-chart"><a href="#"><span>Show&nbsp;</span><span>Hide&nbsp;</span>Graphic<em><svg><use xlink:href="images/sprite.svg#account-event-card-stats-detail-ctrl-chart"></use></svg></em></a></div>
                                                 </div>
                                                 <!-- account event card stats detail ctrl END -->
 
-                                                <div class="account-event-card-stats-params" data-title="Period and Detail" data-url="ajax/account-event-card-stats.json">
+                                                <form class="account-event-card-stats-params" data-title="Period and Detail" data-url="ajax/account-event-card-stats.json">
                                                     <div class="account-event-card-stats-params-periods">
                                                         <label class="account-event-card-stats-params-period today">
                                                             <input type="radio" name="period" value="today">
@@ -609,7 +609,7 @@
                                                         <div class="form-reset"><input type="reset" value="Clear All"></div>
                                                         <div class="form-submit"><input type="submit" value="Apply" class="btn"></div>
                                                     </div>
-                                                </div>
+                                                </form>
 
                                                 <div class="account-event-card-stats-detail-chart">
                                                     <div class="account-event-card-stats-detail-chart-container">
@@ -619,66 +619,85 @@
                                                     </div>
                                                 </div>
                                                 <script>
+                                                    var statData = {
+                                                        "cols"  : [
+                                                            {
+                                                                "name"      : "visits",
+                                                                "title"     : "Visits",
+                                                                "onchart"   : true
+                                                            },
+                                                            {
+                                                                "name"      : "unique",
+                                                                "title"     : "Unique"
+                                                            },
+                                                            {
+                                                                "name"      : "clicks",
+                                                                "title"     : "Clicks"
+                                                            },
+                                                            {
+                                                                "name"      : "favorites",
+                                                                "title"     : "Favorites"
+                                                            },
+                                                            {
+                                                                "name"      : "conversion",
+                                                                "title"     : "Conversion",
+                                                                "highlight" : true
+                                                            }
+                                                        ],
+                                                        "data"  : [
+                                                            {
+                                                                "date"          : "10/07/2024",
+                                                                "visits"        : "101",
+                                                                "unique"        : "78",
+                                                                "clicks"        : "26",
+                                                                "favorites"     : "21",
+                                                                "conversion"    : "4%"
+                                                            },
+                                                            {
+                                                                "date"          : "10/08/2024",
+                                                                "visits"        : "12847",
+                                                                "unique"        : "10554",
+                                                                "clicks"        : "7548",
+                                                                "favorites"     : "988",
+                                                                "conversion"    : "3%"
+                                                            },
+                                                            {
+                                                                "date"          : "10/09/2024",
+                                                                "visits"        : "9665",
+                                                                "unique"        : "7844",
+                                                                "clicks"        : "2004",
+                                                                "favorites"     : "654",
+                                                                "conversion"    : "27%"
+                                                            },
+                                                            {
+                                                                "date"          : "10/10/2024",
+                                                                "visits"        : "45",
+                                                                "unique"        : "36",
+                                                                "clicks"        : "20",
+                                                                "favorites"     : "12",
+                                                                "conversion"    : "15%"
+                                                            },
+                                                            {
+                                                                "date"          : "10/11/2024",
+                                                                "visits"        : "2",
+                                                                "unique"        : "1",
+                                                                "clicks"        : "1",
+                                                                "favorites"     : "0",
+                                                                "conversion"    : "1%"
+                                                            }
+                                                        ],
+                                                        "total" : {
+                                                            "visits"        : "22487",
+                                                            "unique"        : "17544",
+                                                            "clicks"        : "9587",
+                                                            "favorites"     : "1485",
+                                                            "conversion"    : "12%"
+                                                        }
+                                                    }
                                                 </script>
                                                 <script src="js/chart.umd.js"></script>
 
                                                 <div class="account-event-card-stats-detail-table" data-date="Date" data-total="Total">
-                                                    <div class="account-event-card-stats-detail-table-header">
-                                                        <div class="account-event-card-stats-detail-table-header-date">Date</div>
-                                                        <div class="account-event-card-stats-detail-table-header-value">Visits</div>
-                                                        <div class="account-event-card-stats-detail-table-header-value">Unique</div>
-                                                        <div class="account-event-card-stats-detail-table-header-value">Clicks</div>
-                                                        <div class="account-event-card-stats-detail-table-header-value">Favorites</div>
-                                                        <div class="account-event-card-stats-detail-table-header-value">Conversion</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row">
-                                                        <div class="account-event-card-stats-detail-table-row-date">07.10.2024</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>101</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>78</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>26</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>21</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>4%</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row">
-                                                        <div class="account-event-card-stats-detail-table-row-date">08.10.2024</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>12 847</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>10 554</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>7548</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>988</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>3%</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row">
-                                                        <div class="account-event-card-stats-detail-table-row-date">09.10.2024</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>9665</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>7844</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>2004</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>654</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>27%</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row">
-                                                        <div class="account-event-card-stats-detail-table-row-date">10.10.2024</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>45</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>36</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>20</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>12</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>15%</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row">
-                                                        <div class="account-event-card-stats-detail-table-row-date">11.10.2024</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>2</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>1</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>1</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>0</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>1%</div>
-                                                    </div>
-                                                    <div class="account-event-card-stats-detail-table-row summ">
-                                                        <div class="account-event-card-stats-detail-table-row-date">Total</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Visits</span>22 487</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Unique</span>17544</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Clicks</span>9587</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value"><span>Favorites</span>1485</div>
-                                                        <div class="account-event-card-stats-detail-table-row-value highlight"><span>Conversion</span>12%</div>
-                                                    </div>
                                                 </div>
 
                                             </div>
@@ -900,7 +919,7 @@
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
         <script src="js/clockpicker/jquery-clockpicker.min.js"></script>
-        <script src="js/tools.js?sid=005"></script>
+        <script src="js/tools.js?sid=006"></script>
 
     </body>
 </html>

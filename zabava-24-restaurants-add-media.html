@@ -231,10 +231,10 @@
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
                                 <div class="account-menu-item"><a href="#"><strong>Support</strong><span>17</span></a></div>
@@ -245,7 +245,7 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Event</a></div>
+                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Restaurant</a></div>
 
                                 <div class="account-event-add-steps">
                                     <div class="account-event-add-step success">
@@ -257,16 +257,16 @@
                                         <div class="account-event-add-step-title">Basic</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-                                    <div class="account-event-add-step active">
+                                    <div class="account-event-add-step success">
                                         <div class="account-event-add-step-number">
                                             <span>2</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
                                             <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
-                                        <div class="account-event-add-step-title">Schedule</div>
+                                        <div class="account-event-add-step-title">Contacts</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-                                    <div class="account-event-add-step">
+                                    <div class="account-event-add-step warning">
                                         <div class="account-event-add-step-number">
                                             <span>3</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -275,7 +275,7 @@
                                         <div class="account-event-add-step-title">Description</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-                                    <div class="account-event-add-step">
+                                    <div class="account-event-add-step active">
                                         <div class="account-event-add-step-number">
                                             <span>4</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -292,73 +292,70 @@
 
                                         <!-- account event add group -->
                                         <div class="account-event-add-group">
-                                            <div class="account-event-add-group-title">Schedule</div>
+                                            <div class="account-event-add-group-title">Media</div>
                                             <div class="account-event-add-group-content">
 
-                                                <div class="account-event-add-schedule">
-                                                    <div class="account-event-add-schedule-edit"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#review-btn-edit"></use></svg>edit</a></div>
-                                                    <div class="account-event-add-schedule-headers">
-                                                        <div class="account-event-add-schedule-header">Date Event</div>
-                                                        <div class="account-event-add-schedule-header">Start Event</div>
-                                                        <div class="account-event-add-schedule-header">End Event</div>
-                                                    </div>
-                                                    <div class="account-event-add-schedule-list">
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[0][date]" value="05/17/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[0][start]" value="19:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[0][end]" value="22:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/17/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">19:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">22:00</div>
-                                                        </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[1][date]" value="05/18/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[1][start]" value="16:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[1][end]" value="19:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/18/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">16:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">19:00</div>
-                                                        </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[2][date]" value="05/19/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[2][start]" value="15:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[2][end]" value="18:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/19/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">15:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">18:00</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                <!-- account event add subgroup -->
+                                                <div class="account-event-add-subgroup">
+                                                    <div class="account-event-add-subgroup-title">Main Photo</div>
 
-                                                <div class="window-account-event-add-schedule-template">
-                                                    <div class="window-account-event-add-schedule-template-title">Schedule</div>
-                                                    <div class="window-account-event-add-schedule-template-cancel">Cancel</div>
-                                                    <div class="window-account-event-add-schedule-template-save">Save</div>
-                                                    <div class="window-account-event-add-schedule-template-add">Add date event</div>
-                                                    <div class="window-account-event-add-schedule-template-date">Date Event</div>
-                                                    <div class="window-account-event-add-schedule-template-start">Start Event</div>
-                                                    <div class="window-account-event-add-schedule-template-end">End Event</div>
+                                                    <div class="form-file">
+                                                        <div class="form-file-input">
+                                                            <input type="file" name="main_photo" class="account-event-add-main-photo" value="">
+                                                            <span data-placeholder="Attach"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Attach</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-add-main-photo-preview"><img src="" alt=""><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a></div>
                                                 </div>
+                                                <!-- account event add subgroup END -->
 
-                                                <div class="account-event-add-row">
-                                                    <div class="account-event-add-row-field">
-                                                        <div class="form-input"><span>Duration</span><input type="text" name="Duration" value="2h 15m"></div>
+                                                <!-- account event add subgroup -->
+                                                <div class="account-event-add-subgroup">
+                                                    <div class="account-event-add-subgroup-title">Additional Photo</div>
+                                                    <div class="form-files form-files-images">
+                                                        <div class="form-files-dropzone"><span>Drag files here or click to select</span></div>
+                                                        <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/index.php" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /></div>
+                                                        <div class="form-files-list"></div>
                                                     </div>
                                                 </div>
+                                                <!-- account event add subgroup END -->
+
+                                                <!-- account event add subgroup -->
+                                                <div class="account-event-add-subgroup">
+                                                    <div class="account-event-add-subgroup-title">Video preview</div>
+
+                                                    <div class="account-event-add-row">
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-input form-input-youtube"><img src="images/form-input-icon-youtube.svg" alt=""><span>YouTube</span><input type="text" name="youtube" value="" class="url account-event-add-video"></div>
+                                                        </div>
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-file">
+                                                                <div class="form-file-input">
+                                                                    <input type="file" name="video_preview" class="account-event-add-video-preview">
+                                                                    <span data-placeholder="Video preview image"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Video preview image</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-add-media-video-preview">
+                                                        <div class="account-event-add-media-video-player">
+                                                            <a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="images/sprite.svg#account-icon-video-play"></use></svg></a>
+                                                        </div>
+                                                        <a href="#" class="account-event-add-media-video-preview-remove"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a>
+                                                    </div>
+                                                </div>
+                                                <!-- account event add subgroup END -->
 
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
 
-                                        <div class="account-event-add-ctrl">
+                                        <div class="account-event-add-ctrl account-event-add-ctrl-moderation">
                                             <div class="account-event-add-ctrl-group">
                                                 <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>Back</a></div>
                                                 <div class="account-event-add-save"><button type="submit" name="save" class="btn-border">Save</button></div>
                                             </div>
-                                            <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Next<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
+                                            <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Submit for moderation<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
                                         </div>
 
                                     </form>

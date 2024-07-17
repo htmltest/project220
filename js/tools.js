@@ -39,6 +39,9 @@ $(document).ready(function() {
         curField.find('input').val('').trigger('change');
         curField.find('.form-file-input span').html('<svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#input-file"></use></svg>' + curField.find('.form-file-input span').attr('data-placeholder'));
         curField.removeClass('full');
+        if (curField.parents().filter('.account-restaurant-menu-files').length == 1 && $('.account-restaurant-menu-file').length > 1) {
+            curField.parents().filter('.account-restaurant-menu-file').remove();
+        }
         e.preventDefault();
     });
 
@@ -486,6 +489,17 @@ $(document).ready(function() {
         }
     });
 
+    $('.detail-info-social-share-link').click(function(e) {
+        $('.detail-info-social-share').toggleClass('open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.detail-info-social-share').length == 0) {
+            $('.detail-info-social-share').removeClass('open');
+        }
+    });
+
     function popupCenter(url, title) {
         var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
         var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
@@ -538,7 +552,8 @@ $(document).ready(function() {
     $('.filters-calendar').mCustomScrollbar({
         axis: 'x',
         scrollButtons: {
-            enable: true
+            enable: true,
+            scrollAmount: 50
         },
         callbacks:{
             onInit: function() {
@@ -2782,35 +2797,67 @@ $(document).ready(function() {
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
 
-        var newHTML =   '<div class="window-account-event-add-schedule">' +
-                            '<form action="#" method="post">' +
-                                '<div class="window-title">' + $('.window-account-event-add-schedule-template-title').html() + '</div>' +
-                                '<div class="window-account-event-add-schedule-container">';
+        if (!$(this).parent().hasClass('account-restaurant-add-schedule-edit')) {
+            var newHTML =   '<div class="window-account-event-add-schedule">' +
+                                '<form action="#" method="post">' +
+                                    '<div class="window-title">' + $('.window-account-event-add-schedule-template-title').html() + '</div>' +
+                                    '<div class="window-account-event-add-schedule-container">';
 
-        $('.account-event-add-schedule-item').each(function() {
-            var curItem = $(this);
-            newHTML +=              '<div class="window-account-event-add-schedule-item">' +
-                                        '<div class="window-account-event-add-schedule-item-date">' +
-                                            '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-date').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-date').attr('value') + '" class="required"></div>' +
-                                        '</div>' +
-                                        '<div class="window-account-event-add-schedule-item-start">' +
-                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
-                                        '</div>' +
-                                        '<div class="window-account-event-add-schedule-item-end">' +
-                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
-                                        '</div>' +
-                                        '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
-                                    '</div>';
-        });
+            $('.account-event-add-schedule-item').each(function() {
+                var curItem = $(this);
+                newHTML +=              '<div class="window-account-event-add-schedule-item">' +
+                                            '<div class="window-account-event-add-schedule-item-date">' +
+                                                '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-date').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-date').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-start">' +
+                                                '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-end">' +
+                                                '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                        '</div>';
+            });
 
-        newHTML +=              '</div>' +
-                                '<div class="window-account-event-add-schedule-add"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-add"></use></svg>' + $('.window-account-event-add-schedule-template-add').html() + '</a></div>' +
-                                '<div class="window-account-event-add-schedule-ctrl">' +
-                                    '<div class="window-account-event-add-schedule-cancel"><a href="#" class="window-close-btn">' + $('.window-account-event-add-schedule-template-cancel').html() + '</a></div>' +
-                                    '<div class="window-account-event-add-schedule-save"><input type="submit" value="' + $('.window-account-event-add-schedule-template-save').html() + '" class="btn-border"></a></div>' +
-                                '</div>' +
-                            '</form>' +
-                        '</div>';
+            newHTML +=              '</div>' +
+                                    '<div class="window-account-event-add-schedule-add"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-add"></use></svg>' + $('.window-account-event-add-schedule-template-add').html() + '</a></div>' +
+                                    '<div class="window-account-event-add-schedule-ctrl">' +
+                                        '<div class="window-account-event-add-schedule-cancel"><a href="#" class="window-close-btn">' + $('.window-account-event-add-schedule-template-cancel').html() + '</a></div>' +
+                                        '<div class="window-account-event-add-schedule-save"><input type="submit" value="' + $('.window-account-event-add-schedule-template-save').html() + '" class="btn-border"></a></div>' +
+                                    '</div>' +
+                                '</form>' +
+                            '</div>';
+        } else {
+            var newHTML =   '<div class="window-account-event-add-schedule">' +
+                                '<form action="#" method="post">' +
+                                    '<div class="window-title">' + $('.window-account-event-add-schedule-template-title').html() + '</div>' +
+                                    '<div class="window-account-event-add-schedule-container">';
+
+            $('.account-event-add-schedule-item').each(function() {
+                var curItem = $(this);
+                newHTML +=              '<div class="window-account-event-add-schedule-item">' +
+                                            '<div class="window-account-event-add-schedule-item-date">' +
+                                                '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-date').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-date').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-start">' +
+                                                '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-start').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-start').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-end">' +
+                                                '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="' + curItem.find('.account-event-add-schedule-item-end').attr('name') + '" value="' + curItem.find('.account-event-add-schedule-item-end').attr('value') + '" class="required"></div>' +
+                                            '</div>' +
+                                            '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                        '</div>';
+            });
+
+            newHTML +=              '</div>' +
+                                    '<div class="window-account-event-add-schedule-add window-account-restaurant-add-schedule-add"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-add"></use></svg>' + $('.window-account-event-add-schedule-template-add').html() + '</a></div>' +
+                                    '<div class="window-account-event-add-schedule-ctrl">' +
+                                        '<div class="window-account-event-add-schedule-cancel"><a href="#" class="window-close-btn">' + $('.window-account-event-add-schedule-template-cancel').html() + '</a></div>' +
+                                        '<div class="window-account-event-add-schedule-save"><input type="submit" value="' + $('.window-account-event-add-schedule-template-save').html() + '" class="btn-border"></a></div>' +
+                                    '</div>' +
+                                '</form>' +
+                            '</div>';
+        }
 
         $('.window').html('<div class="window-container window-container-preload">' + newHTML + '<a href="#" class="window-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-close"></use></svg></a></div>');
 
@@ -2860,30 +2907,45 @@ $(document).ready(function() {
 
     $('body').on('click', '.window-account-event-add-schedule-add a', function(e) {
         var newID = Date.now();
-        $('.window-account-event-add-schedule-container').append(
-                                '<div class="window-account-event-add-schedule-item">' +
-                                    '<div class="window-account-event-add-schedule-item-date">' +
-                                        '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" id="form-input-date-id-' + newID + '" name="schedule[' + newID + '][date]" value="" class="required"></div>' +
-                                    '</div>' +
-                                    '<div class="window-account-event-add-schedule-item-start">' +
-                                        '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
-                                    '</div>' +
-                                    '<div class="window-account-event-add-schedule-item-end">' +
-                                        '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
-                                    '</div>' +
-                                    '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
-                                '</div>');
-        $('#form-input-date-id-' + newID).each(function() {
-            var curInput = $(this);
-            curInput.attr('autocomplete', 'off');
-            curInput.prop('readonly', true);
-            new AirDatepicker('#form-input-date-id-' + newID, {
-                classes: 'form-input-datepicker',
-                prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+        if (!$(this).parent().hasClass('window-account-restaurant-add-schedule-add')) {
+            $('.window-account-event-add-schedule-container').append(
+                                    '<div class="window-account-event-add-schedule-item">' +
+                                        '<div class="window-account-event-add-schedule-item-date">' +
+                                            '<div class="form-input form-input-date"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" id="form-input-date-id-' + newID + '" name="schedule[' + newID + '][date]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-start">' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-end">' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                    '</div>');
+            $('#form-input-date-id-' + newID).each(function() {
+                var curInput = $(this);
+                curInput.attr('autocomplete', 'off');
+                curInput.prop('readonly', true);
+                new AirDatepicker('#form-input-date-id-' + newID, {
+                    classes: 'form-input-datepicker',
+                    prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
+                    nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+                });
             });
-        });
-
+        } else {
+            $('.window-account-event-add-schedule-container').append(
+                                    '<div class="window-account-event-add-schedule-item">' +
+                                        '<div class="window-account-event-add-schedule-item-date">' +
+                                            '<div class="form-input"><span>' + $('.window-account-event-add-schedule-template-date').html() + '</span><input type="text" name="schedule[' + newID + '][date]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-start">' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-start').html() + '</span><input type="text" name="schedule[' + newID + '][start]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-end">' +
+                                            '<div class="form-input form-input-time"><span>' + $('.window-account-event-add-schedule-template-end').html() + '</span><input type="text" name="schedule[' + newID + '][end]" value="" class="required"></div>' +
+                                        '</div>' +
+                                        '<div class="window-account-event-add-schedule-item-remove"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#file-remove"></use></svg></a></div>' +
+                                    '</div>');
+        }
         $('.window-account-event-add-schedule-item:last-child').each(function() {
             $(this).find('.form-input-time input').each(function() {
                 var curInput = $(this);
@@ -3170,32 +3232,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.account-event-card-stats-detail').each(function() {
-        var now = new Date();
-        var nowMonthText = String('0' + (now.getMonth() + 1)).slice(-2);
-        var nowDateText = String('0' + now.getDate()).slice(-2);
-        var nowYear = now.getFullYear();
-
-        var week = new Date();
-        week.setDate(week.getDate() - 7);
-        var weekMonthText = String('0' + (week.getMonth() + 1)).slice(-2);
-        var weekDateText = String('0' + week.getDate()).slice(-2);
-        var weekYear = week.getFullYear();
-
-        var month = new Date();
-        month.setMonth(week.getMonth() - 1);
-        var monthMonthText = String('0' + (month.getMonth() + 1)).slice(-2);
-        var monthDateText = String('0' + month.getDate()).slice(-2);
-        var monthYear = month.getFullYear();
-
-        $('.account-event-card-stats-params-period.today .account-event-card-stats-params-period-value').html(nowMonthText + '/' + nowDateText + '/' + nowYear);
-        $('.account-event-card-stats-params-period.week .account-event-card-stats-params-period-value').html(weekMonthText + '/' + weekDateText + '/' + weekYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
-        $('.account-event-card-stats-params-period.month .account-event-card-stats-params-period-value').html(monthMonthText + '/' + monthDateText + '/' + monthYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
-        $('.account-event-card-stats-detail-ctrl-dates-range span').html(weekMonthText + '/' + weekDateText + '/' + weekYear + ' — ' + nowMonthText + '/' + nowDateText + '/' + nowYear);
-        $('.account-event-card-stats-params-range-item.from input').val(weekMonthText + '/' + weekDateText + '/' + weekYear);
-        $('.account-event-card-stats-params-range-item.to input').val(nowMonthText + '/' + nowDateText + '/' + nowYear);
-    });
-
     $('body').on('change', '.window .account-event-card-stats-params-periods input', function() {
         var curPeriod = $('.window .account-event-card-stats-params-periods input:checked');
         if (curPeriod.parents().filter('.account-event-card-stats-params-period').hasClass('other')) {
@@ -3205,11 +3241,93 @@ $(document).ready(function() {
         }
     });
 
+    $('.account-event-card-stats-params').each(function() {
+        var curForm = $(this);
+        initForm(curForm);
+        var validator = curForm.validate();
+        if (validator) {
+            validator.destroy();
+        }
+        curForm.validate({
+            ignore: '',
+            submitHandler: function(form) {
+                $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').addClass('loading');
+
+                var curData = curForm.serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('data-url'),
+                    dataType: 'json',
+                    data: curData,
+                    cache: false
+                }).fail(function(jqXHR, textStatus, errorThrown) {
+                    alert('The service is temporarily unavailable, try again later.');
+                    $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').removeClass('loading');
+                }).done(function(data) {
+                    var chartLabels = [];
+                    var chartValues = [];
+
+                    var newTable =  '<div class="account-event-card-stats-detail-table-header">' +
+                                        '<div class="account-event-card-stats-detail-table-header-date">' + $('.account-event-card-stats-detail-table').attr('data-date') + '</div>';
+                    for (var i = 0; i < data.cols.length; i++) {
+                        newTable +=     '<div class="account-event-card-stats-detail-table-header-value">' + data.cols[i].title + '</div>';
+                    }
+                    newTable +=     '</div>';
+                    for (var i = 0; i < data.data.length; i++) {
+                        var curRow = data.data[i];
+                        chartLabels.push(curRow.date);
+                        newTable += '<div class="account-event-card-stats-detail-table-row">' +
+                                        '<div class="account-event-card-stats-detail-table-row-date">' + curRow.date + '</div>';
+                        for (var j = 0; j < data.cols.length; j++) {
+                            var classHighlight = '';
+                            if ((typeof(data.cols[j].highlight) != 'undefined') && data.cols[j].highlight) {
+                                classHighlight = 'highlight';
+                            }
+                            var curValue = curRow[data.cols[j].name];
+                            if (Number.isFinite(Number(curValue))) {
+                                curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+                            }
+                            newTable += '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + data.cols[j].title + '</span>' + curValue + '</div>';
+                            if ((typeof(data.cols[j].onchart) != 'undefined') && data.cols[j].onchart) {
+                                chartValues.push(curRow[data.cols[j].name]);
+                            }
+                        }
+                        newTable += '</div>';
+                    }
+                    newTable +=     '<div class="account-event-card-stats-detail-table-row summ">' +
+                                        '<div class="account-event-card-stats-detail-table-row-date">' + $('.account-event-card-stats-detail-table').attr('data-total') + '</div>';
+                    for (var j = 0; j < data.cols.length; j++) {
+                        var classHighlight = '';
+                        if ((typeof(data.cols[j].highlight) != 'undefined') && data.cols[j].highlight) {
+                            classHighlight = 'highlight';
+                        }
+                        var curValue = data.total[data.cols[j].name];
+                        if (Number.isFinite(Number(curValue))) {
+                            curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+                        }
+                        newTable +=     '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + data.cols[j].title + '</span>' + curValue + '</div>';
+                    }
+                    newTable +=     '</div>';
+                    $('.account-event-card-stats-detail-table').html(newTable);
+
+                    chart.data.labels = chartLabels;
+                    chart.data.datasets.data = chartValues;
+                    chart.update();
+                    $('.account-event-card-stats-detail-chart, .account-event-card-stats-detail-table').removeClass('loading');
+                });
+            }
+        });
+    });
+
     $('.account-event-card-stats-detail-ctrl-dates-item').click(function(e) {
         var curItem = $(this);
         $('.account-event-card-stats-detail-ctrl-dates-item.active').removeClass('active');
         curItem.addClass('active');
-        if (curItem.hasClass('detail')) {
+        $('.account-event-card-stats-params-period.' + curItem.attr('data-period')).prop('checked', true);
+        if (!curItem.hasClass('detail')) {
+            $('.account-event-card-stats-params').trigger('submit');
+        } else {
             var curPadding = $('.wrapper').width();
             var curScroll = $(window).scrollTop();
             $('html').addClass('window-open');
@@ -3280,7 +3398,15 @@ $(document).ready(function() {
                                 newTable += '<div class="account-event-card-stats-detail-table-row">' +
                                                 '<div class="account-event-card-stats-detail-table-row-date">' + curRow.date + '</div>';
                                 for (var j = 0; j < data.cols.length; j++) {
-                                    newTable += '<div class="account-event-card-stats-detail-table-row-value">' + curRow[data.cols[j].name] + '</div>';
+                                    var classHighlight = '';
+                                    if ((typeof(data.cols[j].highlight) != 'undefined') && data.cols[j].highlight) {
+                                        classHighlight = 'highlight';
+                                    }
+                                    var curValue = curRow[data.cols[j].name];
+                                    if (Number.isFinite(Number(curValue))) {
+                                        curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+                                    }
+                                    newTable += '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + data.cols[j].title + '</span>' + curValue + '</div>';
                                     if ((typeof(data.cols[j].onchart) != 'undefined') && data.cols[j].onchart) {
                                         chartValues.push(curRow[data.cols[j].name]);
                                     }
@@ -3290,7 +3416,15 @@ $(document).ready(function() {
                             newTable +=     '<div class="account-event-card-stats-detail-table-row summ">' +
                                                 '<div class="account-event-card-stats-detail-table-row-date">' + $('.account-event-card-stats-detail-table').attr('data-total') + '</div>';
                             for (var j = 0; j < data.cols.length; j++) {
-                                newTable +=     '<div class="account-event-card-stats-detail-table-row-value">' + data.total[data.cols[j].name] + '</div>';
+                                var classHighlight = '';
+                                if ((typeof(data.cols[j].highlight) != 'undefined') && data.cols[j].highlight) {
+                                    classHighlight = 'highlight';
+                                }
+                                var curValue = data.total[data.cols[j].name];
+                                if (Number.isFinite(Number(curValue))) {
+                                    curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+                                }
+                                newTable +=     '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + data.cols[j].title + '</span>' + curValue + '</div>';
                             }
                             newTable +=     '</div>';
                             $('.account-event-card-stats-detail-table').html(newTable);
@@ -3312,17 +3446,69 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.account-event-card-stats-detail-table').each(function() {
+        var newTable =  '<div class="account-event-card-stats-detail-table-header">' +
+                            '<div class="account-event-card-stats-detail-table-header-date">' + $('.account-event-card-stats-detail-table').attr('data-date') + '</div>';
+        for (var i = 0; i < statData.cols.length; i++) {
+            newTable +=     '<div class="account-event-card-stats-detail-table-header-value">' + statData.cols[i].title + '</div>';
+        }
+        newTable +=     '</div>';
+        for (var i = 0; i < statData.data.length; i++) {
+            var curRow = statData.data[i];
+            newTable += '<div class="account-event-card-stats-detail-table-row">' +
+                            '<div class="account-event-card-stats-detail-table-row-date">' + curRow.date + '</div>';
+            for (var j = 0; j < statData.cols.length; j++) {
+                var classHighlight = '';
+                if ((typeof(statData.cols[j].highlight) != 'undefined') && statData.cols[j].highlight) {
+                    classHighlight = 'highlight';
+                }
+                var curValue = curRow[statData.cols[j].name];
+                if (Number.isFinite(Number(curValue))) {
+                    curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+                }
+                newTable += '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + statData.cols[j].title + '</span>' + curValue + '</div>';
+            }
+            newTable += '</div>';
+        }
+        newTable +=     '<div class="account-event-card-stats-detail-table-row summ">' +
+                            '<div class="account-event-card-stats-detail-table-row-date">' + $('.account-event-card-stats-detail-table').attr('data-total') + '</div>';
+        for (var j = 0; j < statData.cols.length; j++) {
+            var classHighlight = '';
+            if ((typeof(statData.cols[j].highlight) != 'undefined') && statData.cols[j].highlight) {
+                classHighlight = 'highlight';
+            }
+            var curValue = statData.total[statData.cols[j].name];
+            if (Number.isFinite(Number(curValue))) {
+                curValue = String(curValue).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1&nbsp;');
+            }
+            newTable +=     '<div class="account-event-card-stats-detail-table-row-value ' + classHighlight + '"><span>' + statData.cols[j].title + '</span>' + curValue + '</div>';
+        }
+        newTable +=     '</div>';
+        $('.account-event-card-stats-detail-table').html(newTable);
+    });
+
     var chart;
 
     $('.account-event-card-stats-detail-chart').each(function() {
         var ctx = $('.account-event-card-stats-detail-chart canvas')[0];
         var skipped = (ctx, value) => ctx.p0.skip || ctx.p1.skip ? value : undefined;
+        var chartLabels = [];
+        var chartValues = [];
+        for (var i = 0; i < statData.data.length; i++) {
+            var curRow = statData.data[i];
+            chartLabels.push(curRow.date);
+            for (var j = 0; j < statData.cols.length; j++) {
+                if ((typeof(statData.cols[j].onchart) != 'undefined') && statData.cols[j].onchart) {
+                    chartValues.push(curRow[statData.cols[j].name]);
+                }
+            }
+        }
         chart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['21.02', '22.02', '23.02', '24.02', '25.02', '26.02', '27.02', '28.02', '01.03', '02.03', '03.03', '04.03', '05.03', '06.03', '07.03', '08.03', '09.03', '10.03', '11.03', '12.03', '13.03', '14.03', '15.03', '16.03', '17.03', '18.03', '19.03'],
+                labels: chartLabels,
                 datasets: [{
-                    data: [636, 554, 554, 410, 636, 410, 492, 533, 636, 533, 492, 636, 328, 267, 410, 1723, 3015, 1743, 492, 492, 267, 267, 410, 1066, 1702, NaN, 1005],
+                    data: chartValues,
                     borderColor: '#EA435D',
                     borderWidth: 2,
                     pointStyle: false,
@@ -3348,6 +3534,40 @@ $(document).ready(function() {
                 }
             }
         });
+    });
+
+    $('.businesslunch-is').change(function() {
+        if ($(this).prop('checked')) {
+            $('.businesslunch-inputs .form-input input').prop('disabled', false).addClass('required');
+        } else {
+            $('.businesslunch-inputs .form-input input').prop('disabled', true).removeClass('required');
+        }
+    });
+
+    $('.businesslunch-is').each(function() {
+        if ($(this).prop('checked')) {
+            $('.businesslunch-inputs .form-input input').prop('disabled', false).addClass('required');
+        } else {
+            $('.businesslunch-inputs .form-input input').prop('disabled', true).removeClass('required');
+        }
+    });
+
+    $('.account-restaurant-menu-add a').click(function(e) {
+        var newID = Date.now();
+        var titleFile = $('.account-restaurant-menu-files').attr('data-attach');
+        var nameFile = $('.account-restaurant-menu-files').attr('data-file').replace('_ID_', newID);
+        var titleText = $('.account-restaurant-menu-files').attr('data-description');
+        var nameText = $('.account-restaurant-menu-files').attr('data-text').replace('_ID_', newID);
+        $('.account-restaurant-menu-files').append( '<div class="account-restaurant-menu-file">' +
+                                                        '<div class="form-file">' +
+                                                            '<div class="form-file-input">' +
+                                                                '<input type="file" name="' + nameFile + '" value="">' +
+                                                                '<span data-placeholder="' + titleFile + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#input-file"></use></svg>' + titleFile + '</span>' +
+                                                            '</div>' +
+                                                        '</div>' +
+                                                        '<div class="form-input"><span>' + titleText + '</span><input type="text" name="' + nameText + '" value=""></div>' +
+                                                    '</div>');
+        e.preventDefault();
     });
 
 });

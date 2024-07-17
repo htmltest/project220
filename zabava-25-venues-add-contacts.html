@@ -221,7 +221,7 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">My Restaurants</a></div>
+                    <div class="breadcrumbs"><a href="#">My Venues</a></div>
 
                     <!-- account -->
                     <div class="account">
@@ -231,9 +231,9 @@
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>My venues</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
@@ -245,7 +245,7 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Event</a></div>
+                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Event Venues</a></div>
 
                                 <div class="account-event-add-steps">
                                     <div class="account-event-add-step success">
@@ -263,7 +263,7 @@
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
                                             <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
-                                        <div class="account-event-add-step-title">Schedule</div>
+                                        <div class="account-event-add-step-title">Contacts</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
                                     <div class="account-event-add-step">
@@ -292,63 +292,170 @@
 
                                         <!-- account event add group -->
                                         <div class="account-event-add-group">
-                                            <div class="account-event-add-group-title">Schedule</div>
+                                            <div class="account-event-add-group-title">Contacts</div>
+                                            <div class="account-event-add-group-content">
+                                                <div class="form-input"><span>Phone</span><input type="text" name="phone" value=""></div>
+                                            </div>
+                                        </div>
+                                        <!-- account event add group END -->
+
+                                        <!-- account event add group -->
+                                        <div class="account-event-add-group">
+                                            <div class="account-event-add-group-title">Location</div>
                                             <div class="account-event-add-group-content">
 
-                                                <div class="account-event-add-schedule">
-                                                    <div class="account-event-add-schedule-edit"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#review-btn-edit"></use></svg>edit</a></div>
-                                                    <div class="account-event-add-schedule-headers">
-                                                        <div class="account-event-add-schedule-header">Date Event</div>
-                                                        <div class="account-event-add-schedule-header">Start Event</div>
-                                                        <div class="account-event-add-schedule-header">End Event</div>
+                                                <!-- account event add location -->
+                                                <div class="account-event-add-location">
+                                                    <input type="hidden" name="locationrequired" value="" class="account-event-add-location-validfield required">
+                                                    <div class="account-event-add-location-current">
+                                                        <div class="account-event-add-location-current-placeholder">Location</div>
+                                                        <div class="account-event-add-location-current-value"></div>
+                                                        <div class="account-event-add-location-current-arrow"><svg><use xlink:href="images/sprite.svg#account-icon-select"></use></svg></div>
                                                     </div>
-                                                    <div class="account-event-add-schedule-list">
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[0][date]" value="05/17/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[0][start]" value="19:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[0][end]" value="22:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/17/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">19:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">22:00</div>
+                                                    <div class="account-event-add-location-content">
+                                                        <div class="account-event-add-location-content-search" data-url="ajax/account-event-add-location.html">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
                                                         </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[1][date]" value="05/18/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[1][start]" value="16:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[1][end]" value="19:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/18/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">16:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">19:00</div>
-                                                        </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[2][date]" value="05/19/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[2][start]" value="15:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[2][end]" value="18:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/19/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">15:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">18:00</div>
+                                                        <div class="account-event-add-location-content-inner">
+                                                            <div class="account-event-add-location-content-placeholder">Type at least 3 characters</div>
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <!-- account event add location END -->
 
-                                                <div class="window-account-event-add-schedule-template">
-                                                    <div class="window-account-event-add-schedule-template-title">Schedule</div>
-                                                    <div class="window-account-event-add-schedule-template-cancel">Cancel</div>
-                                                    <div class="window-account-event-add-schedule-template-save">Save</div>
-                                                    <div class="window-account-event-add-schedule-template-add">Add date event</div>
-                                                    <div class="window-account-event-add-schedule-template-date">Date Event</div>
-                                                    <div class="window-account-event-add-schedule-template-start">Start Event</div>
-                                                    <div class="window-account-event-add-schedule-template-end">End Event</div>
+                                                <div class="account-event-add-location-detail">
+                                                    <div class="account-event-add-location-detail-info">
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name">City</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-city"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name"><img src="files/flags/SI - Slovenia.svg" alt="">Address</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-address"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-info-row">
+                                                            <div class="account-event-add-location-detail-info-row-name"><img src="files/flags/GB-UKM - United Kingdom.svg" alt="">Address English</div>
+                                                            <div class="account-event-add-location-detail-info-row-value account-event-add-location-detail-address-english"></div>
+                                                        </div>
+                                                        <div class="account-event-add-location-detail-point-latitude"></div>
+                                                        <div class="account-event-add-location-detail-point-longitude"></div>
+                                                    </div>
+                                                    <div class="account-event-add-location-detail-btn"><a href="#" class="btn">Fill in the form</a></div>
+                                                </div>
+                                                <div class="form-select">
+                                                    <select name="city" data-placeholder="City" class="account-event-add-location-city">
+                                                        <option value=""></option>
+                                                        <option value="Celje">Celje</option>
+                                                        <option value="Domžale">Domžale</option>
+                                                        <option value="Izola">Izola</option>
+                                                        <option value="Jesenice">Jesenice</option>
+                                                        <option value="Kamnik">Kamnik</option>
+                                                        <option value="Koper">Koper</option>
+                                                        <option value="Kostanjevica na Krki">Kostanjevica na Krki</option>
+                                                        <option value="Kranj">Kranj</option>
+                                                        <option value="Lenart v Slovenskih Goricah">Lenart v Slovenskih Goricah</option>
+                                                        <option value="Ljubljana">Ljubljana</option>
+                                                        <option value="Logatec">Logatec</option>
+                                                        <option value="Maribor">Maribor</option>
+                                                        <option value="Metelkova">Metelkova</option>
+                                                        <option value="Murska Sobota">Murska Sobota</option>
+                                                        <option value="Nova Gorica">Nova Gorica</option>
+                                                        <option value="Novo Mesto">Novo Mesto</option>
+                                                        <option value="Postojna">Postojna</option>
+                                                        <option value="Ptuj">Ptuj</option>
+                                                        <option value="Škofja Loka">Škofja Loka</option>
+                                                        <option value="Trbovlje">Trbovlje</option>
+                                                        <option value="Velenje">Velenje</option>
+                                                        <option value="Vrhnika">Vrhnika</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-input"><span>Address</span><input type="text" name="address" value="" class="account-event-add-location-address"></div>
+                                                <div class="account-event-add-subfield">
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Address English</span><input type="text" name="address_english" value="" class="account-event-add-location-address-english"></div>
+                                                </div>
+
+                                                <!-- account event add point -->
+                                                <div class="account-event-add-point">
+                                                    <div class="account-event-add-subgroup-title">Point on map</div>
+                                                    <div class="account-event-add-point-map" id="map"></div>
+                                                    <script src="js/map-config.js"></script>
+                                                    <script>
+                                                        var map;
+
+                                                        var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
+
+                                                        var marker;
+
+                                                        function initMap() {
+                                                            map = new google.maps.Map(document.getElementById('map'), {
+                                                                center: coordinates,
+                                                                styles: styleArray,
+                                                                zoom: 16,
+                                                                zoomControl: true,
+                                                                zoomControlOptions: {
+                                                                    position: google.maps.ControlPosition.RIGHT_BOTTOM,
+                                                                },
+                                                                mapTypeControl: false,
+                                                                scaleControl: false,
+                                                                streetViewControl: false,
+                                                                rotateControl: false,
+                                                                fullscreenControl: false,
+                                                            });
+
+                                                            marker = new google.maps.Marker({
+                                                                position: new google.maps.LatLng(coordinates.lat, coordinates.lng),
+                                                                draggable: true,
+                                                            });
+
+                                                            marker.setMap(map);
+
+                                                            marker.addListener('dragend', (event) => {
+                                                                var position = marker.position;
+                                                                $('.account-event-add-location-address-latitude').val(position.lat).parents().filter('.form-input').addClass('full');
+                                                                $('.account-event-add-location-address-longitude').val(position.lng).parents().filter('.form-input').addClass('full');
+                                                            });
+                                                        }
+                                                    </script>
+                                                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly&key=AIzaSyA0WMOe8YWd0yua6Z4Fr_fOmST1CJs1OW0"></script>
+
+                                                    <div class="account-event-add-row">
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-input"><span>Latitude</span><input type="text" name="latitude" value="" class="account-event-add-location-address-latitude" readonly></div>
+                                                        </div>
+                                                        <div class="account-event-add-row-field">
+                                                            <div class="form-input"><span>Latitude</span><input type="text" name="longitude" value="" class="account-event-add-location-address-longitude" readonly></div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- account event add point END -->
+
+                                            </div>
+                                        </div>
+                                        <!-- account event add group END -->
+
+                                        <!-- account event add group -->
+                                        <div class="account-event-add-group">
+                                            <div class="account-event-add-group-title">Links</div>
+                                            <div class="account-event-add-group-content">
+                                                <div class="account-event-add-row">
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Website</span><input type="text" name="website" value="https://BeautyAndTheBeast.com" class="url"></div>
+                                                    </div>
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-tiktok.svg" alt=""><span>TikTok</span><input type="text" name="tiktok" value="" class="url"></div>
+                                                    </div>
                                                 </div>
 
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input"><span>Duration</span><input type="text" name="Duration" value="2h 15m"></div>
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-instagram.svg" alt=""><span>Instagram</span><input type="text" name="instagram" value="https://instagram.com/Movies_SL" class="url"></div>
+                                                    </div>
+                                                    <div class="account-event-add-row-field">
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-facebook.svg" alt=""><span>Facebook</span><input type="text" name="facebook" value="https://facebook.com/Movies_SL" class="url"></div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <!-- account event add group END -->

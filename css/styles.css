@@ -2093,6 +2093,15 @@ header.fixed .logo svg {width:100px; height:19px}
 
 .detail-info-social-item-value-social {display:block; margin:5px 20px 0 0}
 
+.detail-info-social-share {position:relative}
+.detail-info-social-share.open .detail-share-window {display:flex}
+.detail-info-params-with-social .detail-info-param-value .detail-info-social-share svg {min-width:32px; max-width:32px; height:32px; margin:0}
+
+@media (max-width:1199px) {
+    .detail-info-social-share .detail-share-window {right:-80px}
+    .detail-info-social-share .detail-share-window::before {right:108px}
+}
+
 .detail-info-place-title {margin:40px 0 0 0; display:flex}
 .detail-info-place-title a {display:flex; align-items:center; font-weight:600; font-size:24px; line-height:31px; color:#D75078}
 @media (min-width:1200px) {
@@ -3649,6 +3658,8 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-category-content-inner::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
 .account-event-add-category-content-inner::-webkit-scrollbar {width:3px; height:3px; background:transparent}
 
+.account-event-add-sep {margin:24px 0; height:1px; background:#C7CAD8}
+
 .account-event-add-category-group {margin:20px 0 0 0}
 .account-event-add-category-group.hidden {display:none}
 .account-event-add-category-group:first-child,
@@ -3678,6 +3689,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-schedule-list {margin:12px 0 0 0}
 .account-event-add-schedule-item {display:flex; border-top:1px solid rgba(199, 202, 216, 0.5); padding:20px 0; font-size:18px; line-height:18px; text-transform:uppercase}
 .account-event-add-schedule-item-date {flex:1; font-weight:bold}
+.account-event-add-schedule-restaurant .account-event-add-schedule-item-date {text-transform:none}
 .account-event-add-schedule-item-start {min-width:113px; margin:0 0 0 20px; text-align:right}
 .account-event-add-schedule-item-sep {min-width:24px; margin:0 0 0 33px; text-align:left}
 .account-event-add-schedule-item-end {min-width:76px; text-align:right}
@@ -4061,23 +4073,6 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .account-event-card-general-stat-than span {margin:0; display:block}
 }
 
-.account-restaurants-card-general-header {margin:40px 0 0 0; display:flex; justify-content:space-between}
-.account-restaurants-card-general-poster {min-width:calc(50% - 10px); max-width:calc(50% - 10px)}
-.account-restaurants-card-general-poster img {display:block; width:100%; border-radius:8px}
-.account-restaurants-card-general-stats {min-width:calc(50% - 10px); max-width:calc(50% - 10px); padding:16px; background:#FFFFFF; box-shadow:0px 0px 24px rgba(7, 21, 66, 0.12); border-radius:8px}
-.account-restaurants-card-general-stats-header {display:flex; justify-content:space-between; align-items:center}
-.account-restaurants-card-general-stats-title {font-weight:600; font-size:18px; line-height:23px; color:#9397AA}
-.account-restaurants-card-general-stats-value {font-weight:500; font-size:36px; line-height:45px}
-.account-restaurants-card-general-stats-chart {margin:20px 0 0 0; padding:20px 0 0 0; border-top:1px solid rgba(147, 151, 170, 0.2)}
-.account-restaurants-card-general-stats-chart-container {margin:20px 0 0 0}
-.account-restaurants-card-general-stats-chart-container canvas {width:100%; height:168px}
-
-@media (max-width:1199px) {
-    .account-restaurants-card-general-header {margin:20px 0 0 0; display:block}
-    .account-restaurants-card-general-poster {min-width:0; max-width:none}
-    .account-restaurants-card-general-stats {margin:10px 0 0 0; min-width:0; max-width:none}
-}
-
 .account-event-card-general-info {margin:40px 0 0 0}
 .account-event-card-general-info-group {margin:40px 0 0 0; border-top:1px solid #DFDFDF; padding:40px 0 0 0}
 .account-event-card-general-info-group:first-child {margin:0; border-top:none; padding:0}
@@ -4245,7 +4240,8 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-detail-ctrl-chart.open a em svg {transform:rotate(-180deg)}
 
 @media (max-width:1199px) {
-    .account-event-card-stats-detail-ctrl-dates-item {margin:0; padding:0 8px}
+    .account-event-card-stats-detail-ctrl-dates-item {display:none}
+    .account-event-card-stats-detail-ctrl-dates-item.detail {display:flex}
     .account-event-card-stats-detail-ctrl-dates-item.active {background:none}
     .account-event-card-stats-detail-ctrl-chart a span {display:none}
     .account-event-card-stats-detail-ctrl-chart.open a span:nth-child(2) {display:none}
@@ -4279,7 +4275,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-detail-table-row-value.highlight {font-weight:bold}
 
 @media (max-width:1199px) {
-    .account-event-card-stats-detail-table {margin:20px -15px 0 -15px}
+    .account-event-card-stats-detail-table {margin:20px -15px 0 -15px; border-top:1px solid #DFDFDF}
     .account-event-card-stats-detail-table-header {display:none}
     .account-event-card-stats-detail-table-row {display:block; padding:15px}
     .account-event-card-stats-detail-table-row.summ {padding:15px; font-size:15px; line-height:26px}
@@ -4357,6 +4353,19 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-card-stats-params-ctrl .form-reset {margin:0}
 .account-event-card-stats-params-ctrl .form-submit {margin:0}
 .account-event-card-stats-params-ctrl .form-submit .btn {min-width:245px}
+
+.account-restaurant-menu-add {margin:24px 0 0 0; display:flex}
+.account-restaurant-menu-add a {display:flex; align-items:center; justify-content:center; height:36px; padding:0 15px; border:1px solid #6768AB; border-radius:4px; font-weight:bold; font-size:12px; line-height:15px; color:#6768AB; text-transform:uppercase; transition:color 0.2s, background 0.2s}
+@media (min-width:1200px) {
+    .account-restaurant-menu-add a:hover {background:#6768AB; color:#FFFFFF}
+}
+.account-restaurant-menu-add a svg {min-width:20px; max-width:20px; height:20px; margin:0 10px 0 0; fill:#6768AB; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-restaurant-menu-add a:hover svg {fill:#FFFFFF}
+}
+.account-restaurant-menu-file {margin:20px 0}
+.account-restaurant-menu-file .form-file {margin:0}
+.account-restaurant-menu-file .form-input {margin:12px 0 0 0}
 
 .up-link {display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; position:fixed; z-index:90; left:50%; margin:0 0 0 631px; bottom:30px; width:54px; height:54px; border-radius:50%; background:rgba(255, 255, 255, 0.9); transition:opacity 0.2s, background 0.2s, border-color 0.2s; border:1px solid rgba(120, 123, 142, 0.5)}
 .up-link.visible {opacity:1; visibility:visible}

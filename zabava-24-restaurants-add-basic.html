@@ -221,7 +221,7 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">My Restaurants</a></div>
+                    <div class="breadcrumbs"><a href="#">My Events</a></div>
 
                     <!-- account -->
                     <div class="account">
@@ -231,10 +231,10 @@
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
                                 <div class="account-menu-item"><a href="#"><strong>Support</strong><span>17</span></a></div>
@@ -245,10 +245,10 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Event</a></div>
+                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Restaurant</a></div>
 
                                 <div class="account-event-add-steps">
-                                    <div class="account-event-add-step success">
+                                    <div class="account-event-add-step active">
                                         <div class="account-event-add-step-number">
                                             <span>1</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -257,13 +257,13 @@
                                         <div class="account-event-add-step-title">Basic</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
-                                    <div class="account-event-add-step active">
+                                    <div class="account-event-add-step">
                                         <div class="account-event-add-step-number">
                                             <span>2</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
                                             <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
                                         </div>
-                                        <div class="account-event-add-step-title">Schedule</div>
+                                        <div class="account-event-add-step-title">Contacts</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
                                     </div>
                                     <div class="account-event-add-step">
@@ -292,70 +292,101 @@
 
                                         <!-- account event add group -->
                                         <div class="account-event-add-group">
-                                            <div class="account-event-add-group-title">Schedule</div>
+                                            <div class="account-event-add-group-title">Basic information</div>
                                             <div class="account-event-add-group-content">
-
-                                                <div class="account-event-add-schedule">
-                                                    <div class="account-event-add-schedule-edit"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#review-btn-edit"></use></svg>edit</a></div>
-                                                    <div class="account-event-add-schedule-headers">
-                                                        <div class="account-event-add-schedule-header">Date Event</div>
-                                                        <div class="account-event-add-schedule-header">Start Event</div>
-                                                        <div class="account-event-add-schedule-header">End Event</div>
-                                                    </div>
-                                                    <div class="account-event-add-schedule-list">
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[0][date]" value="05/17/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[0][start]" value="19:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[0][end]" value="22:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/17/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">19:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">22:00</div>
-                                                        </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[1][date]" value="05/18/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[1][start]" value="16:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[1][end]" value="19:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/18/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">16:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">19:00</div>
-                                                        </div>
-                                                        <div class="account-event-add-schedule-item">
-                                                            <input type="hidden" name="schedule[2][date]" value="05/19/2024" class="account-event-add-schedule-item-date">
-                                                            <input type="hidden" name="schedule[2][start]" value="15:00" class="account-event-add-schedule-item-start">
-                                                            <input type="hidden" name="schedule[2][end]" value="18:00" class="account-event-add-schedule-item-end">
-                                                            <div class="account-event-add-schedule-item-date">05/19/2024</div>
-                                                            <div class="account-event-add-schedule-item-start">15:00</div>
-                                                            <div class="account-event-add-schedule-item-sep">—</div>
-                                                            <div class="account-event-add-schedule-item-end">18:00</div>
-                                                        </div>
-                                                    </div>
+                                                <div class="form-checkbox account-profile-notifications-checkbox">
+                                                    <label><input type="checkbox" name="isactive" checked><span>Active</span></label>
+                                                </div>
+                                                <div class="form-input"><span>Name <em>*</em></span><input type="text" name="name" value="Imperial Café" class="required"></div>
+                                                <div class="account-event-add-subfield">
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Name English <em>*</em></span><input type="text" name="name_english" value="Imperial Cafe" class="required"></div>
+                                                </div>
+                                                <div class="form-input"><span>Mnemonic code</span><input type="text" name="mnemonic_code" value="11874445" disabled></div>
+                                                <div class="form-select">
+                                                    <select name="sorting" data-placeholder="Sorting">
+                                                        <option value=""></option>
+                                                        <option value="Restaurants">Restaurants</option>
+                                                        <option value="Cafes">Cafes</option>
+                                                        <option value="Bars and Pubs">Bars and Pubs</option>
+                                                        <option value="Confectioneries">Confectioneries</option>
+                                                    </select>
                                                 </div>
 
-                                                <div class="window-account-event-add-schedule-template">
-                                                    <div class="window-account-event-add-schedule-template-title">Schedule</div>
-                                                    <div class="window-account-event-add-schedule-template-cancel">Cancel</div>
-                                                    <div class="window-account-event-add-schedule-template-save">Save</div>
-                                                    <div class="window-account-event-add-schedule-template-add">Add date event</div>
-                                                    <div class="window-account-event-add-schedule-template-date">Date Event</div>
-                                                    <div class="window-account-event-add-schedule-template-start">Start Event</div>
-                                                    <div class="window-account-event-add-schedule-template-end">End Event</div>
-                                                </div>
-
-                                                <div class="account-event-add-row">
-                                                    <div class="account-event-add-row-field">
-                                                        <div class="form-input"><span>Duration</span><input type="text" name="Duration" value="2h 15m"></div>
+                                                <!-- account event add category -->
+                                                <div class="account-event-add-category">
+                                                    <input type="hidden" name="categoriesrequired" value="" class="account-event-add-category-validfield required">
+                                                    <div class="account-event-add-category-current">
+                                                        <div class="account-event-add-category-current-placeholder">Categories</div>
+                                                        <div class="account-event-add-category-current-value"></div>
+                                                        <div class="account-event-add-category-current-arrow"><svg><use xlink:href="images/sprite.svg#account-icon-select"></use></svg></div>
+                                                    </div>
+                                                    <div class="account-event-add-category-content">
+                                                        <div class="account-event-add-category-content-search">
+                                                            <input type="text" value="">
+                                                            <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                        </div>
+                                                        <div class="account-event-add-category-content-inner">
+                                                            <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Restaurants]" checked><span>Restaurants</span></label></div>
+                                                            <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Cafes]"><span>Cafes</span></label></div>
+                                                            <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Bars and Pubs]" checked><span>Bars and Pubs</span></label></div>
+                                                            <div class="account-event-add-category-checkbox"><label><input type="checkbox" name="genre[Confectioneries]" checked><span>Confectioneries</span></label></div>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <!-- account event add category END -->
 
+                                                <div class="form-select">
+                                                    <select name="type" data-placeholder="Kitchen type">
+                                                        <option value=""></option>
+                                                        <option value="Bar">Bar</option>
+                                                        <option value="Italian cuisine">Italian cuisine</option>
+                                                        <option value="Japanese cuisine">Japanese cuisine</option>
+                                                        <option value="Mediterranean cuisine">Mediterranean cuisine</option>
+                                                        <option value="Russian cuisine">Russian cuisine</option>
+                                                        <option value="Slovenian cuisine">Slovenian cuisine</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- account event add group END -->
+
+                                        <!-- account event add group -->
+                                        <div class="account-event-add-group">
+                                            <div class="account-event-add-group-title">Booking</div>
+                                            <div class="account-event-add-group-content">
+                                                <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Booking link</span><input type="text" name="booking_link" value="https://Book.com/gng84kjkg94" class="url"><div class="form-notice">Lyrical, ironic, subtle, achingly sad and sincere story to&nbsp;the last word. The performance is&nbsp;a&nbsp;concert about the relationship of&nbsp;a&nbsp;person with his own gift and era.</div></div>
+                                            </div>
+                                        </div>
+                                        <!-- account event add group END -->
+
+                                        <!-- account event add group -->
+                                        <div class="account-event-add-group">
+                                            <div class="account-event-add-group-title">Price</div>
+                                            <div class="account-event-add-group-content">
+                                                <div class="form-select">
+                                                    <select name="price" data-placeholder="Price level">
+                                                        <option value=""></option>
+                                                        <option value="€">€</option>
+                                                        <option value="€€">€€</option>
+                                                        <option value="€€€">€€€</option>
+                                                    </select>
+                                                </div>
+
+                                                <div class="form-select">
+                                                    <select name="average" data-placeholder="Average check">
+                                                        <option value=""></option>
+                                                        <option value="€">€</option>
+                                                        <option value="€€">€€</option>
+                                                        <option value="€€€">€€€</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                         <!-- account event add group END -->
 
                                         <div class="account-event-add-ctrl">
                                             <div class="account-event-add-ctrl-group">
-                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>Back</a></div>
+                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>cancel</a></div>
                                                 <div class="account-event-add-save"><button type="submit" name="save" class="btn-border">Save</button></div>
                                             </div>
                                             <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Next<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button></div>
