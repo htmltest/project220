@@ -564,24 +564,12 @@ header.fixed .header-inner {height:44px}
     header.fixed .header-inner {height:54px}
 }
 
-.logo {min-width:130px}
-.logo a {min-width:130px}
-.logo svg {display:block; width:130px; height:24px; fill:#000000}
+.logo {min-width:108px}
+.logo a {min-width:108px}
+.logo svg {display:block; width:108px; height:24px; fill:#000000}
 
 @media (max-width:1199px) {
-    .logo {min-width:93px; flex-grow:1; order:0}
-    .logo a {min-width:93px}
-    .logo svg {width:93px; height:18px}
-}
-
-header.fixed .logo {min-width:100px}
-header.fixed .logo a {min-width:100px}
-header.fixed .logo svg {width:100px; height:19px}
-
-@media (max-width:1199px) {
-    header.fixed .logo {min-width:93px}
-    header.fixed .logo a {min-width:93px}
-    header.fixed .logo svg {width:93px; height:18px}
+    .logo {flex-grow:1; order:0}
 }
 
 .header-container {margin:0 0 0 20px; display:flex; flex-grow:1}
@@ -2722,7 +2710,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 }
 
 .footer-left {min-width:281px}
-.footer-logo svg {display:block; width:163px; height:30px; fill:#FFFFFF}
+.footer-logo svg {display:block; width:162px; height:36px; fill:#FFFFFF}
 .footer-social {display:flex; margin:58px 0 0 0}
 .footer-social a {min-width:32px; margin:0 20px 0 0}
 .footer-social svg {display:block; width:32px; height:32px; transition:fill 0.2s}
@@ -2737,14 +2725,12 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 
 @media (max-width:1199px) {
     .footer-left {min-width:0; display:flex; justify-content:space-between; align-items:center}
-    .footer-logo {min-width:163px}
+    .footer-logo {min-width:162px}
     .footer-social {margin:0}
     .footer-social a:last-child {margin:0}
 }
 
 .page-map .footer-left {order:1; min-width:100%; max-width:100%; display:flex; align-items:center; padding:12px 0}
-.page-map .footer-logo {min-width:108px}
-.page-map .footer-logo svg {width:108px; height:20px}
 .page-map .footer-social {margin:0 0 0 40px}
 .page-map .footer-social a {min-width:20px}
 .page-map .footer-social a:last-child {margin:0}
