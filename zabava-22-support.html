@@ -193,76 +193,83 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <!-- account support -->
-                                <div class="account-support">
+                                <div class="account-events-header account-support-header">
+                                    <div class="account-events-title">Support</div>
+                                    <div class="account-events-header-add"><a href="#" class="btn-border account-support-archive-link"><svg><use xlink:href="images/sprite.svg#account-icon-archive"></use></svg>Archive</a></div>
+                                    <div class="account-events-header-add"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>New request</a></div>
+                                </div>
 
-                                    <div class="account-support-title">Support</div>
+                                <!-- filters -->
+                                <div class="filters">
+                                    <form action="ajax/account-support.html" method="post">
 
-                                    <!-- account support header -->
-                                    <div class="account-support-header">
-                                        <div class="account-support-filter">
-                                            <a href="#" class="account-support-filter-link"><svg><use xlink:href="images/sprite.svg#account-icon-filter"></use></svg><strong>Filter</strong><span>0</span></a>
-                                            <div class="account-support-filter-window">
-                                                <form action="ajax/account-support.html" method="post">
-                                                    <div class="account-support-filter-header">
-                                                        <div class="account-support-filter-header-title">Filter</div>
-                                                        <a href="#" class="account-support-filter-header-close"><svg><use xlink:href="images/sprite.svg#menu-mobile-close"></use></svg></a>
-                                                    </div>
-                                                    <div class="account-support-filter-group">
-                                                        <div class="account-support-filter-group-title"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-support-filter-group-title"></use></svg></span>Status</a></div>
-                                                        <div class="account-support-filter-group-content">
-                                                            <div class="form-checkbox">
-                                                                <label><input type="checkbox" name="status[answer]" checked><span>There's an answer</span></label>
+                                        <div class="filters-params">
+                                            <div class="filter-params-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#filter-params-mobile-link"></use></svg>Filter<span></span></a></div>
+                                            <div class="filters-params-inner">
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title"><strong>Status</strong><span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="status[answer]"><span>There's an answer</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="status[archive]"><span>Archive</span></label></div>
+                                                                <div class="filters-select-checkbox"><label><input type="checkbox" name="status[new]"><span>New</span></label></div>
                                                             </div>
-                                                            <div class="form-checkbox">
-                                                                <label><input type="checkbox" name="status[archive]"><span>Archive</span></label>
-                                                            </div>
-                                                            <div class="form-checkbox">
-                                                                <label><input type="checkbox" name="status[new]"><span>New</span></label>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <div class="account-support-filter-group">
-                                                        <div class="account-support-filter-group-title"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-support-filter-group-title"></use></svg></span>Period and Detail</a></div>
-                                                        <div class="account-support-filter-group-content account-support-filter-period">
-                                                            <div class="form-radio">
-                                                                <label><input type="radio" name="period" value="today"><span>Today<em>11.10.2024</em></span></label>
-                                                            </div>
-                                                            <div class="form-radio">
-                                                                <label><input type="radio" name="period" value="week"><span>This Week<em>07.10.2024 — 11.10.2024</em></span></label>
-                                                            </div>
-                                                            <div class="form-radio">
-                                                                <label><input type="radio" name="period" value="month" checked class="default"><span>This month<em>07.10.2024 — 11.10.2024</em></span></label>
-                                                            </div>
-                                                            <div class="form-radio">
-                                                                <label><input type="radio" name="period" value="other" class="other"><span>Other</span></label>
-                                                            </div>
-                                                            <div class="account-support-filter-range">
-                                                                <div class="account-support-filter-range-item from">
-                                                                    <div class="form-input form-input-date"><span>From</span><input type="text" name="from" value="" disabled></div>
-                                                                </div>
-                                                                <div class="account-support-filter-range-item to">
-                                                                    <div class="form-input form-input-date"><span>To</span><input type="text" name="to" value="" disabled></div>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-date">
+                                                        <div class="filters-date-mobile-header">
+                                                            <div class="filters-date-mobile-title">Period and Detail</div>
+                                                            <div class="filters-date-mobile-values"></div>
+                                                        </div>
+                                                        <a href="#" class="filters-date-title"><span data-default="Period and Detail">Period and Detail</span><svg><use xlink:href="images/sprite.svg#filters-date"></use></svg><div class="filters-date-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-date-content">
+                                                            <div class="filters-date-container">
+                                                                <div class="filters-date-mobile-subtitle">Period and Detail<a href="#" class="filters-date-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
+                                                                <input type="hidden" name="date" value="">
+                                                                <div class="filters-date-calendar" id="filters-date-calendar"></div>
+                                                                <div class="filters-date-content-results">
+                                                                    <div class="filters-date-content-results-reset"><a href="#">Clear All</a></div>
+                                                                    <div class="filters-date-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div class="filters-params-clearall">
+                                                    <a href="#"><svg><use xlink:href="images/sprite.svg#filters-params-clearall"></use></svg>Clear All</a>
+                                                </div>
+                                                <div class="filters-params-ctrl-mobile">
+                                                    <a href="#" class="filters-params-ctrl-mobile-reset">Clear All</a>
+                                                    <a href="#" class="btn filters-params-ctrl-mobile-apply">Apply</a>
+                                                </div>
+                                            </div>
 
-                                                    <div class="account-support-filter-group">
-                                                        <div class="account-support-filter-ctrl">
-                                                            <a href="#" class="account-support-filter-clear">Clear All</a>
-                                                            <div class="account-support-filter-count">27 results</div>
-                                                            <div class="account-support-filter-submit"><button type="submit" class="btn">Apply</button></div>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                            <div class="filters-sort">
+                                                <div class="filters-sort-current">Sort by Name<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></div>
+                                                <div class="filters-sort-list">
+                                                    <label><input type="radio" name="sort" value="namedown" checked><span>Sort by Name<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="nameup"><span>Sort by Name<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="datedown"><span>Sort by Date<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateup"><span>Sort by Date<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateadddown"><span>Sort by Add date<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateaddup"><span>Sort by Add date<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <a href="#" class="btn-border account-support-archive-link"><svg><use xlink:href="images/sprite.svg#account-icon-archive"></use></svg><span>Archive</span></a>
-                                        <a href="#" class="btn account-support-add-link"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg><span>New request</span></a>
-                                    </div>
-                                    <!-- account support header END -->
+
+                                    </form>
+                                </div>
+                                <!-- filters END -->
+
+                                <!-- catalogue -->
+                                <div class="catalogue">
 
                                     <!-- account support list -->
                                     <div class="account-support-list">
@@ -328,7 +335,7 @@
                                     </div>
                                     <!-- account support list END -->
 
-                                    <div class="account-support-ctrl">
+                                    <div class="account-events-ctrl">
                                         <div class="pager">
                                             <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
                                             <a href="#" data-value="1">1</a>
@@ -356,7 +363,7 @@
                                     </div>
 
                                 </div>
-                                <!-- account support END -->
+                                <!-- catalogue END -->
 
                             </div>
                             <!-- account content END -->

@@ -248,7 +248,7 @@
                                 <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Restaurant</a></div>
 
                                 <div class="account-event-add-steps">
-                                    <div class="account-event-add-step success">
+                                    <a href="#" class="account-event-add-step success">
                                         <div class="account-event-add-step-number">
                                             <span>1</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -256,8 +256,8 @@
                                         </div>
                                         <div class="account-event-add-step-title">Basic</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </div>
-                                    <div class="account-event-add-step success">
+                                    </a>
+                                    <a href="#" class="account-event-add-step success">
                                         <div class="account-event-add-step-number">
                                             <span>2</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -265,8 +265,8 @@
                                         </div>
                                         <div class="account-event-add-step-title">Contacts</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </div>
-                                    <div class="account-event-add-step active">
+                                    </a>
+                                    <a href="#" class="account-event-add-step active">
                                         <div class="account-event-add-step-number">
                                             <span>3</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -274,8 +274,8 @@
                                         </div>
                                         <div class="account-event-add-step-title">Description</div>
                                         <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </div>
-                                    <div class="account-event-add-step">
+                                    </a>
+                                    <a href="#" class="account-event-add-step">
                                         <div class="account-event-add-step-number">
                                             <span>4</span>
                                             <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
@@ -283,7 +283,7 @@
                                         </div>
                                         <div class="account-event-add-step-title">Media</div>
                                         <svg class="account-icon-step-finish"><use xlink:href="images/sprite.svg#account-icon-step-finish"></use></svg>
-                                    </div>
+                                    </a>
                                 </div>
 
                                 <!-- account event add -->
@@ -294,14 +294,14 @@
                                         <div class="account-event-add-group">
                                             <div class="account-event-add-group-title">Description</div>
                                             <div class="account-event-add-group-content">
-                                                <div class="form-input"><span>Description</span><textarea name="description" rows="1" cols="1">Lirična, ironična, subtilna, boleče žalostna in do zadnje besede iskrena zgodba. Predstava je koncert o odnosu človeka do lastnega daru in dobe.</textarea></div>
+                                                <div class="form-input"><span>Description</span><textarea name="description" rows="1" cols="1" class="textarea-editor">Lirična, ironična, subtilna, boleče žalostna in do zadnje besede iskrena zgodba. Predstava je koncert o odnosu človeka do lastnega daru in dobe.</textarea></div>
                                                 <div class="account-event-add-subfield">
-                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Description</span><textarea name="description_eng" rows="1" cols="1">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Description</span><textarea name="description_eng" rows="1" cols="1" class="textarea-editor">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
                                                 </div>
                                                 <div class="account-event-add-sep"></div>
-                                                <div class="form-input"><span>Preview text</span><textarea name="preview" rows="1" cols="1">Lirična, ironična, subtilna, boleče žalostna in do zadnje besede iskrena zgodba. Predstava je koncert o odnosu človeka do lastnega daru in dobe.</textarea></div>
+                                                <div class="form-input"><span>Preview text</span><textarea name="preview" rows="1" cols="1" class="textarea-editor">Lirična, ironična, subtilna, boleče žalostna in do zadnje besede iskrena zgodba. Predstava je koncert o odnosu človeka do lastnega daru in dobe.</textarea></div>
                                                 <div class="account-event-add-subfield">
-                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Preview text</span><textarea name="preview_eng" rows="1" cols="1">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
+                                                    <div class="form-input form-input-with-flag"><img src="files/flags/GB-UKM - United Kingdom.svg" alt=""><span>Preview text</span><textarea name="preview_eng" rows="1" cols="1" class="textarea-editor">Lyrical, ironic, subtle, achingly sad and sincere story to the last word. The performance is a concert about the relationship of a person with his own gift and era.</textarea></div>
                                                 </div>
                                                 <div class="account-event-add-sep"></div>
                                                 <div class="form-checkbox">
@@ -489,6 +489,7 @@
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
         <script src="js/clockpicker/jquery-clockpicker.min.js"></script>
+        <script src="js/tinymce/tinymce.min.js"></script>
         <script src="js/tools.js?sid=006"></script>
 
     </body>

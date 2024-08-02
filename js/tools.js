@@ -1552,11 +1552,17 @@ function updateFiltersStatus() {
             curSelect.find('.filters-select-mobile-values').html('');
             if (curSelect.find('.filters-select-checkbox input:checked').length > 0) {
                 isSelected = true;
-                curSelect.find('.filters-select-title span').html('&nbsp;(' + curSelect.find('.filters-select-checkbox input:checked').length + ')');
+                var countSelected = curSelect.find('.filters-select-checkbox input:checked').length;
                 curSelect.find('.filters-select-checkbox input:checked').each(function() {
                     var curOption = $(this);
                     curSelect.find('.filters-select-mobile-values').append('<div class="filters-select-mobile-value">' + curOption.parent().find('span').text() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#filters-select-mobile-value-remove"></use></svg></a></div>');
+                    newHTML += curOption.parent().find('span').text();
                 });
+                var newHTML = curSelect.find('.filters-select-checkbox input:checked').eq(0).parent().find('span').text();
+                if (countSelected > 1) {
+                    newHTML += ' (' + countSelected + ')';
+                }
+                curSelect.find('.filters-select-title span').html(newHTML);
             }
             if (curSelect.find('.filters-select-range').length > 0) {
                 if ((Number(curSelect.find('.filters-select-range-min').html()) < Number(curSelect.find('.filters-select-range-from').val())) || (Number(curSelect.find('.filters-select-range-max').html()) > Number(curSelect.find('.filters-select-range-to').val()))) {
@@ -1647,6 +1653,26 @@ function initForm(curForm) {
         $(this).val($(this).val()).change();
     });
 
+    curForm.find('.form-input textarea').each(function() {
+        $(this).css({'height': this.scrollHeight, 'overflow-y': 'hidden'});
+        $(this).on('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+    });
+
+    var indexFormEditor = Date.now();
+    curForm.find('.textarea-editor').each(function() {
+        var curEditor = $(this);
+        var curID = 'form-textarea-editor-' + indexFormEditor;
+        curEditor.attr('id', curID);
+        indexFormEditor++;
+        tinymce.init({
+            selector: '#' + curID,
+            menubar: false,
+        });
+    });
+
     var indexFormInput = Date.now();
     curForm.find('.form-input-date input').each(function() {
         var curInput = $(this);
@@ -1664,7 +1690,12 @@ function initForm(curForm) {
             }
         }
         curInput.parents().filter('.form-input').addClass('full');
+        var containerAir = '.air-datepicker-global-container';
+        if (curInput.parents().filter('.window-container').length == 1) {
+            containerAir = '.window-container';
+        }
         new AirDatepicker('#' + curID, {
+            container: containerAir,
             classes: 'form-input-datepicker',
             startDate: startDate,
             selectedDates: [startDate],
@@ -2431,180 +2462,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.account-support-filter-link').click(function(e) {
-        if ($('html').hasClass('account-support-filter-open')) {
-            $('html').removeClass('account-support-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
-            $(window).scrollTop($('html').data('scrollTop'));
-        } else {
-            var curWidth = $(window).width();
-            if (curWidth < 375) {
-                curWidth = 375;
-            }
-            var curScroll = $(window).scrollTop();
-            $('html').addClass('account-support-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
-            $('html').data('scrollTop', curScroll);
-        }
-        e.preventDefault();
-    });
-
-    $(document).click(function(e) {
-        if ($(window).width() > 1199) {
-            if ($(e.target).parents().filter('.account-support-filter').length == 0 && !$(e.target).hasClass('air-datepicker-cell') && !$(e.target).hasClass('air-datepicker-nav--title') && $(e.target).parents().filter('.air-datepicker-nav--title').length == 0) {
-                $('html').removeClass('account-support-filter-open');
-                $('meta[name="viewport"]').attr('content', 'width=device-width');
-                $(window).scrollTop($('html').data('scrollTop'));
-            }
-        } else {
-            if ($(e.target).hasClass('account-support-filter-window')) {
-                $('html').removeClass('account-support-filter-open');
-                $('meta[name="viewport"]').attr('content', 'width=device-width');
-                $(window).scrollTop($('html').data('scrollTop'));
-            }
-        }
-    });
-
-    $('.account-support-filter-submit .btn').click(function(e) {
-        $('html').removeClass('account-support-filter-open');
-        $('meta[name="viewport"]').attr('content', 'width=device-width');
-        $(window).scrollTop($('html').data('scrollTop'));
-    });
-
-    $('.account-support-filter-header-close').click(function(e) {
-        $('html').removeClass('account-support-filter-open');
-        $('meta[name="viewport"]').attr('content', 'width=device-width');
-        $(window).scrollTop($('html').data('scrollTop'));
-        e.preventDefault();
-    });
-
-    $('.account-support-filter-group-title a').click(function(e) {
-        $(this).parent().parent().toggleClass('open');
-        e.preventDefault();
-    });
-
-    $('.account-support-filter-period .form-radio input').change(function() {
-        var curPeriod = $('.account-support-filter-period .form-radio input:checked');
-        if (curPeriod.hasClass('other')) {
-            $('.account-support-filter-range input').prop('disabled', false);
-        } else {
-            $('.account-support-filter-range input').prop('disabled', true);
-        }
-        if ($(window).width() > 1199) {
-            updateAccountSupportFilter();
-            updateAccountSupport();
-        }
-    });
-
-    $('.account-support-filter-range .form-input-date input').change(function() {
-        if ($(window).width() > 1199) {
-            updateAccountSupport();
-        }
-    });
-
-    $('.account-support-filter-group-content .form-checkbox input').change(function() {
-        if ($(window).width() > 1199) {
-            updateAccountSupportFilter();
-            updateAccountSupport();
-        }
-    });
-
-    $('.account-support-filter-period').each(function() {
-        var curPeriod = $('.account-support-filter-period .form-radio input:checked');
-        if (curPeriod.hasClass('other')) {
-            $('.account-support-filter-range input').prop('disabled', false);
-        } else {
-            $('.account-support-filter-range input').prop('disabled', true);
-        }
-        updateAccountSupportFilter();
-    });
-
-    $('.account-support-filter-clear').click(function(e) {
-        $('.account-support-filter-group-content .form-checkbox input').prop('checked', false);
-        $('.account-support-filter-period .form-radio input.default').prop('checked', true).trigger('change');
-        e.preventDefault();
-    });
-
-    function updateAccountSupportFilter() {
-        var curCount = 0;
-        curCount += $('.account-support-filter-group-content .form-checkbox input:checked').length;
-        if (!$('.account-support-filter-period .form-radio input:checked').hasClass('default')) {
-            curCount++;
-        }
-        if (curCount == 0) {
-            $('.account-support-filter-link span').removeClass('visible').html('');
-        } else {
-            $('.account-support-filter-link span').addClass('visible').html(curCount);
-        }
-    }
-
-    function updateAccountSupport() {
-        $('.account-support-filter-window form').trigger('submit');
-    }
-
-    var isPageAccountClick = false;
-
-    $('.account-support-filter-window form').each(function() {
-        var curForm = $(this);
-        var validator = curForm.validate();
-        if (validator) {
-            validator.destroy();
-        }
-        curForm.validate({
-            ignore: '',
-            submitHandler: function(form) {
-                updateAccountSupportFilter();
-                $('.account-support-list').addClass('loading');
-
-                var curData = curForm.serialize();
-                if ($('.pager a.active').length == 1) {
-                    curData += '&page=' + $('.pager a.active').attr('data-value') + '&size=' + $('.pager-size-select-item input:checked').val();
-                }
-                $.ajax({
-                    type: 'POST',
-                    url: curForm.attr('action'),
-                    dataType: 'html',
-                    data: curData,
-                    cache: false
-                }).fail(function(jqXHR, textStatus, errorThrown) {
-                    alert('The service is temporarily unavailable, try again later.');
-                    $('.account-support-list').removeClass('loading');
-                }).done(function(html) {
-                    $('.account-support-list').html($(html).find('.account-support-list').html());
-                    $('.pager').html($(html).find('.pager').html());
-                    $('.account-support-filter-count').html($(html).find('.account-support-list').attr('data-count'));
-                    $('.account-support-list').removeClass('loading');
-
-                    if (isPageAccountClick) {
-                        isPageAccountClick = false;
-                        var curMargin = $('header').height();
-                        $('html, body').animate({'scrollTop': $('.account-support-list').offset().top - curMargin});
-                    }
-                });
-            }
-        });
-    });
-
-    $('body').on('click', '.account-support-ctrl .pager a', function(e) {
-        var curLink = $(this);
-        if (!curLink.hasClass('active')) {
-            $('.account-support-ctrl .pager a.active').removeClass('active');
-            curLink.addClass('active');
-            if (e.originalEvent === undefined) {
-                isPageAccountClick = false;
-            } else {
-                isPageAccountClick = true;
-            }
-            updateAccountSupport();
-        }
-        e.preventDefault();
-    });
-
-    $('.pager-size-select-item input').change(function() {
-        isPageAccountClick = true;
-        updateAccountSupport();
-    });
-
     $('.account-support-card-new-message-link a').click(function(e) {
         $('.account-support-card-new-message').addClass('open');
         e.preventDefault();
@@ -2926,9 +2783,10 @@ $(document).ready(function() {
                 curInput.attr('autocomplete', 'off');
                 curInput.prop('readonly', true);
                 new AirDatepicker('#form-input-date-id-' + newID, {
+                    container: '.window-container',
                     classes: 'form-input-datepicker',
                     prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
-                    nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>'
+                    nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
                 });
             });
         } else {
@@ -3023,22 +2881,20 @@ $(document).ready(function() {
     $('.account-event-add-location-content-search input').on('keyup', function() {
         var curInput = $(this);
         var curValue = curInput.val();
-        if (curValue.length > 2) {
-            var curSelect = curInput.parents().filter('.account-event-add-location');
-            curSelect.find('.account-event-add-location-content-inner').addClass('loading');
-            $.ajax({
-                type: 'POST',
-                url: curSelect.find('.account-event-add-location-content-search').attr('data-url'),
-                processData: false,
-                contentType: false,
-                dataType: 'html',
-                data: curInput.serialize(),
-                cache: false
-            }).done(function(html) {
-                curSelect.find('.account-event-add-location-content-inner').html(html);
-                curSelect.find('.account-event-add-location-content-inner').removeClass('loading');
-            });
-        }
+        var curSelect = curInput.parents().filter('.account-event-add-location');
+        curSelect.find('.account-event-add-location-content-inner').addClass('loading');
+        $.ajax({
+            type: 'POST',
+            url: curSelect.find('.account-event-add-location-content-search').attr('data-url'),
+            processData: false,
+            contentType: false,
+            dataType: 'html',
+            data: curInput.serialize(),
+            cache: false
+        }).done(function(html) {
+            curSelect.find('.account-event-add-location-content-inner').html(html);
+            curSelect.find('.account-event-add-location-content-inner').removeClass('loading');
+        });
     });
 
     $('body').on('change', '.account-event-add-location-checkbox input', function() {
@@ -3068,10 +2924,10 @@ $(document).ready(function() {
 
     $('.account-event-add-location-detail-btn a').click(function(e) {
         $('.account-event-add-location-city').val($('.account-event-add-location-detail-city').html()).trigger('change').trigger({type: 'select2:select'});
-        $('.account-event-add-location-address').val($('.account-event-add-location-detail-address').html()).parents().filter('.form-input').addClass('full');;
-        $('.account-event-add-location-address-english').val($('.account-event-add-location-detail-address-english').html()).parents().filter('.form-input').addClass('full');;
-        $('.account-event-add-location-address-latitude').val($('.account-event-add-location-detail-point-latitude').html()).parents().filter('.form-input').addClass('full');;
-        $('.account-event-add-location-address-longitude').val($('.account-event-add-location-detail-point-longitude').html()).parents().filter('.form-input').addClass('full');;
+        $('.account-event-add-location-address').val($('.account-event-add-location-detail-address').html()).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-english').val($('.account-event-add-location-detail-address-english').html()).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-latitude').val($('.account-event-add-location-detail-point-latitude').html()).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-longitude').val($('.account-event-add-location-detail-point-longitude').html()).parents().filter('.form-input').addClass('full');
         if (map && marker) {
             var newCoords = new google.maps.LatLng($('.account-event-add-location-detail-point-latitude').html(), $('.account-event-add-location-detail-point-longitude').html());
             marker.setPosition(newCoords);
@@ -3079,6 +2935,33 @@ $(document).ready(function() {
         }
         e.preventDefault();
     });
+
+    $('.account-event-add-location-address').change(function() {
+        var curValue = $(this).val();
+        if (curValue != '') {
+            if (geocoder) {
+                geocode({address: curValue});
+            }
+        }
+    });
+
+    function geocode(request) {
+        geocoder
+            .geocode(request)
+                .then((result) => {
+                    const { results } = result;
+
+                    map.setCenter(results[0].geometry.location);
+                    marker.setPosition(results[0].geometry.location);
+                    var position = marker.position;
+                    $('.account-event-add-location-address-latitude').val(position.lat).parents().filter('.form-input').addClass('full');
+                    $('.account-event-add-location-address-longitude').val(position.lng).parents().filter('.form-input').addClass('full');
+                    return results;
+                })
+                .catch((e) => {
+                    alert("Geocode was not successful for the following reason: " + e);
+                });
+    }
 
     $('.account-event-add-persons-current').click(function() {
         var curSelect = $(this).parent();
@@ -3106,26 +2989,24 @@ $(document).ready(function() {
     $('.account-event-add-persons-content-search input').on('keyup', function() {
         var curInput = $(this);
         var curValue = curInput.val();
-        if (curValue.length > 2) {
-            var curSelect = curInput.parents().filter('.account-event-add-persons');
-            curSelect.find('.account-event-add-persons-content-inner').addClass('loading');
-            $.ajax({
-                type: 'POST',
-                url: curSelect.find('.account-event-add-persons-content-search').attr('data-url'),
-                processData: false,
-                contentType: false,
-                dataType: 'html',
-                data: curInput.serialize(),
-                cache: false
-            }).done(function(html) {
-                curSelect.find('.account-event-add-persons-content-inner').html(html);
-                $('.account-event-add-persons-item').each(function() {
-                    var curItem = $(this);
-                    $('.account-event-add-persons-checkbox input[value="' + curItem.find('input').val() + '"]').prop('checked', true);
-                });
-                curSelect.find('.account-event-add-persons-content-inner').removeClass('loading');
+        var curSelect = curInput.parents().filter('.account-event-add-persons');
+        curSelect.find('.account-event-add-persons-content-inner').addClass('loading');
+        $.ajax({
+            type: 'POST',
+            url: curSelect.find('.account-event-add-persons-content-search').attr('data-url'),
+            processData: false,
+            contentType: false,
+            dataType: 'html',
+            data: curInput.serialize(),
+            cache: false
+        }).done(function(html) {
+            curSelect.find('.account-event-add-persons-content-inner').html(html);
+            $('.account-event-add-persons-item').each(function() {
+                var curItem = $(this);
+                $('.account-event-add-persons-checkbox input[value="' + curItem.find('input').val() + '"]').prop('checked', true);
             });
-        }
+            curSelect.find('.account-event-add-persons-content-inner').removeClass('loading');
+        });
     });
 
     $('body').on('change', '.account-event-add-persons-checkbox input', function() {
@@ -3156,6 +3037,20 @@ $(document).ready(function() {
         var curItem = $(this).parents().filter('.account-event-add-persons-item');
         $('.account-event-add-persons-checkbox input[value="' + curItem.find('input').val() + '"]').prop('checked', false).trigger('change');
         e.preventDefault();
+    });
+
+    $('.account-event-add-persons-list').each(function() {
+        Sortable.create(this, {
+            handle: '.account-event-add-persons-item',
+            animation: 150
+        });
+    });
+
+    $('.form-files-images .form-files-list').each(function() {
+        Sortable.create(this, {
+            handle: '.form-files-list-item',
+            animation: 150
+        });
     });
 
     $('.account-event-add-main-photo').change(function(e) {
@@ -3190,6 +3085,18 @@ $(document).ready(function() {
             }
             $('.account-event-add-media-video-player-start').attr('style', '');
             $('.account-event-add-media-video-preview').removeClass('visible');
+            $('.account-event-add-video').each(function(e) {
+                var curValue = $(this).val();
+                if (curValue != '') {
+                    var videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[0];
+                    if (videoID == '') {
+                        videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[1].replace('v=', '').split('&')[0];
+                    }
+                    var previewImg = 'https://img.youtube.com/vi/' + videoID + '/maxresdefault.jpg';
+                    $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(\'' + previewImg + '\')');
+                    $('.account-event-add-media-video-preview').addClass('visible');
+                }
+            });
         }
     });
 
@@ -3200,9 +3107,15 @@ $(document).ready(function() {
             if ($('.account-event-add-media-video-player-start').length == 0) {
                 $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
             }
-            if ($('.account-event-add-media-video-player-start').attr('style') != '') {
-                $('.account-event-add-media-video-preview').addClass('visible');
+            if ($('.account-event-add-media-video-player-start').attr('style') == '') {
+                var videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[0];
+                if (videoID == '') {
+                    videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[1].replace('v=', '').split('&')[0];
+                }
+                var previewImg = 'https://img.youtube.com/vi/' + videoID + '/maxresdefault.jpg';
+                $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(\'' + previewImg + '\')');
             }
+            $('.account-event-add-media-video-preview').addClass('visible');
         } else {
             if ($('.account-event-add-media-video-player-start').length == 0) {
                 $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
@@ -3216,6 +3129,15 @@ $(document).ready(function() {
         $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
         $('.account-event-add-video').val('').trigger('change').parents().filter('.form-input').removeClass('full');
         $('.account-event-add-video-preview').val('').trigger('change').parents().filter('.form-input').removeClass('full');
+        $('.account-event-add-video').each(function(e) {
+            var curValue = $(this).val();
+            if (curValue != '') {
+                var videoID = curValue.replace('https://www.youtube.com/embed/', '').split('?')[0];
+                var previewImg = 'https://img.youtube.com/vi/' + videoID + '/maxresdefault.jpg';
+                $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(\'' + previewImg + '\')');
+                $('.account-event-add-media-video-preview').addClass('visible');
+            }
+        });
         e.preventDefault();
     });
 
