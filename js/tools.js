@@ -829,6 +829,7 @@ $(document).ready(function() {
         var curCalendar = $(this);
         var dp = new AirDatepicker('#' + $(this).attr('id'), {
             range: true,
+            inline: true,
             classes: 'form-input-datepicker',
             prevHtml: '<svg viewBox="0 0 24 24"><path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
             nextHtml: '<svg viewBox="0 0 24 24"><path d="M9 18L15 12L9 6" troke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>',
@@ -1670,6 +1671,30 @@ function initForm(curForm) {
         tinymce.init({
             selector: '#' + curID,
             menubar: false,
+            style_formats: [
+                {
+                    title: 'Headings',
+                    items: [
+                        {title: 'Heading 2', format: 'h2'},
+                        {title: 'Heading 3', format: 'h3'}
+                    ]
+                },
+                {
+                    title: 'Inline',
+                    items: [
+                        {title: 'Bold', format: 'bold'},
+                        {title: 'Italic', format: 'italic'},
+                        {title: 'Underline', format: 'underline'}
+                    ]
+                },
+                {
+                    title: 'Blocks',
+                    items: [
+                        {title: 'Paragraph', format: 'p'},
+                        {title: 'Blockquote', format: 'blockquote'}
+                    ]
+                }
+            ]
         });
     });
 
@@ -3103,18 +3128,18 @@ $(document).ready(function() {
     $('.account-event-add-video').change(function(e) {
         var curValue = $(this).val();
         if (curValue != '') {
-            $('.account-event-add-media-video-player-start').attr('href', curValue);
             if ($('.account-event-add-media-video-player-start').length == 0) {
                 $('.account-event-add-media-video-player').html('<a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#account-icon-video-play"></use></svg></a>');
             }
+            var videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[0];
+            if (videoID == '') {
+                videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[1].replace('v=', '').split('&')[0];
+            }
             if ($('.account-event-add-media-video-player-start').attr('style') == '') {
-                var videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[0];
-                if (videoID == '') {
-                    videoID = curValue.replace('https://www.youtube.com/embed/', '').replace('https://youtu.be/', '').replace('https://www.youtube.com/watch', '').split('?')[1].replace('v=', '').split('&')[0];
-                }
                 var previewImg = 'https://img.youtube.com/vi/' + videoID + '/maxresdefault.jpg';
                 $('.account-event-add-media-video-player-start').attr('style', 'background-image:url(\'' + previewImg + '\')');
             }
+            $('.account-event-add-media-video-player-start').attr('href', 'https://www.youtube.com/embed/' + videoID);
             $('.account-event-add-media-video-preview').addClass('visible');
         } else {
             if ($('.account-event-add-media-video-player-start').length == 0) {

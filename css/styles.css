@@ -194,6 +194,7 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 }
 
 .air-datepicker.form-input-datepicker {border:none; border-radius:8px; background:#FFFFFF; box-shadow:0px 0px 20px 0px rgba(7, 21, 66, 0.10); padding:0; width:404px}
+.window-container .air-datepicker.form-input-datepicker::after {content:""; position:absolute; left:0; bottom:-20px; right:0; height:20px; background:rgba(255, 255, 255, 0)}
 .air-datepicker.form-input-datepicker .air-datepicker--pointer {display:none}
 .air-datepicker.form-input-datepicker .air-datepicker-nav {border-bottom:none; padding:16px 20px; align-items:center; min-height:0}
 .air-datepicker.form-input-datepicker .air-datepicker-nav--action {width:24px; height:24px; border-radius:0; background:#FFFFFF}
