@@ -168,10 +168,10 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 .form-input input:-webkit-autofill:focus,
 .form-input input:-webkit-autofill:hover {-webkit-text-fill-color:#080825; caret-color:#080825; -webkit-transition:background-color 999999s ease-in-out 0s; transition:background-color 999999s ease-in-out 0s}
 
-.form-notice {margin:6px 0 0 0; font-size:13px; line-height:20px; color:#787B8E}
+.form-notice {margin:6px 0 24px 0; font-size:13px; line-height:20px; color:#787B8E}
 
 @media (max-width:1199px) {
-    .form-notice {margin:10px 0 0 0}
+    .form-notice {margin:10px 0 24px 0}
 }
 
 .form-input-date::after {content:""; position:absolute; right:20px; top:16px; width:24px; height:24px; background:url(../images/input-date.svg) no-repeat; pointer-events:none}
@@ -2915,6 +2915,13 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
     .catalogue-empty {margin:25px 0 0 0}
 }
 
+.catalogue-empty-lk {margin:20px 0 0 0; padding:112px 40px}
+.catalogue-empty-lk svg {width:36px; height:36px; fill:#787B8E}
+.catalogue-empty-lk .catalogue-empty-title {margin:20px 0 0 0; font-weight:600; font-size:20px; line-height:26px; color:#787B8E}
+
+@media (max-width:1199px) {
+    .catalogue-empty-lk {padding:60px 40px}
+}
 .comingsoon-icon {margin:-10px 0 0 0}
 .comingsoon-icon img {display:block; margin:0 auto}
 .comingsoon-text {margin:40px 0 0 0; text-align:center; line-height:26px}

@@ -161,7 +161,7 @@
                                             <div class="account-profile-notification-icon"><svg><use xlink:href="images/sprite.svg#account-icon-cancel"></use></svg></div>
                                             <div class="account-profile-notification-title"><span>"Swan Lake"</span> has not passed moderation, the photo needs to be re-uploaded</div>
                                         </div>
-                                        <div class="account-profile-notification-date">Added June 14, 2023</div>
+                                        <div class="account-profile-notification-date">Added September 14, 2023</div>
                                     </a>
                                     <a href="#" class="account-profile-notification account-profile-notification-success">
                                         <div class="account-profile-notification-header">
@@ -221,8 +221,6 @@
                 <!-- container -->
                 <div class="container">
 
-                    <div class="breadcrumbs"><a href="#">My Restaurants</a></div>
-
                     <!-- account -->
                     <div class="account">
                         <!-- account container -->
@@ -231,10 +229,10 @@
                             <!-- account menu -->
                             <div class="account-menu">
                                 <div class="account-menu-item"><a href="#"><strong>Statistics</strong></a></div>
-                                <div class="account-menu-item"><a href="#"><strong>My events</strong><span>1</span></a></div>
+                                <div class="account-menu-item active"><a href="#"><strong>My events</strong><span>1</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My establishments</strong><span>98</span></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>My venues</strong></a></div>
-                                <div class="account-menu-item active"><a href="#"><strong>Restaurants</strong></a></div>
+                                <div class="account-menu-item"><a href="#"><strong>Restaurants</strong></a></div>
                                 <div class="account-menu-item"><a href="#"><strong>Artists</strong></a></div>
                                 <div class="account-menu-sep"></div>
                                 <div class="account-menu-item"><a href="#"><strong>Support</strong><span>17</span></a></div>
@@ -245,125 +243,163 @@
                             <!-- account content -->
                             <div class="account-content">
 
-                                <div class="account-support-back"><a href="#"><span><svg><use xlink:href="images/sprite.svg#account-icon-back-link"></use></svg></span>Add Restaurant</a></div>
-
-                                <div class="account-event-add-steps">
-                                    <a href="#" class="account-event-add-step success">
-                                        <div class="account-event-add-step-number">
-                                            <span>1</span>
-                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
-                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
-                                        </div>
-                                        <div class="account-event-add-step-title">Basic</div>
-                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </a>
-                                    <a href="#" class="account-event-add-step success">
-                                        <div class="account-event-add-step-number">
-                                            <span>2</span>
-                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
-                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
-                                        </div>
-                                        <div class="account-event-add-step-title">Contacts</div>
-                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </a>
-                                    <a href="#" class="account-event-add-step warning">
-                                        <div class="account-event-add-step-number">
-                                            <span>3</span>
-                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
-                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
-                                        </div>
-                                        <div class="account-event-add-step-title">Description</div>
-                                        <svg class="account-icon-step-arrow"><use xlink:href="images/sprite.svg#account-icon-step-arrow"></use></svg>
-                                    </a>
-                                    <a href="#" class="account-event-add-step active">
-                                        <div class="account-event-add-step-number">
-                                            <span>4</span>
-                                            <svg class="account-icon-step-success"><use xlink:href="images/sprite.svg#account-icon-step-success"></use></svg>
-                                            <svg class="account-icon-step-warning"><use xlink:href="images/sprite.svg#account-icon-step-warning"></use></svg>
-                                        </div>
-                                        <div class="account-event-add-step-title">Media</div>
-                                        <svg class="account-icon-step-finish"><use xlink:href="images/sprite.svg#account-icon-step-finish"></use></svg>
-                                    </a>
+                                <div class="account-events-header">
+                                    <div class="account-events-title">My Events</div>
+                                    <div class="account-events-header-add"><a href="#" class="btn"><svg><use xlink:href="images/sprite.svg#account-icon-add"></use></svg>New event</a></div>
                                 </div>
 
-                                <!-- account event add -->
-                                <div class="account-event-add">
-                                    <form action="#" method="post">
+                                <!-- filters -->
+                                <div class="filters">
+                                    <form action="ajax/account-events.html" method="post">
 
-                                        <!-- account event add group -->
-                                        <div class="account-event-add-group">
-                                            <div class="account-event-add-group-title">Media</div>
-                                            <div class="account-event-add-group-content">
-
-                                                <!-- account event add subgroup -->
-                                                <div class="account-event-add-subgroup">
-                                                    <div class="account-event-add-subgroup-title">Main Photo</div>
-
-                                                    <div class="form-file">
-                                                        <div class="form-file-input">
-                                                            <input type="file" name="main_photo" class="account-event-add-main-photo" value="">
-                                                            <span data-placeholder="Attach"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Attach</span>
+                                        <div class="filters-params">
+                                            <div class="filter-params-mobile-link"><a href="#"><svg><use xlink:href="images/sprite.svg#filter-params-mobile-link"></use></svg>Filter<span></span></a></div>
+                                            <div class="filters-params-inner">
+                                                <div class="filters-params-item">
+                                                    <div class="filters-search">
+                                                        <a href="#" class="filters-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg><span data-default="Search">Search</span><div class="filters-search-link-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-search-content">
+                                                            <div class="filters-search-inner">
+                                                                <div class="filters-search-input"><input type="text" name="search" value="" placeholder=""></div>
+                                                                <div class="filters-search-submit"><button type="submit"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                                            </div>
+                                                            <div class="filters-search-reset"><a href="#">Reset</a></div>
                                                         </div>
-                                                        <div class="form-notice">Aspect Ratio: 16:9 (Recommended for website compatibility)<br>Minimum Resolution: 1280 × 720 px (For good quality on mobile and desktop)<br>Maximum File Size: 2 MB<br>Preferred Format: JPG (for better compression without quality loss), PNG (if transparency is needed)</div>
-                                                    </div>
-                                                    <div class="account-event-add-main-photo-preview"><img src="" alt=""><a href="#" data-confirm="Confirm remove?"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a></div>
-                                                </div>
-                                                <!-- account event add subgroup END -->
-
-                                                <!-- account event add subgroup -->
-                                                <div class="account-event-add-subgroup">
-                                                    <div class="account-event-add-subgroup-title">Additional Photo</div>
-                                                    <div class="form-files form-files-images" data-confirmremove="Confirm remove?">
-                                                        <div class="form-files-dropzone"><span>Drag files here or click to select</span></div>
-                                                        <div class="form-files-input"><input type="file" name="files[]" multiple="multiple" data-uploadurl="upload/index.php" data-uploadfiles="upload/files/" data-removeurl="upload/remove.php" /></div>
-                                                        <div class="form-notice">Upload additional photos in the same format as the main photo.</div>
-                                                        <div class="form-files-list"></div>
                                                     </div>
                                                 </div>
-                                                <!-- account event add subgroup END -->
-
-                                                <!-- account event add subgroup -->
-                                                <div class="account-event-add-subgroup">
-                                                    <div class="account-event-add-subgroup-title">Video preview</div>
-
-                                                    <div class="account-event-add-row">
-                                                        <div class="account-event-add-row-field">
-                                                            <div class="form-input form-input-youtube"><img src="images/form-input-icon-youtube.svg" alt=""><span>YouTube</span><input type="text" name="youtube" value="" class="url account-event-add-video"><div class="form-notice">Enter a link to a video (e.g., YouTube) showcasing the restaurant.</div></div>
-                                                        </div>
-                                                        <div class="account-event-add-row-field">
-                                                            <div class="form-file">
-                                                                <div class="form-file-input">
-                                                                    <input type="file" name="video_preview" class="account-event-add-video-preview">
-                                                                    <span data-placeholder="Video preview image"><svg><use xlink:href="images/sprite.svg#input-file"></use></svg>Video preview image</span>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title"><strong>Genre</strong><span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content">
+                                                            <div class="filters-select-content-search">
+                                                                <input type="text" value="">
+                                                                <svg><use xlink:href="images/sprite.svg#header-search"></use></svg>
+                                                            </div>
+                                                            <div class="filters-select-content-inner">
+                                                                <div class="filters-select-group">
+                                                                    <div class="filters-select-group-title">Music</div>
+                                                                    <div class="filters-select-group-list">
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Premieres]"><span>Premieres</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Ballet]"><span>Ballet</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Childish]"><span>Childish</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dramatic]"><span>Dramatic</span></label></div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-notice">Upload an image (thumbnail) for the video, with the same restrictions as photos.</div>
+                                                                <div class="filters-select-group">
+                                                                    <div class="filters-select-group-title">Cinema</div>
+                                                                    <div class="filters-select-group-list">
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Comedies]"><span>Comedies</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Dollhouse]"><span>Dollhouse</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Musicals]"><span>Musicals</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Operettas]"><span>Operettas</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Opera]"><span>Opera</span></label></div>
+                                                                        <div class="filters-select-checkbox"><label><input type="checkbox" name="genre[Circus]"><span>Circus</span></label></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="filters-select-content-results">
+                                                                <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                                <div class="filters-select-content-results-reset"><a href="#">Clear All</a></div>
+                                                                <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="account-event-add-media-video-preview">
-                                                        <div class="account-event-add-media-video-player">
-                                                            <a href="" class="account-event-add-media-video-player-start" style=""><svg><use xlink:href="images/sprite.svg#account-icon-video-play"></use></svg></a>
+                                                </div>
+                                                <div class="filters-params-item">
+                                                    <div class="filters-select">
+                                                        <a href="#" class="filters-select-title">Price<span></span><svg><use xlink:href="images/sprite.svg#filters-select"></use></svg><div class="filters-select-title-reset"><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></div></a>
+                                                        <div class="filters-select-content filters-select-content-range">
+                                                            <div class="filters-select-range" data-currency="€">
+                                                                <div class="filters-select-range-examples">
+                                                                    <div data-from="10" data-to="30"><span>10–30€</span></div>
+                                                                    <div data-from="30" data-to="100"><span>30–100€</span></div>
+                                                                    <div data-from="100" data-to="500"><span>100–500€</span></div>
+                                                                    <div data-from="500" data-to="5000"><span>500–5000€</span></div>
+                                                                </div>
+                                                                <input type="hidden" name="priceFrom" value="10" class="filters-select-range-from">
+                                                                <input type="hidden" name="priceTo" value="5000" class="filters-select-range-to">
+                                                                <div class="filters-select-range-text">
+                                                                    <div class="filters-select-range-text-from">10</div>
+                                                                    <div class="filters-select-range-text-to">5000</div>
+                                                                </div>
+                                                                <div class="filters-select-range-slider">
+                                                                    <div class="filters-select-range-slider-inner"></div>
+                                                                </div>
+                                                                <div class="filters-select-range-hints">
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-from">From: <span></span></div>
+                                                                    <div class="filters-select-range-hints-item filters-select-range-hints-to">To: <span></span></div>
+                                                                </div>
+                                                                <div class="filters-select-range-params">
+                                                                    <div class="filters-select-range-min">10</div>
+                                                                    <div class="filters-select-range-max">5000</div>
+                                                                    <div class="filters-select-range-step">1</div>
+                                                                </div>
+                                                                <div class="filters-select-content-results">
+                                                                    <div class="filters-select-content-results-count"><span>48</span> results</div>
+                                                                    <div class="filters-select-content-results-reset"><a href="#">Reset</a></div>
+                                                                    <div class="filters-select-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                        <a href="#" class="account-event-add-media-video-preview-remove"><svg><use xlink:href="images/sprite.svg#account-icon-item-delete"></use></svg></a>
                                                     </div>
                                                 </div>
-                                                <!-- account event add subgroup END -->
-
+                                                <div class="filters-params-item">
+                                                    <div class="filters-checkbox">
+                                                        <div class="filters-checkbox-mobile-header">
+                                                            <div class="filters-checkbox-mobile-title">Free tickets</div>
+                                                            <div class="filters-checkbox-mobile-values"></div>
+                                                        </div>
+                                                        <div class="filters-checkbox-content">
+                                                            <div class="filters-checkbox-container">
+                                                                <div class="filters-checkbox-mobile-subtitle">Free tickets<a href="#" class="filters-checkbox-mobile-close"><svg><use xlink:href="images/sprite.svg#filters-select-mobile-close"></use></svg></a></div>
+                                                                <label><input type="checkbox" name="free"><span><em>Free tickets</em><em>Yes</em><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></span></label>
+                                                                <div class="filters-checkbox-content-results">
+                                                                    <div class="filters-checkbox-content-results-reset"><a href="#">Clear All</a></div>
+                                                                    <div class="filters-checkbox-content-results-submit"><a href="#" class="btn-border">Apply</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="filters-params-dates">
+                                                    <a href="#"><em>Dates:</em>&nbsp;<span></span><svg><use xlink:href="images/sprite.svg#filters-item-clear"></use></svg></a>
+                                                </div>
+                                                <div class="filters-params-clearall">
+                                                    <a href="#"><svg><use xlink:href="images/sprite.svg#filters-params-clearall"></use></svg>Clear All</a>
+                                                </div>
+                                                <div class="filters-params-ctrl-mobile">
+                                                    <a href="#" class="filters-params-ctrl-mobile-reset">Clear All</a>
+                                                    <a href="#" class="btn filters-params-ctrl-mobile-apply">Apply</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <!-- account event add group END -->
 
-                                        <div class="account-event-add-ctrl account-event-add-ctrl-moderation">
-                                            <div class="account-event-add-ctrl-group">
-                                                <div class="account-event-add-cancel"><a href="#"><svg><use xlink:href="images/sprite.svg#account-icon-cancel-btn"></use></svg>Back</a></div>
-                                                <div class="account-event-add-save"><button type="submit" name="save" class="btn-border">Save</button></div>
+                                            <div class="filters-sort">
+                                                <div class="filters-sort-current">Sort by Name<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></div>
+                                                <div class="filters-sort-list">
+                                                    <label><input type="radio" name="sort" value="namedown" checked><span>Sort by Name<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="nameup"><span>Sort by Name<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="datedown"><span>Sort by Date<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateup"><span>Sort by Date<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateadddown"><span>Sort by Add date<svg><use xlink:href="images/sprite.svg#sort-down"></use></svg></span></label>
+                                                    <label><input type="radio" name="sort" value="dateaddup"><span>Sort by Add date<svg><use xlink:href="images/sprite.svg#sort-up"></use></svg></span></label>
+                                                </div>
                                             </div>
-                                            <div class="account-event-add-submit"><button type="submit" name="submit" class="btn">Submit for moderation<svg><use xlink:href="images/sprite.svg#account-icon-send"></use></svg></button><div class="form-notice">Upon clicking, the restaurant will be submitted for review (moderation) before publication.</div></div>
                                         </div>
 
                                     </form>
                                 </div>
-                                <!-- account event add END -->
+                                <!-- filters END -->
+
+                                <!-- catalogue -->
+                                <div class="catalogue">
+
+                                    <div class="catalogue-empty catalogue-empty-lk">
+                                        <svg><use xlink:href="images/sprite.svg#catalogue-empty"></use></svg>
+                                        <div class="catalogue-empty-title">No events found</div>
+                                    </div>
+
+                                </div>
+                                <!-- catalogue END -->
 
                             </div>
                             <!-- account content END -->
@@ -445,7 +481,6 @@
         <script src="js/fileupload/jquery.fileupload.js"></script>
         <script src="js/fileupload/jquery.fileupload-ui.js"></script>
         <script src="js/clockpicker/jquery-clockpicker.min.js"></script>
-        <script src="js/Sortable.min.js"></script>
         <script src="js/tools.js?sid=006"></script>
 
     </body>
