@@ -3550,4 +3550,24 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('change', '.account-event-add-category-type input', function() {
+        if ($('.account-event-add-category-type-restraunt').prop('checked')) {
+            $('.account-event-add-category-restraunt-types').addClass('required');
+            $('.account-event-add-category-restraunt-types').prop('disabled', false);
+        } else {
+            $('.account-event-add-category-restraunt-types').removeClass('required');
+            $('.account-event-add-category-restraunt-types').prop('disabled', true);
+        }
+    });
+
+    $('.account-event-add-category-type').each(function() {
+        if ($('.account-event-add-category-type-restraunt').prop('checked')) {
+            $('.account-event-add-category-restraunt-types').addClass('required');
+            $('.account-event-add-category-restraunt-types').prop('disabled', false);
+        } else {
+            $('.account-event-add-category-restraunt-types').removeClass('required');
+            $('.account-event-add-category-restraunt-types').prop('disabled', true);
+        }
+    });
+
 });
