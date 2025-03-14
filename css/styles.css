@@ -235,7 +235,7 @@ label.error {display:block; margin:5px 0 0 20px; font-weight:normal; font-size:1
 
 .form-select {margin:20px 0; position:relative}
 .form-select select {position:relative; border:1px solid #C7CAD8; font:normal 18px/18px Mulish, Arial, sans-serif; letter-spacing:0; color:#080825; vertical-align:top; margin:0; padding:27px 50px 9px 19px; width:100%; height:56px; box-sizing:border-box; outline:none; border-radius:8px; background:#FFFFFF; -webkit-appearance:none; transition:border-color 0.2s}
-.form-select label.error {position:absolute; left:0; top:100%; right:0}
+.form-select label.error {position:absolute; left:0; top:56px; right:0}
 
 .form-checkbox {margin:10px 0; font-weight:500; font-size:15px; line-height:23px; display:flex}
 .form-checkbox label {position:relative; display:block}
@@ -3495,7 +3495,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-step.success .account-icon-step-success {display:block}
 .account-icon-step-warning {display:none; width:20px; height:20px; fill:#EB5D46}
 .account-event-add-step.warning .account-icon-step-warning {display:block}
-.account-event-add-step-title {margin:0 0 0 10px; width:100%; font-weight:600; font-size:15px; line-height:19px; color:#080825}
+.account-event-add-step-title {margin:0 0 0 10px; width:100%; font-weight:600; font-size:15px; line-height:19px; color:#080825; white-space:nowrap}
 .account-event-add-step.success .account-event-add-step-title {color:#9397AA}
 .account-icon-step-arrow {display:none; min-width:24px; max-width:24px; height:24px; fill:#9397AA}
 .account-event-add-step.active .account-icon-step-arrow {display:block}
@@ -3551,8 +3551,8 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 @media (min-width:1200px) {
     .account-event-add-category-current:hover {border-color:#787B8E}
 }
-.account-event-add-category-validfield.error+label.error+.account-event-add-category-current {border-color:#D75078; margin-bottom:49px}
-.account-event-add-category label.error {position:absolute; left:0; top:100%; right:0; white-space:nowrap}
+.account-event-add-category-validfield.error+label.error+.account-event-add-category-current {border-color:#D75078; margin-bottom:30px}
+.account-event-add-category label.error {position:absolute; left:0; top:56px; right:0; white-space:nowrap}
 
 .account-event-add-category-current-placeholder {position:absolute; left:19px; top:19px; font-size:18px; line-height:18px; color:#787B8E; transition:top 0.2s, font-size 0.2s, line-height 0.2s}
 .account-event-add-category.full .account-event-add-category-current-placeholder {top:10px; font-size:13px; line-height:13px}
