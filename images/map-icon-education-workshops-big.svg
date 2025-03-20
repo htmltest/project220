@@ -1,9 +1,9 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_718_10783)">
 <path d="M45 30C45 37.1797 39.1797 43 32 43C24.8203 43 19 37.1797 19 30C19 22.8203 24.8203 17 32 17C39.1797 17 45 22.8203 45 30Z" fill="white"/>
-<path d="M32 47.5C41.665 47.5 49.5 39.665 49.5 30C49.5 20.335 41.665 12.5 32 12.5C22.335 12.5 14.5 20.335 14.5 30C14.5 39.665 22.335 47.5 32 47.5Z" stroke="#B91372" stroke-width="9"/>
+<path d="M32 47.5C41.665 47.5 49.5 39.665 49.5 30C49.5 20.335 41.665 12.5 32 12.5C22.335 12.5 14.5 20.335 14.5 30C14.5 39.665 22.335 47.5 32 47.5Z" stroke="#6768AB" stroke-width="9"/>
 </g>
-<path d="M38 30C38 33.3137 35.3137 36 32 36C28.6863 36 26 33.3137 26 30C26 26.6863 28.6863 24 32 24C35.3137 24 38 26.6863 38 30Z" fill="#B91372"/>
+<path d="M38 30C38 33.3137 35.3137 36 32 36C28.6863 36 26 33.3137 26 30C26 26.6863 28.6863 24 32 24C35.3137 24 38 26.6863 38 30Z" fill="#6768AB"/>
 <defs>
 <filter id="filter0_d_718_10783" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
