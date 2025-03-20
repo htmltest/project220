@@ -1249,11 +1249,18 @@ $(document).ready(function() {
                 activeItem.removeClass('active');
                 var activeIndex = $('.card').index(activeItem);
 
-                for (var j = 0; j < mapIcons.length; j++) {
-                    if (mapIcons[j].type == activeItem.attr('data-type')) {
-                        curIcon = mapIcons[j];
-                    }
-                }
+                curIcon = {
+                    'iconURL': activeItem.attr('data-icon'),
+                    'iconWidth': 46,
+                    'iconHeight': 46,
+                    'iconCenterX': 23,
+                    'iconCenterY': 23,
+                    'iconBigURL': activeItem.attr('data-iconbig'),
+                    'iconBigWidth': 64,
+                    'iconBigHeight': 64,
+                    'iconBigCenterX': 32,
+                    'iconBigCenterY': 32
+                };
                 iconImg = curIcon.iconURL;
                 iconWidth = curIcon.iconWidth;
                 iconHeight = curIcon.iconHeight;
@@ -1271,11 +1278,18 @@ $(document).ready(function() {
             curItem.addClass('active');
             var curIndex = $('.card').index(curItem);
 
-            for (var j = 0; j < mapIcons.length; j++) {
-                if (mapIcons[j].type == curItem.attr('data-type')) {
-                    curIcon = mapIcons[j];
-                }
-            }
+            curIcon = {
+                'iconURL': curItem.attr('data-icon'),
+                'iconWidth': 46,
+                'iconHeight': 46,
+                'iconCenterX': 23,
+                'iconCenterY': 23,
+                'iconBigURL': curItem.attr('data-iconbig'),
+                'iconBigWidth': 64,
+                'iconBigHeight': 64,
+                'iconBigCenterX': 32,
+                'iconBigCenterY': 32
+            };
             iconImg = curIcon.iconBigURL;
             iconWidth = curIcon.iconBigWidth;
             iconHeight = curIcon.iconBigHeight;
@@ -1310,11 +1324,18 @@ $(document).ready(function() {
 
             var curIndex = $('.card').index(curItem);
 
-            for (var j = 0; j < mapIcons.length; j++) {
-                if (mapIcons[j].type == curItem.attr('data-type')) {
-                    curIcon = mapIcons[j];
-                }
-            }
+            curIcon = {
+                'iconURL': curItem.attr('data-icon'),
+                'iconWidth': 46,
+                'iconHeight': 46,
+                'iconCenterX': 23,
+                'iconCenterY': 23,
+                'iconBigURL': curItem.attr('data-iconbig'),
+                'iconBigWidth': 64,
+                'iconBigHeight': 64,
+                'iconBigCenterX': 32,
+                'iconBigCenterY': 32
+            };
             iconImg = curIcon.iconBigURL;
             iconWidth = curIcon.iconBigWidth;
             iconHeight = curIcon.iconBigHeight;
@@ -1336,11 +1357,18 @@ $(document).ready(function() {
         if (!curItem.hasClass('active')) {
             var curIndex = $('.card').index(curItem);
 
-            for (var j = 0; j < mapIcons.length; j++) {
-                if (mapIcons[j].type == curItem.attr('data-type')) {
-                    curIcon = mapIcons[j];
-                }
-            }
+            var curIcon = {
+                'iconURL': curItem.attr('data-icon'),
+                'iconWidth': 46,
+                'iconHeight': 46,
+                'iconCenterX': 23,
+                'iconCenterY': 23,
+                'iconBigURL': curItem.attr('data-iconbig'),
+                'iconBigWidth': 64,
+                'iconBigHeight': 64,
+                'iconBigCenterX': 32,
+                'iconBigCenterY': 32
+            };
             iconImg = curIcon.iconURL;
             iconWidth = curIcon.iconWidth;
             iconHeight = curIcon.iconHeight;
@@ -2063,7 +2091,8 @@ function updateMap() {
                     'latitude': Number(curItem.attr('data-latitude')),
                     'title': curItem.find('.card-title').text(),
                     'active': isActive,
-                    'type': curItem.attr('data-type')
+                    'icon': curItem.attr('data-icon'),
+                    'iconbig': curItem.attr('data-iconbig')
                 });
             });
 
@@ -2074,12 +2103,18 @@ function updateMap() {
             markers = [];
 
             for (var i = 0; i < data.length; i++) {
-                var curIcon = null
-                for (var j = 0; j < mapIcons.length; j++) {
-                    if (mapIcons[j].type == data[i].type) {
-                        curIcon = mapIcons[j];
-                    }
-                }
+                var curIcon = {
+                    'iconURL': data[i].icon,
+                    'iconWidth': 46,
+                    'iconHeight': 46,
+                    'iconCenterX': 23,
+                    'iconCenterY': 23,
+                    'iconBigURL': data[i].iconbig,
+                    'iconBigWidth': 64,
+                    'iconBigHeight': 64,
+                    'iconBigCenterX': 32,
+                    'iconBigCenterY': 32
+                };
                 var iconImg = curIcon.iconURL;
                 var iconWidth = curIcon.iconWidth;
                 var iconHeight = curIcon.iconHeight;
@@ -2148,11 +2183,18 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
                     var iconCenterX = 0;
                     var iconCenterY = 0;
 
-                    for (var j = 0; j < mapIcons.length; j++) {
-                        if (mapIcons[j].type == curItem.attr('data-type')) {
-                            curIcon = mapIcons[j];
-                        }
-                    }
+                    curIcon = {
+                        'iconURL': curItem.attr('data-icon'),
+                        'iconWidth': 46,
+                        'iconHeight': 46,
+                        'iconCenterX': 23,
+                        'iconCenterY': 23,
+                        'iconBigURL': curItem.attr('data-iconbig'),
+                        'iconBigWidth': 64,
+                        'iconBigHeight': 64,
+                        'iconBigCenterX': 32,
+                        'iconBigCenterY': 32
+                    };
 
                     iconImg = curIcon.iconBigURL;
                     iconWidth = curIcon.iconBigWidth;
@@ -2185,18 +2227,23 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
             if (curIndex > -1) {
                 var curItem = $('.card').eq(curIndex);
                 if (!curItem.hasClass('active')) {
-                    var curIcon = null;
+                    var curIcon = {
+                        'iconURL': curItem.attr('data-icon'),
+                        'iconWidth': 46,
+                        'iconHeight': 46,
+                        'iconCenterX': 23,
+                        'iconCenterY': 23,
+                        'iconBigURL': curItem.attr('data-iconbig'),
+                        'iconBigWidth': 64,
+                        'iconBigHeight': 64,
+                        'iconBigCenterX': 32,
+                        'iconBigCenterY': 32
+                    };
                     var iconImg = '';
                     var iconWidth = 0;
                     var iconHeight = 0;
                     var iconCenterX = 0;
                     var iconCenterY = 0;
-
-                    for (var j = 0; j < mapIcons.length; j++) {
-                        if (mapIcons[j].type == curItem.attr('data-type')) {
-                            curIcon = mapIcons[j];
-                        }
-                    }
 
                     iconImg = curIcon.iconURL;
                     iconWidth = curIcon.iconWidth;
