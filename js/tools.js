@@ -3618,3 +3618,132 @@ $(document).ready(function() {
     });
 
 });
+
+$(document).ready(function() {
+    $('body').on('click', '.account-event-add-location-gapi-search-btn a', function(e) {
+        var curValue = $('.account-event-add-location-gapi-search .form-input input').val().trim();
+        if (curValue != '') {
+            if (!$('.account-event-add-location-gapi-search').hasClass('loading')) {
+                $('.account-event-add-location-gapi-search').addClass('loading');
+                var request = {
+                    query: curValue,
+                    fields: ['place_id', 'formatted_address', 'name'],
+                };
+                if (service != null) {
+                    service.findPlaceFromQuery(request, (results, status) => {
+                        $('.account-event-add-location-gapi-search-results-list').html('');
+                        if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+                            for (var i = 0; i < results.length; i++) {
+                                $('.account-event-add-location-gapi-search-results-list').append(   '<div class="account-event-add-location-gapi-search-results-list-item" data-id="' + results[i].place_id + '">' +
+                                                                                                        '<div class="account-event-add-location-gapi-search-results-list-item-title">' + results[i].name + '</div>' +
+                                                                                                        '<div class="account-event-add-location-gapi-search-results-list-item-address">' + results[i].formatted_address + '</div>' +
+                                                                                                    '</div>');
+                            }
+                            $('.account-event-add-location-gapi-search-results-count span').html(results.length);
+                        } else {
+                            $('.account-event-add-location-gapi-search-results-list').html('<div class="account-event-add-location-gapi-search-results-list-empty">' + $('.account-event-add-location-gapi-search-results-list').attr('data-emptytext') + '</div>');
+                            $('.account-event-add-location-gapi-search-results-count span').html('0');
+                        }
+                        $('.account-event-add-location-gapi-search').addClass('open');
+                        $('.account-event-add-location-gapi-search').removeClass('loading');
+                    });
+                }
+            }
+        } else {
+            $('.account-event-add-location-gapi-search .form-input input').trigger('focus');
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('keydown', '.account-event-add-location-gapi-search .form-input input', function(e) {
+        if (e.keyCode === 13) {
+            $('.account-event-add-location-gapi-search-btn a').trigger('click');
+            e.preventDefault();
+        }
+    });
+
+    $('body').on('focus', '.account-event-add-location-gapi-search .form-input input', function() {
+        var curInput = $(this);
+        if (curInput.parent().hasClass('full')) {
+            $('.account-event-add-location-gapi-search').addClass('open');
+        }
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.account-event-add-location-gapi-search').length == 0) {
+            $('.account-event-add-location-gapi-search').removeClass('open');
+        }
+    });
+
+    $('body').on('click', '.account-event-add-location-gapi-search-results-list-item', function() {
+        var curItem = $(this);
+        if (!curItem.hasClass('active')) {
+            $('.account-event-add-location-gapi-search-results-list-item.active').removeClass('active');
+            curItem.addClass('active');
+            var curID = curItem.attr('data-id');
+            $('.account-event-add-location-gapi-detail').addClass('open loading');
+            $('.account-event-add-location-gapi-detail-photo, .account-event-add-location-gapi-detail-item').removeClass('visible');
+            var request = {
+                placeId: curID,
+                fields: ['photos', 'adr_address', 'formatted_phone_number', 'website', 'geometry'],
+            };
+            if (service != null) {
+                service.getDetails(request, (place, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK && place) {
+                        if (place.photos && place.photos.length > 0) {
+                            $('.account-event-add-location-gapi-detail-photo').addClass('visible').html('<img src="' + place.photos[0].getUrl() + '" alt="">');
+                        }
+                        if (place.adr_address) {
+                            var newHTML = $('<div>' + place.adr_address + '</div>');
+                            if (newHTML.find('.locality').length == 1) {
+                                $('.account-event-add-location-gapi-detail-item-city').addClass('visible');
+                                $('.account-event-add-location-gapi-detail-item-city .account-event-add-location-gapi-detail-item-value').html(newHTML.find('.locality').html());
+                            }
+                            if (newHTML.find('.street-address').length == 1) {
+                                $('.account-event-add-location-gapi-detail-item-address').addClass('visible');
+                                $('.account-event-add-location-gapi-detail-item-address .account-event-add-location-gapi-detail-item-value').html(newHTML.find('.street-address').html());
+                            }
+                        }
+                        if (place.formatted_phone_number) {
+                            $('.account-event-add-location-gapi-detail-item-phone').addClass('visible');
+                            $('.account-event-add-location-gapi-detail-item-phone .account-event-add-location-gapi-detail-item-value').html(place.formatted_phone_number);
+                        }
+                        if (place.website) {
+                            $('.account-event-add-location-gapi-detail-item-url').addClass('visible');
+                            $('.account-event-add-location-gapi-detail-item-url .account-event-add-location-gapi-detail-item-value a span').html(place.website);
+                            $('.account-event-add-location-gapi-detail-item-url .account-event-add-location-gapi-detail-item-value a').attr('href', place.website);
+                        }
+                        if (place.geometry && place.geometry.location) {
+                            $('.account-event-add-location-gapi-detail').attr('data-lat', place.geometry.location.lat());
+                            $('.account-event-add-location-gapi-detail').attr('data-lng', place.geometry.location.lng());
+                        }
+                    }
+                    $('.account-event-add-location-gapi-detail').removeClass('loading');
+                });
+            }
+        }
+        $('.account-event-add-location-gapi-search').removeClass('open');
+    });
+
+    $('body').on('click', '.account-event-add-location-gapi-search-results-clear a', function(e) {
+        $('.account-event-add-location-gapi-search .form-input input').val('').removeClass('full focus').trigger('blur');
+        $('.account-event-add-location-gapi-search').removeClass('open');
+        $('.account-event-add-location-gapi-detail').removeClass('open');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.account-event-add-location-gapi-detail-btn a', function(e) {
+        $('.account-event-add-location-city').val($('.account-event-add-location-gapi-detail-item-city .account-event-add-location-gapi-detail-item-value').html()).trigger('change').trigger({type: 'select2:select'});
+        $('.account-event-add-location-address').val($('.account-event-add-location-gapi-detail-item-address .account-event-add-location-gapi-detail-item-value').html()).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-english').val($('.account-event-add-location-gapi-detail-item-address .account-event-add-location-gapi-detail-item-value').html()).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-latitude').val($('.account-event-add-location-gapi-detail').attr('data-lat')).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-address-longitude').val($('.account-event-add-location-gapi-detail').attr('data-lng')).parents().filter('.form-input').addClass('full');
+        $('.account-event-add-location-website').val($('.account-event-add-location-gapi-detail-item-url .account-event-add-location-gapi-detail-item-value a').attr('href')).parents().filter('.form-input').addClass('full');
+        if (map && marker) {
+            var newCoords = new google.maps.LatLng($('.account-event-add-location-gapi-detail').attr('data-lat'), $('.account-event-add-location-gapi-detail').attr('data-lng'));
+            marker.setPosition(newCoords);
+            map.setCenter(newCoords);
+        }
+        e.preventDefault();
+    });
+});

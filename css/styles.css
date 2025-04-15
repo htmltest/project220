@@ -4332,3 +4332,78 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 @media (max-width:1199px) {
     .up-link {left:auto; margin:0; right:12px; bottom:12px; width:44px; height:44px; box-shadow:0px 0px 40px rgba(0, 0, 0, 0.25)}
 }
+
+.account-event-add-location-gapi {margin:24px 0}
+.account-event-add-location-gapi-search {display:flex; position:relative}
+.account-event-add-location-gapi-search.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.3) url(../images/loading.svg) no-repeat center; z-index:1}
+.account-event-add-location-gapi-search .form-input {margin:0; width:100%}
+.account-event-add-location-gapi-search .form-input > span {left:45px}
+.account-event-add-location-gapi-search .form-input.focus > span,
+.account-event-add-location-gapi-search .form-input.full > span {left:20px}
+.account-event-add-location-gapi-search .form-input input {padding-left:45px}
+.account-event-add-location-gapi-search .form-input::after {content:""; position:absolute; left:20px; top:20px; width:15px; height:16px; background:url(../images/account-event-add-location-gapi-search.svg) no-repeat; background-size:100%; transition:top 0.2s}
+.account-event-add-location-gapi-search .form-input.focus::after,
+.account-event-add-location-gapi-search .form-input.full::after {top:29px}
+.account-event-add-location-gapi-search-btn {margin:0 0 0 12px; white-space:nowrap; display:flex}
+.account-event-add-location-gapi-search-btn a svg {display:none}
+.account-event-add-location-gapi-search-results {display:none; position:absolute; left:0; top:61px; right:0; z-index:20; background:#FFFFFF; border:1px solid #DFDFDF; box-shadow:0px 4px 24px rgba(7, 21, 66, 0.15); border-radius:8px}
+.account-event-add-location-gapi-search.open .account-event-add-location-gapi-search-results {display:block}
+.account-event-add-location-gapi-search.open.loading .account-event-add-location-gapi-search-results {display:none}
+.account-event-add-location-gapi-search-results-list {margin:10px; position:relative; max-height:239px; overflow:auto}
+.account-event-add-location-gapi-search-results-list::-webkit-scrollbar-thumb {background:#CBCEDC; border-radius:2px}
+.account-event-add-location-gapi-search-results-list::-webkit-scrollbar {width:3px; height:3px; background:transparent}
+.account-event-add-location-gapi-search-results-list-empty {padding:4px 38px 4px 10px; font-weight:600; font-size:18px; line-height:1.5em}
+.account-event-add-location-gapi-search-results-list-item {margin:5px 0 0 0; padding:4px 38px 4px 10px; cursor:pointer; transition:background 0.2s, color 0.2s; color:#080825; position:relative; border-radius:6px}
+.account-event-add-location-gapi-search-results-list-item:first-child {margin:0}
+.account-event-add-location-gapi-search-results-list-item.active {background:#F3F4FB; color:##787B8E}
+@media (min-width:1200px) {
+    .account-event-add-location-gapi-search-results-list-item:hover {background:#F3F4FB; color:#080825}
+}
+.account-event-add-location-gapi-search-results-list-item.active::after {content:""; position:absolute; right:10px; top:50%; width:16px; height:16px; margin:-8px 0 0 0; background:url(../images/account-event-add-location-gapi-search-results-list-item.svg) no-repeat; background-size:100%}
+.account-event-add-location-gapi-search-results-list-item-title {font-weight:600; font-size:18px; line-height:1.5em}
+.account-event-add-location-gapi-search-results-list-item-address {margin:2px 0 0 0; font-size:15px; line-height:1.5em; color:#787B8E}
+.account-event-add-location-gapi-search-results-ctrl {margin:10px 0 0 0; padding:10px; display:flex; align-items:center; justify-content:space-between; border-top:1px solid #DFDFDF}
+.account-event-add-location-gapi-search-results-count {font-weight:bold; font-size:15px; line-height:1.5em; color:#6768AB}
+.account-event-add-location-gapi-search-results-clear {font-weight:500; font-size:15px; line-height:1.5em}
+.account-event-add-location-gapi-search-results-clear a {color:#787B8E}
+@media (min-width:1200px) {
+    .account-event-add-location-gapi-search-results-clear a:hover {color:#D75078}
+}
+.account-event-add-location-gapi-detail {display:none; margin:12px 0 0 0; background:#F7F8FC; padding:20px; border-radius:12px; position:relative; overflow:hidden}
+.account-event-add-location-gapi-detail.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(247, 248, 252, 0.3) url(../images/loading.svg) no-repeat center; z-index:1}
+.account-event-add-location-gapi-detail.open {display:flex}
+.account-event-add-location-gapi-detail-info {width:100%}
+.account-event-add-location-gapi-detail-photo {display:none; margin:0 0 24px 0}
+.account-event-add-location-gapi-detail-photo.visible {display:block}
+.account-event-add-location-gapi-detail-photo img {display:block; max-width:200px; border-radius:8px}
+.account-event-add-location-gapi-detail-btn {white-space:nowrap; margin:0 0 0 20px}
+.account-event-add-location-gapi-detail-btn a {display:flex; align-items:center; height:39px; padding:0 20px; font-weight:800; font-size:12px; line-height:15px; border-radius:6px}
+.account-event-add-location-gapi-detail-item {margin:10px 0 0 0; display:none; font-size:16px; line-height:1.5em}
+.account-event-add-location-gapi-detail-item:first-child {margin:0}
+.account-event-add-location-gapi-detail-item.visible {display:flex}
+.account-event-add-location-gapi-detail-item-title {min-width:80px; max-width:80px; color:#787B8E; margin:0 20px 0 0}
+.account-event-add-location-gapi-detail-item-value {width:100%; font-weight:600; color:#080825}
+.account-event-add-location-gapi-detail-item-value a {display:flex; align-items:center}
+.account-event-add-location-gapi-detail-item-value a svg {min-width:20px; max-width:20px; height:20px; margin:0 0 0 10px; fill:#EA435D; transition:fill 0.2s}
+@media (min-width:1200px) {
+    .account-event-add-location-gapi-detail-item-value a:hover svg {fill:#D75078}
+}
+
+@media (max-width:1199px) {
+    .account-event-add-location-gapi {margin:20px 0}
+    .account-event-add-location-gapi-search .form-input > span {left:20px}
+    .account-event-add-location-gapi-search .form-input input {padding-left:20px}
+    .account-event-add-location-gapi-search .form-input::after {display:none}
+    .account-event-add-location-gapi-search-btn {margin:0 0 0 10px}
+    .account-event-add-location-gapi-search-btn a span {display:none}
+    .account-event-add-location-gapi-search-btn a svg {display:block; min-width:19px; max-width:19px; height:19px; fill:#FFFFFF}
+    .account-event-add-location-gapi-search-results {top:54px}
+    .account-event-add-location-gapi-detail {margin:20px 0 0 0; padding:15px}
+    .account-event-add-location-gapi-detail.open {display:block}
+    .account-event-add-location-gapi-detail-photo {margin:0 0 15px 0}
+    .account-event-add-location-gapi-detail-photo img {max-width:100%; width:100%}
+    .account-event-add-location-gapi-detail-item.visible {display:block; font-size:15px; line-height:1.5em}
+    .account-event-add-location-gapi-detail-item-title {min-width:0; max-width:none; margin:0 0 4px 0; font-size:13px; line-height:1.5em}
+    .account-event-add-location-gapi-detail-btn {margin:15px 0 0 0}
+    .account-event-add-location-gapi-detail-btn a {width:100%; justify-content:center}
+}

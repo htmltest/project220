@@ -1531,6 +1531,47 @@
                                                 </div>
                                                 <!-- account event add location END -->
 
+                                                <!-- account event add location gapi -->
+                                                <div class="account-event-add-location-gapi">
+                                                    <div class="account-event-add-location-gapi-search">
+                                                        <div class="form-input"><span>Location <em>*</em></span><input type="text" name="locationgapi" value=""></div>
+                                                        <div class="account-event-add-location-gapi-search-btn"><a href="#" class="btn"><span>find</span><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a></div>
+                                                        <div class="account-event-add-location-gapi-search-results">
+                                                            <div class="account-event-add-location-gapi-search-results-list" data-emptytext="Not found">
+                                                            </div>
+                                                            <div class="account-event-add-location-gapi-search-results-ctrl">
+                                                                <div class="account-event-add-location-gapi-search-results-count"><span></span> results</div>
+                                                                <div class="account-event-add-location-gapi-search-results-clear"><a href="#">Clear All</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="account-event-add-location-gapi-detail" data-lat="" data-lng="">
+                                                        <div class="account-event-add-location-gapi-detail-info">
+                                                            <div class="account-event-add-location-gapi-detail-photo"></div>
+                                                            <div class="account-event-add-location-gapi-detail-list">
+                                                                <div class="account-event-add-location-gapi-detail-item account-event-add-location-gapi-detail-item-city">
+                                                                    <div class="account-event-add-location-gapi-detail-item-title">City</div>
+                                                                    <div class="account-event-add-location-gapi-detail-item-value"></div>
+                                                                </div>
+                                                                <div class="account-event-add-location-gapi-detail-item account-event-add-location-gapi-detail-item-address">
+                                                                    <div class="account-event-add-location-gapi-detail-item-title">Address</div>
+                                                                    <div class="account-event-add-location-gapi-detail-item-value"></div>
+                                                                </div>
+                                                                <div class="account-event-add-location-gapi-detail-item account-event-add-location-gapi-detail-item-phone">
+                                                                    <div class="account-event-add-location-gapi-detail-item-title">Phone</div>
+                                                                    <div class="account-event-add-location-gapi-detail-item-value"></div>
+                                                                </div>
+                                                                <div class="account-event-add-location-gapi-detail-item account-event-add-location-gapi-detail-item-url">
+                                                                    <div class="account-event-add-location-gapi-detail-item-title">Website</div>
+                                                                    <div class="account-event-add-location-gapi-detail-item-value"><a href="#" target="_blank"><span></span><svg><use xlink:href="images/sprite.svg?news#account-event-add-location-gapi-detail-item-value-url"></use></svg></a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="account-event-add-location-gapi-detail-btn"><a href="#" class="btn">Fill in the form</a></div>
+                                                    </div>
+                                                </div>
+                                                <!-- account event add location gapi END -->
+
                                                 <div class="account-event-add-location-detail">
                                                     <div class="account-event-add-location-detail-info">
                                                         <div class="account-event-add-location-detail-info-row">
@@ -1589,6 +1630,7 @@
                                                     <script src="js/map-config.js"></script>
                                                     <script>
                                                         var map;
+                                                        var service = null;
 
                                                         var coordinates = {lat: 46.047867394816066, lng: 14.50600538891582};
 
@@ -1611,6 +1653,8 @@
                                                                 cameraControl: false,
                                                                 disableDoubleClickZoom: true
                                                             });
+
+                                                            service = new google.maps.places.PlacesService(map);
 
                                                             geocoder = new google.maps.Geocoder();
 
@@ -1635,7 +1679,7 @@
                                                             });
                                                         }
                                                     </script>
-                                                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=&v=weekly&key=AIzaSyA0WMOe8YWd0yua6Z4Fr_fOmST1CJs1OW0"></script>
+                                                    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=places&v=weekly&key=AIzaSyDc6X0TKhk2ZT9KgPRFIisikfoSt9dY9JE"></script>
 
                                                     <div class="account-event-add-row">
                                                         <div class="account-event-add-row-field">
@@ -2311,7 +2355,7 @@
                                             <div class="account-event-add-group-content">
                                                 <div class="account-event-add-row">
                                                     <div class="account-event-add-row-field">
-                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Website</span><input type="text" name="website" value="https://BeautyAndTheBeast.com" class="url"></div>
+                                                        <div class="form-input form-input-with-icon"><img src="images/form-input-icon-url.svg" alt=""><span>Website</span><input type="text" name="website" value="https://BeautyAndTheBeast.com" class="url account-event-add-location-website"></div>
                                                     </div>
                                                     <div class="account-event-add-row-field">
                                                         <div class="form-input form-input-with-icon"><img src="images/form-input-icon-tiktok.svg" alt=""><span>TikTok</span><input type="text" name="tiktok" value="" class="url"></div>
