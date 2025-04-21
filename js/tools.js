@@ -701,7 +701,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.filters-select').length == 0) {
+        if ($(window).width() > 1199 && $(e.target).parents().filter('.filters-select').length == 0) {
             $('.filters-select').removeClass('open');
         }
         if ($(e.target).hasClass('filters-select-content') && $(window).width() < 1200) {
@@ -822,7 +822,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.filters-date').length == 0 && !$(e.target).hasClass('air-datepicker-cell') && !$(e.target).hasClass('air-datepicker-nav--title') && $(e.target).parents().filter('.air-datepicker-nav--title').length == 0) {
+        if ($(window).width() > 1199 && $(e.target).parents().filter('.filters-date').length == 0 && !$(e.target).hasClass('air-datepicker-cell') && !$(e.target).hasClass('air-datepicker-nav--title') && $(e.target).parents().filter('.air-datepicker-nav--title').length == 0) {
             $('.filters-date').removeClass('open');
         }
     });
@@ -2156,6 +2156,7 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
             }
         }
         if (curIndex > -1) {
+            $('.page-map-container').addClass('open')
             $('.page-map-list .card').eq(curIndex).find('.card-content').click();
             window.setTimeout(function() {
                 $('.page-map-list-content').mCustomScrollbar('scrollTo', $('.page-map-list .card').eq(curIndex));
@@ -2163,6 +2164,8 @@ function add_marker(lng, lat, title, iconImg, iconWidth, iconHeight, iconCenterX
             if (mapSwiper) {
                 mapSwiper.slideTo(curIndex);
             }
+        } else {
+            $('.page-map-container').removeClass('open')
         }
     });
     google.maps.event.addListener(marker, 'mouseover', function () {
@@ -2384,7 +2387,9 @@ $(window).on('load resize', function() {
                 curSlider.addClass('swiper');
                 curSlider.find('.catalogue').addClass('swiper-wrapper');
                 curSlider.find('.card').addClass('swiper-slide');
-                curSlider.find('.card-content').eq(0).trigger('click');
+                if ($(window).width() > 1199) {
+                    curSlider.find('.card-content').eq(0).trigger('click');
+                }
                 mapSwiper = new Swiper(curSlider[0], {
                     slidesPerView: 'auto',
                     centeredSlides: true,
