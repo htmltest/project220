@@ -104,7 +104,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 
 @media (max-width:1199px) {
     .message {display:block; padding:19px}
-    .message-title {min-width:none; max-width:none; padding:0; margin:0 0 0 53px; border-right:none}
+    .message-title {min-width:0; max-width:none; padding:0; margin:0 0 0 53px; border-right:none}
     .message-text {margin:20px 0 0 0}
 }
 
@@ -810,7 +810,7 @@ header.fixed .header-inner {height:44px}
     .header-user-account-link svg {display:none}
 
     .header-user-menu-open,
-    .header-user-menu-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidde}
+    .header-user-menu-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidden}
     .header-user-menu-open .menu-mobile-link {display:none}
     .header-user-account-link svg+svg {width:24px; height:24px; fill:#1C1B1F}
     .header-user-menu-open .header-user-account-link {padding-right:0}
@@ -858,7 +858,7 @@ header.fixed .header-inner {height:44px}
     .menu-mobile-link svg:nth-child(2) {display:none}
 
     .menu-mobile-open,
-    .menu-mobile-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidde}
+    .menu-mobile-open body {position:fixed; left:0; top:0; right:0; bottom:0; overflow:hidden}
     .menu-mobile-open .menu-mobile-link svg:nth-child(1) {display:none}
     .menu-mobile-open .menu-mobile-link svg:nth-child(2) {display:block}
 }
@@ -1017,7 +1017,7 @@ header.fixed .header-inner {height:44px}
 .calendar-fixed .filters-calendar-container {position:fixed; left:0; right:0; padding:8px 0; top:44px; z-index:98; border-top:1px solid #F9F9FF; background:#FFFFFF; box-shadow:0px 4px 24px 0px rgba(7, 21, 66, 0.25)}
 .calendar-fixed .filters-calendar {width:1180px; margin:0 auto}
 .calendar-fixed .filters-calendar-month {display:flex; align-items:center}
-.calendar-fixed .filters-calendar-month-title {font-weight:300; font-size:12px; line-height:15px; width:none; text-align:left}
+.calendar-fixed .filters-calendar-month-title {font-weight:300; font-size:12px; line-height:15px; width:auto; text-align:left}
 .calendar-fixed .filters-calendar-month-days {margin:0 0 0 10px}
 .calendar-fixed .filters-calendar-month-day {padding:0 0 0 5px}
 .calendar-fixed .filters-calendar-month-day:first-child {padding:0}
@@ -4360,7 +4360,7 @@ footer {position:relative; margin:120px 0 0 0; padding:40px 0; background:#08082
 .account-event-add-location-gapi-search-results-list-empty {padding:4px 38px 4px 10px; font-weight:600; font-size:18px; line-height:1.5em}
 .account-event-add-location-gapi-search-results-list-item {margin:5px 0 0 0; padding:4px 38px 4px 10px; cursor:pointer; transition:background 0.2s, color 0.2s; color:#080825; position:relative; border-radius:6px}
 .account-event-add-location-gapi-search-results-list-item:first-child {margin:0}
-.account-event-add-location-gapi-search-results-list-item.active {background:#F3F4FB; color:##787B8E}
+.account-event-add-location-gapi-search-results-list-item.active {background:#F3F4FB; color:#787B8E}
 @media (min-width:1200px) {
     .account-event-add-location-gapi-search-results-list-item:hover {background:#F3F4FB; color:#080825}
 }
